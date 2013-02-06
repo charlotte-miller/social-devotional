@@ -6,26 +6,36 @@ gem 'configy'
 gem 'oj'
 gem 'celluloid'
 gem 'whenever'
+gem 'jbuilder'
+gem 'acts_as_interface'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+
+# SideKiq Monitoring
+# gem 'sidekiq'
+# gem "thin", "~> 1.4.1"
+# gem 'slim', '<= 1.3.0'
+# gem 'sinatra', :require => nil
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer', :platforms => :ruby, :require => false
   gem 'uglifier', '>= 1.0.3', :require => false
+  gem 'therubyracer', :platforms => :ruby, :require => false
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails', '2.1.6'
+  gem 'bootstrap-datepicker-rails'
 end
 
 gem 'jquery-rails'
+# gem 'haml-rails'
 
 
 
-# To use Jbuilder templates for JSON
-gem 'jbuilder'
-
+gem "newrelic_rpm"
 
 group :development, :test do
   gem 'thin'
@@ -45,7 +55,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.4'
   gem 'factory_girl_rails'
   gem 'timecop'
-  gem "ffaker", "0.3.5"
+  gem "ffaker"
   gem 'capybara'
   
   # Debugger
