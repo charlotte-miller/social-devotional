@@ -7,10 +7,12 @@ gem 'oj'
 gem 'celluloid'
 gem 'whenever'
 gem 'jbuilder'
-gem 'acts_as_interface'
+
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+gem 'acts_as_interface'
+gem 'profanalyzer'
 
 # SideKiq Monitoring
 # gem 'sidekiq'

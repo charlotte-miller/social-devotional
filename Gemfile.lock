@@ -154,6 +154,7 @@ GEM
       fattr
     polyglot (0.3.3)
     pr_geohash (1.0.0)
+    profanalyzer (1.2.0)
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
@@ -295,6 +296,7 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   oj
+  profanalyzer
   progress_bar
   pry-rails
   quiet_assets
