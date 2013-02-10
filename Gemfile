@@ -7,6 +7,8 @@ gem 'oj'
 gem 'celluloid'
 gem 'whenever'
 gem 'jbuilder'
+gem 'paperclip'
+gem 'devise'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
