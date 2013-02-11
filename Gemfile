@@ -9,6 +9,7 @@ gem 'whenever'
 gem 'jbuilder'
 gem 'paperclip'
 gem 'devise'
+gem 'devise-encryptable'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
