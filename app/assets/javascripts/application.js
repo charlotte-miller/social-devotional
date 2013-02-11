@@ -6,7 +6,7 @@
 //= require ../../../vendor/assets/javascripts/jquery/jquery.easing-1.3
 //= require ../../../vendor/assets/javascripts/backbone/handlebars-1.0.rc.1
 //= require ../../../vendor/assets/javascripts/backbone/underscore-1.4.4
-//= require ../../../vendor/assets/javascripts/backbone/backbone-0.9.2
+//= require ../../../vendor/assets/javascripts/backbone/backbone-0.9.10
 //= require ../../../vendor/assets/javascripts/backbone/backbone-relational-0.6.0
 //= require ../../../vendor/assets/javascripts/backbone/backbone-query-0.2.3
 //= require ../../../vendor/assets/javascripts/backbone/backbone-bind-to-1.0.0
