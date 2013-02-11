@@ -55,15 +55,15 @@ ActiveRecord::Schema.define(:version => 20130211001127) do
   add_index "series", ["slug"], :name => "index_series_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "first_name",             :limit => 60
-    t.string   "last_name",              :limit => 60
-    t.string   "email",                  :limit => 80, :default => "", :null => false
-    t.string   "encrypted_password",                   :default => "", :null => false
+    t.string   "first_name",                 :limit => 60
+    t.string   "last_name",                  :limit => 60
+    t.string   "email",                      :limit => 80, :default => "", :null => false
+    t.string   "encrypted_password",                       :default => "", :null => false
     t.string   "password_salt"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        :default => 0
+    t.integer  "sign_in_count",                            :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -72,10 +72,14 @@ ActiveRecord::Schema.define(:version => 20130211001127) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",                      :default => 0
+    t.integer  "failed_attempts",                          :default => 0
     t.datetime "locked_at"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
+    t.datetime "profile_image_updated_at"
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

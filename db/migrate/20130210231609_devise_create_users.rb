@@ -36,6 +36,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts
       t.datetime :locked_at
 
+      ## Profile Image
+      t.attachment :profile_image
+      
       t.timestamps
     end
 

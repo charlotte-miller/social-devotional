@@ -12,8 +12,12 @@ class User < ActiveRecord::Base
   # -----------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
-
+  attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
+  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+                    :fog_directory => 'profile_images',
+                    :fog_credentials => AppConfig.fog_credentials,  # {}
+                    :fog_host => 'asset1.social-devotional.com'     # cloudfront
+                    # http://rdoc.info/github/thoughtbot/paperclip/Paperclip/Storage/Fog
   
   
   # -------------
@@ -28,6 +32,9 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :first_name, :last_name
   validates_length_of   :first_name, :last_name, :within => 0..60, :message => "is too long"
   validates_length_of   :email, :within => 0..80, :message => "is too long"
+  validates_attachment :profile_image, :presence => true,
+    # :content_type => { :content_type => "image/jpg" },
+    :size => { :in => 0..10.megabytes }
   
   
   # -------
