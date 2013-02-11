@@ -1,8 +1,9 @@
 SocialDevotional::Application.routes.draw do
+  resources :series
   devise_for :admins
   devise_for :users
 
-  # root :to => "home#index"
+  root :to => "series#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

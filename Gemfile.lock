@@ -90,6 +90,7 @@ GEM
     fattr (2.2.1)
     ffaker (0.3.5)
     ffi (1.3.1)
+    friendly_id (4.0.9)
     growl (1.0.3)
     guard (1.6.2)
       listen (>= 0.6.0)
@@ -305,6 +306,7 @@ DEPENDENCIES
   devise-encryptable
   factory_girl_rails
   ffaker
+  friendly_id (~> 4.0.9)
   growl
   guard-jasmine-headless-webkit
   guard-rspec
