@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
   has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-                    :fog_directory => 'profile_images',
+                    :fog_directory => "#{Rails.env}/profile_images",
                     :fog_credentials => AppConfig.fog_credentials,  # {}
                     :fog_host => 'asset1.social-devotional.com'     # cloudfront
                     # http://rdoc.info/github/thoughtbot/paperclip/Paperclip/Storage/Fog
