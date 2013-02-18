@@ -17,7 +17,7 @@ class Series < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  
+  has_many :lessons#, counter_cache: true
   
   
   # ---------------------------------------------------------------------------------
@@ -42,5 +42,9 @@ class Series < ActiveRecord::Base
 
   def tags
     # future association
+  end
+  
+  def stand_alone?
+    lessons.size == 1 #lessons_count
   end
 end

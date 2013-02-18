@@ -43,13 +43,14 @@ ActiveRecord::Schema.define(:version => 20130211001127) do
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
 
   create_table "series", :force => true do |t|
-    t.string   "slug",        :null => false
-    t.string   "title",       :null => false
+    t.string   "slug",                         :null => false
+    t.string   "title",                        :null => false
     t.string   "description"
     t.string   "ref_link"
     t.string   "video_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "lessons_count", :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "series", ["slug"], :name => "index_series_on_slug", :unique => true
