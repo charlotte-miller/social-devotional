@@ -1,7 +1,15 @@
 SocialDevotional::Application.routes.draw do
 
   resources :series, only: [:index, :show ], as: 'library' do
+    resources :lessons, only: [:index, :show ] do
+      resources :questions, only: [:index, :show, :new, :create], member: [:block, :like]
+    end
+  end
 
+  resources :groups do
+    resources :lessons, only: [:index, :show ] do
+      resources :questions, only: [:index, :show, :new, :create], member: [:block, :like]
+    end
   end
 
   devise_for :users

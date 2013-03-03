@@ -27,6 +27,11 @@ _Possible Resource_:
 /groups/:id                                           #=> groups#show
 /groups/new                                           #=> groups#new
 
+### Questions
+/groups/:group_id/questions                           #=> questions#index
+/groups/:group_id/questions/:id                       #=> questions#show
+/groups/:group_id/questions/new                       #=> questions#new
+/groups/:group_id/questions/new?verify=true           #=> questions#new
 
 
 

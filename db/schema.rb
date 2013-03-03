@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130211001127) do
+ActiveRecord::Schema.define(:version => 20130303041645) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -64,6 +64,19 @@ ActiveRecord::Schema.define(:version => 20130211001127) do
   end
 
   add_index "groups", ["series_id"], :name => "index_groups_on_series_id"
+
+  create_table "questions", :force => true do |t|
+    t.integer  "lesson_id"
+    t.integer  "group_id"
+    t.text     "text"
+    t.integer  "answers_count"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "questions", ["group_id", "lesson_id"], :name => "index_questions_on_group_id_and_lesson_id"
+  add_index "questions", ["lesson_id"], :name => "index_questions_on_lesson_id"
+
   create_table "series", :force => true do |t|
     t.string   "slug",                         :null => false
     t.string   "title",                        :null => false
