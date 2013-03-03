@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Series:</b>
+  <%= @lesson.series_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @lesson.position %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @lesson.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @lesson.description %>
+</p>
+
+<p>
+  <b>Backlink:</b>
+  <%= @lesson.backlink %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%= @lesson.video_url %>
+</p>
+
+<p>
+  <b>Audio url:</b>
+  <%= @lesson.audio_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
