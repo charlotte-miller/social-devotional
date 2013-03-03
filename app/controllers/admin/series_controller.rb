@@ -1,6 +1,4 @@
 class Admin::SeriesController < Admin::BaseController
-  before_filter :authenticate_admin!, except: [:index, :show]
-  # caches_page :show
 
   # GET /series?search=keyword
   # GET /series.json

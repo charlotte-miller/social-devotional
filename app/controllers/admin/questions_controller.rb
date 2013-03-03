@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   # GET /questions
   # GET /questions.json
   def index
@@ -32,6 +32,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # GET /questions/1/edit
+  def edit
+    @question = Question.find(params[:id])
+  end
+
   # POST /questions
   # POST /questions.json
   def create
@@ -48,16 +53,31 @@ class QuestionsController < ApplicationController
     end
   end
 
-  
-  # POST /questions/1/block
-  # POST /questions/1/block.json
-  def block
-    
+  # PUT /questions/1
+  # PUT /questions/1.json
+  def update
+    @question = Question.find(params[:id])
+
+    respond_to do |format|
+      if @question.update_attributes(params[:question])
+        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
   end
-  
-  # POST /questions/1/like
-  # POST /questions/1/like.json
-  def like
-    
+
+  # DELETE /questions/1
+  # DELETE /questions/1.json
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+
+    respond_to do |format|
+      format.html { redirect_to questions_url }
+      format.json { head :no_content }
+    end
   end
 end

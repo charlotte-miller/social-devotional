@@ -15,9 +15,10 @@ SocialDevotional::Application.routes.draw do
   devise_for :users
   devise_for :admins
   namespace :admin do
-    # Directs /admin/products/* to Admin::ProductsController
-    # (app/controllers/admin/products_controller.rb)
-    # resources :products
+    resources :groups
+    resources :lessons
+    resources :questions
+    resources :series
   end
 
   root :to => "series#index"
