@@ -22,6 +22,10 @@ _Possible Resource_:
 /library/:series-name/lesson/:index-within-series     #=>  lesson#show  
 
 
+### Groups
+/groups?q=keywords                                    #=> groups#index   (your dashboard or "find a group" (depending on if you have any))
+/groups/:id                                           #=> groups#show
+/groups/new                                           #=> groups#new
 
 
 
