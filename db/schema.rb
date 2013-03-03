@@ -42,6 +42,28 @@ ActiveRecord::Schema.define(:version => 20130211001127) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
 
+  create_table "group_memberships", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.boolean  "public"
+    t.integer  "role_level", :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "group_memberships", ["group_id", "user_id"], :name => "index_group_memberships_on_group_id_and_user_id"
+  add_index "group_memberships", ["user_id", "public"], :name => "index_group_memberships_on_user_id_and_public"
+
+  create_table "groups", :force => true do |t|
+    t.integer  "series_id"
+    t.string   "name"
+    t.text     "desription"
+    t.boolean  "public"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "groups", ["series_id"], :name => "index_groups_on_series_id"
   create_table "series", :force => true do |t|
     t.string   "slug",                         :null => false
     t.string   "title",                        :null => false
