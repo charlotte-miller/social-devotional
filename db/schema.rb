@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303041645) do
+ActiveRecord::Schema.define(:version => 20130303050220) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -55,27 +55,40 @@ ActiveRecord::Schema.define(:version => 20130303041645) do
   add_index "group_memberships", ["user_id", "public"], :name => "index_group_memberships_on_user_id_and_public"
 
   create_table "groups", :force => true do |t|
-    t.integer  "series_id"
+    t.integer  "meeting_id"
     t.string   "name"
     t.text     "desription"
     t.boolean  "public"
+    t.integer  "meets_every_days", :default => 7
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "groups", ["meeting_id"], :name => "index_groups_on_meeting_id"
+
+  create_table "meetings", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "lesson_id"
+    t.datetime "date_of"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "groups", ["series_id"], :name => "index_groups_on_series_id"
+  add_index "meetings", ["group_id", "date_of"], :name => "index_meetings_on_group_id_and_date_of"
+  add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
 
   create_table "questions", :force => true do |t|
-    t.integer  "lesson_id"
-    t.integer  "group_id"
+    t.integer  "user_id"
+    t.integer  "source_id"
+    t.string   "source_type"
     t.text     "text"
     t.integer  "answers_count"
+    t.integer  "blocked_count"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "questions", ["group_id", "lesson_id"], :name => "index_questions_on_group_id_and_lesson_id"
-  add_index "questions", ["lesson_id"], :name => "index_questions_on_lesson_id"
+  add_index "questions", ["source_id", "source_type"], :name => "index_questions_on_source_id_and_source_type"
 
   create_table "series", :force => true do |t|
     t.string   "slug",                         :null => false
