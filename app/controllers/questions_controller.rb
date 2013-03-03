@@ -52,7 +52,18 @@ class QuestionsController < ApplicationController
   # POST /questions/1/block
   # POST /questions/1/block.json
   def block
+    @question      = Question.find(params[:id])
+    @block_request = BlockRequest.new(source: @question)
     
+    respond_to do |format|
+      if @block_request.save
+        format.html { redirect_to @block_request, notice: 'Question blocked.' }
+        format.json { render json: @block_request, status: :created, location: @block_request }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @block_request.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   # POST /questions/1/like

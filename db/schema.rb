@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303050220) do
+ActiveRecord::Schema.define(:version => 20130303060233) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20130303050220) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
 
+  create_table "block_requests", :force => true do |t|
+    t.integer  "admin_id"
+    t.integer  "user_id"
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "block_requests", ["source_id", "source_type"], :name => "index_block_requests_on_source_id_and_source_type"
+  add_index "block_requests", ["user_id"], :name => "index_block_requests_on_user_id"
+
   create_table "group_memberships", :force => true do |t|
     t.integer  "group_id"
     t.integer  "user_id"
@@ -65,6 +77,20 @@ ActiveRecord::Schema.define(:version => 20130303050220) do
   end
 
   add_index "groups", ["meeting_id"], :name => "index_groups_on_meeting_id"
+
+  create_table "lessons", :force => true do |t|
+    t.integer  "series_id",                  :null => false
+    t.integer  "position",    :default => 0
+    t.string   "title",                      :null => false
+    t.text     "description"
+    t.string   "backlink"
+    t.string   "video_url"
+    t.string   "audio_url"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "lessons", ["series_id", "position"], :name => "index_lessons_on_series_id_and_position"
 
   create_table "meetings", :force => true do |t|
     t.integer  "group_id"
