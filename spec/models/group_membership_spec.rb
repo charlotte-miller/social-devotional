@@ -14,7 +14,7 @@
 require 'spec_helper'
 
 describe GroupMembership do
-  it { should belong_to( :user ).as( :member )}
+  it { should belong_to( :member ).class_name( :user )}
   it { should belong_to :group }
   
   

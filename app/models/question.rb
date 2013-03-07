@@ -24,9 +24,9 @@ class Question < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :source, polymorphic: true
-  # belongs_to :meeting, polymorphic: true, as: 'source'
-  # belongs_to :lesson,  polymorphic: true, as: 'source'  
+  belongs_to :source,  polymorphic: true
+  # belongs_to :meeting, :class_name => 'Meeting', :foreign_key => 'source_id'   # these only work with the propery type... probably needs to be a method
+  # belongs_to :lesson,  :class_name => 'Lesson', :foreign_key => 'source_id'    # these only work with the propery type... probably needs to be a method
   
   
   # ---------------------------------------------------------------------------------

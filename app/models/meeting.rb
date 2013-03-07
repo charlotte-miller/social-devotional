@@ -24,7 +24,7 @@ class Meeting < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   belongs_to :group
   belongs_to :lesson  
-  has_many :questions, as: 'source'
+  has_many :questions, as: 'source'  #:dependent => :nullify  # really repoint at question if public
   
   # ---------------------------------------------------------------------------------
   # Validations

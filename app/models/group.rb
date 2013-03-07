@@ -23,7 +23,10 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_one :current_meeting, :class_name => "Meeting", :foreign_key => "meeting_id"  
+  belongs_to :current_meeting,  :class_name => "meeting", :foreign_key => "meeting_id"
+  has_many :meetings,           :dependent => :destroy
+  has_many :group_memberships,  :dependent => :destroy
+  has_many :members,            :through => :group_memberships
   
   
   # ---------------------------------------------------------------------------------

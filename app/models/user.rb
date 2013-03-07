@@ -55,7 +55,8 @@ class User < ActiveRecord::Base
   # -------------
   # Associations
   # ---------------------------------------------------------------------------------
-  
+  has_many :group_memberships, :dependent => :destroy
+  has_many :groups,            :through => :group_membership
   
   
   # ------------

@@ -17,8 +17,19 @@ require 'spec_helper'
 
 describe Question do
   it { should have_many :answers  } 
-  it { should belong_to( :meetings ) }
-  it { should belong_to( :lessons  ) }
+  it { should belong_to( :source ) }
   
-  
+  describe 'lesson' do
+    context "source is a lesson" do
+      it "should have a lesson" do
+        pending
+      end
+    end
+    
+    context "source is a meeting" do
+      it "should have a lesson through meeting" do
+        pending
+      end
+    end
+  end
 end

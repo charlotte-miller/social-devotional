@@ -22,14 +22,14 @@ class GroupMembership < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :group_id
-  belongs_to :user_id
+  belongs_to :group
+  belongs_to :member, :class_name => "user", :foreign_key => "user_id"
   
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :group, :user
+  validates_presence_of :group, :member
   
   
   # ---------------------------------------------------------------------------------

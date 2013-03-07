@@ -15,8 +15,8 @@
 require 'spec_helper'
 
 describe Group do
-  it { should belong_to( :current_meeting ).class( :meeting )}
-  it { should have_many( :members ).through( :group_membership ) } #users
+  it { should belong_to( :current_meeting ).class_name( :meeting )}
+  it { should have_many( :members ).through( :group_memberships ) } #users
   it { should have_many( :questions ).through( :meetings ) }
   
   

@@ -32,7 +32,7 @@ class Series < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :lessons, order: :position#, counter_cache: true
+  has_many :lessons, :order => :position, :dependent => :destroy
   
   
   # ---------------------------------------------------------------------------------
