@@ -1,10 +1,10 @@
 class CreateGroupMemberships < ActiveRecord::Migration
   def change
     create_table :group_memberships do |t|
-      t.integer :group_id
-      t.integer :user_id
-      t.boolean :public
-      t.integer :role_level, default: 0
+      t.integer :group_id,    null:false
+      t.integer :user_id,     null:false
+      t.boolean :public,      default: true
+      t.integer :role_level,  default: 0
 
       t.timestamps
     end

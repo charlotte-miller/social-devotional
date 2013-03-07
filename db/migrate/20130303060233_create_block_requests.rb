@@ -2,9 +2,9 @@ class CreateBlockRequests < ActiveRecord::Migration
   def change
     create_table :block_requests do |t|
       t.integer :admin_id
-      t.integer :user_id
-      t.integer :source_id
-      t.string  :source_type
+      t.integer :user_id,       null:false
+      t.integer :source_id,     null:false
+      t.string  :source_type,   null:false
 
       t.timestamps
     end

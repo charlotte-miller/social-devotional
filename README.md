@@ -26,6 +26,7 @@ _Possible Resource_:
 /groups?q=keywords                                    #=> groups#index   (your dashboard or "find a group" (depending on if you have any))
 /groups/:id                                           #=> groups#show
 /groups/new                                           #=> groups#new
+/groups/:group_id/
 
 ### Questions
 /groups/:group_id/questions                           #=> questions#index

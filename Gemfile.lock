@@ -245,6 +245,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    shoulda-matchers (1.4.1)
+      activesupport (>= 3.0.0)
     slop (3.4.3)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -332,6 +334,7 @@ DEPENDENCIES
   rspec-rails (~> 2.4)
   rspec-rails-mocha (~> 0.3.1)
   sass-rails (~> 3.2.3)
+  shoulda-matchers
   sunspot_rails
   sunspot_solr
   sunspot_test

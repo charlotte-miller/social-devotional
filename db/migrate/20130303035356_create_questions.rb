@@ -1,12 +1,12 @@
 class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
-      t.integer :user_id
-      t.integer :source_id
-      t.string  :source_type
-      t.text    :text
-      t.integer :answers_count
-      t.integer :blocked_count
+      t.integer :user_id,        null:false
+      t.integer :source_id,      null:false
+      t.string  :source_type,    null:false
+      t.text    :text,           null:false
+      t.integer :answers_count,  default: 0
+      t.integer :blocked_count,  default: 0
       
       t.timestamps
     end

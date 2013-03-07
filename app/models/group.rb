@@ -4,9 +4,9 @@
 #
 #  id               :integer          not null, primary key
 #  meeting_id       :integer
-#  name             :string(255)
-#  desription       :text
-#  public           :boolean
+#  name             :string(255)      not null
+#  desription       :text             default(""), not null
+#  public           :boolean          default(TRUE)
 #  meets_every_days :integer          default(7)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -17,7 +17,7 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :desription, :name, :series_id, :public  
+  attr_accessible :desription, :meeting_id, :name, :public  
     
   
   # ---------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :name, :desription, :series_id, :on => :save, :message => "can't be blank"  
+  validates_presence_of :name, :desription
   
   
   # ---------------------------------------------------------------------------------
@@ -37,6 +37,11 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   scope :public, where(public: true)
   
+  
+  # ---------------------------------------------------------------------------------
+  # Callbacks
+  # ---------------------------------------------------------------------------------
+  # after_save :create_first_meeting
   
   # ---------------------------------------------------------------------------------
   # Methods

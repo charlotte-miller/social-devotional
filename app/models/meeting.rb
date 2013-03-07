@@ -3,8 +3,8 @@
 # Table name: meetings
 #
 #  id         :integer          not null, primary key
-#  group_id   :integer
-#  lesson_id  :integer
+#  group_id   :integer          not null
+#  lesson_id  :integer          not null
 #  date_of    :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -29,7 +29,7 @@ class Meeting < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  
+  validates_presence_of :group, :lesson
   
   
   # ---------------------------------------------------------------------------------

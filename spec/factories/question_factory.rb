@@ -3,12 +3,12 @@
 # Table name: questions
 #
 #  id            :integer          not null, primary key
-#  user_id       :integer
-#  source_id     :integer
-#  source_type   :string(255)
-#  text          :text
-#  answers_count :integer
-#  blocked_count :integer
+#  user_id       :integer          not null
+#  source_id     :integer          not null
+#  source_type   :string(255)      not null
+#  text          :text             default(""), not null
+#  answers_count :integer          default(0)
+#  blocked_count :integer          default(0)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

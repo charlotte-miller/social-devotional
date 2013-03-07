@@ -1,8 +1,8 @@
 class CreateMeetings < ActiveRecord::Migration
   def change
     create_table :meetings do |t|
-      t.integer  :group_id
-      t.integer  :lesson_id
+      t.integer  :group_id,   null:false
+      t.integer  :lesson_id,  null:false
       t.datetime :date_of
 
       t.timestamps

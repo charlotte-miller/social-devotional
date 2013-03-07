@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
 
   create_table "block_requests", :force => true do |t|
     t.integer  "admin_id"
-    t.integer  "user_id"
-    t.integer  "source_id"
-    t.string   "source_type"
+    t.integer  "user_id",     :null => false
+    t.integer  "source_id",   :null => false
+    t.string   "source_type", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -55,12 +55,12 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "block_requests", ["user_id"], :name => "index_block_requests_on_user_id"
 
   create_table "group_memberships", :force => true do |t|
-    t.integer  "group_id"
-    t.integer  "user_id"
-    t.boolean  "public"
+    t.integer  "group_id",                     :null => false
+    t.integer  "user_id",                      :null => false
+    t.boolean  "public",     :default => true
     t.integer  "role_level", :default => 0
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "group_memberships", ["group_id", "user_id"], :name => "index_group_memberships_on_group_id_and_user_id"
@@ -68,12 +68,12 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
 
   create_table "groups", :force => true do |t|
     t.integer  "meeting_id"
-    t.string   "name"
-    t.text     "desription"
-    t.boolean  "public"
+    t.string   "name",                               :null => false
+    t.text     "desription",                         :null => false
+    t.boolean  "public",           :default => true
     t.integer  "meets_every_days", :default => 7
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "groups", ["meeting_id"], :name => "index_groups_on_meeting_id"
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "lessons", ["series_id", "position"], :name => "index_lessons_on_series_id_and_position"
 
   create_table "meetings", :force => true do |t|
-    t.integer  "group_id"
-    t.integer  "lesson_id"
+    t.integer  "group_id",   :null => false
+    t.integer  "lesson_id",  :null => false
     t.datetime "date_of"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -104,14 +104,14 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
 
   create_table "questions", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "source_id"
-    t.string   "source_type"
-    t.text     "text"
-    t.integer  "answers_count"
-    t.integer  "blocked_count"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "user_id",                      :null => false
+    t.integer  "source_id",                    :null => false
+    t.string   "source_type",                  :null => false
+    t.text     "text",                         :null => false
+    t.integer  "answers_count", :default => 0
+    t.integer  "blocked_count", :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "questions", ["source_id", "source_type"], :name => "index_questions_on_source_id_and_source_type"

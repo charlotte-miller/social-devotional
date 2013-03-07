@@ -3,9 +3,9 @@
 # Table name: group_memberships
 #
 #  id         :integer          not null, primary key
-#  group_id   :integer
-#  user_id    :integer
-#  public     :boolean
+#  group_id   :integer          not null
+#  user_id    :integer          not null
+#  public     :boolean          default(TRUE)
 #  role_level :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

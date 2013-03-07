@@ -63,6 +63,7 @@ group :development, :test do
   gem 'timecop'
   gem "ffaker"
   gem 'capybara'
+  gem 'shoulda-matchers'
   
   # Debugger
   gem 'pry-rails'
