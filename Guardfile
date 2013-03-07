@@ -7,20 +7,20 @@
 spec_location = "spec/javascripts/%s_spec"
 
 
-guard 'jasmine-headless-webkit' do
-  watch(%r{^app/views/.*\.jst$})
-  
-  # Run All
-  watch(%r{^spec/javascripts/factories\..*}) { spec_location }
-  watch(%r{^spec/javascripts/helpers(.*)\.(js|coffee)$}) { spec_location }
-  watch(%r{^app/assets/javascripts/([^/]*)\.(js|coffee)$}) { spec_location }
-  watch(%r{^app/assets/javascripts/fixtures(.*)\.(js|coffee)$}) { spec_location }
-
-  # Single Spec
-  watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
-  watch(%r{^app/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
-  watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
-end
+# guard 'jasmine-headless-webkit' do
+#   watch(%r{^app/views/.*\.jst$})
+#   
+#   # Run All
+#   watch(%r{^spec/javascripts/factories\..*}) { spec_location }
+#   watch(%r{^spec/javascripts/helpers(.*)\.(js|coffee)$}) { spec_location }
+#   watch(%r{^app/assets/javascripts/([^/]*)\.(js|coffee)$}) { spec_location }
+#   watch(%r{^app/assets/javascripts/fixtures(.*)\.(js|coffee)$}) { spec_location }
+# 
+#   # Single Spec
+#   watch(%r{^public/javascripts/(.*)\.js$}) { |m| newest_js_file(spec_location % m[1]) }
+#   watch(%r{^app/assets/javascripts/(.*)\.(js|coffee)$}) { |m| newest_js_file(spec_location % m[1]) }
+#   watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
+# end
 
 
 

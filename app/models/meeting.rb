@@ -24,7 +24,7 @@ class Meeting < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   belongs_to :group
   belongs_to :lesson  
-  
+  has_many :questions, as: 'source'
   
   # ---------------------------------------------------------------------------------
   # Validations

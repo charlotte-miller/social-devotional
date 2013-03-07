@@ -44,6 +44,8 @@ _Possible Resource_:
 
 
 
+## Third Party Docs
+* [acts_as_list](https://github.com/swanandp/acts_as_list)
 
 
 ## Contributing

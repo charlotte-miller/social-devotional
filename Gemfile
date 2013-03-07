@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9"
+gem 'acts_as_list'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'

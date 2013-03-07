@@ -24,8 +24,9 @@ class Question < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :meeting, polymorphic: true, as: 'source'
-  belongs_to :lesson,  polymorphic: true, as: 'source'  
+  belongs_to :source, polymorphic: true
+  # belongs_to :meeting, polymorphic: true, as: 'source'
+  # belongs_to :lesson,  polymorphic: true, as: 'source'  
   
   
   # ---------------------------------------------------------------------------------

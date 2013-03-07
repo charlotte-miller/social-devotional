@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :lesson do
-    series_id 1
-    position 1
+    series
+    # position 1
     title "MyString"
     description "MyText"
-    backlink ""
+    backlink "http://link.com"
     video_url "MyString"
     audio_url "MyString"
   end

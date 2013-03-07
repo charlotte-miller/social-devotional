@@ -30,6 +30,8 @@ GEM
       multi_json (~> 1.0)
     acts_as_interface (0.1.5)
       activesupport (>= 2.3.4)
+    acts_as_list (0.2.0)
+      activerecord (>= 3.0)
     annotate (2.5.0)
       rake
     arel (3.0.2)
@@ -295,6 +297,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_interface
+  acts_as_list
   annotate (>= 2.5.0)
   bootstrap-datepicker-rails
   capistrano
