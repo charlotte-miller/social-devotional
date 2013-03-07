@@ -1,0 +1,35 @@
+<h1>Listing lessons</h1>
+
+<table>
+  <tr>
+    <th>Series</th>
+    <th>Position</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Backlink</th>
+    <th>Video url</th>
+    <th>Audio url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lessons.each do |lesson| %>
+  <tr>
+    <td><%= lesson.series_id %></td>
+    <td><%= lesson.position %></td>
+    <td><%= lesson.title %></td>
+    <td><%= lesson.description %></td>
+    <td><%= lesson.backlink %></td>
+    <td><%= lesson.video_url %></td>
+    <td><%= lesson.audio_url %></td>
+    <td><%= link_to 'Show', lesson %></td>
+    <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+    <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lesson', new_lesson_path %>
