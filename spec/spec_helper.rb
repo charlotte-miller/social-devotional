@@ -21,7 +21,7 @@ RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   
   # ## Mock Framework
-  config.mock_with :mocha
+  config.mock_with :rspec #:mocha
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

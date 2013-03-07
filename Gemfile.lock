@@ -145,11 +145,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.20.1)
-    mocha (0.13.2)
-      metaclass (~> 0.0.1)
     multi_json (1.5.0)
     mysql2 (0.3.11)
     net-scp (1.0.4)
@@ -231,9 +228,6 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
-    rspec-rails-mocha (0.3.2)
-      mocha (>= 0.9.8)
-      rspec-rails (>= 2.0.0)
     rubyzip (0.9.9)
     sass (3.2.5)
     sass-rails (3.2.6)
@@ -332,7 +326,6 @@ DEPENDENCIES
   rails-backbone-generator
   rb-fsevent
   rspec-rails (~> 2.4)
-  rspec-rails-mocha (~> 0.3.1)
   sass-rails (~> 3.2.3)
   shoulda-matchers
   sunspot_rails

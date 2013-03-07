@@ -75,7 +75,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
+  # gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
   gem 'therubyracer', :platform => :ruby
   gem 'sunspot_test'
 end
