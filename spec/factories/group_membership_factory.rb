@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  group_id   :integer          not null
 #  user_id    :integer          not null
-#  public     :boolean          default(TRUE)
+#  is_public  :boolean          default(TRUE)
 #  role_level :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -17,6 +17,6 @@ FactoryGirl.define do
   factory :group_membership do
     group
     user
-    public false
+    is_public true
   end
 end

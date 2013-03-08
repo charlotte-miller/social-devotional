@@ -6,7 +6,7 @@
 #  meeting_id       :integer
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
-#  public           :boolean          default(TRUE)
+#  is_public        :boolean          default(TRUE)
 #  meets_every_days :integer          default(7)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -17,7 +17,7 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :desription, :meeting_id, :name, :public  
+  attr_accessible :desription, :meeting_id, :name, :is_public  
     
   
   # ---------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------
-  scope :public, where(public: true)
+  scope :is_public, where(is_public: true)
   
   
   # ---------------------------------------------------------------------------------

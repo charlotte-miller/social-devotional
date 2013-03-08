@@ -4,7 +4,7 @@ class CreateGroups < ActiveRecord::Migration
       t.integer :meeting_id
       t.string  :name,             null:false
       t.text    :desription,       null:false
-      t.boolean :public,           default: true
+      t.boolean :is_public,        default: true
       t.integer :meets_every_days, default: 7
 
       t.timestamps

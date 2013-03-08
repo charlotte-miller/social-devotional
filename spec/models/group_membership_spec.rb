@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  group_id   :integer          not null
 #  user_id    :integer          not null
-#  public     :boolean          default(TRUE)
+#  is_public  :boolean          default(TRUE)
 #  role_level :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,12 +20,12 @@ describe GroupMembership do
   
   describe 'a public membership' do
     it "cannot be public if the group is private" do
-      group = create(:group, public: false)
-      lambda { create(:group_membership, public:true) }.should raise_exception #validation error
+      @group = create(:group, is_public: false)
+      lambda { create(:group_membership, is_public:true, group:@group) }.should raise_exception #validation error
     end
     
-    it ".public scope filters by public " do
-      GroupMembership.public.to_sql.should match(/`public` = 1/)
+    it ".is_public scope filters by is_public " do
+      GroupMembership.is_public.to_sql.should match(/`is_public` = 1/) 
     end
   end
   

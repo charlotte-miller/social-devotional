@@ -6,7 +6,7 @@
 #  meeting_id       :integer
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
-#  public           :boolean          default(TRUE)
+#  is_public        :boolean          default(TRUE)
 #  meets_every_days :integer          default(7)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -22,12 +22,12 @@ describe Group do
   
   describe 'a public group' do
     it "cannot be public if the group is private" do
-      group = create(:group, public: false)
-      lambda { create(:group_membership, public:true) }.should raise_exception #validation error
+      group = create(:group, is_public: false)
+      lambda { create(:group_membership, is_public:true) }.should raise_exception #validation error
     end
     
     it ".public scope filters by public " do
-      Group.public.to_sql.should match(/`public` = 1/)
+      Group.is_public.to_sql.should match(/`is_public` = 1/)
     end
   end
   

@@ -57,20 +57,20 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   create_table "group_memberships", :force => true do |t|
     t.integer  "group_id",                     :null => false
     t.integer  "user_id",                      :null => false
-    t.boolean  "public",     :default => true
+    t.boolean  "is_public",  :default => true
     t.integer  "role_level", :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end
 
   add_index "group_memberships", ["group_id", "user_id"], :name => "index_group_memberships_on_group_id_and_user_id"
-  add_index "group_memberships", ["user_id", "public"], :name => "index_group_memberships_on_user_id_and_public"
+  add_index "group_memberships", ["user_id", "is_public"], :name => "index_group_memberships_on_user_id_and_is_public"
 
   create_table "groups", :force => true do |t|
     t.integer  "meeting_id"
     t.string   "name",                               :null => false
     t.text     "desription",                         :null => false
-    t.boolean  "public",           :default => true
+    t.boolean  "is_public",        :default => true
     t.integer  "meets_every_days", :default => 7
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false

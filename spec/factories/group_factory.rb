@@ -6,7 +6,7 @@
 #  meeting_id       :integer
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
-#  public           :boolean          default(TRUE)
+#  is_public        :boolean          default(TRUE)
 #  meets_every_days :integer          default(7)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -19,5 +19,6 @@ FactoryGirl.define do
     series
     name "MyString"
     desription "MyText"
+    is_public true
   end
 end
