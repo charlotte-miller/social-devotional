@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require "paperclip/matchers"
+require 'sunspot_test/rspec'
 # require 'rspec/rails/mocha'
 # require 'factory_girl_rails'
 # require 'sidekiq/testing'
