@@ -67,16 +67,16 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "group_memberships", ["user_id", "is_public"], :name => "index_group_memberships_on_user_id_and_is_public"
 
   create_table "groups", :force => true do |t|
-    t.integer  "meeting_id"
-    t.string   "name",                               :null => false
-    t.text     "desription",                         :null => false
-    t.boolean  "is_public",        :default => true
-    t.integer  "meets_every_days", :default => 7
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.string   "state",            :limit => 50,                   :null => false
+    t.string   "name",                                             :null => false
+    t.text     "desription",                                       :null => false
+    t.boolean  "is_public",                      :default => true
+    t.integer  "meets_every_days",               :default => 7
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
   end
 
-  add_index "groups", ["meeting_id"], :name => "index_groups_on_meeting_id"
+  add_index "groups", ["state", "is_public"], :name => "index_groups_on_state_and_is_public"
 
   create_table "lessons", :force => true do |t|
     t.integer  "series_id",                  :null => false
@@ -93,14 +93,15 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "lessons", ["series_id", "position"], :name => "index_lessons_on_series_id_and_position"
 
   create_table "meetings", :force => true do |t|
-    t.integer  "group_id",   :null => false
-    t.integer  "lesson_id",  :null => false
+    t.integer  "group_id",                 :null => false
+    t.integer  "lesson_id",                :null => false
+    t.string   "state",      :limit => 50, :null => false
     t.datetime "date_of"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
-  add_index "meetings", ["group_id", "date_of"], :name => "index_meetings_on_group_id_and_date_of"
+  add_index "meetings", ["group_id", "state"], :name => "index_meetings_on_group_id_and_state"
   add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
 
   create_table "questions", :force => true do |t|

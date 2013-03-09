@@ -12,6 +12,7 @@ gem 'devise'
 gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9"
 gem 'acts_as_list'
+gem 'state_machine'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
@@ -64,6 +65,7 @@ group :development, :test do
   gem "ffaker"
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'syntax'
   
   # Debugger
   gem 'pry-rails'

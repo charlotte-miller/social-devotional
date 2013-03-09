@@ -3,7 +3,7 @@
 # Table name: groups
 #
 #  id               :integer          not null, primary key
-#  meeting_id       :integer
+#  state            :string(50)       not null
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
 #  is_public        :boolean          default(TRUE)
@@ -12,12 +12,12 @@
 #  updated_at       :datetime         not null
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
+
 
 FactoryGirl.define do
   factory :group do
-    series
-    name "MyString"
+    state 'active'
+    name  "MyString"
     desription "MyText"
     is_public true
   end

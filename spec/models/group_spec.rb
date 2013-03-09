@@ -3,7 +3,7 @@
 # Table name: groups
 #
 #  id               :integer          not null, primary key
-#  meeting_id       :integer
+#  state            :string(50)       not null
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
 #  is_public        :boolean          default(TRUE)

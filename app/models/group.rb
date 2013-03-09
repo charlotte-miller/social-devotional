@@ -3,7 +3,7 @@
 # Table name: groups
 #
 #  id               :integer          not null, primary key
-#  meeting_id       :integer
+#  state            :string(50)       not null
 #  name             :string(255)      not null
 #  desription       :text             default(""), not null
 #  is_public        :boolean          default(TRUE)
@@ -23,7 +23,7 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :current_meeting,  :class_name => "meeting", :foreign_key => "meeting_id"
+  has_one  :current_meeting,    :class_name => "meeting",  :conditions => {state: 'current'}
   has_many :meetings,           :dependent => :destroy
   has_many :group_memberships,  :dependent => :destroy
   has_many :members,            :through => :group_memberships

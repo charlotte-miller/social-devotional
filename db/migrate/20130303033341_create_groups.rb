@@ -1,7 +1,7 @@
 class CreateGroups < ActiveRecord::Migration
   def change
     create_table :groups do |t|
-      t.integer :meeting_id
+      t.string  :state,            null:false,  limit:50
       t.string  :name,             null:false
       t.text    :desription,       null:false
       t.boolean :is_public,        default: true
@@ -10,6 +10,6 @@ class CreateGroups < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :groups, :meeting_id
+    add_index :groups, [:state, :is_public]
   end
 end
