@@ -66,9 +66,9 @@ class QuestionsController < ApplicationController
     end
   end
   
-  # POST /questions/1/like
-  # POST /questions/1/like.json
-  def like
+  # POST /questions/1/star
+  # POST /questions/1/star.json
+  def star
     
   end
 end

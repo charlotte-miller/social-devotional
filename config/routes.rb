@@ -1,17 +1,31 @@
 SocialDevotional::Application.routes.draw do
 
-  resources :series, only: [:index, :show ], as: 'library' do
+  # Library
+  root :to => "series#index"
+  resources :series, only: [:index, :show ], path: 'library' do
     resources :lessons, only: [:index, :show ] do
-      resources :questions, only: [:index, :show, :new, :create], member: [:block, :like]
+      resources :questions, only: [:index, :show, :new, :create] do
+        member do
+          post :block 
+          post :star
+        end
+      end
     end
   end
 
+  # Groups
   resources :groups do
-    resources :lessons, only: [:index, :show ] do
-      resources :questions, only: [:index, :show, :new, :create], member: [:block, :like]
+    resources :meetings do
+      resources :questions, only: [:index, :show, :new, :create] do
+        member do
+          post :block 
+          post :star
+        end
+      end
     end
   end
 
+  # Authentication & Admin
   devise_for :users
   devise_for :admins
   namespace :admin do
@@ -21,7 +35,7 @@ SocialDevotional::Application.routes.draw do
     resources :series
   end
 
-  root :to => "series#index"
+  # http://apidock.com/rails/ActionDispatch/Routing/Mapper/Resources/resources
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
