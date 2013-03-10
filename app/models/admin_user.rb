@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: admin_users
 #
 #  id                     :integer          not null, primary key
 #  first_name             :string(60)

@@ -1,40 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Lesson -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Series:</b>
-  <%= @lesson.series_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:series_id) %>:</strong></dt>
+  <dd><%= @lesson.series_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:position) %>:</strong></dt>
+  <dd><%= @lesson.position %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @lesson.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @lesson.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:backlink) %>:</strong></dt>
+  <dd><%= @lesson.backlink %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:video_url) %>:</strong></dt>
+  <dd><%= @lesson.video_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:audio_url) %>:</strong></dt>
+  <dd><%= @lesson.audio_url %></dd>
+</dl>
 
-<p>
-  <b>Position:</b>
-  <%= @lesson.position %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @lesson.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @lesson.description %>
-</p>
-
-<p>
-  <b>Backlink:</b>
-  <%= @lesson.backlink %>
-</p>
-
-<p>
-  <b>Video url:</b>
-  <%= @lesson.video_url %>
-</p>
-
-<p>
-  <b>Audio url:</b>
-  <%= @lesson.audio_url %>
-</p>
-
-
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              lesson_path, :class => 'btn'  %>
+</div>

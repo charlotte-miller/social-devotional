@@ -2,8 +2,9 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
   def change
     create_table(:admin_users) do |t|
       # Greetings
-      t.string :first_name, :limit => 60
-      t.string :last_name,  :limit => 60
+      t.string  :first_name, :limit => 60
+      t.string  :last_name,  :limit => 60
+      t.integer :user_id
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => "", :limit => 80

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: admin_users
 #
 #  id                     :integer          not null, primary key
 #  first_name             :string(60)
@@ -29,5 +29,7 @@
 require 'spec_helper'
 
 describe AdminUser do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should build from factory" do
+    lambda { create(:admin_user) }.shoud_not raise_error
+  end
 end

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",             :limit => 60
     t.string   "last_name",              :limit => 60
+    t.integer  "user_id"
     t.string   "email",                  :limit => 80, :default => "", :null => false
     t.string   "encrypted_password",                   :default => "", :null => false
     t.string   "password_salt"
@@ -43,12 +44,12 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
   add_index "admin_users", ["unlock_token"], :name => "index_admin_users_on_unlock_token", :unique => true
 
   create_table "block_requests", :force => true do |t|
-    t.integer  "admin_id"
-    t.integer  "user_id",     :null => false
-    t.integer  "source_id",   :null => false
-    t.string   "source_type", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "admin_user_id"
+    t.integer  "user_id",       :null => false
+    t.integer  "source_id",     :null => false
+    t.string   "source_type",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "block_requests", ["source_id", "source_type"], :name => "index_block_requests_on_source_id_and_source_type"

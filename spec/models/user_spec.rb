@@ -33,5 +33,7 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should build from factory" do
+    expect { create(:user) }.to_not raise_error
+  end
 end

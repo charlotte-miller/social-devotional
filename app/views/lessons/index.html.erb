@@ -1,35 +1,35 @@
-<h1>Listing lessons</h1>
-
-<table>
-  <tr>
-    <th>Series</th>
-    <th>Position</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Backlink</th>
-    <th>Video url</th>
-    <th>Audio url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @lessons.each do |lesson| %>
-  <tr>
-    <td><%= lesson.series_id %></td>
-    <td><%= lesson.position %></td>
-    <td><%= lesson.title %></td>
-    <td><%= lesson.description %></td>
-    <td><%= lesson.backlink %></td>
-    <td><%= lesson.video_url %></td>
-    <td><%= lesson.audio_url %></td>
-    <td><%= link_to 'Show', lesson %></td>
-    <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-    <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Lesson -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:series_id) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:backlink) %></th>
+      <th><%= model_class.human_attribute_name(:video_url) %></th>
+      <th><%= model_class.human_attribute_name(:audio_url) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= link_to lesson.id, lesson_path(lesson) %></td>
+        <td><%= lesson.series_id %></td>
+        <td><%= lesson.position %></td>
+        <td><%= lesson.title %></td>
+        <td><%= lesson.description %></td>
+        <td><%= lesson.backlink %></td>
+        <td><%= lesson.video_url %></td>
+        <td><%= lesson.audio_url %></td>
+        <td><%=l lesson.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Lesson', new_lesson_path %>

@@ -33,6 +33,16 @@
 
 
 FactoryGirl.define do
-  factory :user do
+  factory :user, aliases: [:requester] do
+    before(:save) do
+      User.any_instance.stubs({ save_attached_files: true })
+    end
+    
+    first_name  'Fred'
+    last_name   'Fredrickson'
+    sequence(   :email)  {|n| "example@domain#{n}.com"}
+    password    'super-secret'
+    password_confirmation  {|me| me.password }
+    profile_image File.open(File.join(Rails.root, 'spec/files/', 'user_profile_image.jpeg' ))
   end
 end

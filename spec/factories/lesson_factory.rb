@@ -20,10 +20,10 @@ FactoryGirl.define do
   factory :lesson do
     series
     # position 1
-    title "MyString"
-    description "MyText"
-    backlink "http://link.com"
-    video_url "MyString"
-    audio_url "MyString"
+    title "What it means to be Salt"
+    description "We are called to be salt and light.  But if salt looses it's saltiness it is worthless."
+    backlink "http://link.com/salt-and-light"
+    video_url "http://link.com/salt-and-light.mp4"
+    audio_url "http://link.com/salt-and-light.mp3"
   end
 end

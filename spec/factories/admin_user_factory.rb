@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: admin_users
 #
 #  id                     :integer          not null, primary key
 #  first_name             :string(60)
@@ -29,6 +29,12 @@
 
 
 FactoryGirl.define do
-  factory :admin do
+  factory :admin_user, aliases: [:approver] do
+    first_name  'Fred'
+    last_name   'Fredrickson'
+    user
+    sequence(   :email)  {|n| "example@domain#{n}.com"}
+    password    'super-secret'
+    password_confirmation  {|me| me.password }
   end
 end

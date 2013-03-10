@@ -37,7 +37,7 @@ end
 gem 'jquery-rails'
 gem 'therubyracer', :platforms => :ruby, :require => false
 gem 'less-rails'
-gem 'twitter-bootstrap-rails', '2.1.6'
+gem 'twitter-bootstrap-rails', '~> 2.2.6'
 gem 'bootstrap-datepicker-rails'
 
 

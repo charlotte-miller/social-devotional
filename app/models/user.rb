@@ -32,7 +32,7 @@
 
 class User < ActiveRecord::Base
   # Authentication Layer
-  devise  :database_authenticatable, :encryptable, :trackable, :validatable, :lockable,
+  devise  :database_authenticatable, :trackable, :validatable, :lockable,
           :registerable, :recoverable, :confirmable, :rememberable, #:omniauthable,
           :lock_strategy => :failed_attempts, :unlock_strategy => :time, :maximum_attempts => 5, :unlock_in => 5.seconds,   # lockable
           :remember_for => 1.week, :extend_remember_period => true,                                                         # rememberable
