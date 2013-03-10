@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303060233) do
+ActiveRecord::Schema.define(:version => 20130310043030) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
 
   add_index "block_requests", ["source_id", "source_type"], :name => "index_block_requests_on_source_id_and_source_type"
   add_index "block_requests", ["user_id"], :name => "index_block_requests_on_user_id"
+
+  create_table "churches", :force => true do |t|
+    t.string   "name",       :limit => 100, :null => false
+    t.string   "homepage",   :limit => 100, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "group_memberships", :force => true do |t|
     t.integer  "group_id",                     :null => false
@@ -104,6 +111,17 @@ ActiveRecord::Schema.define(:version => 20130303060233) do
 
   add_index "meetings", ["group_id", "state"], :name => "index_meetings_on_group_id_and_state"
   add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
+
+  create_table "podcasts", :force => true do |t|
+    t.integer  "church_id",                   :null => false
+    t.string   "title",        :limit => 100
+    t.string   "url",                         :null => false
+    t.datetime "last_checked"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "podcasts", ["church_id"], :name => "index_podcasts_on_church_id"
 
   create_table "questions", :force => true do |t|
     t.integer  "user_id",                      :null => false
