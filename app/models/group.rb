@@ -23,10 +23,10 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_one  :current_meeting,    :class_name => "meeting",  :conditions => {state: 'current'}
-  has_many :meetings,           :dependent => :destroy
-  has_many :group_memberships,  :dependent => :destroy
-  has_many :members,            :through => :group_memberships
+  has_one  :current_meeting,    :class_name => "meeting",  :conditions => {state: 'current'}, inverse_of: 'group'
+  has_many :meetings,           :dependent => :destroy,                                       inverse_of: 'group'
+  has_many :group_memberships,  :dependent => :destroy,                                       inverse_of: 'group'
+  has_many :members,            :through => :group_memberships,                               inverse_of: 'group'
   
   
   # ---------------------------------------------------------------------------------

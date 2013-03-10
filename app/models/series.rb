@@ -32,7 +32,9 @@ class Series < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :lessons, :order => :position, :dependent => :destroy
+  has_many :lessons, :order => :position, 
+                     :dependent => :destroy,
+                     :inverse_of => :series
   
   
   # ---------------------------------------------------------------------------------

@@ -22,8 +22,8 @@ class GroupMembership < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :group
-  belongs_to :member, :class_name => "user", :foreign_key => "user_id"
+  belongs_to :group,                          inverse_of: 'group_memberships'
+  belongs_to :member, :class_name => "user",  inverse_of: 'group_memberships'
   
   
   # ---------------------------------------------------------------------------------
@@ -41,4 +41,6 @@ class GroupMembership < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
+  
+  
 end

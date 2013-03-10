@@ -31,7 +31,7 @@ class AdminUser < ActiveRecord::Base
   devise :database_authenticatable, :trackable, :validatable, :recoverable, :confirmable, :lockable, :timeoutable, 
          :lock_strategy => :failed_attempts, :maximum_attempts => 5, :unlock_strategy => :email,        # :lockable
          :timeout_in => 12.hours,                                                                       # :timeoutable
-         :stretches => 20                                                                               # :database_authenticatable
+         :stretches => 12                                                                               # :database_authenticatable
 
 
   
@@ -45,7 +45,7 @@ class AdminUser < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  
+  has_many :block_requests,   inverse_of: 'approver'
   
   
   # ---------------------------------------------------------------------------------
