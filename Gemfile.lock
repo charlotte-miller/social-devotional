@@ -106,6 +106,9 @@ GEM
     guard-rspec (2.4.0)
       guard (>= 1.1)
       rspec (~> 2.11)
+    guard-spin (0.1.4)
+      guard
+      spin
     hashie (1.2.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -242,6 +245,7 @@ GEM
     shoulda-matchers (1.4.1)
       activesupport (>= 3.0.0)
     slop (3.4.3)
+    spin (0.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -311,6 +315,7 @@ DEPENDENCIES
   growl
   guard-jasmine-headless-webkit
   guard-rspec
+  guard-spin
   jasmine-headless-webkit (~> 0.8.4)
   jasmine-rails
   jbuilder
