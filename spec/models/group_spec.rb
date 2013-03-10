@@ -15,9 +15,11 @@
 require 'spec_helper'
 
 describe Group do
-  it { should belong_to( :current_meeting ).class_name( :meeting )}
+  it { should have_one(  :current_meeting )}
+  it { should have_many( :meetings )}
+  it { should have_many( :group_memberships )}
   it { should have_many( :members ).through( :group_memberships ) } #users
-  it { should have_many( :questions ).through( :meetings ) }
+  it { should have_many( :questions ) } 
   
   
   describe 'a public group' do
@@ -29,6 +31,17 @@ describe Group do
     it ".public scope filters by public " do
       Group.is_public.to_sql.should match(/`is_public` = 1/)
     end
+  end
+  
+  describe 'state_machine' do
+    
+    describe 'open' do
+      it "is .accepting_members?" do
+        create(:group, state:'open').accepting_members?.should be_true
+      end
+      
+    end
+    
   end
   
 end

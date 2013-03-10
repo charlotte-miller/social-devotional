@@ -17,22 +17,23 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :desription, :meeting_id, :name, :is_public  
+  attr_accessible :desription, :meeting_id, :name, :is_public, :state
     
   
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_one  :current_meeting,    :class_name => "meeting",  :conditions => {state: 'current'}, inverse_of: 'group'
-  has_many :meetings,           :dependent => :destroy,                                       inverse_of: 'group'
-  has_many :group_memberships,  :dependent => :destroy,                                       inverse_of: 'group'
-  has_many :members,            :through => :group_memberships,                               inverse_of: 'group'
+  has_one  :current_meeting,    :conditions => {state: 'current'},  :class_name => "Meeting", foreign_key: 'group_id'
+  has_many :meetings,           :dependent => :destroy,             :class_name => "Meeting", foreign_key: 'group_id'
+  has_many :group_memberships,  :dependent => :destroy
+  has_many :members,            :through => :group_memberships,     inverse_of: 'group'
+  has_many :questions,        as: 'source'
   
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :name, :desription
+  validates_presence_of :name, :desription, :state
   
   
   # ---------------------------------------------------------------------------------
@@ -45,6 +46,16 @@ class Group < ActiveRecord::Base
   # Callbacks
   # ---------------------------------------------------------------------------------
   # after_save :create_first_meeting
+  
+  
+  # ---------------------------------------------------------------------------------
+  # StateMachine
+  # ---------------------------------------------------------------------------------
+  state_machine :initial => :open do
+    state :open do
+      def accepting_members?  ;true;  end
+    end
+  end
   
   # ---------------------------------------------------------------------------------
   # Methods
