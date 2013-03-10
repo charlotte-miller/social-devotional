@@ -1,8 +1,8 @@
 class SeriesController < ApplicationController
   # caches_page :show
 
-  # GET /series?search=keyword
-  # GET /series.json
+  # GET /library?search=keyword
+  # GET /library.json
   def index
     @series = (
       if params[:search]
@@ -21,8 +21,8 @@ class SeriesController < ApplicationController
     end
   end
 
-  # GET /series/1
-  # GET /series/1.json
+  # GET /library/1
+  # GET /library/1.json
   def show
     @series = Series.find(params[:id])
 

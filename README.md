@@ -30,17 +30,19 @@ _Possible Resource_:
 
 ### Questions
 /groups/:group_id/questions                           #=> questions#index
-/groups/:group_id/questions/:id                       #=> questions#show
+/groups/:group_id/questions/:id                       #=> questions#show  (include answers ?)
 /groups/:group_id/questions/new                       #=> questions#new
 /groups/:group_id/questions/new?verify=true           #=> questions#new
 
+### Answers
+/question/:id/answers/                                #=> answers#index
+/question/:id/answers/ (POST)                         #=> answers#create
+/answers/:id/block
+/answers/:id/star
 
-
-
-
-
-
-
+### Comments
+/groups/:group_id/comments?q=keywords                 #=> comments/index
+/groups/:group_id/comments/:id                        #=> comments/show
 
 
 

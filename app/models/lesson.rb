@@ -19,7 +19,7 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :audio_url, :backlink, :description, :position, :series_id, :title, :video_url
+  attr_accessible :audio_url, :backlink, :description, :position, :series, :title, :video_url
   acts_as_list scope: :series  
   
   # ---------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ class Lesson < ActiveRecord::Base
   # Scopes
   # ---------------------------------------------------------------------------------
   # default_scope order: 'position ASC'
-  
+  scope :for_series, lambda {|series_id| where({ series_id: series_id }) }
   
   # ---------------------------------------------------------------------------------
   # Methods

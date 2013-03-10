@@ -17,5 +17,10 @@
 require 'spec_helper'
 
 describe Lesson do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe 'scopes' do
+    describe 'for_series(:series_id)' do
+      pending
+    end
+  end
 end
