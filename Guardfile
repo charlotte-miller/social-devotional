@@ -24,11 +24,17 @@ spec_location = "spec/javascripts/%s_spec"
 
 
 
-guard 'spin'do
+guard 'rspec' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
-  watch(%r{spec/factories/.*_factory.rb'})  { "spec" }
+  watch(%r{^spec/factories/(.+)\.rb$}) do |m|
+    %W[
+      spec/models/#{m[1].singularize}_spec.rb
+      spec/controllers/#{m[1]}_controller_spec.rb
+      spec/requests/#{m[1]}_spec.rb
+    ]
+  end
 
   # Rails example
   watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
