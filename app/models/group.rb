@@ -26,7 +26,7 @@ class Group < ActiveRecord::Base
   has_one  :current_meeting,    :conditions => {state: 'current'},  :class_name => "Meeting", foreign_key: 'group_id'
   has_many :meetings,           :dependent => :destroy,             :class_name => "Meeting", foreign_key: 'group_id'
   has_many :group_memberships,  :dependent => :destroy
-  has_many :members,            :through => :group_memberships,     inverse_of: 'group'
+  has_many :members,            :through => :group_memberships# ,     inverse_of: 'group'
   has_many :questions,        as: 'source'
   
   

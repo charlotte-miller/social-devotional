@@ -33,7 +33,7 @@ class Lesson < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :series, counter_cache:true, touch:true
-  has_many :questions, as: 'source', inverse_of: 'source'
+  has_many :questions, as: 'source'# , inverse_of: 'source'
   
   # ---------------------------------------------------------------------------------
   # Validations

@@ -55,9 +55,9 @@ class User < ActiveRecord::Base
   # -------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :group_memberships, :dependent => :destroy,        inverse_of: 'member'
-  has_many :groups,            :through => :group_membership, inverse_of: 'member'
-  has_many :block_requests,                                   inverse_of: 'requester'
+  has_many :group_memberships, :dependent => :destroy# ,        inverse_of: 'member'
+  has_many :groups,            :through => :group_membership# , inverse_of: 'member'
+  has_many :block_requests# ,                                   inverse_of: 'requester'
     
   
   # ------------
