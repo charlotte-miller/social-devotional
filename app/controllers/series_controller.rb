@@ -25,7 +25,12 @@ class SeriesController < ApplicationController
   # GET /library/1.json
   def show
     @series = Series.find(params[:id])
-
+    
+    # Follow old friendly_id 
+    if request.path != library_path(@series)
+      redirect_to @series, status: :moved_permanently
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @series }

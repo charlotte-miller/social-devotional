@@ -21,7 +21,7 @@ class Series < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :description, :ref_link, :slug, :title, :video_url
-  friendly_id :title, :use => :slugged
+  friendly_id :title
   searchable do
     text :title
     text :organization
