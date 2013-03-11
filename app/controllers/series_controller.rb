@@ -27,7 +27,7 @@ class SeriesController < ApplicationController
     @series = Series.find(params[:id])
     
     # Follow old friendly_id 
-    if request.path != library_path(@series)
+    if request.path != series_path(@series)
       redirect_to @series, status: :moved_permanently
     end
     

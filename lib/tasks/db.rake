@@ -7,6 +7,7 @@ namespace :db do
       'db:test:purge',
       'db:test:load_schema'
     ].each { |task| Rake::Task[ task ].execute  } #rescue next
+    `annotate -f before`
   end
   
 end

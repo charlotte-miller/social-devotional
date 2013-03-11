@@ -24,7 +24,7 @@ describe QuestionsController do
   # Question. As you add validations to Question, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "lesson_id" => "1" }
+    FactoryGirl.attributes_for(:question).slice(:author, :source, :text)
   end
 
   # This should return the minimal set of values that should be in the session

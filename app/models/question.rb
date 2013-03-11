@@ -18,27 +18,28 @@ class Question < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :source, :text, :answers_count  
+  attr_accessible :author, :user_id, :source, :source_id, :text
     
   
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :source,  polymorphic: true
-  # belongs_to :meeting, :class_name => 'Meeting', :foreign_key => 'source_id'   # these only work with the propery type... probably needs to be a method
-  # belongs_to :lesson,  :class_name => 'Lesson', :foreign_key => 'source_id'    # these only work with the propery type... probably needs to be a method
-  
+  belongs_to :author,  :class_name => "User", :foreign_key => "user_id"
+  belongs_to :source,  polymorphic: true  # Meeting, Lesson, Group
+    
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :user, :source, :text
+  validates_presence_of :author, :source, :text
   
   
   # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------
-  
+  scope :meetings,  where(source_type:'Meeting')
+  scope :lessons,   where(source_type:'Lesson')
+  scope :groups,    where(source_type:'Group')  
   
   
   # ---------------------------------------------------------------------------------

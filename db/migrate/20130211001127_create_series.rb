@@ -2,6 +2,7 @@ class CreateSeries < ActiveRecord::Migration
   def change
     create_table :series do |t|
       t.string  :slug,          null:false
+      t.integer :podcast_id,    null:false
       t.string  :title,         null:false
       t.string  :description
       t.string  :ref_link
@@ -12,5 +13,6 @@ class CreateSeries < ActiveRecord::Migration
     end
     
     add_index :series, :slug, unique: true
+    add_index :series, :podcast_id
   end
 end

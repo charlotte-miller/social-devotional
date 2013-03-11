@@ -24,10 +24,8 @@ describe SeriesController do
   # Series. As you add validations to Series, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { 
-      "slug"  => "MyString",
-      'title' => "MyString"
-    }
+    podcast = create(:podcast)
+    attributes_for(:series, podcast: podcast).merge({podcast_id: podcast.id})
   end
 
   # This should return the minimal set of values that should be in the session
@@ -50,6 +48,10 @@ describe SeriesController do
       series = Series.create! valid_attributes
       get :show, {:id => series.to_param}, valid_session
       assigns(:series).should eq(series)
+    end
+    
+    it "follows an old friendly_id" do
+      pending
     end
   end
 

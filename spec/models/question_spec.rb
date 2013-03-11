@@ -18,6 +18,7 @@ require 'spec_helper'
 describe Question do
   it { should have_many :answers  } 
   it { should belong_to( :source ) }
+  it { should belong_to( :author )}
   
   describe 'lesson' do
     context "source is a lesson" do
@@ -31,5 +32,20 @@ describe Question do
         pending
       end
     end
+  end
+
+  describe 'scopes' do
+    describe 'meetings' do
+      
+    end
+    
+    describe 'lessons' do
+      
+    end
+    
+    describe 'groups' do
+      
+    end
+    
   end
 end

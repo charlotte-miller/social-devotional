@@ -17,9 +17,22 @@
 
 FactoryGirl.define do
   factory :question do
-    lesson
-    group
+    ignore do
+      source { FactoryGirl.create(:lesson) }
+    end
+    
+    author
+    source_id   { source.id }
+    source_type { source.class.name }
     text "Why did Jonnah try to avoid Gods command to 'go to Ninevah"
     answers_count 0
+  end
+  
+  factory :library_question, parent: 'question' do
+    source { FactoryGirl.create(:lesson) }
+  end
+  
+  factory :group_question, parent: 'question' do
+    source { FactoryGirl.create(:group) }
   end
 end

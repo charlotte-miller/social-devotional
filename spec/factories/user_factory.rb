@@ -33,9 +33,9 @@
 
 
 FactoryGirl.define do
-  factory :user, aliases: [:requester] do
-    before(:save) do
-      User.any_instance.stubs({ save_attached_files: true })
+  factory :user, aliases: [:requester, :author] do
+    before(:create) do
+      User.any_instance.stub({ save_attached_files: true })
     end
     
     first_name  'Fred'

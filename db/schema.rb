@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
 
   create_table "series", :force => true do |t|
     t.string   "slug",                         :null => false
+    t.integer  "podcast_id",                   :null => false
     t.string   "title",                        :null => false
     t.string   "description"
     t.string   "ref_link"
@@ -158,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
     t.datetime "updated_at",                   :null => false
   end
 
+  add_index "series", ["podcast_id"], :name => "index_series_on_podcast_id"
   add_index "series", ["slug"], :name => "index_series_on_slug", :unique => true
 
   create_table "users", :force => true do |t|

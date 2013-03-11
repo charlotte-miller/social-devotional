@@ -24,7 +24,9 @@ describe GroupsController do
   # Group. As you add validations to Group, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    { "name"        => "Weekly Matthew Study",
+      "desription" => 'Go throught the book of Matthew using the inductive method'
+    }
   end
 
   # This should return the minimal set of values that should be in the session
