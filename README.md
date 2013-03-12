@@ -21,7 +21,6 @@ _Possible Resource_:
 /library/:series-name                                 #=>  series#show  
 /library/:series-name/lesson/:index-within-series     #=>  lesson#show  
 
-
 ### Groups
 /groups?q=keywords                                    #=> groups#index   (your dashboard or "find a group" (depending on if you have any))
 /groups/:id                                           #=> groups#show
@@ -53,3 +52,28 @@ _Possible Resource_:
 
 ## Contributing
 So my dear brothers and sisters, be strong and immovable. Always work enthusiastically for the Lord, for the you that nothing you do for the Lord is ever useless.  1 Corinthians 15:58
+
+
+## Roadmap
+* MVP
+* * Podcast Integration
+* * Browse and watch audio/video messages
+* * Comments and Q&A
+* * Groups
+* * User accounts w/ soft-delte
+* * Moderation
+* * * Comments
+* * * Q&A
+* * * Block / Soft-delete user
+
+* Recommendation Engine
+
+* Develop group leaders
+* * Automatically nominate active members
+
+## TODO
+* scaffold answers
+* questions_controller before_filter assign url params
+* questions_controller before_filter assign author and source
+* rm admin::questions (not used).  Use block requests instead
+* questions/show shallow routes (for answers as well)
