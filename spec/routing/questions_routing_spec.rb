@@ -12,7 +12,7 @@ describe QuestionsController do
       end
 
       it "routes to #show" do
-        get("/library/1/lessons/1/questions/1").should route_to("questions#show", :id => "1", series_id:'1', lesson_id:'1')
+        get("/questions/1").should route_to("questions#show", :id => "1")
       end
 
       it "routes to #create" do
@@ -20,11 +20,11 @@ describe QuestionsController do
       end
 
       it "routes to #block" do
-        post("/library/1/lessons/1/questions/1/block").should route_to("questions#block", :id => "1", series_id:'1', lesson_id:'1')
+        post("/questions/1/block").should route_to("questions#block", :id => "1")
       end
       
       it "routes to #star" do
-        post("/library/1/lessons/1/questions/1/star").should route_to("questions#star", :id => "1", series_id:'1', lesson_id:'1')
+        post("/questions/1/star").should route_to("questions#star", :id => "1")
       end
     end
     
@@ -38,7 +38,7 @@ describe QuestionsController do
       end
 
       it "routes to #show" do
-        get("/groups/1/meetings/1/questions/1").should route_to("questions#show", :id => "1", :meeting_id => '1', :group_id => '1')
+        get("/questions/1").should route_to("questions#show", :id => "1")
       end
 
       it "routes to #create" do
@@ -46,11 +46,11 @@ describe QuestionsController do
       end
 
       it "routes to #block" do
-        post("/groups/1/meetings/1/questions/1/block").should route_to("questions#block", :id => "1", :meeting_id => '1', :group_id => '1')
+        post("/questions/1/block").should route_to("questions#block", :id => "1")
       end
 
       it "routes to #star" do
-        post("/groups/1/meetings/1/questions/1/star").should route_to("questions#star", :id => "1", :meeting_id => '1', :group_id => '1')
+        post("/questions/1/star").should route_to("questions#star", :id => "1")
       end
 
     end
