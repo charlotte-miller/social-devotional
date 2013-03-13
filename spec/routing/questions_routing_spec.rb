@@ -4,11 +4,11 @@ describe QuestionsController do
   describe "routing" do
     context "within lessons" do
       it "routes to #index" do
-        get("/library/1/lessons/1/questions").should route_to("questions#index", series_id:'1', lesson_id:'1')
+        get("/library/1/lessons/1/questions").should route_to("questions#index", study_id:'1', lesson_id:'1')
       end
 
       it "routes to #new" do
-        get("/library/1/lessons/1/questions/new").should route_to("questions#new", series_id:'1', lesson_id:'1')
+        get("/library/1/lessons/1/questions/new").should route_to("questions#new", study_id:'1', lesson_id:'1')
       end
 
       it "routes to #show" do
@@ -16,7 +16,7 @@ describe QuestionsController do
       end
 
       it "routes to #create" do
-        post("/library/1/lessons/1/questions").should route_to("questions#create", series_id:'1', lesson_id:'1')
+        post("/library/1/lessons/1/questions").should route_to("questions#create", study_id:'1', lesson_id:'1')
       end
 
       it "routes to #block" do

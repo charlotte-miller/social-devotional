@@ -3,7 +3,7 @@
 # Table name: lessons
 #
 #  id          :integer          not null, primary key
-#  series_id   :integer          not null
+#  study_id    :integer          not null
 #  position    :integer          default(0)
 #  title       :string(255)      not null
 #  description :text
@@ -19,7 +19,7 @@ require 'spec_helper'
 describe Lesson do
   
   describe 'scopes' do
-    describe 'for_series(:series_id)' do
+    describe 'for_study(:study_id)' do
       pending
     end
   end

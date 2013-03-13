@@ -5,7 +5,7 @@ describe "questions/index" do
   context "library" do
     before(:each) do
       assign(:questions, 2.times.map { build_stubbed(:question) })
-      assign(:series, build_stubbed(:series, slug: 'matthew-study'))
+      assign(:study, build_stubbed(:study, slug: 'matthew-study'))
       assign(:lesson, build_stubbed(:lesson, id: 1))
     end
 

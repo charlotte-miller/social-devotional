@@ -15,7 +15,7 @@ require 'spec_helper'
 
 describe Podcast do
   it { should belong_to :church }
-  it { should have_many :series }
+  it { should have_many :studies }
   
   describe '.pull_updates()' do
     

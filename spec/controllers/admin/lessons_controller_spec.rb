@@ -24,7 +24,7 @@ describe Admin::LessonsController do
   # Lesson. As you add validations to Lesson, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "series_id" => "1" }
+    { "study_id" => "1" }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,14 +89,14 @@ describe Admin::LessonsController do
       it "assigns a newly created but unsaved lesson as @lesson" do
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        post :create, {:lesson => { "series_id" => "invalid value" }}, valid_session
+        post :create, {:lesson => { "study_id" => "invalid value" }}, valid_session
         assigns(:lesson).should be_a_new(Lesson)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        post :create, {:lesson => { "series_id" => "invalid value" }}, valid_session
+        post :create, {:lesson => { "study_id" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -110,8 +110,8 @@ describe Admin::LessonsController do
         # specifies that the Lesson created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Lesson.any_instance.should_receive(:update_attributes).with({ "series_id" => "1" })
-        put :update, {:id => lesson.to_param, :lesson => { "series_id" => "1" }}, valid_session
+        Lesson.any_instance.should_receive(:update_attributes).with({ "study_id" => "1" })
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "1" }}, valid_session
       end
 
       it "assigns the requested lesson as @lesson" do
@@ -132,7 +132,7 @@ describe Admin::LessonsController do
         lesson = Lesson.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        put :update, {:id => lesson.to_param, :lesson => { "series_id" => "invalid value" }}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}, valid_session
         assigns(:lesson).should eq(lesson)
       end
 
@@ -140,7 +140,7 @@ describe Admin::LessonsController do
         lesson = Lesson.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        put :update, {:id => lesson.to_param, :lesson => { "series_id" => "invalid value" }}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

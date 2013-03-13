@@ -21,7 +21,7 @@ class Podcast < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :church
-  has_many :series
+  has_many :studies
 
 
   # ---------------------------------------------------------------------------------

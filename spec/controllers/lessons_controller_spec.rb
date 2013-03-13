@@ -19,13 +19,13 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe LessonsController do
-  let(:series) { create(:series) }
+  let(:study) { create(:study) }
   
   # This should return the minimal set of attributes required to create a valid
   # Lesson. As you add validations to Lesson, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "series" => series, title: 'Salt and Light'}
+    { "study" => study, title: 'Salt and Light'}
   end
 
   # This should return the minimal set of values that should be in the session
@@ -38,11 +38,11 @@ describe LessonsController do
   describe "GET index" do
     it "assigns all lessons as @lessons" do
       lesson = Lesson.create! valid_attributes
-      get :index, {series_id: series.id}, valid_session
+      get :index, {study_id: study.id}, valid_session
       assigns(:lessons).should eq([lesson])
     end
     
-    it "doesn't include lessons from other series" do
+    it "doesn't include lessons from other study" do
       pending
     end
   end
@@ -50,11 +50,11 @@ describe LessonsController do
   describe "GET show" do
     it "assigns the requested lesson as @lesson" do
       lesson = Lesson.create! valid_attributes
-      get :show, {series_id: series.id, :id => lesson.to_param}, valid_session
+      get :show, {study_id: study.id, :id => lesson.to_param}, valid_session
       assigns(:lesson).should eq(lesson)
     end
     
-    it "@lesson is from the correct series" do
+    it "@lesson is from the correct study" do
       pending
     end
   end

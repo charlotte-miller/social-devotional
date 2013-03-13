@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:series_id) %></th>
+      <th><%= model_class.human_attribute_name(:study_id) %></th>
       <th><%= model_class.human_attribute_name(:position) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -20,7 +20,7 @@
     <% @lessons.each do |lesson| %>
       <tr>
         <td><%= link_to lesson.id, lesson_path(lesson) %></td>
-        <td><%= lesson.series_id %></td>
+        <td><%= lesson.study_id %></td>
         <td><%= lesson.position %></td>
         <td><%= lesson.title %></td>
         <td><%= lesson.description %></td>

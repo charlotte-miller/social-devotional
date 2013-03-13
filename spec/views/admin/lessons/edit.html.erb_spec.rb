@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "lessons/edit" do
   before(:each) do
     @lesson = assign(:lesson, stub_model(Lesson,
-      :series_id => 1,
+      :study_id => 1,
       :position => 1,
       :title => "MyString",
       :description => "MyText",
@@ -18,7 +18,7 @@ describe "lessons/edit" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => lessons_path(@lesson), :method => "post" do
-      assert_select "input#lesson_series_id", :name => "lesson[series_id]"
+      assert_select "input#lesson_study_id", :name => "lesson[study_id]"
       assert_select "input#lesson_position", :name => "lesson[position]"
       assert_select "input#lesson_title", :name => "lesson[title]"
       assert_select "textarea#lesson_description", :name => "lesson[description]"

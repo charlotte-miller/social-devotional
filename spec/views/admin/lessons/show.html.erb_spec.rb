@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "lessons/show" do
   before(:each) do
     @lesson = assign(:lesson, stub_model(Lesson,
-      :series_id => 1,
+      :study_id => 1,
       :position => 2,
       :title => "Title",
       :description => "MyText",

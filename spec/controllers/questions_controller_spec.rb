@@ -24,7 +24,9 @@ describe QuestionsController do
   # Question. As you add validations to Question, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    FactoryGirl.attributes_for(:question).slice(:author, :source, :text)
+    {text: 'Why did Jonnah try to avoid Gods command to and go to Ninevah'}
+    # author = create(:author)
+    # FactoryGirl.attributes_for(:question).merge(author: author)
   end
 
   # This should return the minimal set of values that should be in the session
@@ -36,7 +38,7 @@ describe QuestionsController do
 
   describe "GET index" do
     it "assigns all questions as @questions" do
-      question = Question.create! valid_attributes
+      question = create(:question, valid_attributes)
       get :index, {}, valid_session
       assigns(:questions).should eq([question])
     end
@@ -44,7 +46,7 @@ describe QuestionsController do
 
   describe "GET show" do
     it "assigns the requested question as @question" do
-      question = Question.create! valid_attributes
+      question = create(:question, valid_attributes)
       get :show, {:id => question.to_param}, valid_session
       assigns(:question).should eq(question)
     end
@@ -59,7 +61,7 @@ describe QuestionsController do
 
   describe "GET edit" do
     it "assigns the requested question as @question" do
-      question = Question.create! valid_attributes
+      question = create(:question, valid_attributes)
       get :edit, {:id => question.to_param}, valid_session
       assigns(:question).should eq(question)
     end
@@ -99,65 +101,6 @@ describe QuestionsController do
         post :create, {:question => { "lesson_id" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested question" do
-        question = Question.create! valid_attributes
-        # Assuming there are no other questions in the database, this
-        # specifies that the Question created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Question.any_instance.should_receive(:update_attributes).with({ "lesson_id" => "1" })
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "1" }}, valid_session
-      end
-
-      it "assigns the requested question as @question" do
-        question = Question.create! valid_attributes
-        put :update, {:id => question.to_param, :question => valid_attributes}, valid_session
-        assigns(:question).should eq(question)
-      end
-
-      it "redirects to the question" do
-        question = Question.create! valid_attributes
-        put :update, {:id => question.to_param, :question => valid_attributes}, valid_session
-        response.should redirect_to(question)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the question as @question" do
-        question = Question.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Question.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}, valid_session
-        assigns(:question).should eq(question)
-      end
-
-      it "re-renders the 'edit' template" do
-        question = Question.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Question.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested question" do
-      question = Question.create! valid_attributes
-      expect {
-        delete :destroy, {:id => question.to_param}, valid_session
-      }.to change(Question, :count).by(-1)
-    end
-
-    it "redirects to the questions list" do
-      question = Question.create! valid_attributes
-      delete :destroy, {:id => question.to_param}, valid_session
-      response.should redirect_to(questions_url)
     end
   end
 

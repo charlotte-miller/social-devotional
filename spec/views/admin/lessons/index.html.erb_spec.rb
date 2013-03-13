@@ -4,7 +4,7 @@ describe "admin/lessons/index" do
   before(:each) do
     assign(:lessons, [
       stub_model(Lesson,
-        :series_id => 1,
+        :study_id => 1,
         :position => 2,
         :title => "Title",
         :description => "MyText",
@@ -13,7 +13,7 @@ describe "admin/lessons/index" do
         :audio_url => "Audio Url"
       ),
       stub_model(Lesson,
-        :series_id => 1,
+        :study_id => 1,
         :position => 2,
         :title => "Title",
         :description => "MyText",

@@ -2,7 +2,7 @@ module QuestionsHelper
   
   def polymorphic_questions_path( question_or_action=nil )
     question = question_or_action.is_a?( Question ) ? question_or_action : 'questions'
-    obj_array = [@series, @lesson, @group, @meeting, question].compact
+    obj_array = [@study, @lesson, @group, @meeting, question].compact
     
     case question_or_action
       when 'new'    

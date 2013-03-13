@@ -1,7 +1,7 @@
 class CreateLessons < ActiveRecord::Migration
   def change
     create_table :lessons do |t|
-      t.integer  :series_id,    null: false
+      t.integer  :study_id,    null: false
       t.integer  :position,     default: 0
       t.string   :title,        null: false
       t.text     :description
@@ -12,6 +12,6 @@ class CreateLessons < ActiveRecord::Migration
       t.timestamps
     end
     
-    add_index :lessons, [:series_id, :position]
+    add_index :lessons, [:study_id, :position]
   end
 end

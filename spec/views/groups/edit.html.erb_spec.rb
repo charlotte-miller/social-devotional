@@ -5,7 +5,7 @@ describe "groups/edit" do
     @group = assign(:group, stub_model(Group,
       :name => "MyString",
       :desription => "MyText",
-      :series_id => 1
+      :study_id => 1
     ))
   end
 
@@ -16,7 +16,7 @@ describe "groups/edit" do
     assert_select "form", :action => groups_path(@group), :method => "post" do
       assert_select "input#group_name", :name => "group[name]"
       assert_select "textarea#group_desription", :name => "group[desription]"
-      assert_select "input#group_series_id", :name => "group[series_id]"
+      assert_select "input#group_study_id", :name => "group[study_id]"
     end
   end
 end

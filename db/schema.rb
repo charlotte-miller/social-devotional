@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
   add_index "groups", ["state", "is_public"], :name => "index_groups_on_state_and_is_public"
 
   create_table "lessons", :force => true do |t|
-    t.integer  "series_id",                  :null => false
+    t.integer  "study_id",                   :null => false
     t.integer  "position",    :default => 0
     t.string   "title",                      :null => false
     t.text     "description"
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
     t.datetime "updated_at",                 :null => false
   end
 
-  add_index "lessons", ["series_id", "position"], :name => "index_lessons_on_series_id_and_position"
+  add_index "lessons", ["study_id", "position"], :name => "index_lessons_on_study_id_and_position"
 
   create_table "meetings", :force => true do |t|
     t.integer  "group_id",                 :null => false
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
 
   add_index "questions", ["source_id", "source_type"], :name => "index_questions_on_source_id_and_source_type"
 
-  create_table "series", :force => true do |t|
+  create_table "studies", :force => true do |t|
     t.string   "slug",                         :null => false
     t.integer  "podcast_id",                   :null => false
     t.string   "title",                        :null => false
@@ -159,8 +159,8 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
     t.datetime "updated_at",                   :null => false
   end
 
-  add_index "series", ["podcast_id"], :name => "index_series_on_podcast_id"
-  add_index "series", ["slug"], :name => "index_series_on_slug", :unique => true
+  add_index "studies", ["podcast_id"], :name => "index_studies_on_podcast_id"
+  add_index "studies", ["slug"], :name => "index_studies_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "first_name",                 :limit => 60

@@ -1,9 +1,9 @@
 class LessonsController < ApplicationController
   
-  # GET /library/:series_idlibrary/:series_id/lessons
-  # GET /library/:series_id/lessons.json
+  # GET /library/:studies_idlibrary/:studies_id/lessons
+  # GET /library/:studies_id/lessons.json
   def index
-    @lessons = Lesson.for_series(params[:series_id]).all
+    @lessons = Lesson.for_studies(params[:study_id]).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,10 +11,10 @@ class LessonsController < ApplicationController
     end
   end
 
-  # GET /library/:series_id/lessons/1
-  # GET /library/:series_id/lessons/1.json
+  # GET /library/:studies_id/lessons/1
+  # GET /library/:studies_id/lessons/1.json
   def show
-    @lesson = Lesson.for_series(params[:series_id]).find(params[:id])
+    @lesson = Lesson.for_study(params[:study_id]).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

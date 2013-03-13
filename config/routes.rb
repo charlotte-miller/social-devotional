@@ -3,8 +3,8 @@
 SocialDevotional::Application.routes.draw do
 
   # Library
-  root :to => "series#index"
-  resources :series, only: [:index, :show ], path: 'library' do
+  root :to => "studies#index"
+  resources :studies, only: [:index, :show ], path: 'library' do
     resources :lessons, only: [:index, :show ] do
       resources :questions, only: [:index, :show, :new, :create], shallow: true do
         post :block, :star, :on => :member
@@ -29,7 +29,7 @@ SocialDevotional::Application.routes.draw do
   # Authentication & Admin
   devise_for :users, :admin_user
   namespace :admin do
-    resources :series, :lessons, :questions, :groups
+    resources :studies, :lessons, :questions, :groups
   end
 
 end

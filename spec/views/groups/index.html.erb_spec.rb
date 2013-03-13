@@ -6,12 +6,12 @@ describe "groups/index" do
       stub_model(Group,
         :name => "Name",
         :desription => "MyText",
-        :series_id => 1
+        :study_id => 1
       ),
       stub_model(Group,
         :name => "Name",
         :desription => "MyText",
-        :series_id => 1
+        :study_id => 1
       )
     ])
   end
