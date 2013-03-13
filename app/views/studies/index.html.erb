@@ -12,7 +12,6 @@
       <th><%= model_class.human_attribute_name(:ref_link) %></th>
       <th><%= model_class.human_attribute_name(:video_url) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -25,15 +24,6 @@
         <td><%= study.ref_link %></td>
         <td><%= study.video_url %></td>
         <td><%=l study.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_studies_path(study), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      studies_path(study),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>

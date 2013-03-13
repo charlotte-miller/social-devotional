@@ -1,45 +1,50 @@
-<%= form_for(@lesson) do |f| %>
-  <% if @lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
-
-      <ul>
-      <% @lesson.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @lesson, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :study_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :study_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :position, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :position, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :backlink, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :backlink, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :video_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :video_url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :audio_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :audio_url, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :study_id %><br />
-    <%= f.number_field :study_id %>
-  </div>
-  <div class="field">
-    <%= f.label :position %><br />
-    <%= f.number_field :position %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :backlink %><br />
-    <%= f.text_field :backlink %>
-  </div>
-  <div class="field">
-    <%= f.label :video_url %><br />
-    <%= f.text_field :video_url %>
-  </div>
-  <div class="field">
-    <%= f.label :audio_url %><br />
-    <%= f.text_field :audio_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                lessons_path, :class => 'btn' %>
   </div>
 <% end %>

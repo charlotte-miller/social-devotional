@@ -15,7 +15,7 @@ describe "studies/edit" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => studies_index_path(@studies), :method => "post" do
+    assert_select "form", :action => studies_path(@studies), :method => "post" do
       assert_select "input#studies_slug", :name => "studies[slug]"
       assert_select "input#studies_title", :name => "studies[title]"
       assert_select "input#studies_description", :name => "studies[description]"

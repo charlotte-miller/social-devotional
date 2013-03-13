@@ -19,7 +19,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= link_to lesson.id, lesson_path(lesson) %></td>
+        <td><%= link_to lesson.id, study_lessons_path(@study, lesson) %></td>
         <td><%= lesson.study_id %></td>
         <td><%= lesson.position %></td>
         <td><%= lesson.title %></td>

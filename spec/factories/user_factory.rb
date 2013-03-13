@@ -37,6 +37,9 @@ FactoryGirl.define do
     before(:create) do
       User.any_instance.stub({ save_attached_files: true })
     end
+    before(:stub) do
+      User.any_instance.stub({ save_attached_files: true })
+    end
     
     first_name  'Fred'
     last_name   'Fredrickson'

@@ -25,7 +25,11 @@ describe Admin::QuestionsController do
     question.attributes.slice(:author, :source, :text)
   end
 
-  before(:each)   { sign_in @admin_user = build_stubbed(:admin_user) }
+  before(:each) do
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    @admin_user = create(:admin_user)
+    sign_in @admin_user
+  end
   
   describe "GET index" do
     it "assigns all questions as @questions" do
