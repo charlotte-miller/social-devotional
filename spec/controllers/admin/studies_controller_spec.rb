@@ -27,17 +27,12 @@ describe Admin::StudiesController do
     { "slug" => "MyString" }
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # StudiesController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+  before(:each)   { sign_in @admin_user = build_stubbed(:admin_user) }
 
   describe "GET index" do
     it "assigns all studies as @studies" do
       studies = Study.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:studies).should eq([studies])
     end
   end
@@ -45,14 +40,14 @@ describe Admin::StudiesController do
   describe "GET show" do
     it "assigns the requested study as @study" do
       study = Study.create! valid_attributes
-      get :show, {:id => study.to_param}, valid_session
+      get :show, {:id => study.to_param}
       assigns(:study).should eq(study)
     end
   end
 
   describe "GET new" do
     it "assigns a new study as @study" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:study).should be_a_new(Study)
     end
   end
@@ -60,7 +55,7 @@ describe Admin::StudiesController do
   describe "GET edit" do
     it "assigns the requested study as @study" do
       study = Study.create! valid_attributes
-      get :edit, {:id => study.to_param}, valid_session
+      get :edit, {:id => study.to_param}
       assigns(:study).should eq(study)
     end
   end
@@ -69,18 +64,18 @@ describe Admin::StudiesController do
     describe "with valid params" do
       it "creates a new Study" do
         expect {
-          post :create, {:study => valid_attributes}, valid_session
+          post :create, {:study => valid_attributes}
         }.to change(Study, :count).by(1)
       end
 
       it "assigns a newly created study as @study" do
-        post :create, {:study => valid_attributes}, valid_session
+        post :create, {:study => valid_attributes}
         assigns(:study).should be_a(Study)
         assigns(:study).should be_persisted
       end
 
       it "redirects to the created study" do
-        post :create, {:study => valid_attributes}, valid_session
+        post :create, {:study => valid_attributes}
         response.should redirect_to(Study.last)
       end
     end
@@ -89,14 +84,14 @@ describe Admin::StudiesController do
       it "assigns a newly created but unsaved study as @study" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        post :create, {:study => { "slug" => "invalid value" }}, valid_session
+        post :create, {:study => { "slug" => "invalid value" }}
         assigns(:study).should be_a_new(Study)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        post :create, {:study => { "slug" => "invalid value" }}, valid_session
+        post :create, {:study => { "slug" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -111,18 +106,18 @@ describe Admin::StudiesController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Study.any_instance.should_receive(:update_attributes).with({ "slug" => "MyString" })
-        put :update, {:id => study.to_param, :study => { "slug" => "MyString" }}, valid_session
+        put :update, {:id => study.to_param, :study => { "slug" => "MyString" }}
       end
 
       it "assigns the requested study as @study" do
         study = Study.create! valid_attributes
-        put :update, {:id => study.to_param, :study => valid_attributes}, valid_session
+        put :update, {:id => study.to_param, :study => valid_attributes}
         assigns(:study).should eq(study)
       end
 
       it "redirects to the study" do
         study = Study.create! valid_attributes
-        put :update, {:id => study.to_param, :study => valid_attributes}, valid_session
+        put :update, {:id => study.to_param, :study => valid_attributes}
         response.should redirect_to(study)
       end
     end
@@ -132,7 +127,7 @@ describe Admin::StudiesController do
         study = Study.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}, valid_session
+        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
         assigns(:study).should eq(study)
       end
 
@@ -140,7 +135,7 @@ describe Admin::StudiesController do
         study = Study.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}, valid_session
+        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -150,13 +145,13 @@ describe Admin::StudiesController do
     it "destroys the requested study" do
       study = Study.create! valid_attributes
       expect {
-        delete :destroy, {:id => study.to_param}, valid_session
+        delete :destroy, {:id => study.to_param}
       }.to change(Study, :count).by(-1)
     end
 
     it "redirects to the study list" do
       study = Study.create! valid_attributes
-      delete :destroy, {:id => study.to_param}, valid_session
+      delete :destroy, {:id => study.to_param}
       response.should redirect_to(study_index_url)
     end
   end

@@ -27,17 +27,12 @@ describe Admin::LessonsController do
     { "study_id" => "1" }
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # LessonsController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+  before(:each)   { sign_in @admin_user = build_stubbed(:admin_user) }
 
   describe "GET index" do
     it "assigns all lessons as @lessons" do
       lesson = Lesson.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:lessons).should eq([lesson])
     end
   end
@@ -45,14 +40,14 @@ describe Admin::LessonsController do
   describe "GET show" do
     it "assigns the requested lesson as @lesson" do
       lesson = Lesson.create! valid_attributes
-      get :show, {:id => lesson.to_param}, valid_session
+      get :show, {:id => lesson.to_param}
       assigns(:lesson).should eq(lesson)
     end
   end
 
   describe "GET new" do
     it "assigns a new lesson as @lesson" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:lesson).should be_a_new(Lesson)
     end
   end
@@ -60,7 +55,7 @@ describe Admin::LessonsController do
   describe "GET edit" do
     it "assigns the requested lesson as @lesson" do
       lesson = Lesson.create! valid_attributes
-      get :edit, {:id => lesson.to_param}, valid_session
+      get :edit, {:id => lesson.to_param}
       assigns(:lesson).should eq(lesson)
     end
   end
@@ -69,18 +64,18 @@ describe Admin::LessonsController do
     describe "with valid params" do
       it "creates a new Lesson" do
         expect {
-          post :create, {:lesson => valid_attributes}, valid_session
+          post :create, {:lesson => valid_attributes}
         }.to change(Lesson, :count).by(1)
       end
 
       it "assigns a newly created lesson as @lesson" do
-        post :create, {:lesson => valid_attributes}, valid_session
+        post :create, {:lesson => valid_attributes}
         assigns(:lesson).should be_a(Lesson)
         assigns(:lesson).should be_persisted
       end
 
       it "redirects to the created lesson" do
-        post :create, {:lesson => valid_attributes}, valid_session
+        post :create, {:lesson => valid_attributes}
         response.should redirect_to(Lesson.last)
       end
     end
@@ -89,14 +84,14 @@ describe Admin::LessonsController do
       it "assigns a newly created but unsaved lesson as @lesson" do
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        post :create, {:lesson => { "study_id" => "invalid value" }}, valid_session
+        post :create, {:lesson => { "study_id" => "invalid value" }}
         assigns(:lesson).should be_a_new(Lesson)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        post :create, {:lesson => { "study_id" => "invalid value" }}, valid_session
+        post :create, {:lesson => { "study_id" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -111,18 +106,18 @@ describe Admin::LessonsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Lesson.any_instance.should_receive(:update_attributes).with({ "study_id" => "1" })
-        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "1" }}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "1" }}
       end
 
       it "assigns the requested lesson as @lesson" do
         lesson = Lesson.create! valid_attributes
-        put :update, {:id => lesson.to_param, :lesson => valid_attributes}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => valid_attributes}
         assigns(:lesson).should eq(lesson)
       end
 
       it "redirects to the lesson" do
         lesson = Lesson.create! valid_attributes
-        put :update, {:id => lesson.to_param, :lesson => valid_attributes}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => valid_attributes}
         response.should redirect_to(lesson)
       end
     end
@@ -132,7 +127,7 @@ describe Admin::LessonsController do
         lesson = Lesson.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}
         assigns(:lesson).should eq(lesson)
       end
 
@@ -140,7 +135,7 @@ describe Admin::LessonsController do
         lesson = Lesson.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Lesson.any_instance.stub(:save).and_return(false)
-        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}, valid_session
+        put :update, {:id => lesson.to_param, :lesson => { "study_id" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -150,13 +145,13 @@ describe Admin::LessonsController do
     it "destroys the requested lesson" do
       lesson = Lesson.create! valid_attributes
       expect {
-        delete :destroy, {:id => lesson.to_param}, valid_session
+        delete :destroy, {:id => lesson.to_param}
       }.to change(Lesson, :count).by(-1)
     end
 
     it "redirects to the lessons list" do
       lesson = Lesson.create! valid_attributes
-      delete :destroy, {:id => lesson.to_param}, valid_session
+      delete :destroy, {:id => lesson.to_param}
       response.should redirect_to(lessons_url)
     end
   end

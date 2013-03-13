@@ -21,44 +21,36 @@ require 'spec_helper'
 describe Admin::QuestionsController do
   let!(:question) { create(:question) }
   
-  # This should return the minimal set of attributes required to create a valid
-  # Question. As you add validations to Question, be sure to
-  # update the return value of this method accordingly.
   def valid_attributes
     question.attributes.slice(:author, :source, :text)
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # QuestionsController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
-
+  before(:each)   { sign_in @admin_user = build_stubbed(:admin_user) }
+  
   describe "GET index" do
     it "assigns all questions as @questions" do
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:questions).should eq([question])
     end
   end
 
   describe "GET show" do
     it "assigns the requested question as @question" do
-      get :show, {:id => question.to_param}, valid_session
+      get :show, {:id => question.to_param}
       assigns(:question).should eq(question)
     end
   end
 
   describe "GET new" do
     it "assigns a new question as @question" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:question).should be_a_new(Question)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested question as @question" do
-      get :edit, {:id => question.to_param}, valid_session
+      get :edit, {:id => question.to_param}
       assigns(:question).should eq(question)
     end
   end
@@ -67,18 +59,18 @@ describe Admin::QuestionsController do
     describe "with valid params" do
       it "creates a new Question" do
         expect {
-          post :create, {:question => valid_attributes}, valid_session
+          post :create, {:question => valid_attributes}
         }.to change(Question, :count).by(1)
       end
 
       it "assigns a newly created question as @question" do
-        post :create, {:question => valid_attributes}, valid_session
+        post :create, {:question => valid_attributes}
         assigns(:question).should be_a(Question)
         assigns(:question).should be_persisted
       end
 
       it "redirects to the created question" do
-        post :create, {:question => valid_attributes}, valid_session
+        post :create, {:question => valid_attributes}
         response.should redirect_to(Question.last)
       end
     end
@@ -87,14 +79,14 @@ describe Admin::QuestionsController do
       it "assigns a newly created but unsaved question as @question" do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
-        post :create, {:question => { "lesson_id" => "invalid value" }}, valid_session
+        post :create, {:question => { "lesson_id" => "invalid value" }}
         assigns(:question).should be_a_new(Question)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
-        post :create, {:question => { "lesson_id" => "invalid value" }}, valid_session
+        post :create, {:question => { "lesson_id" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -108,16 +100,16 @@ describe Admin::QuestionsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Question.any_instance.should_receive(:update_attributes).with({ "lesson_id" => "1" })
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "1" }}, valid_session
+        put :update, {:id => question.to_param, :question => { "lesson_id" => "1" }}
       end
 
       it "assigns the requested question as @question" do
-        put :update, {:id => question.to_param, :question => valid_attributes}, valid_session
+        put :update, {:id => question.to_param, :question => valid_attributes}
         assigns(:question).should eq(question)
       end
 
       it "redirects to the question" do
-        put :update, {:id => question.to_param, :question => valid_attributes}, valid_session
+        put :update, {:id => question.to_param, :question => valid_attributes}
         response.should redirect_to(question)
       end
     end
@@ -126,14 +118,14 @@ describe Admin::QuestionsController do
       it "assigns the question as @question" do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}, valid_session
+        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}
         assigns(:question).should eq(question)
       end
 
       it "re-renders the 'edit' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Question.any_instance.stub(:save).and_return(false)
-        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}, valid_session
+        put :update, {:id => question.to_param, :question => { "lesson_id" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -142,12 +134,12 @@ describe Admin::QuestionsController do
   describe "DELETE destroy" do
     it "destroys the requested question" do
       expect {
-        delete :destroy, {:id => question.to_param}, valid_session
+        delete :destroy, {:id => question.to_param}
       }.to change(Question, :count).by(-1)
     end
 
     it "redirects to the questions list" do
-      delete :destroy, {:id => question.to_param}, valid_session
+      delete :destroy, {:id => question.to_param}
       response.should redirect_to(questions_url)
     end
   end

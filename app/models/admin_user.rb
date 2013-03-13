@@ -39,7 +39,7 @@ class AdminUser < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :user
   
     
   
@@ -47,6 +47,7 @@ class AdminUser < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   has_many :block_requests# ,   inverse_of: 'approver'
+  belongs_to :user
   
   
   # ---------------------------------------------------------------------------------

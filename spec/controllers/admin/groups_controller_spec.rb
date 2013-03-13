@@ -27,17 +27,12 @@ describe Admin::GroupsController do
     { "name" => "MyString" }
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # GroupsController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+  before(:each)   { sign_in @admin_user = build_stubbed(:admin_user) }
 
   describe "GET index" do
     it "assigns all groups as @groups" do
       group = Group.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {}
       assigns(:groups).should eq([group])
     end
   end
@@ -45,14 +40,14 @@ describe Admin::GroupsController do
   describe "GET show" do
     it "assigns the requested group as @group" do
       group = Group.create! valid_attributes
-      get :show, {:id => group.to_param}, valid_session
+      get :show, {:id => group.to_param}
       assigns(:group).should eq(group)
     end
   end
 
   describe "GET new" do
     it "assigns a new group as @group" do
-      get :new, {}, valid_session
+      get :new, {}
       assigns(:group).should be_a_new(Group)
     end
   end
@@ -60,7 +55,7 @@ describe Admin::GroupsController do
   describe "GET edit" do
     it "assigns the requested group as @group" do
       group = Group.create! valid_attributes
-      get :edit, {:id => group.to_param}, valid_session
+      get :edit, {:id => group.to_param}
       assigns(:group).should eq(group)
     end
   end
@@ -69,18 +64,18 @@ describe Admin::GroupsController do
     describe "with valid params" do
       it "creates a new Group" do
         expect {
-          post :create, {:group => valid_attributes}, valid_session
+          post :create, {:group => valid_attributes}
         }.to change(Group, :count).by(1)
       end
 
       it "assigns a newly created group as @group" do
-        post :create, {:group => valid_attributes}, valid_session
+        post :create, {:group => valid_attributes}
         assigns(:group).should be_a(Group)
         assigns(:group).should be_persisted
       end
 
       it "redirects to the created group" do
-        post :create, {:group => valid_attributes}, valid_session
+        post :create, {:group => valid_attributes}
         response.should redirect_to(Group.last)
       end
     end
@@ -89,14 +84,14 @@ describe Admin::GroupsController do
       it "assigns a newly created but unsaved group as @group" do
         # Trigger the behavior that occurs when invalid params are submitted
         Group.any_instance.stub(:save).and_return(false)
-        post :create, {:group => { "name" => "invalid value" }}, valid_session
+        post :create, {:group => { "name" => "invalid value" }}
         assigns(:group).should be_a_new(Group)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Group.any_instance.stub(:save).and_return(false)
-        post :create, {:group => { "name" => "invalid value" }}, valid_session
+        post :create, {:group => { "name" => "invalid value" }}
         response.should render_template("new")
       end
     end
@@ -111,18 +106,18 @@ describe Admin::GroupsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Group.any_instance.should_receive(:update_attributes).with({ "name" => "MyString" })
-        put :update, {:id => group.to_param, :group => { "name" => "MyString" }}, valid_session
+        put :update, {:id => group.to_param, :group => { "name" => "MyString" }}
       end
 
       it "assigns the requested group as @group" do
         group = Group.create! valid_attributes
-        put :update, {:id => group.to_param, :group => valid_attributes}, valid_session
+        put :update, {:id => group.to_param, :group => valid_attributes}
         assigns(:group).should eq(group)
       end
 
       it "redirects to the group" do
         group = Group.create! valid_attributes
-        put :update, {:id => group.to_param, :group => valid_attributes}, valid_session
+        put :update, {:id => group.to_param, :group => valid_attributes}
         response.should redirect_to(group)
       end
     end
@@ -132,7 +127,7 @@ describe Admin::GroupsController do
         group = Group.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Group.any_instance.stub(:save).and_return(false)
-        put :update, {:id => group.to_param, :group => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => group.to_param, :group => { "name" => "invalid value" }}
         assigns(:group).should eq(group)
       end
 
@@ -140,7 +135,7 @@ describe Admin::GroupsController do
         group = Group.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Group.any_instance.stub(:save).and_return(false)
-        put :update, {:id => group.to_param, :group => { "name" => "invalid value" }}, valid_session
+        put :update, {:id => group.to_param, :group => { "name" => "invalid value" }}
         response.should render_template("edit")
       end
     end
@@ -150,13 +145,13 @@ describe Admin::GroupsController do
     it "destroys the requested group" do
       group = Group.create! valid_attributes
       expect {
-        delete :destroy, {:id => group.to_param}, valid_session
+        delete :destroy, {:id => group.to_param}
       }.to change(Group, :count).by(-1)
     end
 
     it "redirects to the groups list" do
       group = Group.create! valid_attributes
-      delete :destroy, {:id => group.to_param}, valid_session
+      delete :destroy, {:id => group.to_param}
       response.should redirect_to(groups_url)
     end
   end
