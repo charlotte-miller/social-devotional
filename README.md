@@ -17,9 +17,9 @@ _Possible Resource_:
 ## Pages
 
 ### Library
-/library?q=keywords                                   #=>  series#index  
-/library/:series-name                                 #=>  series#show  
-/library/:series-name/lesson/:index-within-series     #=>  lesson#show  
+/library?q=keywords                                   #=>  <small>studies</small>#index  
+/library/:study-name                                  #=>  studies#show  
+/library/:study-name/lesson/:index-within-study       #=>  lesson#show  
 
 ### Groups
 /groups?q=keywords                                    #=> groups#index   (your dashboard or "find a group" (depending on if you have any))
@@ -72,6 +72,7 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 * * Automatically nominate active members
 
 ## TODO
+* lesson and meeting to_params using position - verify routes and update controllers
 * scaffold answers
 * questions_controller before_filter assign url params
 * questions_controller before_filter assign author and source

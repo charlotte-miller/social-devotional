@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311030104) do
+ActiveRecord::Schema.define(:version => 20130313045638) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -141,11 +141,24 @@ ActiveRecord::Schema.define(:version => 20130311030104) do
     t.text     "text",                         :null => false
     t.integer  "answers_count", :default => 0
     t.integer  "blocked_count", :default => 0
+    t.integer  "stared_count",  :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end
 
   add_index "questions", ["source_id", "source_type"], :name => "index_questions_on_source_id_and_source_type"
+  add_index "questions", ["stared_count"], :name => "index_questions_on_stared_count"
+
+  create_table "stars", :force => true do |t|
+    t.integer  "user_id",                   :null => false
+    t.integer  "source_id",                 :null => false
+    t.string   "source_type", :limit => 50, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "stars", ["source_id", "source_type"], :name => "index_stars_on_source_id_and_source_type"
+  add_index "stars", ["user_id"], :name => "index_stars_on_user_id"
 
   create_table "studies", :force => true do |t|
     t.string   "slug",                         :null => false

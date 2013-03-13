@@ -9,16 +9,18 @@
 #  text          :text             default(""), not null
 #  answers_count :integer          default(0)
 #  blocked_count :integer          default(0)
+#  stared_count  :integer          default(0)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
 
 class Question < ActiveRecord::Base
+  include SourceableModels 
 
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :author, :user_id, :source, :source_id, :text
+  attr_accessible :author, :source, :text
     
   
   # ---------------------------------------------------------------------------------
@@ -26,6 +28,7 @@ class Question < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   belongs_to :author,  :class_name => "User", :foreign_key => "user_id"
   belongs_to :source,  polymorphic: true  # Meeting, Lesson, Group
+  # has_many   :answers
     
   
   # ---------------------------------------------------------------------------------
@@ -37,9 +40,17 @@ class Question < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------
-  scope :meetings,  where(source_type:'Meeting')
-  scope :lessons,   where(source_type:'Lesson')
-  scope :groups,    where(source_type:'Group')  
+  scope :recent,   reorder( 'created_at ASC')
+  scope :popular,  reorder( 'stared_count'  )
+  scope :timeline, reorder( 'created_at ASC')
+  scope :first_n,  lambda {|n=3| limit(n)     } 
+
+  default_scope joins(:author).recent
+  
+  # Admin and Reporting
+  # scope :meetings,  where(source_type:'Meeting')
+  # scope :lessons,   where(source_type:'Lesson')
+  # scope :groups,    where(source_type:'Group')  
   
   
   # ---------------------------------------------------------------------------------

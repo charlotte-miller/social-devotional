@@ -1,4 +1,8 @@
 class QuestionsController < ApplicationController
+  include SourceableControllers 
+  
+  before_filter :merge_author_and_source
+  
   # GET /questions
   # GET /questions.json
   def index
@@ -57,7 +61,7 @@ class QuestionsController < ApplicationController
     
     respond_to do |format|
       if @block_request.save
-        format.html { redirect_to @block_request, notice: 'Question blocked.' }
+        format.html { redirect_to @block_request, notice: 'Question Blocked.' }
         format.json { render json: @block_request, status: :created, location: @block_request }
       else
         format.html { render action: "new" }
@@ -69,6 +73,33 @@ class QuestionsController < ApplicationController
   # POST /questions/1/star
   # POST /questions/1/star.json
   def star
+    @star = Star.create({
+      user_id: current_user.id,
+      source:  current_source
+    })
     
+    respond_to do |format|
+      if @star.save
+        format.html { redirect_to @star, notice: 'Question Stared.' }
+        format.json { render json: @star, status: :created, location: @star }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @star.errors, status: :unprocessable_entity }
+      end
+    end
   end
+  
+private
+  
+  def merge_author_and_source
+    params[:author] = current_user
+    params[:source] = current_source
+  end
+  
+  # def current_source
+  #   case params
+  #     when [:lesson_id]   then Lesson.find(  params[:lesson_id]  )
+  #     when [:meeting_id]  then Meeting.find( params[:meeting_id] )
+  #   end   
+  # end
 end
