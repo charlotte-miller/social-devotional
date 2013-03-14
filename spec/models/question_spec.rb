@@ -4,9 +4,10 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
+#  admin_user    :integer
 #  source_id     :integer          not null
 #  source_type   :string(255)      not null
-#  text          :text             default(""), not null
+#  text          :text
 #  answers_count :integer          default(0)
 #  blocked_count :integer          default(0)
 #  stared_count  :integer          default(0)

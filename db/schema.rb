@@ -136,9 +136,10 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
 
   create_table "questions", :force => true do |t|
     t.integer  "user_id",                      :null => false
+    t.integer  "admin_user"
     t.integer  "source_id",                    :null => false
     t.string   "source_type",                  :null => false
-    t.text     "text",                         :null => false
+    t.text     "text"
     t.integer  "answers_count", :default => 0
     t.integer  "blocked_count", :default => 0
     t.integer  "stared_count",  :default => 0
@@ -147,7 +148,8 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
   end
 
   add_index "questions", ["source_id", "source_type"], :name => "index_questions_on_source_id_and_source_type"
-  add_index "questions", ["stared_count"], :name => "index_questions_on_stared_count"
+  add_index "questions", ["stared_count", "answers_count"], :name => "index_questions_on_stared_count_and_answers_count"
+  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
 
   create_table "stars", :force => true do |t|
     t.integer  "user_id",                   :null => false

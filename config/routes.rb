@@ -29,7 +29,7 @@ SocialDevotional::Application.routes.draw do
   # Authentication & Admin
   devise_for :users, :admin_user
   namespace :admin do
-    resources :studies, :lessons, :questions, :groups
+    resources :studies, :lessons
   end
 
 end
