@@ -66,10 +66,13 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 * * * Q&A
 * * * Block / Soft-delete user
 
+* Develop group leaders
+* * Allow the leader to moderate 'blocks' 
+* * Provide a dashboard w/ charts and stats on their activity
+* * Automatically nominate active members
+
 * Recommendation Engine
 
-* Develop group leaders
-* * Automatically nominate active members
 
 ## TODO
 * lesson and meeting to_params using position - verify routes and update controllers

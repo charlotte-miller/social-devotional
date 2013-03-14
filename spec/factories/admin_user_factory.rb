@@ -33,7 +33,7 @@ FactoryGirl.define do
   factory :admin_user, aliases: [:approver] do
     first_name  'Fred'
     last_name   'Fredrickson'
-    user
+    user        { FactoryGirl.build_stubbed(:user) } 
     sequence(   :email)  {|n| "example@domain#{n}.com"}
     password    'super-secret'
     password_confirmation  {|me| me.password }
