@@ -16,20 +16,20 @@
     </tr>
   </thead>
   <tbody>
-    <% @studies.each do |studies| %>
-      <tr>
-        <td><%= link_to studies.id, studies_path(studies) %></td>
-        <td><%= studies.slug %></td>
-        <td><%= studies.title %></td>
-        <td><%= studies.description %></td>
-        <td><%= studies.ref_link %></td>
-        <td><%= studies.video_url %></td>
-        <td><%=l studies.created_at %></td>
+    <% @studies.each do |study| %>
+      <tr class="study">
+        <td><%= link_to study.id, admin_studies_path(study) %></td>
+        <td><%= study.slug %></td>
+        <td><%= study.title %></td>
+        <td><%= study.description %></td>
+        <td><%= study.ref_link %></td>
+        <td><%= study.video_url %></td>
+        <td><%=l study.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_studies_path(studies), :class => 'btn btn-mini' %>
+                      edit_admin_studies_path(study), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      studies_path(studies),
+                      admin_studies_path(study),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>

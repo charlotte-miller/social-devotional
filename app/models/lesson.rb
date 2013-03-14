@@ -52,6 +52,9 @@ class Lesson < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   
+  def study_title
+    @study_title ||= study.select(:title).title
+  end
   
 private
   

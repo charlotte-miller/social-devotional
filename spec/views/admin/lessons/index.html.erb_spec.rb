@@ -10,7 +10,8 @@ describe "admin/lessons/index" do
         :description => "MyText",
         :backlink => "",
         :video_url => "Video Url",
-        :audio_url => "Audio Url"
+        :audio_url => "Audio Url",
+        :created_at => Time.now
       ),
       stub_model(Lesson,
         :study_id => 1,
@@ -19,7 +20,8 @@ describe "admin/lessons/index" do
         :description => "MyText",
         :backlink => "",
         :video_url => "Video Url",
-        :audio_url => "Audio Url"
+        :audio_url => "Audio Url",
+        :created_at => Time.now
       )
     ])
   end

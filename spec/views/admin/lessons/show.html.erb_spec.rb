@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "lessons/show" do
+describe "admin/lessons/show" do
   before(:each) do
     @lesson = assign(:lesson, stub_model(Lesson,
       :study_id => 1,
@@ -9,7 +9,8 @@ describe "lessons/show" do
       :description => "MyText",
       :backlink => "",
       :video_url => "Video Url",
-      :audio_url => "Audio Url"
+      :audio_url => "Audio Url",
+      :created_at => Time.now
     ))
   end
 

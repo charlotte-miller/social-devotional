@@ -11,12 +11,7 @@ describe "questions/index" do
 
     it "renders a list of questions" do
       render :template => 'questions/index.html.erb'
-
       assert_select '#new_question_button', :href => '/library/matthew-study/lessons/1/questions'
-      # assert_select "tr>td", :text => 1.to_s, :count => 2
-      # assert_select "tr>td", :text => 2.to_s, :count => 2
-      # assert_select "tr>td", :text => "MyText".to_s, :count => 2
-      # assert_select "tr>td", :text => 3.to_s, :count => 2
     end
     
   end
@@ -32,10 +27,6 @@ describe "questions/index" do
       render :template => 'questions/index.html.erb'
       
       assert_select '#new_question_button', :href => '/groups/1/meetings/1/questions'
-      # assert_select "tr>td", :text => 1.to_s, :count => 2
-      # assert_select "tr>td", :text => 2.to_s, :count => 2
-      # assert_select "tr>td", :text => "MyText".to_s, :count => 2
-      # assert_select "tr>td", :text => 3.to_s, :count => 2
     end
     
   end

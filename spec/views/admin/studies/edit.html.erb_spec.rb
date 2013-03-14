@@ -7,7 +7,8 @@ describe "studies/edit" do
       :title => "MyString",
       :description => "MyString",
       :ref_link => "MyString",
-      :video_url => "MyString"
+      :video_url => "MyString",
+      :created_at => Time.now
     ))
   end
 

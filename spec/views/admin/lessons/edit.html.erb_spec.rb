@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "lessons/edit" do
+describe "admin/lessons/edit" do
   before(:each) do
     @lesson = assign(:lesson, stub_model(Lesson,
       :study_id => 1,
@@ -9,7 +9,8 @@ describe "lessons/edit" do
       :description => "MyText",
       :backlink => "",
       :video_url => "MyString",
-      :audio_url => "MyString"
+      :audio_url => "MyString",
+      :created_at => Time.now
     ))
   end
 
@@ -17,7 +18,7 @@ describe "lessons/edit" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => lessons_path(@lesson), :method => "post" do
+    assert_select "form", :action => admin_lessons_path(@lesson), :method => "post" do
       assert_select "input#lesson_study_id", :name => "lesson[study_id]"
       assert_select "input#lesson_position", :name => "lesson[position]"
       assert_select "input#lesson_title", :name => "lesson[title]"

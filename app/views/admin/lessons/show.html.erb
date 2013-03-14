@@ -22,11 +22,11 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              lessons_path, :class => 'btn'  %>
+              admin_lessons_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_lesson_path(@lesson), :class => 'btn' %>
+              edit_admin_lesson_path(@lesson), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              lesson_path(@lesson),
+              admin_lesson_path(@lesson),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

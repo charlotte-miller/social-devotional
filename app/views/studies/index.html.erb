@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @studies.each do |study| %>
-      <tr>
+      <tr class="study">
         <td><%= link_to study.id, study_path(study) %></td>
         <td><%= study.slug %></td>
         <td><%= study.title %></td>
@@ -29,6 +29,3 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_studies_path,
-            :class => 'btn btn-primary' %>

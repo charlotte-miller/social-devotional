@@ -7,7 +7,8 @@ describe "studies/new" do
       :title => "MyString",
       :description => "MyString",
       :ref_link => "MyString",
-      :video_url => "MyString"
+      :video_url => "MyString",
+      :created_at => Time.now
     ).as_new_record)
   end
 

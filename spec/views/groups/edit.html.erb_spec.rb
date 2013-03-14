@@ -5,7 +5,8 @@ describe "groups/edit" do
     @group = assign(:group, stub_model(Group,
       :name => "MyString",
       :desription => "MyText",
-      :study_id => 1
+      :study_id => 1,
+      :created_at => Time.now
     ))
   end
 
