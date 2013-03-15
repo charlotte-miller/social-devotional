@@ -2,41 +2,18 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:study_id) %></th>
-      <th><%= model_class.human_attribute_name(:position) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:backlink) %></th>
-      <th><%= model_class.human_attribute_name(:video_url) %></th>
-      <th><%= model_class.human_attribute_name(:audio_url) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-    </tr>
-  </thead>
-  <ul>
-    <% @lessons.each do |lesson| %>
-      <li>
-        <article>
-          <h3><%= lesson.study_title %></h3>
-          <dl class="dl-horizontal">
-            <%= render partial: 'lesson' %>
-          </dl>
-        </article>
-      </li>
-    
-      <tr class="lesson">
-        <td></td>
-        <td><%= lesson.position %></td>
-        <td><%= link_to lesson.title, study_lessons_path(@study, lesson) %></td>
-        <td><%= lesson.description %></td>
-        <td><%= lesson.backlink %></td>
-        <td><%= lesson.video_url %></td>
-        <td><%= lesson.audio_url %></td>
-        <td><%=l lesson.created_at %></td>
-      </tr>
-    <% end %>
-  </ul>
-</table>
+
+<ul class="thumbnails">
+  <% @lessons.each do |lesson| %>
+    <li class="span4">
+      <article class="thumbnail"> 
+        <h3><%= lesson.study_title %>: <small><%= lesson.position %></small></h3>
+        <dl class="dl-horizontal">
+          <%= render partial: 'lesson' %>
+        </dl>
+      </article>
+    </li>
+  <% end %>
+</ul>
+
 

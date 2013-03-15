@@ -1,4 +1,6 @@
 class MeetingsController < ApplicationController
+  before_filter :load_group_and_meeting
+  
   # GET /meetings
   # GET /meetings.json
   def index
@@ -13,7 +15,6 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
-    @meeting = Meeting.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +35,6 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/1/edit
   def edit
-    @meeting = Meeting.find(params[:id])
   end
 
   # POST /meetings
@@ -44,8 +44,8 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.save
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render json: @meeting, status: :created, location: @meeting }
+        format.html { redirect_to [@group, @meeting], notice: 'Meeting was successfully created.' }
+        format.json { render json: @meeting, status: :created, location: [@group, @meeting] }
       else
         format.html { render action: "new" }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
@@ -56,11 +56,10 @@ class MeetingsController < ApplicationController
   # PUT /meetings/1
   # PUT /meetings/1.json
   def update
-    @meeting = Meeting.find(params[:id])
 
     respond_to do |format|
       if @meeting.update_attributes(params[:meeting])
-        format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
+        format.html { redirect_to [@group, @meeting], notice: 'Meeting was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,12 +71,23 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1
   # DELETE /meetings/1.json
   def destroy
-    @meeting = Meeting.find(params[:id])
     @meeting.destroy
 
     respond_to do |format|
-      format.html { redirect_to meetings_url }
+      format.html { redirect_to group_meetings_url(@group) }
       format.json { head :no_content }
     end
   end
+  
+private
+  
+  def load_group_and_meeting
+    if params[:id]
+      @meeting = Meeting.includes(:group).find(params[:id])
+      @group   = @meeting.group
+    else
+      @group   = Group.find(params[:group_id])
+    end
+  end
+  
 end

@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   # GET /library/:studies_idlibrary/:studies_id/lessons
   # GET /library/:studies_id/lessons.json
   def index
-    @lessons = Lesson.for_studies(params[:study_id]).all
+    @lessons = Lesson.for_study(params[:study_id]).all
 
     respond_to do |format|
       format.html # index.html.erb

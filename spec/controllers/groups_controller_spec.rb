@@ -26,7 +26,7 @@ describe GroupsController do
   def valid_attributes
     { "name"        => "Weekly Matthew Study",
       "desription" => 'Go throught the book of Matthew using the inductive method'
-    }
+    } 
   end
 
   # This should return the minimal set of values that should be in the session

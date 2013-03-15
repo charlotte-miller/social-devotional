@@ -25,7 +25,7 @@ describe LessonsController do
   # Lesson. As you add validations to Lesson, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "study" => study, title: 'Salt and Light'}
+    { "study" => study, title: 'Salt and Light'} 
   end
 
   # This should return the minimal set of values that should be in the session

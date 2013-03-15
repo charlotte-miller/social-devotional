@@ -1,12 +1,10 @@
-<dt><strong><%= model_class.study_title %>:</strong></dt>
-<dd><%= @lesson.position %></dd>
-<dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+<dt><strong><%= Lesson.human_attribute_name(:title) %>:</strong></dt>
 <dd><%= @lesson.title %></dd>
-<dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+<dt><strong><%= Lesson.human_attribute_name(:description) %>:</strong></dt>
 <dd><%= @lesson.description %></dd>
-<dt><strong><%= model_class.human_attribute_name(:backlink) %>:</strong></dt>
+<dt><strong><%= Lesson.human_attribute_name(:backlink) %>:</strong></dt>
 <dd><%= @lesson.backlink %></dd>
-<dt><strong><%= model_class.human_attribute_name(:video_url) %>:</strong></dt>
+<dt><strong><%= Lesson.human_attribute_name(:video_url) %>:</strong></dt>
 <dd><%= @lesson.video_url %></dd>
-<dt><strong><%= model_class.human_attribute_name(:audio_url) %>:</strong></dt>
+<dt><strong><%= Lesson.human_attribute_name(:audio_url) %>:</strong></dt>
 <dd><%= @lesson.audio_url %></dd>

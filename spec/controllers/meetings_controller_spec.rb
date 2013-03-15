@@ -19,12 +19,14 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe MeetingsController do
-
+  let(:group)  { create(:group) }
+  let(:lesson) { create(:lesson)}
+  
   # This should return the minimal set of attributes required to create a valid
   # Meeting. As you add validations to Meeting, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {  }
+    attributes_for(:meeting).merge(group_id: group.id, lesson_id: lesson.id)
   end
 
   # This should return the minimal set of values that should be in the session
@@ -37,7 +39,7 @@ describe MeetingsController do
   describe "GET index" do
     it "assigns all meetings as @meetings" do
       meeting = Meeting.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, {:group_id => group.id}, valid_session
       assigns(:meetings).should eq([meeting])
     end
   end
@@ -45,14 +47,14 @@ describe MeetingsController do
   describe "GET show" do
     it "assigns the requested meeting as @meeting" do
       meeting = Meeting.create! valid_attributes
-      get :show, {:id => meeting.to_param}, valid_session
+      get :show, {:group_id => group.id, :id => meeting.to_param}, valid_session
       assigns(:meeting).should eq(meeting)
     end
   end
 
   describe "GET new" do
     it "assigns a new meeting as @meeting" do
-      get :new, {}, valid_session
+      get :new, {:group_id => group.id}, valid_session
       assigns(:meeting).should be_a_new(Meeting)
     end
   end
@@ -60,7 +62,7 @@ describe MeetingsController do
   describe "GET edit" do
     it "assigns the requested meeting as @meeting" do
       meeting = Meeting.create! valid_attributes
-      get :edit, {:id => meeting.to_param}, valid_session
+      get :edit, {:group_id => group.id, :id => meeting.to_param}, valid_session
       assigns(:meeting).should eq(meeting)
     end
   end
@@ -69,19 +71,19 @@ describe MeetingsController do
     describe "with valid params" do
       it "creates a new Meeting" do
         expect {
-          post :create, {:meeting => valid_attributes}, valid_session
+          post :create, {:group_id => group.id, :meeting => valid_attributes}, valid_session
         }.to change(Meeting, :count).by(1)
       end
 
       it "assigns a newly created meeting as @meeting" do
-        post :create, {:meeting => valid_attributes}, valid_session
+        post :create, {:group_id => group.id, :meeting => valid_attributes}, valid_session
         assigns(:meeting).should be_a(Meeting)
         assigns(:meeting).should be_persisted
       end
 
       it "redirects to the created meeting" do
-        post :create, {:meeting => valid_attributes}, valid_session
-        response.should redirect_to(Meeting.last)
+        post :create, {:group_id => group.id, :meeting => valid_attributes}, valid_session
+        response.should redirect_to([group, Meeting.last])
       end
     end
 
@@ -89,14 +91,14 @@ describe MeetingsController do
       it "assigns a newly created but unsaved meeting as @meeting" do
         # Trigger the behavior that occurs when invalid params are submitted
         Meeting.any_instance.stub(:save).and_return(false)
-        post :create, {:meeting => {  }}, valid_session
+        post :create, {:group_id => group.id, :meeting => {  }}, valid_session
         assigns(:meeting).should be_a_new(Meeting)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Meeting.any_instance.stub(:save).and_return(false)
-        post :create, {:meeting => {  }}, valid_session
+        post :create, {:group_id => group.id, :meeting => {  }}, valid_session
         response.should render_template("new")
       end
     end
@@ -111,19 +113,19 @@ describe MeetingsController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Meeting.any_instance.should_receive(:update_attributes).with({ "these" => "params" })
-        put :update, {:id => meeting.to_param, :meeting => { "these" => "params" }}, valid_session
+        put :update, {:group_id => group.id, :id => meeting.to_param, :meeting => { "these" => "params" }}, valid_session
       end
 
       it "assigns the requested meeting as @meeting" do
         meeting = Meeting.create! valid_attributes
-        put :update, {:id => meeting.to_param, :meeting => valid_attributes}, valid_session
+        put :update, {:group_id => group.id, :id => meeting.to_param, :meeting => valid_attributes}, valid_session
         assigns(:meeting).should eq(meeting)
       end
 
       it "redirects to the meeting" do
         meeting = Meeting.create! valid_attributes
-        put :update, {:id => meeting.to_param, :meeting => valid_attributes}, valid_session
-        response.should redirect_to(meeting)
+        put :update, {:group_id => group.id, :id => meeting.to_param, :meeting => valid_attributes}, valid_session
+        response.should redirect_to([group, meeting])
       end
     end
 
@@ -132,7 +134,7 @@ describe MeetingsController do
         meeting = Meeting.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Meeting.any_instance.stub(:save).and_return(false)
-        put :update, {:id => meeting.to_param, :meeting => {  }}, valid_session
+        put :update, {:group_id => group.id, :id => meeting.to_param, :meeting => {  }}, valid_session
         assigns(:meeting).should eq(meeting)
       end
 
@@ -140,7 +142,7 @@ describe MeetingsController do
         meeting = Meeting.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Meeting.any_instance.stub(:save).and_return(false)
-        put :update, {:id => meeting.to_param, :meeting => {  }}, valid_session
+        put :update, {:group_id => group.id, :id => meeting.to_param, :meeting => {  }}, valid_session
         response.should render_template("edit")
       end
     end
@@ -150,14 +152,14 @@ describe MeetingsController do
     it "destroys the requested meeting" do
       meeting = Meeting.create! valid_attributes
       expect {
-        delete :destroy, {:id => meeting.to_param}, valid_session
+        delete :destroy, {:group_id => group.id, :id => meeting.to_param}, valid_session
       }.to change(Meeting, :count).by(-1)
     end
 
     it "redirects to the meetings list" do
       meeting = Meeting.create! valid_attributes
-      delete :destroy, {:id => meeting.to_param}, valid_session
-      response.should redirect_to(meetings_url)
+      delete :destroy, {:group_id => group.id, :id => meeting.to_param}, valid_session
+      response.should redirect_to(group_meetings_url(group))
     end
   end
 
