@@ -24,12 +24,24 @@ class GroupMembership < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   belongs_to :group# ,                          inverse_of: 'group_memberships'
   belongs_to :member, :class_name => "user"# ,  inverse_of: 'group_memberships'
+  # belongs_to :invitation, :class_name => "Message"
+  # alias_method :invitation, :request
   
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :group, :member
+  
+  
+  # ---------------------------------------------------------------------------------
+  # StateMachine
+  # ---------------------------------------------------------------------------------
+  state_machine :initial => :pending do
+    state :pending do
+      def request_sent?  ;true;  end
+    end
+  end
   
   
   # ---------------------------------------------------------------------------------

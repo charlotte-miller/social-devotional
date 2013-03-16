@@ -1,11 +1,19 @@
 class GroupsController < ApplicationController
+  before_filter :authenticate_user!, except:[:index, :show]
+  before_filter :safe_select_group, except:[:new, :create]
+  
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    if user_signed_in?
+      template= 'index.html.erb'
+    else
+      @groups = Group.publicly_searchable.all
+      template= 'public_index.html.erb'
+    end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html template:template 
       format.json { render json: @groups }
     end
   end
@@ -13,10 +21,14 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @group = Group.find(params[:id])
-
+    if user_signed_in?
+      template= 'show.html.erb'
+    else
+      @group = Group.publicly_searchable.all
+      template= 'public_show.html.erb'
+    end
     respond_to do |format|
-      format.html # show.html.erb
+      format.html template:template 
       format.json { render json: @group }
     end
   end
@@ -34,7 +46,6 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
-    @group = Group.find(params[:id])
   end
 
   # POST /groups
@@ -56,7 +67,6 @@ class GroupsController < ApplicationController
   # PUT /groups/1
   # PUT /groups/1.json
   def update
-    @group = Group.find(params[:id])
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
@@ -72,12 +82,20 @@ class GroupsController < ApplicationController
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
-    @group = Group.find(params[:id])
     @group.destroy
 
     respond_to do |format|
       format.html { redirect_to groups_url }
       format.json { head :no_content }
     end
+  end
+  
+private
+  
+  # scopes SELECT to current user
+  def safe_select_group
+    return unless user_signed_in?
+    @groups = current_user.groups
+    @group = @groups.where(id:params[:id])
   end
 end

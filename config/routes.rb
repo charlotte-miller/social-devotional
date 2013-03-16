@@ -27,8 +27,15 @@ SocialDevotional::Application.routes.draw do
   
   
   # Authentication & Admin
-  devise_for :users, :admin_user
-  namespace :admin do
+  devise_for :users, :skip => [:sessions]
+  as :user do
+    get     'signin' => 'devise/sessions#new',      :as => :new_user_session
+    post    'signin' => 'devise/sessions#create',   :as => :user_session
+    delete  'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  
+  devise_for :admin_user
+  namespace  :admin do
     resources :studies, :lessons
   end
 

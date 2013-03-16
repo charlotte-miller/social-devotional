@@ -17,7 +17,8 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :desription, :meeting_id, :name, :is_public, :state
+  attr_accessible :desription, :name, :is_public, :state, :meets_every_days
+  attr_accessible :members, :members_attributes,  as: 'leader'
     
   
   # ---------------------------------------------------------------------------------
@@ -26,26 +27,15 @@ class Group < ActiveRecord::Base
   has_one  :current_meeting,    :conditions => {state: 'current'},  :class_name => "Meeting", foreign_key: 'group_id'
   has_many :meetings,           :dependent => :destroy,             :class_name => "Meeting", foreign_key: 'group_id'
   has_many :group_memberships,  :dependent => :destroy
+    accepts_nested_attributes_for :group_memberships, allow_destroy: true, reject_if: lambda { !(attributes[:members_attributes].try([], :user_id)) }
   has_many :members,            :through => :group_memberships# ,     inverse_of: 'group'
-  has_many :questions,        as: 'source'
+  has_many :questions,          as: 'source'
   
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :name, :desription, :state
-  
-  
-  # ---------------------------------------------------------------------------------
-  # Scopes
-  # ---------------------------------------------------------------------------------
-  scope :is_public, where(is_public: true)
-  
-  
-  # ---------------------------------------------------------------------------------
-  # Callbacks
-  # ---------------------------------------------------------------------------------
-  # after_save :create_first_meeting
   
   
   # ---------------------------------------------------------------------------------
@@ -57,7 +47,27 @@ class Group < ActiveRecord::Base
     end
   end
   
+
+  # ---------------------------------------------------------------------------------
+  # Scopes
+  # ---------------------------------------------------------------------------------
+  # scope :for_user, lambda {|user| where(user)}
+  scope :is_currently, lambda {|state| {:conditions => { :state => state.to_s }} }
+  scope :is_public,    where(is_public: true)
+  scope :publicly_searchable, is_public.is_currently(:open)
+
+  
+  
+  # ---------------------------------------------------------------------------------
+  # Callbacks
+  # ---------------------------------------------------------------------------------
+  # after_save :create_first_meeting
+  
+  
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
+  
+  delegate :members=,  :to => 'group_memberships'
+
 end

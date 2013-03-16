@@ -16,6 +16,11 @@
 
 FactoryGirl.define do
   factory :group do
+    ignore do
+      member  nil
+      members lambda {|f| [f.member].compact}
+    end
+    
     state 'open'
     name  "Bible in a Year!"
     desription "We're going to read through the Bible in one year, and discuss weekly."
