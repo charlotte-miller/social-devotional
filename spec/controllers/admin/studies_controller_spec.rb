@@ -3,15 +3,14 @@ require 'spec_helper'
 describe Admin::StudiesController do
   login_admin_user
   
-  let!(:podcast){ build_stubbed(:podcast) }
+  let!(:podcast){ create(:podcast) }
   let!(:study){ create(:study, podcast:podcast) }
-  let(:valid_attributes){ attributes_for(:study).merge({ podcast:podcast }) }
+  let(:valid_attributes){ attributes_for(:study).merge({ podcast_id:podcast.id }) }
   
   describe "GET index" do
     before(:each) { get :index, {} }
     
     it { should respond_with(:success) }
-    
     it "assigns all studies as @studies" do
       assigns(:studies).should eq([study])
     end
@@ -21,7 +20,6 @@ describe Admin::StudiesController do
     before(:each) { get :show, {:id => study.to_param} }
     
     it { should respond_with(:success) }
-    
     it "assigns the requested study as @study" do
       assigns(:study).should eq(study)
     end
@@ -31,17 +29,16 @@ describe Admin::StudiesController do
     before(:each) { get :new, {} }
     
     it { should respond_with(:success) }
-    
     it "assigns a new study as @study" do
       assigns(:study).should be_a_new(Study)
     end
   end
 
   describe "GET edit" do
-    it { should respond_with(:success) }
+    before(:each) { get :edit, {:id => study.to_param} }
     
+    it { should respond_with(:success) }
     it "assigns the requested study as @study" do
-      get :edit, {:id => study.to_param}
       assigns(:study).should eq(study)
     end
   end
@@ -50,7 +47,7 @@ describe Admin::StudiesController do
     describe "with valid params" do    
       it "creates a new Study" do
         expect {
-          post :create, {:study => valid_attributes}
+          post :create, {:study => valid_attributes} 
         }.to change(Study, :count).by(1)
       end
 
@@ -62,7 +59,7 @@ describe Admin::StudiesController do
 
       it "redirects to the created study" do
         post :create, {:study => valid_attributes}
-        response.should redirect_to(Study.last)
+        response.should redirect_to( [:admin, Study.last] )
       end
     end
 
@@ -101,7 +98,7 @@ describe Admin::StudiesController do
 
       it "redirects to the study" do
         put :update, {:id => study.to_param, :study => valid_attributes}
-        response.should redirect_to(study)
+        response.should redirect_to( [:admin, study] )
       end
     end
 

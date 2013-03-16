@@ -19,7 +19,7 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :audio_url, :backlink, :description, :position, :study, :title, :video_url
+  attr_accessible :audio_url, :backlink, :description, :position, :study, :study_id, :title, :video_url
   acts_as_list scope: :study 
   
   # http://sunspot.github.com/

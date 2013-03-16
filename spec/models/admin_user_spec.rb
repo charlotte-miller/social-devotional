@@ -33,4 +33,9 @@ describe AdminUser do
   it "should build from factory" do
     lambda { create(:admin_user) }.shoud_not raise_error
   end
+  
+  it { should delegate_method(:name).to(:user) }
+  it { should delegate_method(:first_name).to(:user) }
+  it { should delegate_method(:last_name).to(:user) }
+  it { should delegate_method(:profile_image).to(:user) }
 end

@@ -13,7 +13,6 @@ class Admin::StudiesController < Admin::BaseController
         Study.all
       end
     )
-    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @studies }
@@ -54,7 +53,7 @@ class Admin::StudiesController < Admin::BaseController
 
     respond_to do |format|
       if @study.save
-        format.html { redirect_to @study, notice: 'Study was successfully created.' }
+        format.html { redirect_to [:admin, @study], notice: 'Study was successfully created.' }
         format.json { render json: @study, status: :created, location: @study }
       else
         format.html { render action: "new" }
@@ -70,7 +69,7 @@ class Admin::StudiesController < Admin::BaseController
 
     respond_to do |format|
       if @study.update_attributes(params[:study])
-        format.html { redirect_to @study, notice: 'Study was successfully updated.' }
+        format.html { redirect_to [:admin, @study], notice: 'Study was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,7 +85,7 @@ class Admin::StudiesController < Admin::BaseController
     @study.destroy
 
     respond_to do |format|
-      format.html { redirect_to studies_index_url }
+      format.html { redirect_to admin_studies_url }
       format.json { head :no_content }
     end
   end

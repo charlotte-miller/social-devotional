@@ -41,10 +41,9 @@ class Admin::LessonsController < Admin::BaseController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(params[:lesson])
-
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully created.' }
         format.json { render json: @lesson, status: :created, location: @lesson }
       else
         format.html { render action: "new" }
@@ -60,7 +59,7 @@ class Admin::LessonsController < Admin::BaseController
 
     respond_to do |format|
       if @lesson.update_attributes(params[:lesson])
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +75,7 @@ class Admin::LessonsController < Admin::BaseController
     @lesson.destroy
 
     respond_to do |format|
-      format.html { redirect_to lessons_url }
+      format.html { redirect_to admin_lessons_url }
       format.json { head :no_content }
     end
   end

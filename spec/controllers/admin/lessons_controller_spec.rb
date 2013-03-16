@@ -3,16 +3,17 @@ require 'spec_helper'
 describe Admin::LessonsController do
   login_admin_user
   
-  let(:study) { create(:study) }
-  let(:lesson){ create(:lesson)}
-  let(:valid_attributes){ attributes_for(:lesson) }
+  let!(:study) { create(:study) }
+  let!(:lesson){ create(:lesson, study:study)}
+  let(:valid_attributes){ attributes_for(:lesson).merge( study_id:study.id) }
   
   describe "GET index" do
     before(:each) { get :index, {} }
     
     it { should respond_with(:success) }
     it "assigns all lessons as @lessons" do
-      assigns(:lessons).should eq([lesson])
+      should assign_to(:lessons).with([lesson])
+      # assigns(:lessons).should eq([lesson])
     end
   end
 
@@ -59,7 +60,7 @@ describe Admin::LessonsController do
 
       it "redirects to the created lesson" do
         post :create, {:lesson => valid_attributes}
-        response.should redirect_to(Lesson.last)
+        response.should redirect_to([:admin, Lesson.last])
       end
     end
 
@@ -98,7 +99,7 @@ describe Admin::LessonsController do
 
       it "redirects to the lesson" do
         put :update, {:id => lesson.to_param, :lesson => valid_attributes}
-        response.should redirect_to(lesson)
+        response.should redirect_to([:admin, lesson])
       end
     end
 
@@ -128,7 +129,7 @@ describe Admin::LessonsController do
 
     it "redirects to the lessons list" do
       delete :destroy, {:id => lesson.to_param}
-      response.should redirect_to(lessons_url)
+      response.should redirect_to(admin_lessons_url)
     end
   end
 
