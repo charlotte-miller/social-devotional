@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
 
   create_table "questions", :force => true do |t|
     t.integer  "user_id",                      :null => false
-    t.integer  "admin_user"
+    t.integer  "admin_user_id"
     t.integer  "source_id",                    :null => false
     t.string   "source_type",                  :null => false
     t.text     "text"

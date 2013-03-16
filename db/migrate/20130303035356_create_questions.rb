@@ -2,7 +2,7 @@ class CreateQuestions < ActiveRecord::Migration
   def change
     create_table :questions do |t|
       t.integer :user_id,        null:false
-      t.integer :admin_user
+      t.integer :admin_user_id
       t.integer :source_id,      null:false
       t.string  :source_type,    null:false
       t.text    :text#,          null:false
