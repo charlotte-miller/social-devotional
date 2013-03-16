@@ -37,5 +37,6 @@ FactoryGirl.define do
     sequence(   :email)  {|n| "example@domain#{n}.com"}
     password    'super-secret'
     password_confirmation  {|me| me.password }
+    confirmed_at Time.now - 1.minute
   end
 end

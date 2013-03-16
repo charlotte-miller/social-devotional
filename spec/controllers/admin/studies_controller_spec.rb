@@ -1,51 +1,53 @@
 require 'spec_helper'
 
-
 describe Admin::StudiesController do
-
-  def valid_attributes
-    { "slug" => "MyString" }
-  end
-
-  before(:each) do
-    @request.env["devise.mapping"] = Devise.mappings[:admin]
-    @admin_user = create(:admin_user)
-    sign_in @admin_user
-  end
+  login_admin_user
+  
+  let!(:podcast){ build_stubbed(:podcast) }
+  let!(:study){ create(:study, podcast:podcast) }
+  let(:valid_attributes){ attributes_for(:study).merge({ podcast:podcast }) }
   
   describe "GET index" do
+    before(:each) { get :index, {} }
+    
+    it { should respond_with(:success) }
+    
     it "assigns all studies as @studies" do
-      studies = Study.create! valid_attributes
-      get :index, {}
-      assigns(:studies).should eq([studies])
+      assigns(:studies).should eq([study])
     end
   end
 
   describe "GET show" do
+    before(:each) { get :show, {:id => study.to_param} }
+    
+    it { should respond_with(:success) }
+    
     it "assigns the requested study as @study" do
-      study = Study.create! valid_attributes
-      get :show, {:id => study.to_param}
       assigns(:study).should eq(study)
     end
   end
 
   describe "GET new" do
+    before(:each) { get :new, {} }
+    
+    it { should respond_with(:success) }
+    
     it "assigns a new study as @study" do
-      get :new, {}
       assigns(:study).should be_a_new(Study)
     end
   end
 
   describe "GET edit" do
+    it { should respond_with(:success) }
+    
     it "assigns the requested study as @study" do
-      study = Study.create! valid_attributes
       get :edit, {:id => study.to_param}
       assigns(:study).should eq(study)
     end
   end
 
   describe "POST create" do
-    describe "with valid params" do
+    describe "with valid params" do    
       it "creates a new Study" do
         expect {
           post :create, {:study => valid_attributes}
@@ -82,9 +84,8 @@ describe Admin::StudiesController do
   end
 
   describe "PUT update" do
-    describe "with valid params" do
+    describe "with valid params" do    
       it "updates the requested study" do
-        study = Study.create! valid_attributes
         # Assuming there are no other study in the database, this
         # specifies that the Study created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -94,21 +95,19 @@ describe Admin::StudiesController do
       end
 
       it "assigns the requested study as @study" do
-        study = Study.create! valid_attributes
         put :update, {:id => study.to_param, :study => valid_attributes}
         assigns(:study).should eq(study)
       end
 
       it "redirects to the study" do
-        study = Study.create! valid_attributes
         put :update, {:id => study.to_param, :study => valid_attributes}
         response.should redirect_to(study)
       end
     end
 
     describe "with invalid params" do
+            
       it "assigns the study as @study" do
-        study = Study.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
         put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
@@ -116,7 +115,6 @@ describe Admin::StudiesController do
       end
 
       it "re-renders the 'edit' template" do
-        study = Study.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
         put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
@@ -127,16 +125,14 @@ describe Admin::StudiesController do
 
   describe "DELETE destroy" do
     it "destroys the requested study" do
-      study = Study.create! valid_attributes
       expect {
         delete :destroy, {:id => study.to_param}
       }.to change(Study, :count).by(-1)
     end
 
     it "redirects to the study list" do
-      study = Study.create! valid_attributes
       delete :destroy, {:id => study.to_param}
-      response.should redirect_to(study_index_url)
+      response.should redirect_to(admin_studies_url) #index
     end
   end
 
