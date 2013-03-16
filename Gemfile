@@ -57,7 +57,7 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'guard-jasmine-headless-webkit'  # brew install qt --build-from-source
-  gem 'guard-spin'
+  gem 'guard-spin' # consider spring instead
   
   # Rspec
   gem 'rspec-rails', '~> 2.4'
