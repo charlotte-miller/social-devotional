@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
-#  admin_user    :integer
+#  admin_user_id :integer
 #  source_id     :integer          not null
 #  source_type   :string(255)      not null
 #  text          :text
@@ -19,7 +19,7 @@
 
 FactoryGirl.define do
   factory :question do  
-    approver
+    permanent_approver
     author
     source { FactoryGirl.create(:lesson) }
     text "Why did Jonnah try to avoid Gods command to 'go to Ninevah"

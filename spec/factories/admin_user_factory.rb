@@ -30,7 +30,7 @@
 
 
 FactoryGirl.define do
-  factory :admin_user, aliases: [:approver] do
+  factory :admin_user, aliases: [:approver, :permanent_approver] do
     first_name  'Fred'
     last_name   'Fredrickson'
     user        { FactoryGirl.build_stubbed(:user) } 

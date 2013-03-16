@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  user_id       :integer          not null
-#  admin_user    :integer
+#  admin_user_id :integer
 #  source_id     :integer          not null
 #  source_type   :string(255)      not null
 #  text          :text
@@ -18,9 +18,10 @@
 require 'spec_helper'
 
 describe Question do
-  it { should have_many :answers  } 
-  it { should belong_to( :source ) }
-  it { should belong_to( :author )}
+  it { should have_many  :answers  } 
+  it { should belong_to( :source             )}
+  it { should belong_to( :author             )}
+  it { should belong_to( :permanent_approver )}
   
   describe 'lesson' do
     context "source is a lesson" do
