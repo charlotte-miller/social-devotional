@@ -1,7 +1,7 @@
 class Admin::StudiesController < Admin::BaseController
 
-  # GET /studies?search=keyword
-  # GET /studies.json
+  # GET /admin/studies?search=keyword
+  # GET /admin/studies.json
   def index
     @studies = (
       if params[:search]
@@ -20,8 +20,8 @@ class Admin::StudiesController < Admin::BaseController
     end
   end
 
-  # GET /studies/1
-  # GET /studies/1.json
+  # GET /admin/studies/1
+  # GET /admin/studies/1.json
   def show
     @study = Study.find(params[:id])
 
@@ -31,8 +31,8 @@ class Admin::StudiesController < Admin::BaseController
     end
   end
 
-  # GET /studies/new
-  # GET /studies/new.json
+  # GET /admin/studies/new
+  # GET /admin/studies/new.json
   def new
     @study = Study.new
 
@@ -42,13 +42,13 @@ class Admin::StudiesController < Admin::BaseController
     end
   end
 
-  # GET /studies/1/edit
+  # GET /admin/studies/1/edit
   def edit
     @study = Study.find(params[:id])
   end
 
-  # POST /studies
-  # POST /studies.json
+  # POST /admin/studies
+  # POST /admin/studies.json
   def create
     @study = Study.new(params[:study])
 
@@ -63,8 +63,8 @@ class Admin::StudiesController < Admin::BaseController
     end
   end
 
-  # PUT /studies/1
-  # PUT /studies/1.json
+  # PUT /admin/studies/1
+  # PUT /admin/studies/1.json
   def update
     @study = Study.find(params[:id])
 
@@ -79,8 +79,8 @@ class Admin::StudiesController < Admin::BaseController
     end
   end
 
-  # DELETE /studies/1
-  # DELETE /studies/1.json
+  # DELETE /admin/studies/1
+  # DELETE /admin/studies/1.json
   def destroy
     @study = Study.find(params[:id])
     @study.destroy
