@@ -16,6 +16,12 @@ describe QuestionsController do
   end
 
   describe "GET index" do
+    it "loads" do
+      get :index, {}, valid_session
+      should respond_with(:success)
+    end
+    
+    
     it "assigns all questions as @questions" do
       question = create(:question, valid_attributes)
       get :index, {}, valid_session
@@ -24,6 +30,11 @@ describe QuestionsController do
   end
 
   describe "GET show" do
+    it "loads" do
+      get :show, {}, valid_session
+      should respond_with(:success)
+    end
+    
     it "assigns the requested question as @question" do
       question = create(:question, valid_attributes)
       get :show, {:id => question.to_param}, valid_session
@@ -32,6 +43,11 @@ describe QuestionsController do
   end
 
   describe "GET new" do
+    it "loads" do
+      get :new, {}, valid_session
+      should respond_with(:success)
+    end
+    
     it "assigns a new question as @question" do
       get :new, {}, valid_session
       assigns(:question).should be_a_new(Question)

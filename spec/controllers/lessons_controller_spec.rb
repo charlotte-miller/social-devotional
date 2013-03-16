@@ -13,8 +13,14 @@ describe LessonsController do
   def valid_session
     {}
   end
-
+  
   describe "GET index" do
+    it "loads" do
+      get :index, {}, valid_session
+      should respond_with(:success)
+    end
+    
+    
     it "assigns all lessons as @lessons" do
       lesson = Lesson.create! valid_attributes
       get :index, {study_id: study.id}, valid_session
@@ -27,6 +33,12 @@ describe LessonsController do
   end
 
   describe "GET show" do
+    it "loads" do
+      get :show, {}, valid_session
+      should respond_with(:success)
+    end
+    
+    
     it "assigns the requested lesson as @lesson" do
       lesson = Lesson.create! valid_attributes
       get :show, {study_id: study.id, :id => lesson.to_param}, valid_session

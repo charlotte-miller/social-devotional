@@ -16,6 +16,11 @@ describe MeetingsController do
   end
 
   describe "GET index" do
+    it "loads" do
+      get :index, {}, valid_session
+      should respond_with(:success)
+    end
+    
     it "assigns all meetings as @meetings" do
       meeting = Meeting.create! valid_attributes
       get :index, {:group_id => group.id}, valid_session
@@ -24,6 +29,11 @@ describe MeetingsController do
   end
 
   describe "GET show" do
+    it "loads" do
+      get :show, {}, valid_session
+      should respond_with(:success)
+    end
+    
     it "assigns the requested meeting as @meeting" do
       meeting = Meeting.create! valid_attributes
       get :show, {:group_id => group.id, :id => meeting.to_param}, valid_session
@@ -32,6 +42,11 @@ describe MeetingsController do
   end
 
   describe "GET new" do
+    it "loads" do
+      get :new, {}, valid_session
+      should respond_with(:success)
+    end
+    
     it "assigns a new meeting as @meeting" do
       get :new, {:group_id => group.id}, valid_session
       assigns(:meeting).should be_a_new(Meeting)
