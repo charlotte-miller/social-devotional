@@ -1,102 +1,236 @@
 require 'spec_helper'
 
 describe QuestionsController do
+  login_user
+  
+  let!(:question)         { create(:question) }
+  let(:valid_attributes) { attributes_for(:question).merge(author: current_user) }
 
-  def valid_attributes
-    {text: 'Why did Jonnah try to avoid Gods command to and go to Ninevah'}
-    # author = create(:author)
-    # FactoryGirl.attributes_for(:question).merge(author: author)
-  end
+  describe 'from Lesson' do
+    let!(:study) { create(:study)}
+    let(:lesson) { create(:lesson, study_id:study.id) }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # QuestionsController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
-
-  describe "GET index" do
-    it "loads" do
-      get :index, {}, valid_session
-      should respond_with(:success)
-    end
     
-    
-    it "assigns all questions as @questions" do
-      question = create(:question, valid_attributes)
-      get :index, {}, valid_session
-      assigns(:questions).should eq([question])
-    end
-  end
-
-  describe "GET show" do
-    it "loads" do
-      get :show, {}, valid_session
-      should respond_with(:success)
-    end
-    
-    it "assigns the requested question as @question" do
-      question = create(:question, valid_attributes)
-      get :show, {:id => question.to_param}, valid_session
-      assigns(:question).should eq(question)
-    end
-  end
-
-  describe "GET new" do
-    it "loads" do
-      get :new, {}, valid_session
-      should respond_with(:success)
-    end
-    
-    it "assigns a new question as @question" do
-      get :new, {}, valid_session
-      assigns(:question).should be_a_new(Question)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested question as @question" do
-      question = create(:question, valid_attributes)
-      get :edit, {:id => question.to_param}, valid_session
-      assigns(:question).should eq(question)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Question" do
-        expect {
-          post :create, {:question => valid_attributes}, valid_session
-        }.to change(Question, :count).by(1)
+    describe "GET index" do
+      it "loads" do
+        get :index, {study_id:study.id, lesson_id:lesson.id}
+        should respond_with(:success)
       end
 
-      it "assigns a newly created question as @question" do
-        post :create, {:question => valid_attributes}, valid_session
-        assigns(:question).should be_a(Question)
-        assigns(:question).should be_persisted
+      it "requires authentication" do
+        get :index, {study_id:study.id, lesson_id:lesson.id}, {}#clears current_user
+        should redirect_to '/signin'
       end
 
-      it "redirects to the created question" do
-        post :create, {:question => valid_attributes}, valid_session
-        response.should redirect_to(Question.last)
+      it "assigns all questions as @questions" do
+        get :index, {study_id:study.id, lesson_id:lesson.id}
+        assigns(:questions).should eq([question])
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved question as @question" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Question.any_instance.stub(:save).and_return(false)
-        post :create, {:question => { "lesson_id" => "invalid value" }}, valid_session
+    describe "GET show" do
+      it "loads" do
+        get :show, {study_id:study.id, lesson_id:lesson.id, :id => question.to_param}
+        should respond_with(:success)
+      end
+
+      it "requires authentication" do
+        get :show, {study_id:study.id, lesson_id:lesson.id, :id => question.to_param}, {}#clears current_user
+        should redirect_to '/signin'
+      end
+
+      it "assigns the requested question as @question" do
+        get :show, {study_id:study.id, lesson_id:lesson.id, :id => question.to_param}
+        assigns(:question).should eq(question)
+      end
+    end
+
+    describe "GET new" do
+      it "loads" do
+        get :new, {study_id:study.id, lesson_id:lesson.id}
+        should respond_with(:success)
+      end
+
+      it "requires authentication" do
+        get :index, {study_id:study.id, lesson_id:lesson.id}, {}#clears current_user
+        should redirect_to '/signin'
+      end
+
+      it "assigns a new question as @question" do
+        get :new, {study_id:study.id, lesson_id:lesson.id}
         assigns(:question).should be_a_new(Question)
       end
+    end
 
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Question.any_instance.stub(:save).and_return(false)
-        post :create, {:question => { "lesson_id" => "invalid value" }}, valid_session
-        response.should render_template("new")
+    describe "POST create" do
+      
+      describe "with valid params" do
+        it "requires authentication" do
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}, {}#clears current_user
+          should redirect_to '/signin'
+        end
+        
+        it "creates a new Question" do
+          expect {
+            post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}
+          }.to change(Question, :count).by(1)
+        end
+
+        it "assigns a newly created question as @question" do
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}
+          assigns(:question).should be_a(Question)
+          assigns(:question).should be_persisted
+        end
+
+        it "redirects to the created question" do
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}
+          response.should redirect_to(Question.last)
+        end
+      end
+
+      describe "with invalid params" do
+        it "requires authentication" do
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => { "text" => "" }}, {}#clears current_user
+          should redirect_to '/signin'
+        end
+        
+        it "assigns a newly created but unsaved question as @question" do
+          # Trigger the behavior that occurs when invalid params are submitted
+          Question.any_instance.stub(:save).and_return(false)
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => { "text" => "" }}
+          assigns(:question).should be_a_new(Question)
+        end
+
+        it "re-renders the 'new' template" do
+          # Trigger the behavior that occurs when invalid params are submitted
+          Question.any_instance.stub(:save).and_return(false)
+          post :create, {study_id:study.id, lesson_id:lesson.id, :question => { "text" => "" }}
+          response.should render_template("new")
+        end
       end
     end
+
+
   end
 
+  describe 'from Group' do
+    let!(:group)   { create(:group) }
+    let!(:meeting) { create(:meeting) }
+      
+    describe "GET index" do
+      it "loads" do
+        get :index, {group_id:group.id, meeting_id:meeting.id}
+        should respond_with(:success)
+      end
+
+      it "requires authentication" do
+        get :index, {group_id:group.id, meeting_id:meeting.id}, {}#clears current_user
+        should redirect_to '/signin'
+      end
+
+      it "assigns all questions as @questions" do
+        get :index, {group_id:group.id, meeting_id:meeting.id}
+        assigns(:questions).should eq([question])
+      end
+    end
+
+    describe "GET show" do
+      it "loads" do
+        get :show, {group_id:group.id, meeting_id:meeting.id, :id => question.to_param}
+        should respond_with(:success)
+      end
+
+      it "requires authentication" do
+        get :show, {group_id:group.id, meeting_id:meeting.id, :id => question.to_param}, {}#clears current_user
+        should redirect_to '/signin'
+      end
+      
+      it "assigns the requested question as @question" do
+        get :show, {group_id:group.id, meeting_id:meeting.id, :id => question.to_param}
+        assigns(:question).should eq(question)
+      end
+    end
+
+    describe "GET new" do
+      it "loads" do
+        get :new, {group_id:group.id, meeting_id:meeting.id}
+        should respond_with(:success)
+      end
+      
+      it "requires authentication" do
+        get :new, {group_id:group.id, meeting_id:meeting.id}, {}#clears current_user
+        should redirect_to '/signin'
+      end
+
+      it "assigns a new question as @question" do
+        get :new, {group_id:group.id, meeting_id:meeting.id}
+        assigns(:question).should be_a_new(Question)
+      end
+    end
+
+    describe "POST create" do
+      describe "with valid params" do
+        it "requires authentication" do
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}, {}#clears current_user
+          should redirect_to '/signin'
+        end
+        
+        it "creates a new Question" do
+          expect {
+            post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}
+          }.to change(Question, :count).by(1)
+        end
+
+        it "assigns a newly created question as @question" do
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}
+          assigns(:question).should be_a(Question)
+          assigns(:question).should be_persisted
+        end
+
+        it "redirects to the created question" do
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}
+          response.should redirect_to(Question.last)
+        end
+      end
+
+      describe "with invalid params" do
+        it "requires authentication" do
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => {"text" => "" } }, {}#clears current_user
+          should redirect_to '/signin'
+        end
+        
+        it "assigns a newly created but unsaved question as @question" do
+          # Trigger the behavior that occurs when invalid params are submitted
+          Question.any_instance.stub(:save).and_return(false)
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => { "text" => "" }}
+          assigns(:question).should be_a_new(Question)
+        end
+
+        it "re-renders the 'new' template" do
+          # Trigger the behavior that occurs when invalid params are submitted
+          Question.any_instance.stub(:save).and_return(false)
+          post :create, {group_id:group.id, meeting_id:meeting.id, :question => { "text" => "" }}
+          response.should render_template("new")
+        end
+      end
+    end
+
+
+  end
+  
+  describe 'private methods' do
+    describe 'before_filters' do
+      
+      describe '#current_source' do
+        pending
+      end
+
+      describe '#merge_author_and_source' do
+        pending
+      end
+      
+    end
+    
+    #other private methods
+  end
 end

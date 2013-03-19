@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
-  include SourceableControllers 
+  extend ActiveSupport::Memoizable
+  include SourceableControllers
   
+  before_filter :authenticate_user!
   before_filter :merge_author_and_source
   
   # GET /questions
@@ -39,6 +41,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
+    puts params.inspect
     @question = Question.new(params[:question])
 
     respond_to do |format|
@@ -96,10 +99,10 @@ private
     params[:source] = current_source
   end
   
-  # def current_source
-  #   case params
-  #     when [:lesson_id]   then Lesson.find(  params[:lesson_id]  )
-  #     when [:meeting_id]  then Meeting.find( params[:meeting_id] )
-  #   end   
-  # end
+  memoize :current_source
+  def current_source
+    Lesson.find(  params.delete(:lesson_id)  ) && return if params[:lesson_id]
+    Meeting.find( params.delete(:meeting_id) ) && return if params[:meeting_id]
+  end
+  
 end

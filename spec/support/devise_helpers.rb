@@ -1,4 +1,5 @@
 def login_user
+  let(:current_user){ @user }
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:user]
     sign_in @user = create(:user)
