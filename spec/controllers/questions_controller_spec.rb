@@ -9,7 +9,6 @@ describe QuestionsController do
   describe 'from Lesson' do
     let!(:study) { create(:study)}
     let(:lesson) { create(:lesson, study_id:study.id) }
-
     
     describe "GET index" do
       it "loads" do
@@ -84,7 +83,7 @@ describe QuestionsController do
 
         it "redirects to the created question" do
           post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}
-          response.should redirect_to(Question.last)
+          response.should redirect_to(assigns(:question))
         end
       end
 
@@ -110,7 +109,12 @@ describe QuestionsController do
       end
     end
 
-
+    describe '#current_source' do
+      it "should be a Lesson" do
+        get :index, {study_id:study.id, lesson_id:lesson.id}
+        controller.send(:current_source).should eql lesson
+      end 
+    end
   end
 
   describe 'from Group' do
@@ -189,7 +193,7 @@ describe QuestionsController do
 
         it "redirects to the created question" do
           post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}
-          response.should redirect_to(Question.last)
+          response.should redirect_to(assigns(:question))
         end
       end
 
@@ -215,22 +219,29 @@ describe QuestionsController do
       end
     end
 
-
+    describe '#current_source' do
+      it "should be a Meeting" do
+        get :index, {group_id:group.id, meeting_id:meeting.id}
+        controller.send(:current_source).should eql meeting 
+      end
+      
+      it "MUST belong to the current_user" do
+        pending "something like: return current_user.meetings.find( params.delete(:meeting_id) ) if params[:meeting_id]"
+        # could also use something like:
+        # current_user.group_memberships.map(&:group_id).include? params[:group_id] 
+        # but we should check the users rights to a given meeting not just group :(
+      end
+    end
   end
   
-  describe 'private methods' do
-    describe 'before_filters' do
-      
-      describe '#current_source' do
-        pending
-      end
-
-      describe '#merge_author_and_source' do
-        pending
-      end
-      
-    end
-    
-    #other private methods
-  end
+  # describe 'private methods' do
+  #   describe 'before_filters' do
+  #     
+  #     describe '#merge_author_and_source' do
+  #       pending
+  #     end
+  #     
+  #   end
+  #   
+  # end
 end
