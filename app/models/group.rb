@@ -19,23 +19,30 @@ class Group < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible :desription, :name, :is_public, :state, :meets_every_days
   attr_accessible :members, :members_attributes,  as: 'leader'
-    
+  
   
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
   has_one  :current_meeting,    :conditions => {state: 'current'},  :class_name => "Meeting", foreign_key: 'group_id'
   has_many :meetings,           :dependent => :destroy,             :class_name => "Meeting", foreign_key: 'group_id'
-  has_many :group_memberships,  :dependent => :destroy
-    accepts_nested_attributes_for :group_memberships, allow_destroy: true, reject_if: lambda { !(attributes[:members_attributes].try([], :user_id)) }
-  has_many :members,            :through => :group_memberships# ,     inverse_of: 'group'
   has_many :questions,          as: 'source'
   
+  has_many :members,            :through => :group_memberships, source:'member'# ,     inverse_of: 'group'  
+  # has_many :leaders,            :through => :group_memberships, source: 'member', conditions: 'group_memberships.role_level > 1'
+  has_many :group_memberships,  :dependent => :destroy
+  accepts_nested_attributes_for :group_memberships, 
+                                allow_destroy: true, 
+                                reject_if: lambda { !(attributes[:members_attributes].try([], :user_id)) }
+  
+  
+  def leaders; members.where('group_memberships.role_level > 1') ;end
   
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :name, :desription, :state
+  
   
   
   # ---------------------------------------------------------------------------------
@@ -68,6 +75,5 @@ class Group < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   
-  delegate :members=,  :to => 'group_memberships'
-
+  
 end

@@ -16,7 +16,7 @@
 FactoryGirl.define do
   factory :group_membership do
     group
-    user
+    member
     is_public true
   end
 end

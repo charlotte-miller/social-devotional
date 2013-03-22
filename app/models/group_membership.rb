@@ -23,7 +23,7 @@ class GroupMembership < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :group# ,                          inverse_of: 'group_memberships'
-  belongs_to :member, :class_name => "user"# ,  inverse_of: 'group_memberships'
+  belongs_to :member, :class_name => "User", foreign_key: 'user_id'# ,  inverse_of: 'group_memberships'
   # belongs_to :invitation, :class_name => "Message"
   # alias_method :invitation, :request
   
@@ -51,8 +51,18 @@ class GroupMembership < ActiveRecord::Base
   
   
   # ---------------------------------------------------------------------------------
+  # Callbacks
+  # ---------------------------------------------------------------------------------
+  before_create :keep_private_groups_private
+
+  # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
   
+private
+  def keep_private_groups_private
+    # binding.pry
+    # self.is_public &&= self.group.is_public
+  end
   
 end

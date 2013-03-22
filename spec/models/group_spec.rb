@@ -20,15 +20,13 @@ describe Group do
   it { should have_many( :group_memberships )}
   it { should have_many( :members ).through( :group_memberships ) } #users
   it { should have_many( :questions ) } 
-  it { should delegate_method(:meetings=).to(:group_memberships) }
+  # it { should delegate_method(:meetings=).to(:group_memberships) }
+  it "should build from factory" do
+    lambda { create(:group) }.should_not raise_error
+    lambda { create(:group_w_member) }.should_not raise_error
+  end
   
-  
-  describe 'a public group' do
-    it "cannot be public if the group is private" do
-      group = create(:group, is_public: false)
-      lambda { create(:group_membership, is_public:true) }.should raise_exception #validation error
-    end
-    
+  describe 'a public group' do    
     it ".publicly_searchable scope filters by public " do
       sql = Group.publicly_searchable.to_sql
       sql.should match(/`is_public` = 1/)

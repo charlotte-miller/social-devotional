@@ -15,16 +15,18 @@
 
 
 FactoryGirl.define do
-  factory :group do
-    ignore do
-      member  nil
-      members lambda {|f| [f.member].compact}
-    end
-    
+  factory :group do  
     state 'open'
     name  "Bible in a Year!"
     desription "We're going to read through the Bible in one year, and discuss weekly."
     meets_every_days 7
     is_public true
+  end
+  
+  factory :group_w_member, parent: :group do
+    ignore do
+      new_member {FactoryGirl.create(:member)}
+    end
+    members { [new_member] }
   end
 end

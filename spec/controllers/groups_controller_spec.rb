@@ -1,34 +1,29 @@
 require 'spec_helper'
 
-describe GroupsController do
-  
-  
+describe GroupsController do  
   let!(:group){ create(:group) }
+  let(:valid_attributes) { attributes_for(:group) }
 
-  def valid_attributes
-    { "name"        => "Weekly Matthew Study",
-      "desription" => 'Go throught the book of Matthew using the inductive method'
-    } 
-  end
-  
   describe 'new or logged-out user' do
     
     describe "GET index" do
       it "loads" do
         get :index, {}
+        should assign_to(:groups)
         should respond_with(:success)
       end
 
 
       it "assigns all groups as @groups" do
         get :index, {}
+        should assign_to(:groups)
         assigns(:groups).should eq([group])
       end
     end
 
     describe "GET show" do
       it "loads" do
-        get :show, {}
+        get :show, { :id => group.to_param }
         should respond_with(:success)
       end
 
@@ -42,27 +37,27 @@ describe GroupsController do
     describe "trying to access logged_in content" do
       it ":new redirects to :index" do
         get :new, {}
-        should redirect_to(groups_url)
+        should redirect_to(new_user_session_url)
       end
       
       it ":edit redirects to :index" do
-        get :edit, {}
-        should redirect_to(groups_url)
+        get :edit, { :id => group.to_param }
+        should redirect_to(new_user_session_url)
       end
       
       it ":create redirects to :index" do
         post :create, {:group => valid_attributes}
-        should redirect_to(groups_url)
+        should redirect_to(new_user_session_url)
       end
       
       it ":update redirects to :index" do
         put :update, {:id => group.to_param, :group => { "name" => "MyString" }}
-        should redirect_to(groups_url)
+        should redirect_to(new_user_session_url)
       end
       
       it ":destroy redirects to :index" do
         delete :destroy, {:id => group.to_param}
-        should redirect_to(groups_url)
+        should redirect_to(new_user_session_url)
       end
     end
 
@@ -70,6 +65,7 @@ describe GroupsController do
   
   describe 'logged-in user' do
     login_user
+    before(:each){  group.members << current_user }
     
     describe "GET index" do
       it "loads" do
@@ -90,7 +86,7 @@ describe GroupsController do
 
     describe "GET show" do
       it "loads" do
-        get :show, {}
+        get :show, { :id => group.to_param }
         should respond_with(:success)
       end
 
@@ -120,7 +116,7 @@ describe GroupsController do
 
     describe "GET edit" do
       it "loads" do
-        get :edit, {}
+        get :edit, { :id => group.to_param }
         should respond_with(:success)
       end
 
@@ -138,6 +134,7 @@ describe GroupsController do
     describe "POST create" do
       it "sets current_user as 'leader'" do
         pending
+        # assigns(:group).leader.should eql current_user
       end
       
       describe "with valid params" do
@@ -250,22 +247,28 @@ describe GroupsController do
       
       describe 'logged in users' do
         login_user
+        # before(:each){  group.members << current_user }
         
         it "scopes @groups to the current user" do
-          not_user_group = create(:group)
-          user_group     = create(:group, member:@user)
-          helper.params[:id] = user_group.id
+          not_user_group = group
+          user_group     = create(:group_w_member, new_member:@user)
+          
+          controller.params[:id] = user_group.id
+          controller.send( :safe_select_group )
+          
           should assign_to(:groups)
-          assigns(:group).should     include(user_group)
-          assigns(:group).should_not include(not_user_group) 
+          assigns(:groups).should     include(user_group)
+          assigns(:groups).should_not include(not_user_group) 
 
         end
         
         it "prevents horizontal privilage escilation from params[:id]" do
-          not_user_group = create(:group)
-          user_group     = create(:group, member:@user)
+          not_user_group = group
+          user_group     = create(:group_w_member, new_member:@user)
           
-          helper.params[:id] = create(:group).id
+          controller.params[:id] = user_group
+          controller.send( :safe_select_group )
+          
           should assign_to(:groups).with([user_group])
           should assign_to(:group).with(user_group)
         end

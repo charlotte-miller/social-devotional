@@ -1,19 +1,19 @@
 class GroupsController < ApplicationController
-  before_filter :authenticate_user!, except:[:index, :show]
-  before_filter :safe_select_group, except:[:new, :create]
+  before_filter :authenticate_user!,  except:[:index, :show]
+  before_filter :safe_select_group,   except:[:new, :create]
   
   # GET /groups
   # GET /groups.json
   def index
     if user_signed_in?
-      template= 'index.html.erb'
+      template= 'index'
     else
       @groups = Group.publicly_searchable.all
-      template= 'public_index.html.erb'
+      template= 'public_index'
     end
 
     respond_to do |format|
-      format.html template:template 
+      format.html { render template: "groups/#{template}" }
       format.json { render json: @groups }
     end
   end
@@ -22,13 +22,13 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     if user_signed_in?
-      template= 'show.html.erb'
+      template= 'show'
     else
-      @group = Group.publicly_searchable.all
-      template= 'public_show.html.erb'
+      @group = Group.publicly_searchable.find( params[:id] )
+      template= 'public_show'
     end
     respond_to do |format|
-      format.html template:template 
+      format.html { render template: "groups/#{template}" }
       format.json { render json: @group }
     end
   end
@@ -96,6 +96,6 @@ private
   def safe_select_group
     return unless user_signed_in?
     @groups = current_user.groups
-    @group = @groups.where(id:params[:id])
+    @group = @groups.where(id: params[:id]).first if params[:id]
   end
 end

@@ -14,14 +14,18 @@
 require 'spec_helper'
 
 describe GroupMembership do
-  it { should belong_to( :member ).class_name( :user )}
+  it { should belong_to( :member ).class_name( 'User' )}
   it { should belong_to :group }
+  
+  it "should build from factory" do
+    lambda { create(:group_membership) }.should_not raise_error
+  end
   
   
   describe 'a public membership' do
     it "cannot be public if the group is private" do
       @group = create(:group, is_public: false)
-      lambda { create(:group_membership, is_public:true, group:@group) }.should raise_exception #validation error
+      create(:group_membership, is_public:true, group:@group).is_public.should be_false #validation error
     end
     
     it ".is_public scope filters by is_public " do
