@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "studies/index" do
+describe "admin/studies/index" do
   before(:each) do
     assign(:studies, [
       stub_model(Study,

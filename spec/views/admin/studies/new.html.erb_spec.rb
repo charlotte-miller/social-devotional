@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "studies/new" do
+describe "admin/studies/new" do
   before(:each) do
     assign(:study, stub_model(Study,
       :slug => "MyString",
