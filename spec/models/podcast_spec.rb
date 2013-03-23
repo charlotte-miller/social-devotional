@@ -17,6 +17,10 @@ describe Podcast do
   it { should belong_to :church }
   it { should have_many :studies }
   
+  it "should build from factory" do
+    lambda { create(:podcast) }.should_not raise_error
+  end
+  
   describe '.pull_updates()' do
     
     it "should create lessons from the podcast" do

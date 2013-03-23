@@ -20,7 +20,7 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :description, :ref_link, :slug, :title, :video_url, :podcast
+  attr_accessible :description, :ref_link, :slug, :title, :video_url, :podcast, :podcast_id
   friendly_id :title
 
   # http://sunspot.github.com/

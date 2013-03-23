@@ -17,6 +17,12 @@
 require 'spec_helper'
 
 describe Lesson do
+  it { should belong_to( :study )}
+  it { should have_many( :questions )}
+  
+  it "builds from factory" do
+    lambda { create(:lesson) }.should_not raise_error
+  end
   
   describe 'scopes' do
     describe 'for_study(:study_id)' do

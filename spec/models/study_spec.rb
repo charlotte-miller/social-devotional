@@ -17,5 +17,13 @@
 require 'spec_helper'
 
 describe Study do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:lessons) }
+  it { should belong_to(:podcast) }
+  it { should have_one(:church).through(:podcast) }
+    
+  it "should build from factory" do
+    lambda { create(:study) }.should_not raise_error
+  end
+  
+  
 end

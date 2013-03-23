@@ -20,8 +20,8 @@ class Podcast < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :church
-  has_many :studies
+  belongs_to :church#, :inverse_of => :podcast
+  has_many :studies#,  :inverse_of => :podcast
 
 
   # ---------------------------------------------------------------------------------

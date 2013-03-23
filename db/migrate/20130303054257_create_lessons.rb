@@ -1,7 +1,7 @@
 class CreateLessons < ActiveRecord::Migration
   def change
     create_table :lessons do |t|
-      t.integer  :study_id,    null: false
+      t.integer  :study_id,     null: false
       t.integer  :position,     default: 0
       t.string   :title,        null: false
       t.text     :description

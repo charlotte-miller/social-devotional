@@ -16,7 +16,7 @@ require 'spec_helper'
 describe BlockRequest do
   
   it { should belong_to( :requester ).class_name('User')    }
-  it { should belong_to( :approver ).class_name('AdminUser  ')}
+  it { should belong_to( :approver ).class_name('AdminUser')}
   it { should belong_to :source }
   
 end

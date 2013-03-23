@@ -31,7 +31,7 @@ require 'spec_helper'
 
 describe AdminUser do
   it "should build from factory" do
-    lambda { create(:admin_user) }.shoud_not raise_error
+    lambda { create(:admin_user) }.should_not raise_error
   end
   
   it { should delegate_method(:name).to(:user) }
