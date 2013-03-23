@@ -53,7 +53,7 @@ class GroupMembership < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Callbacks
   # ---------------------------------------------------------------------------------
-  before_create :keep_private_groups_private
+  before_validation :keep_private_groups_private
 
   # ---------------------------------------------------------------------------------
   # Methods
@@ -61,8 +61,8 @@ class GroupMembership < ActiveRecord::Base
   
 private
   def keep_private_groups_private
-    # binding.pry
-    # self.is_public &&= self.group.is_public
+    self.is_public &&= group.is_public
+    self
   end
   
 end

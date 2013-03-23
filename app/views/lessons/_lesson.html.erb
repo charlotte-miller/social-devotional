@@ -1,10 +1,10 @@
-<dt><strong><%= Lesson.human_attribute_name(:title) %>:</strong></dt>
-<dd><%= @lesson.title %></dd>
-<dt><strong><%= Lesson.human_attribute_name(:description) %>:</strong></dt>
-<dd><%= @lesson.description %></dd>
-<dt><strong><%= Lesson.human_attribute_name(:backlink) %>:</strong></dt>
-<dd><%= @lesson.backlink %></dd>
-<dt><strong><%= Lesson.human_attribute_name(:video_url) %>:</strong></dt>
-<dd><%= @lesson.video_url %></dd>
-<dt><strong><%= Lesson.human_attribute_name(:audio_url) %>:</strong></dt>
-<dd><%= @lesson.audio_url %></dd>
+<dt><strong>Title:</strong></dt>
+<dd><%= link_to lesson.title, study_lesson_path( @study, lesson ) %></dd>
+<dt><strong>Description:</strong></dt>
+<dd><%= lesson.description %></dd>
+<dt><strong>Backlink:</strong></dt>
+<dd><%= lesson.backlink %></dd>
+<dt><strong>Video URL:</strong></dt>
+<dd><%= lesson.video_url %></dd>
+<dt><strong>Audio URL:</strong></dt>
+<dd><%= lesson.audio_url %></dd>

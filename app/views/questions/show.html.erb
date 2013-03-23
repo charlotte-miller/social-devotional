@@ -1,21 +1,16 @@
-<%- model_class = Question -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= truncate( @question.text ) %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+<dl class="dl-horizontal" id="question">
+  <dt><strong>Author:</strong></dt>
   <dd><%= @question.user_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:source_id) %>:</strong></dt>
-  <dd><%= @question.source_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:source_type) %>:</strong></dt>
-  <dd><%= @question.source_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
+  <dt><strong>Question:</strong></dt>
   <dd><%= @question.text %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              polymorphic_questions_path, :class => 'btn'  %>
+              :back, :class => 'btn'  %>
 
 </div>

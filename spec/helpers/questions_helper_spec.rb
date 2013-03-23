@@ -15,6 +15,10 @@ describe QuestionsHelper do
   describe 'polymorphic_questions_path' do
     let(:question) { create(:question, id:100) }
     
+    it "requires @lesson or @meeting" do
+      lambda { helper.polymorphic_questions_path }.should raise_error(ArgumentError)
+    end
+    
     context "library" do
       before(:each) do
         assign :study, build_stubbed(:study, slug: 'matthew-study')

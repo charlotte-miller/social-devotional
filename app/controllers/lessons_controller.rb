@@ -3,7 +3,9 @@ class LessonsController < ApplicationController
   # GET /library/:studies_idlibrary/:studies_id/lessons
   # GET /library/:studies_id/lessons.json
   def index
-    @lessons = Lesson.for_study(params[:study_id]).all
+    @study   = Study.includes(:lessons).find(params[:study_id])
+    @lessons = @study.lessons.all
+    raise ActiveRecord::RecordNotFound if @lessons.empty?
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +16,14 @@ class LessonsController < ApplicationController
   # GET /library/:studies_id/lessons/1
   # GET /library/:studies_id/lessons/1.json
   def show
-    @lesson = Lesson.for_study(params[:study_id]).find(params[:id])
+    @study   = Study.find(params[:study_id])
+    @lessons = @study.lessons.all
+    raise ActiveRecord::RecordNotFound if @lessons.empty?
+
+    @lesson = Lesson.find(params[:id])
+    # lesson_number = params[:id].to_i
+    # lesson_number = (lesson_number > @lessons.count) ? 0 : lesson_number-1
+    # @lesson  = @lessons[ lesson_number ]
 
     respond_to do |format|
       format.html # show.html.erb

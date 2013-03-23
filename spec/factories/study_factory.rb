@@ -25,4 +25,11 @@ FactoryGirl.define do
     ref_link "http://link.com/salt-and-light"
     video_url "http://link.com/salt-and-light.mp4"
   end
+  
+  factory :study_w_lesson, parent: 'study' do
+    ignore do
+      new_lesson {FactoryGirl.create(:lesson)}
+    end
+    lessons {[new_lesson]}
+  end
 end

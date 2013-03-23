@@ -21,7 +21,6 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible :audio_url, :backlink, :description, :position, :study, :study_id, :title, :video_url
   acts_as_list scope: :study 
-  # alias_method :position, :to_param   #used by url helpers as :id
   
   # http://sunspot.github.com/
   # searchable do
@@ -52,9 +51,10 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
+  # def to_param; position ;end #used by url helpers as :id
   
   def study_title
-    @study_title ||= study.select(:title).title
+    @study_title ||= Study.select(:title).where( id:study_id ).first.title
   end
   
 private

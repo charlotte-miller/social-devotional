@@ -5,8 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require "paperclip/matchers"
 require 'sunspot_test/rspec'
-# require 'rspec/rails/mocha'
-# require 'factory_girl_rails'
+require 'capybara/rspec'
 # require 'sidekiq/testing'
 # require 'webmock/rspec'
 # require 'vcr'
@@ -17,7 +16,9 @@ require 'pry'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers,      :type => :controller
+  config.extend  Devise::ControllerHelper, :type => :controller
+  config.extend  Devise::RequestHelper,    :type => :request
   config.include FactoryGirl::Syntax::Methods
   config.include Paperclip::Shoulda::Matchers
   

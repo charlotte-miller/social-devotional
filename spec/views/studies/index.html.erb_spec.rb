@@ -8,14 +8,16 @@ describe "studies/index" do
         :title => "Title",
         :description => "Description",
         :ref_link => "Ref Link",
-        :video_url => "Video Url"
+        :video_url => "Video Url",
+        :created_at => Time.now
       ),
       stub_model(Study,
         :slug => "Slug",
         :title => "Title",
         :description => "Description",
         :ref_link => "Ref Link",
-        :video_url => "Video Url"
+        :video_url => "Video Url",
+        :created_at => Time.now
       )
     ])
   end

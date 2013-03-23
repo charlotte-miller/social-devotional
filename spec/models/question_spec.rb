@@ -18,7 +18,7 @@
 require 'spec_helper'
 
 describe Question do
-  it { should have_many  :answers  } 
+  it { pending "should have_many  :answers"   } 
   it { should belong_to( :source             )}
   it { should belong_to( :author             )}
   it { should belong_to( :permanent_approver )}

@@ -4,6 +4,7 @@
 # Run JS and CoffeeScript files in a typical Rails 3.1 fashion, placing Underscore templates in app/views/*.jst
 # Your spec files end with _spec.{js,coffee}.
 
+require 'active_support/core_ext'
 spec_location = "spec/javascripts/%s_spec"
 
 
@@ -22,9 +23,9 @@ spec_location = "spec/javascripts/%s_spec"
 #   watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
 # end
 
+# all_after_pass:false
 
-
-guard 'rspec', focus_on_failed:true do
+guard 'rspec' do  
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }

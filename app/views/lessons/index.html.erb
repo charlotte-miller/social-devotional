@@ -1,15 +1,16 @@
-<%- model_class = Lesson -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>
+    <%=t '.title', :default => @study.title %>
+  </h1>
 </div>
 
 <ul class="thumbnails">
   <% @lessons.each do |lesson| %>
     <li class="span4">
-      <article class="thumbnail"> 
-        <h3><%= lesson.study_title %>: <small><%= lesson.position %></small></h3>
+      <article class="thumbnail lesson"> 
+        <h3>Lesson: <%= lesson.position %></h3>
         <dl class="dl-horizontal">
-          <%= render partial: 'lesson' %>
+          <%= render partial: 'lesson', locals: {lesson:lesson}  %>
         </dl>
       </article>
     </li>

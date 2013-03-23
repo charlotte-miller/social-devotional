@@ -1,11 +1,14 @@
-<%- model_class = Lesson -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1>
+    <%=t '.title', :default => study_title %>
+    <small><%= @lesson.position %></small>
+  </h1>
 </div>
 
-<h3><%= @lesson.study_title %>: <small><%= @lesson.position %></small></h3>
+
+<h3><%= study_title %>: <small><%= @lesson.position %></small></h3>
 <dl class="dl-horizontal" id="lesson">
-  <%= render partial: 'lesson' %>
+  <%= render partial: 'lesson', locals: {lesson: @lesson} %>
 </dl>
 
 <div class="form-actions">

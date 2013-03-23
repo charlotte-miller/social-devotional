@@ -54,6 +54,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 1.0.0)
+    capybara-webkit (0.14.2)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     celluloid (0.12.4)
       facter (>= 1.6.12)
       timers (>= 1.0.0)
@@ -310,6 +313,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   capistrano
   capybara
+  capybara-webkit
   celluloid
   coffee-rails (~> 3.2.1)
   configy

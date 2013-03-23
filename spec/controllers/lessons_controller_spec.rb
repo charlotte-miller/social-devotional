@@ -13,9 +13,10 @@ describe LessonsController do
     end
     
     
-    it "assigns all lessons as @lessons" do
+    it "assigns all lessons as @lessons and @study" do
       get :index, {study_id: study.id}, valid_session
-      assigns(:lessons).should eq([lesson])
+      should assign_to(:lessons).with([lesson])
+      should assign_to(:study).with(study)
     end
     
     it "doesn't include lessons from other study" do
@@ -30,7 +31,7 @@ describe LessonsController do
     end
     
     
-    it "assigns the requested lesson as @lesson" do
+    it "assigns the requested lesson as @lesson by :position" do
       get :show, {study_id: study.id, :id => lesson.to_param}, valid_session
       assigns(:lesson).should eq(lesson)
     end

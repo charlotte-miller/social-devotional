@@ -65,6 +65,7 @@ group :development, :test do
   gem 'timecop'
   gem "ffaker"
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'shoulda-matchers'
   gem 'syntax'
   
