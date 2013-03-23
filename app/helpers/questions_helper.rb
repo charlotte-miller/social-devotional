@@ -8,6 +8,8 @@ module QuestionsHelper
       when 'new'    
         obj_array[-1] = obj_array[-1].singularize
         new_polymorphic_path( obj_array )
+      when Question #shallow routes
+        question_path(question)
       # not edit
       else  polymorphic_path( obj_array )
     end

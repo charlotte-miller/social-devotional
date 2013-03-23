@@ -13,9 +13,7 @@ require 'spec_helper'
 describe QuestionsHelper do
   
   describe 'polymorphic_questions_path' do
-    before(:each) do
-      @question = build_stubbed(:question, id:100)
-    end
+    let(:question) { create(:question, id:100) }
     
     context "library" do
       before(:each) do
@@ -32,7 +30,7 @@ describe QuestionsHelper do
       end
       
       it "should build show" do
-        helper.polymorphic_questions_path(@question).should == '/library/matthew-study/lessons/1/questions/100' #match %r{ /library/matthew-study/lessons/\d/questions }
+        helper.polymorphic_questions_path(question).should == '/questions/100' #match %r{ /library/matthew-study/lessons/\d/questions }
       end
       
     end
@@ -52,7 +50,7 @@ describe QuestionsHelper do
       end
       
       it "should build show" do
-        helper.polymorphic_questions_path(@question).should == '/groups/1/meetings/1/questions/100' #match %r{ /library/matthew-study/lessons/\d/questions }
+        helper.polymorphic_questions_path(question).should == '/questions/100' #match %r{ /library/matthew-study/lessons/\d/questions }
       end
 
     end
