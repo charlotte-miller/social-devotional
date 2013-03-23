@@ -8,6 +8,7 @@
 #  desription       :text             default(""), not null
 #  is_public        :boolean          default(TRUE)
 #  meets_every_days :integer          default(7)
+#  meetings_count   :integer          default(0)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #

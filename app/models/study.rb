@@ -20,7 +20,7 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :description, :ref_link, :slug, :title, :video_url, :podcast, :podcast_id
+  attr_accessible :description, :ref_link, :slug, :title, :video_url, :podcast
   friendly_id :title
 
   # http://sunspot.github.com/
@@ -36,9 +36,15 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :lessons, :order => :position, :dependent => :destroy
-  belongs_to :podcast
-  has_one :church, through: 'podcast'
+  has_many :lessons, :order => :position, :dependent => :destroy do
+    def number(n)
+      raise ArgumentError if n > lessons_count
+      where(position:n) 
+    end
+  end
+  
+  belongs_to :podcast#, :inverse_of => :studies
+  has_one :church,     :through => :podcast
   
   
   # ---------------------------------------------------------------------------------

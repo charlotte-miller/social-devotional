@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.text     "desription",                                       :null => false
     t.boolean  "is_public",                      :default => true
     t.integer  "meets_every_days",               :default => 7
+    t.integer  "meetings_count",                 :default => 0
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
   end
