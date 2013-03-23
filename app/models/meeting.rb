@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  group_id   :integer          not null
 #  lesson_id  :integer          not null
-#  position   :integer          default(0)
+#  position   :integer          default(0), not null
 #  state      :string(50)       not null
 #  date_of    :datetime
 #  created_at :datetime         not null
@@ -45,5 +45,5 @@ class Meeting < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   
   
-  def to_param; group.is_public ? position : id  ;end
+  # def to_param; group.is_public ? position : id  ;end
 end

@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
-  before_filter :load_group_and_meeting
+  before_filter :authenticate_user!
+  before_filter :safe_select_group_and_meeting
   
   # GET /meetings
   # GET /meetings.json
@@ -81,13 +82,11 @@ class MeetingsController < ApplicationController
   
 private
   
-  def load_group_and_meeting
-    if params[:id]
-      @meeting = Meeting.includes(:group).find(params[:id])
-      @group   = @meeting.group
-    else
-      @group   = Group.find(params[:group_id])
-    end
+  def safe_select_group_and_meeting
+    return unless user_signed_in?
+    @group = current_user.groups.find(params[:group_id])
+    @meetings = @group.meetings
+    @meeting = @group.meetings.find(params[:id])  if params[:id]
   end
   
 end
