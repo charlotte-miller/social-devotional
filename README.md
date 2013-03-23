@@ -79,5 +79,4 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 * scaffold answers
 * questions_controller before_filter assign url params
 * questions_controller before_filter assign author and source
-* rm admin::questions (not used).  Use block requests instead
 * questions/show shallow routes (for answers as well)
