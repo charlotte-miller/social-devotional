@@ -16,8 +16,8 @@ class BlockRequest < ActiveRecord::Base
   
   attr_accessible :requester, :approver, :source
   
-  belongs_to :requester, :class_name  => "user",       :foreign_key => "user_id"
-  belongs_to :approver,  :class_name  => "admin_user", :foreign_key => "admin_id"
+  belongs_to :requester, :class_name  => "User",        :foreign_key => "user_id"
+  belongs_to :approver,  :class_name  => "AdminUser",   :foreign_key => "admin_user_id"
   belongs_to :source,    :polymorphic =>  true,        :counter_cache => true
   # has_one  :author,    :class_name => "user", :through => :source
   
