@@ -113,14 +113,16 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
   add_index "lessons", ["study_id", "position"], :name => "index_lessons_on_study_id_and_position"
 
   create_table "meetings", :force => true do |t|
-    t.integer  "group_id",                 :null => false
-    t.integer  "lesson_id",                :null => false
-    t.string   "state",      :limit => 50, :null => false
+    t.integer  "group_id",                                :null => false
+    t.integer  "lesson_id",                               :null => false
+    t.integer  "position",                 :default => 0, :null => false
+    t.string   "state",      :limit => 50,                :null => false
     t.datetime "date_of"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
+  add_index "meetings", ["group_id", "position"], :name => "index_meetings_on_group_id_and_position"
   add_index "meetings", ["group_id", "state"], :name => "index_meetings_on_group_id_and_state"
   add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
 
