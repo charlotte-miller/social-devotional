@@ -4,6 +4,7 @@ gem 'rails', '~> 3.2.13'
 gem 'mysql2'
 gem 'configy'
 gem 'oj'
+gem 'ox'
 gem 'celluloid'
 gem 'whenever'
 gem 'jbuilder'
@@ -13,9 +14,9 @@ gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9"
 gem 'acts_as_list'
 gem 'state_machine'
-
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'typhoeus'
 
 gem 'acts_as_interface'
 gem 'profanalyzer'
