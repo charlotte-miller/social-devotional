@@ -4,10 +4,8 @@ gem 'rails', '~> 3.2.13'
 gem 'mysql2'
 gem 'configy'
 gem 'oj'
-gem 'ox'
 gem 'celluloid'
 gem 'whenever'
-gem 'jbuilder'
 gem 'paperclip'
 gem 'devise'
 gem 'devise-encryptable'
@@ -17,8 +15,6 @@ gem 'state_machine'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'typhoeus'
-
-gem 'acts_as_interface'
 gem 'profanalyzer'
 
 # SideKiq Monitoring
@@ -26,6 +22,10 @@ gem 'profanalyzer'
 # gem "thin", "~> 1.4.1"
 # gem 'slim', '<= 1.3.0'
 # gem 'sinatra', :require => nil
+# gem 'ox'
+# gem 'jbuilder'
+# gem 'acts_as_interface'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

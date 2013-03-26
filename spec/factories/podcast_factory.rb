@@ -11,13 +11,12 @@
 #  updated_at   :datetime         not null
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
+require 'active_support'
 FactoryGirl.define do
-  factory :podcast do
+  factory :podcast do  
     church
-    title "Cornerstone Church Audio"
-    url "http://cornerstone.com/podcasts/audio_podcast.xml"
+    title { "#{church.name} Sermons" }
+    url { "#{church.homepage.dasherize}/podcasts/audio_podcast.xml" }
     last_checked Time.now - 1.day
   end
 end

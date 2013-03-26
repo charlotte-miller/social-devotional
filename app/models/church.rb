@@ -20,7 +20,7 @@ class Church < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   has_many :podcasts#, :inverse_of => :church
-
+    accepts_nested_attributes_for :podcasts
 
   # ---------------------------------------------------------------------------------
   # Validations
