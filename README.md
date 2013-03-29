@@ -7,6 +7,7 @@ Then we will no longer be immature like children.  We won't we tossed and blown 
 * **Mars Hill**: http://marshill.org/teaching/podcast-info/
 * **The Village Church [Sermons]**: http://feeds.feedburner.com/TVCSermonAudio
 * **The Village Church [Other]**: http://www.thevillagechurch.net/resources/feeds-podcasts/
+* **Cornerstone Church**: http://cornerstone-sf.org/rss/tv/
 
 _Possible Resource_: 
 * [Sermon Cloud](http://www.sermoncloud.com/)
