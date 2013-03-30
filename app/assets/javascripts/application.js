@@ -12,3 +12,11 @@
 //= require ../../../vendor/assets/javascripts/backbone/backbone-bind-to-1.0.0
 //= require ../../../vendor/assets/javascripts/backbone/backbone-handlebars-1.0.0
 //= require_tree ./shared
+
+jQuery(document).ready(function($) {
+  $('#signin-email').click(function(){
+    // more complex logic to determine if the user has an account
+    // 1) check for cookie... if present then password and link to create account
+    $('#signin-dropdown').slideFadeShow();
+  });
+});
