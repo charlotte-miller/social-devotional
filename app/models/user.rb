@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
   # ------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :email, :first_name, :last_name
+  validates_presence_of :email#, :first_name, :last_name
   validates_length_of   :first_name, :last_name, :within => 0..60, :message => "is too long"
   validates_length_of   :email, :within => 0..80, :message => "is too long"
   validates_attachment :profile_image, :size => { :in => 0..10.megabytes }
