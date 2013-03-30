@@ -1,31 +1,32 @@
 <%- model_class = Study -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Library</h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:slug) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:ref_link) %></th>
-      <th><%= model_class.human_attribute_name(:video_url) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @studies.each do |study| %>
-      <tr class="study">
-        <td><%= link_to study.id, study_path(study) %></td>
-        <td><%= study.slug %></td>
-        <td><%= study.title %></td>
-        <td><%= study.description %></td>
-        <td><%= study.ref_link %></td>
-        <td><%= study.video_url %></td>
-        <td><%=l study.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div id="search">
+  <%= form_for studies_path do |f| %>
+    <%= f.text_field :search, placeholder: 'Search the Library' %>
+    <%=  %>
+  <% end -%>
+</div>
+
+<ul class="thumbnails">
+  <% @studies.each do |study| %>
+    <li class="span3">
+      <a class="thumbnail", href="<%= study_path(study) %>">
+        <!-- <%= raw(image_tag(study.poster_img)) %> -->
+        <video src="<%= study.video_url %>">Video</video>
+        <h3><%= study.title %></h3>
+        <p><%= study.description %></p>
+        <dl class="small">
+          <dt>Source:</dt>
+          <dd><%= study.ref_link %></dd>
+        </dl>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
+
 

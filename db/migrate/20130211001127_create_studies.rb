@@ -7,6 +7,7 @@ class CreateStudies < ActiveRecord::Migration
       t.string  :description
       t.string  :ref_link
       t.string  :video_url
+      t.string  :poster_img
       t.integer :lessons_count, default: 0
 
       t.timestamps

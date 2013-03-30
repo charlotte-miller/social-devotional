@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.string   "description"
     t.string   "ref_link"
     t.string   "video_url"
+    t.string   "poster_img"
     t.integer  "lessons_count", :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
