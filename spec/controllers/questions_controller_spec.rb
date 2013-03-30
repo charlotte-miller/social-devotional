@@ -234,6 +234,13 @@ describe QuestionsController do
     end
   end
   
+  describe 'prevent horizontal privalage escalation' do
+    it "should only return questions a user has access to" do
+      pending('not sure weather to go back to nesting (user has ownership of upstream info) 
+               or create a query for checking a users privlages') # leaning toward nesting
+    end
+  end
+  
   # describe 'private methods' do
   #   describe 'before_filters' do
   #     
