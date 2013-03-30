@@ -29,14 +29,15 @@
   </div>
 </div> -->
 
-<div id="signin" class='pull-right'>        
-  <form class="form-search" action="/signin" method="POST">
+<!-- <div id="signin" class='pull-right'>        
+  <form class="form-search" action="<%= user_session_path %>" method="POST">
     <input id="signin-email" type="email" name="user[email]" class="input-medium" placeholder="login_or_join@email.com">
     <span id="signin-dropdown" class="hide">
       <input type="password" name="user[password]" class="input-medium" placeholder="Password">
     </span>
-    <button type="submit" class="btn" name="commit">
-      <i class="icon-home"></i>
-    </button>
+    <div class="btn-group">
+      <button type="submit" class="btn" name="commit">Login</button>
+      <button class="btn" id="signup_button">Join</button>
+    </div>
   </form>
-</div>
+</div> -->
