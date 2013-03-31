@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+.small dt, .small dd {
+  display:inline;
+}
+
+#hero_sidebar{
+  text-align:right;
+}
+#message {
+  text-align:left;
+  margin-left: 20px;
+}

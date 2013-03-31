@@ -23,7 +23,8 @@ FactoryGirl.define do
     title "Matthew Study - Chapter by Chapter"
     description "We work through book of Matthew chapter by chapter using the inductive method"
     ref_link "http://link.com/salt-and-light"
-    video_url "http://link.com/salt-and-light.mp4"
+    video_url "https://s3.amazonaws.com/CornerstoneMedia/121125_SPECIAL.m4v"
+    poster_img 'http://media.cornerstone-sf.org/uploads/tv/series/media_player_master_music_1.jpg'
   end
   
   factory :study_w_lesson, parent: 'study' do
