@@ -6,7 +6,7 @@ gem 'unicorn'
 gem 'configy'
 gem 'oj'
 gem 'celluloid'
-gem 'whenever'
+gem 'whenever', :require => false
 gem 'paperclip'
 gem 'devise'
 gem 'devise-encryptable'
