@@ -4,6 +4,7 @@
 //= require ../../../vendor/assets/javascripts/jquery/jquery-1.8.0
 //= require ../../../vendor/assets/javascripts/jquery/jquery-ui.min
 //= require ../../../vendor/assets/javascripts/jquery/jquery.easing-1.3
+//= require ../../../vendor/assets/javascripts/jquery/select2-3.2
 //= require ../../../vendor/assets/javascripts/backbone/handlebars-1.0.rc.1
 //= require ../../../vendor/assets/javascripts/backbone/underscore-1.4.4
 //= require ../../../vendor/assets/javascripts/backbone/backbone-0.9.10
