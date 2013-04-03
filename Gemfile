@@ -17,6 +17,7 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'typhoeus'
 gem 'profanalyzer'
+gem 'airbrake'
 
 # SideKiq Monitoring
 # gem 'sidekiq'
