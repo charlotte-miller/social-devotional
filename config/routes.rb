@@ -29,10 +29,11 @@ SocialDevotional::Application.routes.draw do
   # Authentication & Admin
   devise_for :users, :skip => [:sessions]
   as :user do
-    get     'signup' => 'devise/registrations#new', :as => :new_registrations
-    get     'signin' => 'devise/sessions#new',      :as => :new_user_session
-    post    'signin' => 'devise/sessions#create',   :as => :user_session
-    delete  'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get     'join' => 'devise/registrations#new', :as => :new_registrations
+    get     'login' => 'devise/sessions#new',      :as => :new_user_session
+    post    'login' => 'devise/sessions#create',   :as => :user_session
+    delete  'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    get     'logout'  => 'devise/sessions#destroy' #convenience
   end
   
   devise_for :admin_user

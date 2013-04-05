@@ -23,3 +23,8 @@
   text-align:left;
   margin-left: 20px;
 }
+
+#login-btn-group{
+  position: relative;
+  top: 2px;
+}
