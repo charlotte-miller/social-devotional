@@ -50,6 +50,7 @@ class User < ActiveRecord::Base
                     :fog_credentials => AppConfig.fog_credentials,  # {}
                     :fog_host => 'asset1.social-devotional.com'     # cloudfront
                     # http://rdoc.info/github/thoughtbot/paperclip/Paperclip/Storage/Fog
+                    # actually using AWS-SDK
   
   
   # -------------

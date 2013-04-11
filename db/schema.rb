@@ -166,16 +166,19 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
   add_index "stars", ["user_id"], :name => "index_stars_on_user_id"
 
   create_table "studies", :force => true do |t|
-    t.string   "slug",                         :null => false
-    t.integer  "podcast_id",                   :null => false
-    t.string   "title",                        :null => false
+    t.string   "slug",                                   :null => false
+    t.integer  "podcast_id",                             :null => false
+    t.string   "title",                                  :null => false
     t.string   "description"
     t.string   "ref_link"
     t.string   "video_url"
-    t.string   "poster_img"
-    t.integer  "lessons_count", :default => 0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.string   "poster_img_file_name"
+    t.string   "poster_img_content_type"
+    t.integer  "poster_img_file_size"
+    t.datetime "poster_img_updated_at"
+    t.integer  "lessons_count",           :default => 0
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "studies", ["podcast_id"], :name => "index_studies_on_podcast_id"

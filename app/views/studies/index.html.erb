@@ -45,7 +45,7 @@
 
 <ul class="thumbnails">
   <% @studies.each do |study| %>
-    <li class="span3">
+    <li class="span3 study">
       <a class="thumbnail", href="<%= study_path(study) %>">
         <%= image_tag(study.poster_img) %>
         <h3><%= study.title %></h3>

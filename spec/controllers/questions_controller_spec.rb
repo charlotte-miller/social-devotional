@@ -18,7 +18,7 @@ describe QuestionsController do
 
       it "requires authentication" do
         get :index, {study_id:study.id, lesson_id:lesson.id}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
 
       it "assigns all questions as @questions" do
@@ -35,7 +35,7 @@ describe QuestionsController do
 
       it "requires authentication" do
         get :show, {study_id:study.id, lesson_id:lesson.id, :id => question.to_param}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
 
       it "assigns the requested question as @question" do
@@ -52,7 +52,7 @@ describe QuestionsController do
 
       it "requires authentication" do
         get :index, {study_id:study.id, lesson_id:lesson.id}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
 
       it "assigns a new question as @question" do
@@ -66,7 +66,7 @@ describe QuestionsController do
       describe "with valid params" do
         it "requires authentication" do
           post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}, {}#clears current_user
-          should redirect_to '/signin'
+          should redirect_to '/login'
         end
         
         it "creates a new Question" do
@@ -90,7 +90,7 @@ describe QuestionsController do
       describe "with invalid params" do
         it "requires authentication" do
           post :create, {study_id:study.id, lesson_id:lesson.id, :question => { "text" => "" }}, {}#clears current_user
-          should redirect_to '/signin'
+          should redirect_to '/login'
         end
         
         it "assigns a newly created but unsaved question as @question" do
@@ -129,7 +129,7 @@ describe QuestionsController do
 
       it "requires authentication" do
         get :index, {group_id:group.id, meeting_id:meeting.id}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
 
       it "assigns all questions as @questions" do
@@ -146,7 +146,7 @@ describe QuestionsController do
 
       it "requires authentication" do
         get :show, {group_id:group.id, meeting_id:meeting.id, :id => question.to_param}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
       
       it "assigns the requested question as @question" do
@@ -163,7 +163,7 @@ describe QuestionsController do
       
       it "requires authentication" do
         get :new, {group_id:group.id, meeting_id:meeting.id}, {}#clears current_user
-        should redirect_to '/signin'
+        should redirect_to '/login'
       end
 
       it "assigns a new question as @question" do
@@ -176,7 +176,7 @@ describe QuestionsController do
       describe "with valid params" do
         it "requires authentication" do
           post :create, {group_id:group.id, meeting_id:meeting.id, :question => valid_attributes}, {}#clears current_user
-          should redirect_to '/signin'
+          should redirect_to '/login'
         end
         
         it "creates a new Question" do
@@ -200,7 +200,7 @@ describe QuestionsController do
       describe "with invalid params" do
         it "requires authentication" do
           post :create, {group_id:group.id, meeting_id:meeting.id, :question => {"text" => "" } }, {}#clears current_user
-          should redirect_to '/signin'
+          should redirect_to '/login'
         end
         
         it "assigns a newly created but unsaved question as @question" do
