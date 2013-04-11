@@ -9,11 +9,11 @@
 #  updated_at :datetime         not null
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'active_support'
 FactoryGirl.define do
   factory :church do
     name "Cornerstone Church"
-    homepage "http://cornerstone.com"
+    homepage {|c| "http://#{c.name.gsub(/\s/,'').underscore.dasherize}.com"}
   end
 end

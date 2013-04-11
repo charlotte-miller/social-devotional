@@ -8,6 +8,7 @@ gem 'oj'
 gem 'celluloid'
 gem 'whenever', :require => false
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'devise'
 gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9"
@@ -63,7 +64,7 @@ group :development, :test do
   gem 'guard-spin' # consider spring instead
   
   # Rspec
-  gem 'rspec-rails', '~> 2.4'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'timecop'
   gem "ffaker"
@@ -71,6 +72,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'shoulda-matchers'
   gem 'syntax'
+  gem 'webmock'
   
   # Debugger
   gem 'pry-rails'
@@ -78,7 +80,7 @@ group :development, :test do
   
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'
-  gem 'rails-backbone-generator'
+  gem 'rails-backbone-generator', :require => false
 end
 
 group :test do

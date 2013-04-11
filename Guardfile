@@ -23,9 +23,14 @@ spec_location = "spec/javascripts/%s_spec"
 #   watch(%r{^spec/javascripts/(.*)_spec\..*}) { |m| newest_js_file(spec_location % m[1]) }
 # end
 
-# all_after_pass:false
 
-guard 'rspec' do  
+rspec_options ={
+  all_on_start: false,
+  all_after_pass:false,
+  run_all: { cli:"--tag ~internal --profile" }
+}
+
+guard 'rspec', rspec_options do  
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -47,5 +52,4 @@ guard 'rspec' do
 
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
-
 end

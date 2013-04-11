@@ -16,7 +16,7 @@ FactoryGirl.define do
   factory :podcast do  
     church
     title { "#{church.name} Sermons" }
-    url { "#{church.homepage.dasherize}/podcasts/audio_podcast.xml" }
-    last_checked Time.now - 1.day
+    url { "#{church.homepage}/podcasts/audio_podcast.xml" }
+    last_checked 1.day.ago
   end
 end
