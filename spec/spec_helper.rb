@@ -2,7 +2,6 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require "paperclip/matchers"
 require 'sunspot_test/rspec'
 require 'capybara/rspec'
@@ -35,5 +34,5 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = true
 
-  # config.order = "random"
+  config.order = "random"
 end

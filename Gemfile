@@ -73,6 +73,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'syntax'
   gem 'webmock'
+  gem 'zeus'
   
   # Debugger
   gem 'pry-rails'
