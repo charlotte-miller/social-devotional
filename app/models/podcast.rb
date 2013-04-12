@@ -7,6 +7,7 @@
 #  title        :string(100)
 #  url          :string(255)      not null
 #  last_checked :datetime
+#  last_updated :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -42,5 +43,10 @@ class Podcast < ActiveRecord::Base
   class << self
     
   end #class << self
+  
+  def update_from_feed( feed_obj )
+    feed = feed_obj.is_a?( Podcast::Parser ) ? feed_obj : (raise ArgumentError.new('Podcast::Parser required'))
+    
+  end
   
 end

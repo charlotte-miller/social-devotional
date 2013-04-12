@@ -17,13 +17,22 @@
 require 'spec_helper'
 
 describe Podcast::Parser do
+  before(:all) do
+    @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) 
+  end
+  subject { Podcast::Parser.new(@podcast_xml) }
   
-  describe 'new' do
-    
+  describe '.new(xml_str)' do
+    it "requires an xml string" do
+      lambda { Podcast::Parser.new }.should raise_error(ArgumentError)
+      lambda { Podcast::Parser.new('') }.should raise_error(ArgumentError)
+      lambda { Podcast::Parser.new('<not xml>')}.should raise_error(RSS::NotWellFormedError)
+      lambda { Podcast::Parser.new(@podcast_xml) }.should_not raise_error
+    end
   end
   
-  describe 'run' do
-    
+  describe '#last_updated' do
+    it('handles itunes') { subject.last_updated.should == Time.parse('Tue, 26 Mar 2013 21:10:35 +0000') }    
   end
   
 end

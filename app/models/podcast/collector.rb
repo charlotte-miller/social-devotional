@@ -9,7 +9,10 @@ class Podcast::Collector
     podcasts.map do |podcast| 
       request = Typhoeus::Request.new(podcast.url)
       request.on_complete do |response|
-        Podcast::Parser.new(response.body).run!
+        feed = Podcast::Parser.new(response.body)
+        if feed.last_updated > podcast.last_updated
+          podcast.update_from_feed( feed )
+        end
       end
       @hydra.queue request
     end

@@ -7,6 +7,7 @@
 #  title        :string(100)
 #  url          :string(255)      not null
 #  last_checked :datetime
+#  last_updated :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -17,6 +18,7 @@ FactoryGirl.define do
     church
     title { "#{church.name} Sermons" }
     url { "#{church.homepage}/podcasts/audio_podcast.xml" }
+    last_updated 2.days.ago
     last_checked 1.day.ago
   end
 end

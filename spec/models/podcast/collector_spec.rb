@@ -30,19 +30,21 @@ describe Podcast::Collector do
   
   describe '#run!' do
     before(:each) do
-      @podcast     = create(:podcast)
-      @collector   = Podcast::Collector.new(@podcast)
+      @podcasts    = 2.times.map { create(:podcast, last_updated: Time.parse('Mon, 25 Mar 2013')) }
+      @collector   = Podcast::Collector.new(@podcasts)
       @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))      
       stub_request(:get, %r{/podcasts/audio_podcast.xml$}).to_return( :body => @podcast_xml, :status => 200 )
     end
     
-    it "should 'parse' each podcast", internal:true do
-      Podcast::Parser.should_receive(:new).with(@podcast_xml).and_return(stub(:run! => true)) 
+    it "skips still-fresh podcasts" do
+      recently_checked = create(:podcast, last_updated: Time.parse('Wed, 27 Mar 2013'))
+      recently_checked.should_not_receive(:update_from_feed)
       @collector.run!
     end
     
-    it "should create studies / lessons" do
-      false.should be_true
+    it "updates each podcast by feed" do
+      @podcasts.each {|podcast| podcast.should_receive(:update_from_feed).once }
+      @collector.run!
     end
   end
   

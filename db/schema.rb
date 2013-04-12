@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.string   "title",        :limit => 100
     t.string   "url",                         :null => false
     t.datetime "last_checked"
+    t.datetime "last_updated"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end

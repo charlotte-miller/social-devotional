@@ -1,333 +1,358 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2enclosuresfull.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
-
-<channel>
-	<title>Mars Hill Bible Church</title>
-	
-	<link>http://www.marshill.org</link>
-	<description>Weekly Teachings</description>
-	<lastBuildDate>Tue, 26 Mar 2013 21:10:35 +0000</lastBuildDate>
-	<language>Mars Hill Bible Church</language>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	
-<!-- podcast_generator="Blubrry PowerPress/3.0.1" -->
-	<itunes:summary>This publication contains the weekly teaching from Mars Hill Bible Church in Grandville, Michigan. In addition to an mp3 file of the teaching, a pdf of supplementary material is often provided.</itunes:summary>
-	<itunes:author>Mars Hill Bible Church</itunes:author>
-	<itunes:explicit>no</itunes:explicit>
-	<itunes:image href="http://www.marshill.org/mhlogo.png" />
-	<itunes:owner>
-		<itunes:name>Mars Hill </itunes:name>
-		<itunes:email>info@marshill.org</itunes:email>
-	</itunes:owner>
-	<managingEditor>info@marshill.org (Mars Hill )</managingEditor>
-	<itunes:subtitle>Teachings from Mars Hill Bible Church - Grandville, Michigan</itunes:subtitle>
-	<image>
-		<title>Mars Hill Bible Church</title>
-		<url>http://marshill.org/teaching/files/powerpress/marslogo.png</url>
-		<link>http://www.marshill.org</link>
-	</image>
-	
-		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/marshill/podcast" /><feedburner:info uri="marshill/podcast" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><itunes:keywords>Mars,Grand,Rapids,Grandville,Christianity,Rob,Bell,Bell,Grandville,Shane,Hipps</itunes:keywords><itunes:category text="Religion &amp; Spirituality"><itunes:category text="Christianity" /></itunes:category><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.feedburner.com/marshill/podcast" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><feedburner:feedFlare href="http://odeo.com/listen/subscribe?feed=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://odeo.com/img/badge-channel-black.gif">Subscribe with ODEO</feedburner:feedFlare><feedburner:feedFlare href="http://www.podnova.com/add.srf?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.podnova.com/img_chicklet_podnova.gif">Subscribe with Podnova</feedburner:feedFlare><item>
-		<title>Seven Deadly Sins: Wrath</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/btjS4Py6TOI/</link>
-		<comments>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/#comments</comments>
-		<pubDate>Sun, 24 Mar 2013 15:00:14 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[032413]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3604</guid>
-		<description><![CDATA[Michael Hidalgo]]></description>
-				<content:encoded><![CDATA[<p>Michael Hidalgo</p>
+  <channel>
+    <title>Mars Hill Bible Church</title>
+    <link>http://www.marshill.org</link>
+    <description>Weekly Teachings</description>
+    <lastBuildDate>Tue, 26 Mar 2013 21:10:35 +0000</lastBuildDate>
+    <language>Mars Hill Bible Church</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <!-- podcast_generator="Blubrry PowerPress/3.0.1" -->
+    <itunes:summary>This publication contains the weekly teaching from Mars Hill Bible Church in Grandville, Michigan. In addition to an mp3 file of the teaching, a pdf of supplementary material is often provided.</itunes:summary>
+    <itunes:author>Mars Hill Bible Church</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="http://www.marshill.org/mhlogo.png"/>
+    <itunes:owner>
+      <itunes:name>Mars Hill </itunes:name>
+      <itunes:email>info@marshill.org</itunes:email>
+    </itunes:owner>
+    <managingEditor>info@marshill.org (Mars Hill )</managingEditor>
+    <itunes:subtitle>Teachings from Mars Hill Bible Church - Grandville, Michigan</itunes:subtitle>
+    <image>
+      <title>Mars Hill Bible Church</title>
+      <url>http://marshill.org/teaching/files/powerpress/marslogo.png</url>
+      <link>http://www.marshill.org</link>
+    </image>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/marshill/podcast"/>
+    <feedburner:info uri="marshill/podcast"/>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
+    <itunes:keywords>Mars,Grand,Rapids,Grandville,Christianity,Rob,Bell,Bell,Grandville,Shane,Hipps</itunes:keywords>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Christianity"/>
+    </itunes:category>
+    <feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.feedburner.com/marshill/podcast" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://odeo.com/listen/subscribe?feed=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://odeo.com/img/badge-channel-black.gif">Subscribe with ODEO</feedburner:feedFlare>
+    <feedburner:feedFlare href="http://www.podnova.com/add.srf?url=http%3A%2F%2Ffeeds.feedburner.com%2Fmarshill%2Fpodcast" src="http://www.podnova.com/img_chicklet_podnova.gif">Subscribe with Podnova</feedburner:feedFlare>
+    <item>
+      <title>Seven Deadly Sins: Wrath</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/btjS4Py6TOI/</link>
+      <comments>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/#comments</comments>
+      <pubDate>Sun, 24 Mar 2013 15:00:14 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[032413]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3604</guid>
+      <description><![CDATA[Michael Hidalgo]]></description>
+      <content:encoded><![CDATA[<p>Michael Hidalgo</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=15301077" rel="nofollow">Brianna Thierfelder-Kotman</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=btjS4Py6TOI:FZEVF0fyIM8:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=btjS4Py6TOI:FZEVF0fyIM8:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=btjS4Py6TOI:FZEVF0fyIM8:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=btjS4Py6TOI:FZEVF0fyIM8:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/btjS4Py6TOI" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>032413</itunes:keywords>
-		<itunes:subtitle>Michael Hidalgo</itunes:subtitle>
-		<itunes:summary>Michael Hidalgo</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>36:34</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3" length="17689826" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/032413.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Seven Deadly Sins: Envy</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/cIaXt83ZRJQ/</link>
-		<comments>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/#comments</comments>
-		<pubDate>Sun, 17 Mar 2013 15:00:50 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[031713]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3591</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>032413</itunes:keywords>
+      <itunes:subtitle>Michael Hidalgo</itunes:subtitle>
+      <itunes:summary>Michael Hidalgo</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>36:34</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/03/24/seven-deadly-sins-wrath/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3" length="17689826" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/032413.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Seven Deadly Sins: Envy</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/cIaXt83ZRJQ/</link>
+      <comments>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/#comments</comments>
+      <pubDate>Sun, 17 Mar 2013 15:00:50 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[031713]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3591</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a>, <a href="http://www.facebook.com/profile.php?id=100002097009621" rel="nofollow">Jeff Bergstrom</a>, <a href="http://www.facebook.com/profile.php?id=100000529132739" rel="nofollow">Larry Hall</a>, <a href="http://www.facebook.com/profile.php?id=1052952486" rel="nofollow">Colleen Rumney</a>, <a href="http://www.facebook.com/profile.php?id=1145245709" rel="nofollow">Jessica Eteo</a>, <a href="http://www.facebook.com/profile.php?id=1532326478" rel="nofollow">Dan Van Malsen</a>, <a href="http://www.facebook.com/profile.php?id=100001416986482" rel="nofollow">Move To Joy</a>, <a href="http://www.facebook.com/profile.php?id=1037332318" rel="nofollow">Rachel Buikema Wright</a>, <a href="http://www.facebook.com/profile.php?id=1647340075" rel="nofollow">Raymond Narvaiz</a>, <a href="http://www.facebook.com/profile.php?id=676849751" rel="nofollow">Nikki Williams</a>, <a href="http://www.facebook.com/profile.php?id=152001840" rel="nofollow">Cassandra Haller</a>, <a href="http://www.facebook.com/profile.php?id=1640336840" rel="nofollow">Chad Julius Klasko</a>, <a href="http://www.facebook.com/profile.php?id=687392314" rel="nofollow">Linda Swain-Sommers</a>, <a href="http://www.facebook.com/profile.php?id=208704781" rel="nofollow">Kaylee Rae Lockwood</a>, <a href="http://www.facebook.com/profile.php?id=1510339657" rel="nofollow">Judy Klynstra</a>, <a href="http://www.facebook.com/profile.php?id=610032605" rel="nofollow">Rachael Ann Lewis</a>, <a href="http://www.facebook.com/profile.php?id=1260690008" rel="nofollow">Laura Neiser</a>, <a href="http://www.facebook.com/profile.php?id=1400976890" rel="nofollow">Ben Merritt</a>, <a href="http://www.facebook.com/profile.php?id=502284749" rel="nofollow">Lyndsie Van Dam</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=cIaXt83ZRJQ:GX9RVlHvPDk:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=cIaXt83ZRJQ:GX9RVlHvPDk:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=cIaXt83ZRJQ:GX9RVlHvPDk:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=cIaXt83ZRJQ:GX9RVlHvPDk:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/cIaXt83ZRJQ" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>031713</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>43:29</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/QQSkAdGp6o4/031713.mp3" length="20998082" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/031713.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Seven Deadly Sins: Sloth</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/ZmO9ytSWFxM/</link>
-		<comments>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/#comments</comments>
-		<pubDate>Sun, 10 Mar 2013 15:00:54 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[031013]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3578</guid>
-		<description><![CDATA[Rob Bell]]></description>
-				<content:encoded><![CDATA[<p>Rob Bell</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>031713</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>43:29</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/03/17/seven-deadly-sins-envy/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/QQSkAdGp6o4/031713.mp3" length="20998082" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/031713.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Seven Deadly Sins: Sloth</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/ZmO9ytSWFxM/</link>
+      <comments>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/#comments</comments>
+      <pubDate>Sun, 10 Mar 2013 15:00:54 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[031013]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3578</guid>
+      <description><![CDATA[Rob Bell]]></description>
+      <content:encoded><![CDATA[<p>Rob Bell</p>
 <div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=ZmO9ytSWFxM:ZoZwazMD7bM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=ZmO9ytSWFxM:ZoZwazMD7bM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=ZmO9ytSWFxM:ZoZwazMD7bM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=ZmO9ytSWFxM:ZoZwazMD7bM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/ZmO9ytSWFxM" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>031013</itunes:keywords>
-		<itunes:subtitle>Rob Bell</itunes:subtitle>
-		<itunes:summary>Rob Bell</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>47:39</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/m05lbAbcET0/031013.mp3" length="22992198" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/031013.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Seven Deadly Sins: Greed</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/OSIpSMeJ3mI/</link>
-		<comments>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/#comments</comments>
-		<pubDate>Sun, 03 Mar 2013 16:00:45 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[030313]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3561</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>031013</itunes:keywords>
+      <itunes:subtitle>Rob Bell</itunes:subtitle>
+      <itunes:summary>Rob Bell</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>47:39</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/03/10/seven-deadly-sins-sloth/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/m05lbAbcET0/031013.mp3" length="22992198" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/031013.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Seven Deadly Sins: Greed</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/OSIpSMeJ3mI/</link>
+      <comments>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/#comments</comments>
+      <pubDate>Sun, 03 Mar 2013 16:00:45 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[030313]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3561</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=1496665169" rel="nofollow">Trisha Kotrba Nelson</a>, <a href="http://www.facebook.com/profile.php?id=1556142003" rel="nofollow">Laura Lee Nelson</a>, <a href="http://www.facebook.com/profile.php?id=1640336840" rel="nofollow">Chad Julius Klasko</a>, <a href="http://www.facebook.com/profile.php?id=1253430032" rel="nofollow">Monica Armenti</a>, <a href="http://www.facebook.com/profile.php?id=15301077" rel="nofollow">Brianna Thierfelder-Kotman</a>, <a href="http://www.facebook.com/profile.php?id=554275725" rel="nofollow">Claudia Symonds del Valle</a>, <a href="http://www.facebook.com/profile.php?id=11401426" rel="nofollow">Alicia Katherine JD</a>, <a href="http://www.facebook.com/profile.php?id=1145245709" rel="nofollow">Jessica Eteo</a>, <a href="http://www.facebook.com/profile.php?id=1271556535" rel="nofollow">Carrie Storr Dirkse</a>, <a href="http://www.facebook.com/profile.php?id=100000139485133" rel="nofollow">Kimberly Mason Pitsch</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=OSIpSMeJ3mI:ckiEVnRgoiA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=OSIpSMeJ3mI:ckiEVnRgoiA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=OSIpSMeJ3mI:ckiEVnRgoiA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=OSIpSMeJ3mI:ckiEVnRgoiA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/OSIpSMeJ3mI" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>030313</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>54:12</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/RAnXiN_2Aq4/030313.mp3" length="26125131" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/030313.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Seven Deadly Sins: Gluttony</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/1dzIPmZYuhM/</link>
-		<comments>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/#comments</comments>
-		<pubDate>Sun, 24 Feb 2013 16:00:37 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[022413]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3538</guid>
-		<description><![CDATA[Meredith Dancause]]></description>
-				<content:encoded><![CDATA[<p>Meredith Dancause</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>030313</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>54:12</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/03/03/seven-deadly-sins-greed/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/RAnXiN_2Aq4/030313.mp3" length="26125131" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/03/030313.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Seven Deadly Sins: Gluttony</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/1dzIPmZYuhM/</link>
+      <comments>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/#comments</comments>
+      <pubDate>Sun, 24 Feb 2013 16:00:37 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[022413]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3538</guid>
+      <description><![CDATA[Meredith Dancause]]></description>
+      <content:encoded><![CDATA[<p>Meredith Dancause</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=1314625033" rel="nofollow">William A. Marshall</a>, <a href="http://www.facebook.com/profile.php?id=1136625135" rel="nofollow">Kathy Hardison</a>, <a href="http://www.facebook.com/profile.php?id=1037332318" rel="nofollow">Rachel Buikema Wright</a>, <a href="http://www.facebook.com/profile.php?id=1513466026" rel="nofollow">Don DeHoog</a>, <a href="http://www.facebook.com/profile.php?id=1510339657" rel="nofollow">Judy Klynstra</a>, <a href="http://www.facebook.com/profile.php?id=1443710247" rel="nofollow">Julie Rozema-Riemenschneider</a>, <a href="http://www.facebook.com/profile.php?id=676849751" rel="nofollow">Nikki Williams</a>, <a href="http://www.facebook.com/profile.php?id=100000529132739" rel="nofollow">Larry Hall</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=1dzIPmZYuhM:BeWvdAayAD0:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=1dzIPmZYuhM:BeWvdAayAD0:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=1dzIPmZYuhM:BeWvdAayAD0:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=1dzIPmZYuhM:BeWvdAayAD0:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/1dzIPmZYuhM" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>022413</itunes:keywords>
-		<itunes:subtitle>Meredith Dancause</itunes:subtitle>
-		<itunes:summary>Meredith Dancause</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>36:44</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/A1T0ksdAlAw/022413.mp3" length="17764176" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/022413.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Seven Deadly Sins: Lust</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/pzl9Ych3PJ0/</link>
-		<comments>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/#comments</comments>
-		<pubDate>Sun, 17 Feb 2013 16:00:53 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[021713]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3512</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>022413</itunes:keywords>
+      <itunes:subtitle>Meredith Dancause</itunes:subtitle>
+      <itunes:summary>Meredith Dancause</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>36:44</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/02/24/seven-deadly-sins-gluttony/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/A1T0ksdAlAw/022413.mp3" length="17764176" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/022413.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Seven Deadly Sins: Lust</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/pzl9Ych3PJ0/</link>
+      <comments>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/#comments</comments>
+      <pubDate>Sun, 17 Feb 2013 16:00:53 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[021713]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3512</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=pzl9Ych3PJ0:ehgzUnot8NY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=pzl9Ych3PJ0:ehgzUnot8NY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=pzl9Ych3PJ0:ehgzUnot8NY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=pzl9Ych3PJ0:ehgzUnot8NY:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/pzl9Ych3PJ0" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>021713</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>47:00</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/rsujcoPRhFc/021713.mp3" length="22691060" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/021713.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Shema – Part 5</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/lCSzS_qv1f4/</link>
-		<comments>http://marshill.org/teaching/2013/02/10/shema-part-5/#comments</comments>
-		<pubDate>Sun, 10 Feb 2013 16:00:50 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[021013]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3494</guid>
-		<description><![CDATA[Scot McKnight]]></description>
-				<content:encoded><![CDATA[<p>Scot McKnight</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>021713</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>47:00</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/02/17/seven-deadly-sins-lust/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/rsujcoPRhFc/021713.mp3" length="22691060" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/021713.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Shema – Part 5</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/lCSzS_qv1f4/</link>
+      <comments>http://marshill.org/teaching/2013/02/10/shema-part-5/#comments</comments>
+      <pubDate>Sun, 10 Feb 2013 16:00:50 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[021013]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3494</guid>
+      <description><![CDATA[Scot McKnight]]></description>
+      <content:encoded><![CDATA[<p>Scot McKnight</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=100000033285632" rel="nofollow">Steve Gillette</a>, <a href="http://www.facebook.com/profile.php?id=1190910362" rel="nofollow">Gayle Guikema Ringnalda</a>, <a href="http://www.facebook.com/profile.php?id=1442072467" rel="nofollow">Mary Sayre</a>, <a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a>, <a href="http://www.facebook.com/profile.php?id=1082787616" rel="nofollow">Teri Burgess Harmon</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=lCSzS_qv1f4:FE9q0PrRbjg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=lCSzS_qv1f4:FE9q0PrRbjg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=lCSzS_qv1f4:FE9q0PrRbjg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=lCSzS_qv1f4:FE9q0PrRbjg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/lCSzS_qv1f4" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/02/10/shema-part-5/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>021013</itunes:keywords>
-		<itunes:subtitle>Scot McKnight</itunes:subtitle>
-		<itunes:summary>Scot McKnight</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>42:15</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/02/10/shema-part-5/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/1Zix4-iMut4/021013.mp3" length="20409161" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/021013.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Shema – Part 4</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/WxeRU5TNmFM/</link>
-		<comments>http://marshill.org/teaching/2013/02/03/shema-part-4/#comments</comments>
-		<pubDate>Sun, 03 Feb 2013 16:00:16 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[020313]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3474</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/02/10/shema-part-5/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>021013</itunes:keywords>
+      <itunes:subtitle>Scot McKnight</itunes:subtitle>
+      <itunes:summary>Scot McKnight</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>42:15</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/02/10/shema-part-5/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/1Zix4-iMut4/021013.mp3" length="20409161" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/021013.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Shema – Part 4</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/WxeRU5TNmFM/</link>
+      <comments>http://marshill.org/teaching/2013/02/03/shema-part-4/#comments</comments>
+      <pubDate>Sun, 03 Feb 2013 16:00:16 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[020313]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3474</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=1190910362" rel="nofollow">Gayle Guikema Ringnalda</a>, <a href="http://www.facebook.com/profile.php?id=100002097009621" rel="nofollow">Jeff Bergstrom</a>, <a href="http://www.facebook.com/profile.php?id=703378366" rel="nofollow">Andrew Qi Wen</a>, <a href="http://www.facebook.com/profile.php?id=751045581" rel="nofollow">Melanie Suk</a>, <a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=WxeRU5TNmFM:bMldZhvSlNM:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=WxeRU5TNmFM:bMldZhvSlNM:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=WxeRU5TNmFM:bMldZhvSlNM:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=WxeRU5TNmFM:bMldZhvSlNM:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/WxeRU5TNmFM" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/02/03/shema-part-4/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>020313</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>50:59</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/02/03/shema-part-4/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/ltvPgNjeZx8/020313.mp3" length="24595976" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/020313.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Shema – Part 3</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/MlHh61fx5f8/</link>
-		<comments>http://marshill.org/teaching/2013/01/27/shema-part-3/#comments</comments>
-		<pubDate>Sun, 27 Jan 2013 16:00:27 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[012713]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3459</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/02/03/shema-part-4/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>020313</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>50:59</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/02/03/shema-part-4/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/ltvPgNjeZx8/020313.mp3" length="24595976" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/02/020313.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Shema – Part 3</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/MlHh61fx5f8/</link>
+      <comments>http://marshill.org/teaching/2013/01/27/shema-part-3/#comments</comments>
+      <pubDate>Sun, 27 Jan 2013 16:00:27 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[012713]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3459</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=1344669773" rel="nofollow">Ian Rice</a>, <a href="http://www.facebook.com/profile.php?id=100000044882483" rel="nofollow">K Brooke Owens</a>, <a href="http://www.facebook.com/profile.php?id=703378366" rel="nofollow">Andrew Qi Wen</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=MlHh61fx5f8:EFW6c-NEB4c:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=MlHh61fx5f8:EFW6c-NEB4c:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=MlHh61fx5f8:EFW6c-NEB4c:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=MlHh61fx5f8:EFW6c-NEB4c:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/MlHh61fx5f8" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/01/27/shema-part-3/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>012713</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>48:22</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/01/27/shema-part-3/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/qYPoQus6p5I/012713.mp3" length="23317825" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/012713.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Shema – Part 2</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/zHZzqZcsUbc/</link>
-		<comments>http://marshill.org/teaching/2013/01/20/shema-part-2/#comments</comments>
-		<pubDate>Sun, 20 Jan 2013 16:00:59 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[012013]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3434</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/01/27/shema-part-3/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>012713</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>48:22</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/01/27/shema-part-3/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/qYPoQus6p5I/012713.mp3" length="23317825" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/012713.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Shema – Part 2</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/zHZzqZcsUbc/</link>
+      <comments>http://marshill.org/teaching/2013/01/20/shema-part-2/#comments</comments>
+      <pubDate>Sun, 20 Jan 2013 16:00:59 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[012013]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3434</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=100001247963395" rel="nofollow">Greg Fullenwider</a>, <a href="http://www.facebook.com/profile.php?id=1278498925" rel="nofollow">Sally Rutgers Postma</a>, <a href="http://www.facebook.com/profile.php?id=1061724185" rel="nofollow">Joel Maczkowiack</a>, <a href="http://www.facebook.com/profile.php?id=100001310141636" rel="nofollow">Mike Bergstrom</a>, <a href="http://www.facebook.com/profile.php?id=1261605241" rel="nofollow">Laura Bode</a>, <a href="http://www.facebook.com/profile.php?id=676849751" rel="nofollow">Nikki Williams</a>, <a href="http://www.facebook.com/profile.php?id=210148065702720" rel="nofollow">Emmanuel Worship Center (EWC)</a>, <a href="http://www.facebook.com/profile.php?id=1676074650" rel="nofollow">Melissa Wilkins</a>, <a href="http://www.facebook.com/profile.php?id=1183941389" rel="nofollow">Randy Snoeyink</a>, <a href="http://www.facebook.com/profile.php?id=208705431" rel="nofollow">John Jurries</a>, <a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a>, <a href="http://www.facebook.com/profile.php?id=1190910362" rel="nofollow">Gayle Guikema Ringnalda</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=zHZzqZcsUbc:8zvcmXVSG7M:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=zHZzqZcsUbc:8zvcmXVSG7M:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=zHZzqZcsUbc:8zvcmXVSG7M:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=zHZzqZcsUbc:8zvcmXVSG7M:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/zHZzqZcsUbc" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/01/20/shema-part-2/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>012013</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>41:47</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/01/20/shema-part-2/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/LjOKtUXI1wA/012013.mp3" length="20184600" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/012013.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>How Beautiful The Feet</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/-CDiEOHV6us/</link>
-		<comments>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/#comments</comments>
-		<pubDate>Sun, 13 Jan 2013 16:00:53 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[011313]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3426</guid>
-		<description><![CDATA[Richard Mouw]]></description>
-				<content:encoded><![CDATA[<p>Richard Mouw</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/01/20/shema-part-2/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>012013</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>41:47</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/01/20/shema-part-2/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/LjOKtUXI1wA/012013.mp3" length="20184600" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/012013.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>How Beautiful The Feet</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/-CDiEOHV6us/</link>
+      <comments>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/#comments</comments>
+      <pubDate>Sun, 13 Jan 2013 16:00:53 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[011313]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3426</guid>
+      <description><![CDATA[Richard Mouw]]></description>
+      <content:encoded><![CDATA[<p>Richard Mouw</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=703378366" rel="nofollow">Andrew Qi Wen</a>, <a href="http://www.facebook.com/profile.php?id=1410711363" rel="nofollow">Mary Elizabeth Fosburg</a>, <a href="http://www.facebook.com/profile.php?id=15305202" rel="nofollow">Anna Bolinder</a>, <a href="http://www.facebook.com/profile.php?id=1289916890" rel="nofollow">Elizabeth Rogers Drouillard</a>, <a href="http://www.facebook.com/profile.php?id=15302149" rel="nofollow">Katie Veenstra</a>, <a href="http://www.facebook.com/profile.php?id=1532326478" rel="nofollow">Dan Van Malsen</a>, <a href="http://www.facebook.com/profile.php?id=1506198465" rel="nofollow">Sandra Lynn Schut</a>, <a href="http://www.facebook.com/profile.php?id=751045581" rel="nofollow">Melanie Suk</a>, <a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a>, <a href="http://www.facebook.com/profile.php?id=2253343" rel="nofollow">Dan Klyn</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=-CDiEOHV6us:6qcN0l6qdrI:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=-CDiEOHV6us:6qcN0l6qdrI:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=-CDiEOHV6us:6qcN0l6qdrI:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=-CDiEOHV6us:6qcN0l6qdrI:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/-CDiEOHV6us" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>011313</itunes:keywords>
-		<itunes:subtitle>Richard Mouw</itunes:subtitle>
-		<itunes:summary>Richard Mouw</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>30:59</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/fLXtq328P1I/011313.mp3" length="15005322" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/011313.mp3</feedburner:origEnclosureLink></item>
-		<item>
-		<title>Shema – Part 1</title>
-		<link>http://feedproxy.google.com/~r/marshill/podcast/~3/HluPdjOZpK4/</link>
-		<comments>http://marshill.org/teaching/2013/01/06/shema-part-1/#comments</comments>
-		<pubDate>Sun, 06 Jan 2013 16:00:32 +0000</pubDate>
-		<dc:creator>Mars Hill Bible Church</dc:creator>
-				<category><![CDATA[sundays]]></category>
-		<category><![CDATA[010613]]></category>
-
-		<guid isPermaLink="false">http://marshill.org/teaching/?p=3402</guid>
-		<description><![CDATA[Kent Dobson]]></description>
-				<content:encoded><![CDATA[<p>Kent Dobson</p>
+      <wfw:commentRss>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>011313</itunes:keywords>
+      <itunes:subtitle>Richard Mouw</itunes:subtitle>
+      <itunes:summary>Richard Mouw</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>30:59</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/01/13/how-beautiful-the-feet/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/fLXtq328P1I/011313.mp3" length="15005322" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/011313.mp3</feedburner:origEnclosureLink>
+    </item>
+    <item>
+      <title>Shema – Part 1</title>
+      <link>http://feedproxy.google.com/~r/marshill/podcast/~3/HluPdjOZpK4/</link>
+      <comments>http://marshill.org/teaching/2013/01/06/shema-part-1/#comments</comments>
+      <pubDate>Sun, 06 Jan 2013 16:00:32 +0000</pubDate>
+      <dc:creator>Mars Hill Bible Church</dc:creator>
+      <category><![CDATA[sundays]]></category>
+      <category><![CDATA[010613]]></category>
+      <guid isPermaLink="false">http://marshill.org/teaching/?p=3402</guid>
+      <description><![CDATA[Kent Dobson]]></description>
+      <content:encoded><![CDATA[<p>Kent Dobson</p>
 <div class="al2fb_likers"><a href="http://www.facebook.com/profile.php?id=703378366" rel="nofollow">Andrew Qi Wen</a>, <a href="http://www.facebook.com/profile.php?id=1410499206" rel="nofollow">Rosemary Trimpe</a>, <a href="http://www.facebook.com/profile.php?id=729325980" rel="nofollow">Teresa Braam</a>, <a href="http://www.facebook.com/profile.php?id=1381704224" rel="nofollow">Staci Croley Bartels</a>, <a href="http://www.facebook.com/profile.php?id=2304031" rel="nofollow">Catie Richert</a>, <a href="http://www.facebook.com/profile.php?id=100000712418989" rel="nofollow">Carmen Maria</a>, <a href="http://www.facebook.com/profile.php?id=1278498925" rel="nofollow">Sally Rutgers Postma</a>, <a href="http://www.facebook.com/profile.php?id=1090344230" rel="nofollow">Sue Niewenhuis</a>, <a href="http://www.facebook.com/profile.php?id=1158127678" rel="nofollow">Amy Zaloudek Hibschman</a>, <a href="http://www.facebook.com/profile.php?id=676849751" rel="nofollow">Nikki Williams</a>, <a href="http://www.facebook.com/profile.php?id=513830262" rel="nofollow">Courtney Lyn Garvelink</a>, <a href="http://www.facebook.com/profile.php?id=563044669" rel="nofollow">Megan Hoeksema</a> <span class="al2fb_liked">liked this post</span></div><div class="feedflare">
 <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=HluPdjOZpK4:EjQz16ieVsg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=HluPdjOZpK4:EjQz16ieVsg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?i=HluPdjOZpK4:EjQz16ieVsg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/marshill/podcast?a=HluPdjOZpK4:EjQz16ieVsg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/marshill/podcast?d=qj6IDK7rITs" border="0"></img></a>
 </div><img src="http://feeds.feedburner.com/~r/marshill/podcast/~4/HluPdjOZpK4" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://marshill.org/teaching/2013/01/06/shema-part-1/feed/</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-
-			<itunes:keywords>010613</itunes:keywords>
-		<itunes:subtitle>Kent Dobson</itunes:subtitle>
-		<itunes:summary>Kent Dobson</itunes:summary>
-		<itunes:author>Mars Hill </itunes:author>
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:duration>49:09</itunes:duration>
-	<feedburner:origLink>http://marshill.org/teaching/2013/01/06/shema-part-1/</feedburner:origLink><enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/_5F76Fm42m0/010613.mp3" length="23702944" type="audio/mpeg" /><feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/010613.mp3</feedburner:origEnclosureLink></item>
-	<copyright>Copyright Mars Hill Bible Church 2012</copyright></channel>
+      <wfw:commentRss>http://marshill.org/teaching/2013/01/06/shema-part-1/feed/</wfw:commentRss>
+      <slash:comments>0</slash:comments>
+      <itunes:keywords>010613</itunes:keywords>
+      <itunes:subtitle>Kent Dobson</itunes:subtitle>
+      <itunes:summary>Kent Dobson</itunes:summary>
+      <itunes:author>Mars Hill </itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>49:09</itunes:duration>
+      <feedburner:origLink>http://marshill.org/teaching/2013/01/06/shema-part-1/</feedburner:origLink>
+      <enclosure url="http://feedproxy.google.com/~r/marshill/podcast/~5/_5F76Fm42m0/010613.mp3" length="23702944" type="audio/mpeg"/>
+      <feedburner:origEnclosureLink>http://marshill.org/wp-content/blogs.dir/2/files/2013/01/010613.mp3</feedburner:origEnclosureLink>
+    </item>
+    <copyright>Copyright Mars Hill Bible Church 2012</copyright>
+  </channel>
 </rss>
