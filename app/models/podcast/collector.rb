@@ -1,19 +1,22 @@
 class Podcast::Collector
   attr_reader :hydra, :queue
   
-  def initialize(podcasts = Podcast.all)
-    podcasts = Array.wrap(podcasts)
-    
+  
+  # Accepts an array of Podcast objects
+  # Pulls the current podcast XML
+  # Executes the &block on_complete passing the podcast_obj and podcast_xml
+  def initialize( podcasts, &on_complete )
+    valid_arguments = podcasts.is_a?( Array ) && podcasts.all? {|p| p.is_a? Podcast }
+    raise ArgumentError.new('@podcast collection required') unless valid_arguments
+
     @hydra = Typhoeus::Hydra.new
     @queue = @hydra.queued_requests
     podcasts.map do |podcast| 
       request = Typhoeus::Request.new(podcast.url)
       request.on_complete do |response|
-        feed = Podcast::Parser.new(response.body)
-        if feed.last_updated > podcast.last_updated
-          podcast.update_from_feed( feed )
-        end
-      end
+        on_complete.call(podcast, response.body)
+      end if block_given?
+      
       @hydra.queue request
     end
   end

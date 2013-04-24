@@ -41,12 +41,20 @@ class Podcast < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   class << self
+    def refresh(podcasts = Podcast.all)
+      podcast_arr = Array.wrap(podcasts)
+      
+      Podcast::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
+        channel = Podcast::Normalize::Channel.new(podcast_xml)
+        if channel.last_updated > podcast_obj.last_updated
+          podcast_obj.update_channel( channel )
+        end
+      end.run!
+    end
     
   end #class << self
   
-  def update_from_feed( feed_obj )
-    feed = feed_obj.is_a?( Podcast::Parser ) ? feed_obj : (raise ArgumentError.new('Podcast::Parser required'))
-    
+  def update_channel( normalized_channel )
+    # TODO
   end
-  
 end
