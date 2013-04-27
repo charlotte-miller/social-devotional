@@ -1,8 +1,25 @@
+# == Schema Information
+#
+# Table name: lessons
+#
+#  id          :integer          not null, primary key
+#  study_id    :integer          not null
+#  position    :integer          default(0)
+#  title       :string(255)      not null
+#  description :text
+#  backlink    :string(255)
+#  video_url   :string(255)
+#  audio_url   :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Podcast::Normalize::Item do
   before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
   let!(:channel) { Podcast::Normalize::Channel.new(@podcast_xml) }
+  let(:spamy) { Podcast::Normalize::Channel.new(@spamy_content).items.first }
   subject { channel.items.first }
   
   describe '.new(rss_item_obj)' do
@@ -14,7 +31,78 @@ describe Podcast::Normalize::Item do
   end
   
   describe '#title' do
-    pending
+    it "returns the item's title" do
+      subject.title.should == 'Seven Deadly Sins: Wrath'
+    end
+    
+    it "returns plain text" do
+      @spamy_content = @podcast_xml.gsub('<title>Seven Deadly Sins: Wrath', '<title><![CDATA[<h1>Seven Deadly Sins: Wrath</h1><script>alert("spam")</script>]]>')
+      spamy.title.should == 'Seven Deadly Sins: Wrath'
+    end
+  end
+  
+  describe '#description' do
+    it "returns a description of the item" do
+      subject.description.should == 'Michael Hidalgo'
+    end
+    
+    it "returns plain text" do
+      @spamy_content = @podcast_xml.gsub('<description>Michael Hidalgo', '<description><![CDATA[<h1>Michael Hidalgo</h1><script>alert("spam")</script>]]>')
+      spamy.description.should == 'Michael Hidalgo'
+    end
+  end
+  
+  describe '#homepage' do
+    it "is the item's link" do
+      subject.homepage.should == 'http://feedproxy.google.com/~r/marshill/podcast/~3/btjS4Py6TOI/'
+    end
+    
+    it "ignores javascript urls" do
+      @spamy_content = @podcast_xml.gsub('<link>http://feedproxy.google.com/~r/marshill/podcast/~3/btjS4Py6TOI/', '<link>javascript://alert("spam")')
+      spamy.homepage.should == nil
+    end
+    
+    # it "uses the original link feedburner:origLink" do
+    #   pending
+    # end
+  end
+  
+  describe '#published_at' do
+    it "returns a Time obj" do
+      subject.published_at.should be_a Time
+    end
+    
+    it "returns the items pubDate" do
+      subject.published_at.should == Time.parse('Sun, 24 Mar 2013 15:00:14 +0000')
+    end
+  end
+  
+  describe '#duration' do  
+    it "is the itunes:duration in seconds" do
+      subject.duration.should == 2194 #36:34
+    end
+  end
+  
+  describe '#media_link' do
+    it "is a link to the enclosed media" do
+      subject.media_link.should == 'http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3'
+    end
+    
+    # it "uses the original link feedburner:origEnclosureLink" do
+    #   pending
+    # end
+  end
+  
+  describe 'media_length' do
+    it "is the byte length of the media" do
+      subject.media_length.should == 17689826
+    end
+  end
+  
+  describe 'media_type' do
+    it "is a string describing the file format" do
+      subject.media_type.should == 'audio/mpeg'
+    end
   end
   
   # describe '#next' do

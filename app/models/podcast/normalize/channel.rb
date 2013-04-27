@@ -30,6 +30,12 @@ module Podcast::Normalize
     def poster_image
       sanitize_url(channel.image.url)
     end
+    
+    def keywords
+      channel.itunes_keywords.map do |keyword|
+        plain_text(keyword)
+      end
+    end
 
     # original set of podcast items
     def native_rss_items

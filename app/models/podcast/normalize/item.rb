@@ -7,6 +7,42 @@ module Podcast::Normalize
       @rss_item_obj = rss_item_obj
     end
     
+    def title
+      plain_text(rss_item_obj.title)
+    end
+    
+    def description
+      plain_text( rss_item_obj.description )
+    end
+    
+    def homepage
+      sanitize_url(rss_item_obj.link)
+    end
+    
+    def published_at
+      pubDate
+    end
+    
+    # duration in seconds (integer)
+    def duration
+      t = itunes_duration
+      [ t.hour   * 3600,
+        t.minute * 60,
+        t.second
+      ].sum
+    end
+    
+    def media_link
+      sanitize_url(enclosure.url)
+    end
+    
+    def media_length
+      enclosure.length.to_i
+    end
+    
+    def media_type
+      enclosure.type
+    end
     
     # Delegate missing methods to rss_item_obj
     def method_missing(meth, *args, &block)

@@ -6,6 +6,7 @@ module Podcast::Normalize
     
     def plain_text(str)
       str = ActionController::Base.helpers.sanitize(str)    #rm script && style
+      str.gsub!(/>\s*</,'> <')                              #single space between tags
       str = ActionController::Base.helpers.strip_tags(str)  #rm tags
       str.strip                                             #rm padding/whitespace
     end

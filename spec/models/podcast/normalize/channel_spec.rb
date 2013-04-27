@@ -66,7 +66,13 @@ describe Podcast::Normalize::Channel do
   end
   
   describe '#last_updated' do
-    it('returns a Time obj') { subject.last_updated.should == Time.parse('Tue, 26 Mar 2013 21:10:35 +0000') }    
+    it "returns a Time obj" do
+      subject.last_updated.should be_a Time
+    end
+    
+    it "returns the channel's lastBuildDate" do
+      subject.last_updated.should == Time.parse('Tue, 26 Mar 2013 21:10:35 +0000')
+    end
   end
   
   describe '#poster_image' do
@@ -78,11 +84,21 @@ describe Podcast::Normalize::Channel do
       @spamy_content = @podcast_xml.gsub('<url>http://marshill.org/teaching/files/powerpress/marslogo.png', '<url>javascript://alert("spam")')
       spamy.poster_image.should == nil
     end
+  end
+  
+  describe '#keywords' do
+    it "returns an array" do
+      subject.keywords.should be_a Array
+    end
     
-    # it "sanitizes the url" do
-    #   @spamy_content = @podcast_xml.gsub(%r{http://www.marshill.org/mhlogo.png}, 'javascript://alert("spam")')
-    #   spamy.poster_image.should == ''
-    # end
+    it "returns the channels itunes:keywords" do
+      subject.keywords.should == %w{Mars Grand Rapids Grandville Christianity Rob Bell Bell Grandville Shane Hipps}
+    end
+    
+    it "returns plain text keywords" do
+      @spamy_content = @podcast_xml.gsub("Mars,Grand,Rapids,Grandville,Christianity,Rob,Bell,Bell,Grandville,Shane,Hipps", "<![CDATA[Mars</h1>]]>,Grand,Rapids,Grandville")
+      spamy.keywords.should == %w{Mars Grand Rapids Grandville}
+    end
   end
   
   describe 'items' do
@@ -90,7 +106,6 @@ describe Podcast::Normalize::Channel do
       subject.items.should be_a Array
       subject.items.first.should be_a Podcast::Normalize::Item
     end
-    
   end
   
   describe '#method_missing', internal:true do

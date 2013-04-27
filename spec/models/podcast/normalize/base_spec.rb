@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Podcast::Normalize::Base do
   
   describe '#plain_text(str)' do
-    it "strips tags and lead/trailing whitespace" do
-      str = <<-TEXT
+    before(:all) do
+      @html_str = <<-TEXT
         <div>
           <p>
             <a href="javascript://alert('spam')">Friendly Link</a>
@@ -12,8 +12,17 @@ describe Podcast::Normalize::Base do
           </p>
         </div>
       TEXT
-      
-      subject.send(:plain_text, str).should == 'Friendly Link'
+    end
+    
+    it "strips tags, scripts, and lead/trailing whitespace" do
+      subject.send(:plain_text, @html_str).should == 'Friendly Link'
+    end
+    
+    it "whitespace pads the content of the removed tags" do
+      [ "<h1>Friendly</h1><p>Link</p>",
+        "<h1>Friendly</h1>    <p>Link</p>",
+        "<h1>Friendly</h1>\n<p>Link</p>"
+      ].each {|str| subject.send(:plain_text, str).should == 'Friendly Link' }
     end
   end
   
