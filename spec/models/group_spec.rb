@@ -22,7 +22,7 @@ describe Group do
   it { should have_many( :members ).through( :group_memberships ) } #users
   it { should have_many( :questions ) } 
   # it { should delegate_method(:meetings=).to(:group_memberships) }
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:group) }.should_not raise_error
     lambda { create(:group_w_member) }.should_not raise_error
   end

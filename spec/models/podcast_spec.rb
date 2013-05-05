@@ -20,7 +20,7 @@ describe Podcast do
   it { should belong_to :church }
   it { should have_many :studies }
   
-  it "should build from factory", internal:true do
+  it "builds from factory", internal:true do
     lambda { create(:podcast) }.should_not raise_error
   end
   

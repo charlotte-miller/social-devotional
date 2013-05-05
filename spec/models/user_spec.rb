@@ -33,7 +33,7 @@
 require 'spec_helper'
 
 describe User do
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     expect { create(:user) }.to_not raise_error
   end
 end

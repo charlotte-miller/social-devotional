@@ -30,7 +30,7 @@
 require 'spec_helper'
 
 describe AdminUser do
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:admin_user) }.should_not raise_error
   end
   

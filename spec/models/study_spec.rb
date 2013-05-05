@@ -25,7 +25,7 @@ describe Study do
   it { should belong_to(:podcast) }
   it { should have_one(:church).through(:podcast) }
     
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:study) }.should_not raise_error
   end
   

@@ -20,7 +20,7 @@ describe Lesson do
   it { should belong_to( :study )}
   it { should have_many( :questions )}
   
-  it "builds from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:lesson) }.should_not raise_error
   end
   

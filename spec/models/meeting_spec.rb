@@ -18,7 +18,7 @@ describe Meeting do
   it { should belong_to :group  }
   it { should belong_to :lesson }
   
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:meeting) }.should_not raise_error
   end
 end

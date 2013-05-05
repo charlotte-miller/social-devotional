@@ -17,7 +17,7 @@ describe GroupMembership do
   it { should belong_to( :member ).class_name( 'User' )}
   it { should belong_to :group }
   
-  it "should build from factory" do
+  it "builds from factory", internal:true do
     lambda { create(:group_membership) }.should_not raise_error
   end
   
