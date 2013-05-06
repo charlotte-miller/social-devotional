@@ -41,19 +41,20 @@ class User < ActiveRecord::Base
          
          
 
-  # -----------
+  # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
   has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-                    :fog_directory => "#{Rails.env}/profile_images",
-                    :fog_credentials => AppConfig.fog_credentials,  # {}
-                    :fog_host => 'asset1.social-devotional.com'     # cloudfront
-                    # http://rdoc.info/github/thoughtbot/paperclip/Paperclip/Storage/Fog
-                    # actually using AWS-SDK
+    :storage => :s3,
+    :bucket => AppConfig.s3.bucket,
+    :s3_credentials => AppConfig.s3.credentials,
+    :path => ':rails_env/:class/:attachment/:id/:updated_at.:extension'
+    # :url  => AppConfig.cloudfront.url
+
   
   
-  # -------------
+  # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
   has_many :group_memberships, :dependent => :destroy# ,        inverse_of: 'member'
@@ -61,7 +62,7 @@ class User < ActiveRecord::Base
   has_many :block_requests# ,                                   inverse_of: 'requester'
     
   
-  # ------------
+  # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :email#, :first_name, :last_name
@@ -73,13 +74,13 @@ class User < ActiveRecord::Base
     
   
   
-  # -------
+  # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------
   
   
   
-  # --------
+  # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
   

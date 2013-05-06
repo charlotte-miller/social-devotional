@@ -11,11 +11,11 @@
 #   xml_rpc_url: http://localhost:8008/
 
 common:
-  fog_credentials:
-    aws_access_key_id: '<your aws_access_key_id>'
-    aws_secret_access_key: '<your aws_secret_access_key>'
-    provider: 'AWS'
-    region: 'eu-west-1'
+  s3:
+    bucket: social-devotional
+    credentials:
+      access_key_id: AKIAJAW4PTOXOO6POA7Q
+      secret_access_key: 16OnbG3tdfOHNA/J3br9/4KjeV/vtgoMeXoR8L9R
 
 development:
 

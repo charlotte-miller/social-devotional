@@ -99,15 +99,21 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
   add_index "groups", ["state", "is_public"], :name => "index_groups_on_state_and_is_public"
 
   create_table "lessons", :force => true do |t|
-    t.integer  "study_id",                   :null => false
-    t.integer  "position",    :default => 0
-    t.string   "title",                      :null => false
+    t.integer  "study_id",                          :null => false
+    t.integer  "position",           :default => 0
+    t.string   "title",                             :null => false
     t.text     "description"
     t.string   "backlink"
-    t.string   "video_url"
-    t.string   "audio_url"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   add_index "lessons", ["study_id", "position"], :name => "index_lessons_on_study_id_and_position"

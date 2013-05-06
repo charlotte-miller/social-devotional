@@ -2,16 +2,22 @@
 #
 # Table name: lessons
 #
-#  id          :integer          not null, primary key
-#  study_id    :integer          not null
-#  position    :integer          default(0)
-#  title       :string(255)      not null
-#  description :text
-#  backlink    :string(255)
-#  video_url   :string(255)
-#  audio_url   :string(255)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                 :integer          not null, primary key
+#  study_id           :integer          not null
+#  position           :integer          default(0)
+#  title              :string(255)      not null
+#  description        :text
+#  backlink           :string(255)
+#  video_file_name    :string(255)
+#  video_content_type :string(255)
+#  video_file_size    :integer
+#  video_updated_at   :datetime
+#  audio_file_name    :string(255)
+#  audio_content_type :string(255)
+#  audio_file_size    :integer
+#  audio_updated_at   :datetime
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
 #
 
 class Lesson < ActiveRecord::Base
@@ -19,8 +25,36 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :audio_url, :backlink, :description, :position, :study, :study_id, :title, :video_url
-  acts_as_list scope: :study 
+  acts_as_list scope: :study
+  attr_accessible :study, :study_id, :position, :title, :description, :backlink, 
+                  :audio, :video, :audio_remote_url, :video_remote_url
+  
+  has_attached_file :audio,
+    :storage => :s3,
+    :bucket => AppConfig.s3.bucket,
+    :s3_credentials => AppConfig.s3.credentials,
+    :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
+    # :url  => AppConfig.cloudfront.url
+    
+  has_attached_file :video,
+    :storage => :s3,
+    :bucket => AppConfig.s3.bucket,
+    :s3_credentials => AppConfig.s3.credentials,
+    :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
+    # :url  => AppConfig.cloudfront.url
+  
+  
+  # https://github.com/thoughtbot/paperclip/wiki/Attachment-downloaded-from-a-URL
+  attr_reader :audio_remote_url, :video_remote_url
+  def audio_remote_url=(url_str)
+    self.audio=URI.parse(url_str)
+    @audio_remote_url = url_str
+  end
+  
+  def video_remote_url=(url_str)
+    self.video=URI.parse(url_str)
+    @video_remote_url = url_str
+  end
   
   # http://sunspot.github.com/
   # searchable do
@@ -38,8 +72,12 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  # validates_uniqueness_of :position, :scope => :study_id
   validates_presence_of :study, :title
+  # validates_uniqueness_of :position, :scope => :study_id
+  # validates_attachment_presence :audio, :video
+  
+  # http://stackoverflow.com/questions/3181845/validate-attachment-content-type-paperclip
+  # validates_attachment_content_type :audio
   
   
   # ---------------------------------------------------------------------------------
