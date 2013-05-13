@@ -7,7 +7,6 @@ describe "admin/studies/new" do
       :title => "MyString",
       :description => "MyString",
       :ref_link => "MyString",
-      :video_url => "MyString",
       :created_at => Time.now
     ).as_new_record)
   end
@@ -21,7 +20,7 @@ describe "admin/studies/new" do
       assert_select "input#study_title", :name => "study[title]"
       assert_select "input#study_description", :name => "study[description]"
       assert_select "input#study_ref_link", :name => "study[ref_link]"
-      assert_select "input#study_video_url", :name => "study[video_url]"
+      # assert_select "input#study_video_url", :name => "study[video_url]"
     end
   end
 end

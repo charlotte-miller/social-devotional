@@ -25,9 +25,7 @@
 FactoryGirl.define do
   factory :lesson do
     before(:create, :stub) do
-      Lesson.any_instance.stub({
-        save_attached_files: true
-      })
+      Lesson.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
     end
     
     study
@@ -35,7 +33,7 @@ FactoryGirl.define do
     title "What it means to be Salt"
     description "We are called to be salt and light.  But if salt looses it's saltiness it is worthless."
     backlink "http://link.com/salt-and-light"
-    video nil #File.new(Rails.root.join('spec/files', 'salt-and-light.mp4'), 'r')
-    audio nil #File.new(Rails.root.join('spec/files', 'salt-and-light.mp3'), 'r')
+    video File.new(Rails.root.join('spec/files', 'video.m4v'), 'r')
+    audio File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')
   end
 end

@@ -3,9 +3,17 @@ require 'spec_helper'
 describe Admin::LessonsController do
   login_admin_user
   
+  before(:each) do
+    # https://github.com/thoughtbot/paperclip/issues/197
+    AWS.stub!
+  end
+  
   let!(:study) { create(:study) }
   let!(:lesson){ create(:lesson, study:study)}
-  let(:valid_attributes){ attributes_for(:lesson).merge( study_id:study.id) }
+  let(:valid_attributes){ 
+    attributes_for(:lesson).merge( study_id:study.id)
+    .tap {|hash| [:audio, :video].each {|media| hash[media]= fixture_file_upload(hash[media].to_path)} }
+  }
   
   describe "GET index" do
     before(:each) { get :index, {} }

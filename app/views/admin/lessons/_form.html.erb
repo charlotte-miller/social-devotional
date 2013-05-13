@@ -1,4 +1,4 @@
-<%= form_for [:admin, @lesson], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [:admin, @lesson], :html => { :class => 'form-horizontal', multipart:true } do |f| %>
   <div class="control-group">
     <%= f.label :study_id, :class => 'control-label' %>
     <div class="controls">
@@ -30,15 +30,15 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :video_url, :class => 'control-label' %>
+    <%= f.label :video, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :video_url, :class => 'text_field' %>
+      <%= f.file_field :video, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :audio_url, :class => 'control-label' %>
+    <%= f.label :audio, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :audio_url, :class => 'text_field' %>
+      <%= f.file_field :audio, :class => 'text_field' %>
     </div>
   </div>
 

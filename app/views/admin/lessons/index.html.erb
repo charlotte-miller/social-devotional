@@ -11,8 +11,8 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:backlink) %></th>
-      <th><%= model_class.human_attribute_name(:video_url) %></th>
-      <th><%= model_class.human_attribute_name(:audio_url) %></th>
+      <th><%= model_class.human_attribute_name(:video) %></th>
+      <th><%= model_class.human_attribute_name(:audio) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -26,8 +26,8 @@
         <td><%= lesson.title %></td>
         <td><%= lesson.description %></td>
         <td><%= lesson.backlink %></td>
-        <td><%= lesson.video_url %></td>
-        <td><%= lesson.audio_url %></td>
+        <td><%= lesson.video.url %></td>
+        <td><%= lesson.audio.url %></td>
         <td><%=l lesson.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

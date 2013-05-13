@@ -72,7 +72,6 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'shoulda-matchers'
   gem 'syntax'
-  gem 'webmock'
   gem 'zeus'
   
   # Debugger
@@ -85,7 +84,7 @@ group :development, :test do
 end
 
 group :test do
-  # gem 'rspec-rails-mocha', '~> 0.3.1', :require => false
+  gem 'webmock'
   gem 'therubyracer', :platform => :ruby
   gem 'sunspot_test'
 end

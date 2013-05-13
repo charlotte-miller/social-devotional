@@ -6,7 +6,7 @@ module Paperclip
   end
   class Thumbnail
     def make
-      src = File.join(Rails.root, 'spec/files/', 'user_profile_image.jpeg') #Test::FileHelper.fixture_file('white_pixel.jpg')
+      src = File.join(Rails.root, 'spec/files/', 'pixel.gif') #user_profile_image.jpg
       dst = Tempfile.new([@basename, @format].compact.join("."))
       dst.binmode
       FileUtils.cp(src, dst.path)

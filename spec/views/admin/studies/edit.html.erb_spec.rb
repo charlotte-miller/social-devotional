@@ -7,7 +7,6 @@ describe "admin/studies/edit" do
       :title => "MyString",
       :description => "MyString",
       :ref_link => "MyString",
-      :video_url => "MyString",
       :created_at => Time.now
     ))
   end
@@ -21,7 +20,7 @@ describe "admin/studies/edit" do
       assert_select "input#study_title", :name => "studies[title]"
       assert_select "input#study_description", :name => "studies[description]"
       assert_select "input#study_ref_link", :name => "studies[ref_link]"
-      assert_select "input#study_video_url", :name => "studies[video_url]"
+      # assert_select "input#study_video_url", :name => "studies[video_url]"
     end
   end
 end

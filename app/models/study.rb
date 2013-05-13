@@ -8,7 +8,6 @@
 #  title                   :string(255)      not null
 #  description             :string(255)
 #  ref_link                :string(255)
-#  video_url               :string(255)
 #  poster_img_file_name    :string(255)
 #  poster_img_content_type :string(255)
 #  poster_img_file_size    :integer
@@ -24,10 +23,22 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :description, :ref_link, :slug, :title, :video_url, :podcast, :podcast_id
-  has_attached_file :poster_img #aws setup
+  attr_accessible :description, :ref_link, :slug, :title, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
   friendly_id :title
-  # delegate :something to: :podcasts
+  
+  has_attached_file :poster_img,
+    :storage => :s3,
+    :bucket => AppConfig.s3.bucket,
+    :s3_credentials => AppConfig.s3.credentials,
+    :path => ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
+    # :url  => AppConfig.cloudfront.url
+    
+  # https://github.com/thoughtbot/paperclip/wiki/Attachment-downloaded-from-a-URL
+  attr_reader :poster_img_remote_url
+  def poster_img_remote_url=(url_str)
+    self.poster_img=URI.parse(url_str)
+    @poster_img_remote_url = url_str
+  end
 
   # http://sunspot.github.com/
   searchable do
@@ -39,20 +50,20 @@ class Study < ActiveRecord::Base
     # string(  :tags          )     { tags.select(:text).map(&:text).join(' | ')}
   end
   
+  # delegate :something to: :podcasts
   
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :lessons, :order => :position, :dependent => :destroy do
-    def number(n)
-      raise ArgumentError if n > lessons_count
-      where(position:n) 
-    end
-  end
-  
   belongs_to :podcast#, :inverse_of => :studies
   has_one :church,     :through => :podcast
-  
+  has_many :lessons, :order => 'position ASC', :dependent => :destroy do
+    def number(n, strict=false)
+      raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
+      where(position:n).first
+    end
+  end
+    
   
   # ---------------------------------------------------------------------------------
   # Validations
@@ -84,7 +95,7 @@ class Study < ActiveRecord::Base
   
 private
 
-  def searchable_title target
-    target.downcase.gsub(/^(an?|the|for|by)\b/, '')
+  def searchable_title str
+    str.downcase.gsub(/^(an?|the|for|by)\b/, '').strip
   end
 end

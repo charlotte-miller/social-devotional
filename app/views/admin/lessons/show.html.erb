@@ -14,10 +14,10 @@
   <dd><%= @lesson.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:backlink) %>:</strong></dt>
   <dd><%= @lesson.backlink %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:video_url) %>:</strong></dt>
-  <dd><%= @lesson.video_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:audio_url) %>:</strong></dt>
-  <dd><%= @lesson.audio_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:video) %>:</strong></dt>
+  <dd><%= @lesson.video.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:audio) %>:</strong></dt>
+  <dd><%= @lesson.audio.url %></dd>
 </dl>
 
 <div class="form-actions">

@@ -8,7 +8,6 @@ describe "admin/studies/index" do
         :title => "Title",
         :description => "Description",
         :ref_link => "Ref Link",
-        :video_url => "Video Url",
         :created_at => Time.now
       ),
       stub_model(Study,
@@ -16,7 +15,6 @@ describe "admin/studies/index" do
         :title => "Title",
         :description => "Description",
         :ref_link => "Ref Link",
-        :video_url => "Video Url",
         :created_at => Time.now
       )
     ])

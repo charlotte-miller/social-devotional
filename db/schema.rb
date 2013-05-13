@@ -178,7 +178,6 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.string   "title",                                  :null => false
     t.string   "description"
     t.string   "ref_link"
-    t.string   "video_url"
     t.string   "poster_img_file_name"
     t.string   "poster_img_content_type"
     t.integer  "poster_img_file_size"

@@ -25,7 +25,6 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:ref_link) %></th>
-      <th><%= model_class.human_attribute_name(:video_url) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -38,7 +37,6 @@
         <td><%= study.title %></td>
         <td><%= study.description %></td>
         <td><%= study.ref_link %></td>
-        <td><%= study.video_url %></td>
         <td><%=l study.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -35,7 +35,7 @@
 FactoryGirl.define do
   factory :user, aliases: [:requester, :author, :member] do
     before(:create, :stub) do
-      User.any_instance.stub({ save_attached_files: true })
+      User.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
     end
     
     first_name  'Fred'
@@ -43,6 +43,6 @@ FactoryGirl.define do
     sequence(   :email)  {|n| "example@domain#{n}.com"}
     password    'super-secret'
     password_confirmation  {|me| me.password }
-    profile_image File.open(File.join(Rails.root, 'spec/files/', 'user_profile_image.jpeg' ))
+    profile_image File.open(File.join(Rails.root, 'spec/files/', 'user_profile_image.jpg' ))
   end
 end

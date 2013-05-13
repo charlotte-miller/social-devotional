@@ -7,7 +7,6 @@ describe "admin/studies/show" do
       :title => "Title",
       :description => "Description",
       :ref_link => "Ref Link",
-      :video_url => "Video Url",
       :created_at => Time.now
     ))
   end
@@ -19,6 +18,6 @@ describe "admin/studies/show" do
     rendered.should match(/Title/)
     rendered.should match(/Description/)
     rendered.should match(/Ref Link/)
-    rendered.should match(/Video Url/)
+    # rendered.should match(/Lessons/)
   end
 end

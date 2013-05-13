@@ -8,8 +8,13 @@
 <div class="row-fluid">
   <video <%= "poster=#{@study.poster_img} id='video-for-#{@study.id}' " %> 
     class="video-js vjs-default-skin span10 offset1" controls preload="auto" data-setup="{}">
-    <source src="<%= @study.video_url %>" type='video/mp4'></source>
+    <source src="<%= @study.lessons.first.video.url %>" type='video/mp4'></source>
   </video>
+  <ul>
+    <%- @study.lessons.each do |lesson| -%>
+      <li id="<%= lesson.id %>"><%= lesson.video.url %></li>
+    <%- end -%>
+  </ul>
 </div>
 <div class="row-fluid">
   <dl class="dl-horizontal" id="study">
@@ -19,8 +24,6 @@
     <dd><%= @study.description %></dd>
     <dt><strong><%= model_class.human_attribute_name(:ref_link) %>:</strong></dt>
     <dd><%= @study.ref_link %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:video_url) %>:</strong></dt>
-    <dd><%= @study.video_url %></dd>
   </dl>
   <%# link_to 'Back to All', studies_path, :class => 'btn offset1'  %>
 </div>
