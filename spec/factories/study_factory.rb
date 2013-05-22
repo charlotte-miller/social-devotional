@@ -23,8 +23,7 @@ FactoryGirl.define do
   factory :study do
     before(:create, :stub) do
       Study.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
-      # DELETE prepare_for_destroy:true
-      # OR stub all AWS calls: ``AWS.stub!``
+      # DELETE prepare_for_destroy:true OR stub all AWS calls: ``AWS.stub!``
     end
     
     ignore do

@@ -16,6 +16,7 @@
 #  audio_content_type :string(255)
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
+#  machine_sorted     :boolean          default(FALSE)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
@@ -33,6 +34,27 @@ describe Lesson do
   describe 'scopes' do
     describe 'for_study(:study_id)' do
       pending
+    end
+  end
+    
+  describe 'similar_lesson?' do
+    it "matches lessons by similar title" do
+      matching_title_pairs = [
+        ['Mark Part 1', 'Mark Part 2'],
+        ['Mark [Part 1]', 'Mark [Part 2]'],
+        ['Mark (Part 1)', 'Mark (Part 2)'],
+        ['Mark Part I', 'Mark Part II']
+      ].each do |title_pair|
+        part_1, part_2 = title_pair.map {|title| build_stubbed(:lesson, title:title)}
+        (part_1.similar_lesson? part_2).should be_true
+      end
+      
+      non_matching_title_pairs = [
+        ['Mark Part 1', 'Moses Part 1']
+      ].each do |title_pair|
+        part_1, part_2 = title_pair.map {|title| build_stubbed(:lesson, title:title)}
+        (part_1.similar_lesson? part_2).should be_false
+      end
     end
   end
 end

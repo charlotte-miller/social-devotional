@@ -80,7 +80,9 @@ describe Podcast do
       pending
     end
     
-
+    it "adds similar lessons to the same study" do
+      pending
+    end
   end
 
 end

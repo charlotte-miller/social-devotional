@@ -8,9 +8,9 @@ describe "admin/lessons/index" do
         :position => 2,
         :title => "Title",
         :description => "MyText",
-        :backlink => "",
-        :video_url => "Video Url",
-        :audio_url => "Audio Url",
+        :backlink => "backlink",
+        :video => v = video_file,
+        :audio => a = audio_file,
         :created_at => Time.now
       ),
       stub_model(Lesson,
@@ -18,9 +18,9 @@ describe "admin/lessons/index" do
         :position => 2,
         :title => "Title",
         :description => "MyText",
-        :backlink => "",
-        :video_url => "Video Url",
-        :audio_url => "Audio Url",
+        :backlink => "backlink",
+        :video => v,
+        :audio => a,
         :created_at => Time.now
       )
     ])
@@ -31,10 +31,10 @@ describe "admin/lessons/index" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "".to_s, :count => 2
-    assert_select "tr>td", :text => "Video Url".to_s, :count => 2
-    assert_select "tr>td", :text => "Audio Url".to_s, :count => 2
+    assert_select "tr>td", :text => "Title", :count => 2
+    assert_select "tr>td", :text => "MyText", :count => 2
+    assert_select "tr>td", :text => "backlink", :count => 2
+    assert_select "tr>td", :text => "Video", :count => 2
+    assert_select "tr>td", :text => "Audio", :count => 2
   end
 end

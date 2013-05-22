@@ -8,6 +8,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string              :backlink
       t.has_attached_file   :video
       t.has_attached_file   :audio
+      t.boolean             :machine_sorted,  default: false
 
       t.timestamps
     end

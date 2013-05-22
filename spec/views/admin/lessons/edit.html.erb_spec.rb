@@ -8,8 +8,8 @@ describe "admin/lessons/edit" do
       :title => "MyString",
       :description => "MyText",
       :backlink => "",
-      :video_url => "MyString",
-      :audio_url => "MyString",
+      :video => video_file,
+      :audio => audio_file,
       :created_at => Time.now
     ))
   end
@@ -24,8 +24,8 @@ describe "admin/lessons/edit" do
       assert_select "input#lesson_title", :name => "lesson[title]"
       assert_select "textarea#lesson_description", :name => "lesson[description]"
       assert_select "input#lesson_backlink", :name => "lesson[backlink]"
-      assert_select "input#lesson_video_url", :name => "lesson[video_url]"
-      assert_select "input#lesson_audio_url", :name => "lesson[audio_url]"
+      assert_select "input#lesson_video", :name => "lesson[video]"
+      assert_select "input#lesson_audio", :name => "lesson[audio]"
     end
   end
 end

@@ -16,17 +16,19 @@
 #  audio_content_type :string(255)
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
+#  machine_sorted     :boolean          default(FALSE)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
 
 class Lesson < ActiveRecord::Base
+  # include Comparable
   
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
   acts_as_list scope: :study
-  attr_accessible :study, :study_id, :position, :title, :description, :backlink, 
+  attr_accessible :study, :study_id, :position, :title, :description, :backlink, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
   
   has_attached_file :audio,
@@ -93,6 +95,16 @@ class Lesson < ActiveRecord::Base
   
   def study_title
     @study_title ||= Study.select(:title).where( id:study_id ).first.title
+  end
+  
+  def similar_lesson? other_lesson
+    def scrub( dirty )
+      roman_num = /(X{0,2})(IX|IV|V?I{1,3})?/ #up to 30
+      clean = dirty.strip.gsub(/\d/, '')
+      clean = clean.gsub(/\s#{roman_num}/,'')
+    end
+    
+    scrub(title) == scrub(other_lesson.title)
   end
   
 private

@@ -8,8 +8,8 @@ describe "lessons/show" do
       :position => 2,
       :title => "Title",
       :description => "MyText",
-      :video_url => "Video Url",
-      :audio_url => "Audio Url",
+      :video => video_file,
+      :audio => audio_file,
       :created_at => Time.now,
       :study_title => 'Matthew Study'
     ))
@@ -21,7 +21,7 @@ describe "lessons/show" do
     rendered.should match(/2/)
     rendered.should match(/Title/)
     rendered.should match(/MyText/)
-    rendered.should match(/Video Url/)
-    rendered.should match(/Audio Url/)
+    rendered.should match( url_to_regex(@lesson.video.url) )
+    rendered.should match( url_to_regex(@lesson.audio.url) )
   end
 end

@@ -7,9 +7,9 @@ describe "admin/lessons/show" do
       :position => 2,
       :title => "Title",
       :description => "MyText",
-      :backlink => "",
-      :video_url => "Video Url",
-      :audio_url => "Audio Url",
+      :backlink => "backlink",
+      :video => video_file,
+      :audio => audio_file,
       :created_at => Time.now
     ))
   end
@@ -21,8 +21,8 @@ describe "admin/lessons/show" do
     rendered.should match(/2/)
     rendered.should match(/Title/)
     rendered.should match(/MyText/)
-    rendered.should match(//)
-    rendered.should match(/Video Url/)
-    rendered.should match(/Audio Url/)
+    rendered.should match(/backlink/)
+    rendered.should match( url_to_regex(@lesson.video.url) )
+    rendered.should match( url_to_regex(@lesson.audio.url) )
   end
 end
