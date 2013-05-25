@@ -27,6 +27,10 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
+  # http://rubydoc.info/github/FriendlyId/friendly_id/master/FriendlyId/Scoped
+  # extend FriendlyId
+  # friendly_id :position, :use => :scoped, :scope => :study
+  
   acts_as_list scope: :study
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
@@ -91,7 +95,6 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
-  # def to_param; position ;end #used by url helpers as :id
   
   def study_title
     @study_title ||= Study.select(:title).where( id:study_id ).first.title

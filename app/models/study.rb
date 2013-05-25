@@ -24,7 +24,12 @@ class Study < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :description, :ref_link, :slug, :title, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
-  friendly_id :title
+  delegate :church_name, to: :podcast
+  friendly_id :title #:slug_candidates #update after v 5.0.0
+  
+  def slug_candidates
+    [ :title, [:title, :church_name] ]
+  end
   
   has_attached_file :poster_img,
     :storage => :s3,
@@ -50,7 +55,6 @@ class Study < ActiveRecord::Base
     # string(  :tags          )     { tags.select(:text).map(&:text).join(' | ')}
   end
   
-  # delegate :something to: :podcasts
   
   # ---------------------------------------------------------------------------------
   # Associations
