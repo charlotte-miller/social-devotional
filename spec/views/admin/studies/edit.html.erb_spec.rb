@@ -14,7 +14,6 @@ describe "admin/studies/edit" do
   it "renders the edit studies form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => admin_studies_path(@studies), :method => "post" do
       assert_select "input#study_slug", :name => "studies[slug]"
       assert_select "input#study_title", :name => "studies[title]"

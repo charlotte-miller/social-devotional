@@ -1,33 +1,32 @@
-<%- model_class = Lesson -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => 'Lessons' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:study_id) %></th>
-      <th><%= model_class.human_attribute_name(:position) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:backlink) %></th>
-      <th><%= model_class.human_attribute_name(:video) %></th>
-      <th><%= model_class.human_attribute_name(:audio) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Study</th>
+      <th>Position</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Backlink</th>
+      <th>Video</th>
+      <th>Audio</th>
+      <th>Created At</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @lessons.each do |lesson| %>
-      <tr>
+      <tr class="lesson">
         <td><%= link_to lesson.id, admin_lesson_path(lesson) %></td>
         <td><%= lesson.study_id %></td>
         <td><%= lesson.position %></td>
         <td><%= lesson.title %></td>
         <td><%= lesson.description %></td>
         <td><%= lesson.backlink %></td>
-        <td><%= lesson.video.url %></td>
-        <td><%= lesson.audio.url %></td>
+        <td><%= link_to lesson.video.original_filename, lesson.video.url %></td>
+        <td><%= link_to lesson.audio.original_filename, lesson.audio.url %></td>
         <td><%=l lesson.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

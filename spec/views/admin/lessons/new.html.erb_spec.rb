@@ -17,7 +17,6 @@ describe "admin/lessons/new" do
   it "renders new lesson form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => admin_lessons_path, :method => "post" do
       assert_select "input#lesson_study_id", :name => "lesson[study_id]"
       assert_select "input#lesson_position", :name => "lesson[position]"

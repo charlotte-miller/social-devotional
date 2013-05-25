@@ -3,21 +3,13 @@ require 'spec_helper'
 describe "studies/index" do
   before(:each) do
     assign(:studies, [
-      stub_model(Study,
-        :slug => "Slug",
-        :title => "Title",
-        :description => "Description",
-        :ref_link => "Ref Link",
-        :video_url => "Video Url",
-        :created_at => Time.now
+      build_stubbed(Study,
+        :title => "Road to Damascus",
+        :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
       ),
-      stub_model(Study,
-        :slug => "Slug",
-        :title => "Title",
-        :description => "Description",
-        :ref_link => "Ref Link",
-        :video_url => "Video Url",
-        :created_at => Time.now
+      build_stubbed(Study,
+        :title => "Road to Damascus",
+        :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
       )
     ])
   end
@@ -25,5 +17,8 @@ describe "studies/index" do
   it "renders a list of studies" do
     render
     assert_select ".study", :count => 2
+    
+    rendered.should have_content "Road to Damascus"
+    rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
   end
 end

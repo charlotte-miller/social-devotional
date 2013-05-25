@@ -42,7 +42,7 @@ class Podcast < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   class << self
-    def refresh(podcasts = Podcast.all)
+    def pull_updates(podcasts = Podcast.all)
       podcast_arr = Array.wrap(podcasts)
       
       Podcast::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|

@@ -9,7 +9,6 @@ describe "meetings/edit" do
   it "renders the edit meeting form" do
     render
 
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => group_meetings_path(@group, @meeting), :method => "post" do
     end
   end

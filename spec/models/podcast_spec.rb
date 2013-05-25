@@ -24,7 +24,7 @@ describe Podcast do
     lambda { create(:podcast) }.should_not raise_error
   end
   
-  describe '.refresh( podcasts )' do
+  describe '.pull_updates( podcasts )' do
     before(:each) do
       @podcasts = 2.times.map { create(:podcast, last_updated: Time.parse('Mon, 25 Mar 2013')) }
       @podcast  = Podcast.first
@@ -33,17 +33,17 @@ describe Podcast do
     
     it "updates all by default" do
       Podcast::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
-      Podcast.refresh()
+      Podcast.pull_updates()
     end
     
     it "accetps an array of @podcasts" do
       Podcast::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
-      Podcast.refresh(@podcasts)
+      Podcast.pull_updates(@podcasts)
     end
     
     it "accetps a single @podcast" do
       Podcast::Collector.should_receive( :new ).with([@podcast]).and_return(@runner)
-      Podcast.refresh(@podcast)
+      Podcast.pull_updates(@podcast)
     end
     
     describe '&on_complete' do
@@ -54,7 +54,7 @@ describe Podcast do
     
       it "updates each podcast" do
         @podcasts.each {|podcast| podcast.should_receive(:update_channel).once }
-        Podcast.refresh
+        Podcast.pull_updates
       end
       
       it "skips up-to-date podcasts" do
@@ -63,7 +63,7 @@ describe Podcast do
         
         out_of_date.should_receive(:update_channel)
         up_to_date.should_not_receive(:update_channel)
-        Podcast.refresh
+        Podcast.pull_updates
       end
     end
     

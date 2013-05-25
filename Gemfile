@@ -11,7 +11,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
 gem 'devise-encryptable'
-gem "friendly_id", "~> 4.0.9"
+gem "friendly_id", "~> 4.0.9" #'~> 5.0.0'
 gem 'acts_as_list'
 gem 'state_machine'
 gem 'sunspot_rails'

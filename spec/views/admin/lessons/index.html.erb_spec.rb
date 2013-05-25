@@ -2,39 +2,40 @@ require 'spec_helper'
 
 describe "admin/lessons/index" do
   before(:each) do
-    assign(:lessons, [
-      stub_model(Lesson,
-        :study_id => 1,
-        :position => 2,
-        :title => "Title",
-        :description => "MyText",
-        :backlink => "backlink",
-        :video => v = video_file,
-        :audio => a = audio_file,
-        :created_at => Time.now
+    @audio, @video = [audio_file, video_file]
+    lessons = assign(:lessons, [
+      build_stubbed(Lesson,
+        :title => "Road to Damascus Part 1",
+        :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
+        :backlink => "http://www.church.org/sermon/1234",
+        :video => @video,
+        :audio => @audio,
       ),
-      stub_model(Lesson,
-        :study_id => 1,
-        :position => 2,
-        :title => "Title",
-        :description => "MyText",
-        :backlink => "backlink",
-        :video => v,
-        :audio => a,
-        :created_at => Time.now
+      build_stubbed(Lesson,
+        :title => "Road to Damascus Part 2",
+        :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
+        :backlink => "http://www.church.org/sermon/1235",
+        :video => @video,
+        :audio => @audio,
       )
     ])
+    base_url = 'http://s3.amazonaws.com/social-devotional/test/lessons'
+    @audio_url_matcher = %r`#{base_url}/audios/\d{10}-#{@audio.basename}\?\d{10}`
+    @video_url_matcher = %r`#{base_url}/videos/\d{10}-#{@video.basename}\?\d{10}`
   end
 
   it "renders a list of lessons" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "Title", :count => 2
-    assert_select "tr>td", :text => "MyText", :count => 2
-    assert_select "tr>td", :text => "backlink", :count => 2
-    assert_select "tr>td", :text => "Video", :count => 2
-    assert_select "tr>td", :text => "Audio", :count => 2
+    assert_select('.lesson', count: 2)
+    
+    rendered.should have_content "Road to Damascus Part 1"
+    rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
+    rendered.should have_content "http://www.church.org/sermon/1234"
+    
+    rendered.should have_content @audio.basename
+    rendered.should match @audio_url_matcher
+    
+    rendered.should have_content @video.basename
+    rendered.should match @video_url_matcher
   end
 end

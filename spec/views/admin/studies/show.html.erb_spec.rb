@@ -2,22 +2,22 @@ require 'spec_helper'
 
 describe "admin/studies/show" do
   before(:each) do
-    @study = assign(:study, stub_model(Study,
-      :slug => "Slug",
-      :title => "Title",
-      :description => "Description",
-      :ref_link => "Ref Link",
-      :created_at => Time.now
+    @study = assign(:study, build_stubbed(Study,
+      :slug => "road-to-damascus",
+      :title => "Road to Damascus",
+      :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
+      :ref_link => "http://www.church.org/podcast/1234"
     ))
   end
 
   it "renders attributes in <p>" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Slug/)
-    rendered.should match(/Title/)
-    rendered.should match(/Description/)
-    rendered.should match(/Ref Link/)
+    assert_select "#study"
+        
+    rendered.should have_content "road-to-damascus"
+    rendered.should have_content "Road to Damascus"
+    rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
+    rendered.should have_content "http://www.church.org/podcast/1234"
     # rendered.should match(/Lessons/)
   end
 end
