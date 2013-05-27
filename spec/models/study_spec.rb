@@ -33,6 +33,9 @@ describe Study do
     lambda { create(:study) }.should_not raise_error
   end
   
+  describe '- scopes' do
+  end
+  
   describe '#lessons.number(n, strict=false)' do
     before(:each) do
       @study = create(:study_with_n_lessons, n:2 )

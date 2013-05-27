@@ -24,19 +24,27 @@ class StudiesController < ApplicationController
   # GET /library/1
   # GET /library/1.json
   def show
-    @study = Study.find(params[:id])
-    
+    @study = find_or_redirect_to_study || return #redirecting
+    @lessons = @study.lessons
+    @video   = @lessons.first.video
     
       
-    respond_to do |format|  
-      # Follow old friendly_id 
-      unless request.path == study_path(@study)
-        redirect_to( @study, status: :moved_permanently ) && return
-      end
-      
+    respond_to do |format|      
       format.html # show.html.erb
       format.json { render json: @study }
     end
   end
 
+private
+  
+  # Return @study OR follow old friendly_id
+  # Usage: @study = find_or_redirect_to_study || return #redirecting
+  def find_or_redirect_to_study
+    study = Study.w_lessons.find(params[:id]) 
+    unless request.path == study_path(study)
+      redirect_to( study, status: :moved_permanently ) && (return false)
+    end
+    return study
+  end
+  
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe StudiesController do
-  let!(:study)  { create(:study) }
+  let!(:study)  { create(:study_w_lesson) }
   let(:podcast) { study.podcast  }
   let(:valid_attributes) { attributes_for(:study, podcast: podcast).merge({podcast_id: podcast.id}) }
   let(:valid_session) { {} }

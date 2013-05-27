@@ -7,7 +7,8 @@ describe "studies/show" do
       :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
       :ref_link => "http://www.church.org/podcast/1234"
     ))
-    @lessons = assign(:lessons, @lessons = @study.lessons)
+    @lessons = assign(:lessons, @study.lessons)
+    @video   = assign(:video, @lessons.first.video)
   end
 
   it "renders attributes in <p>" do
