@@ -19,6 +19,8 @@ describe Podcast do
   
   it { should belong_to :church }
   it { should have_many :studies }
+  it { should delegate_method(:church_name).to(:church).as(:name) }
+  it { should delegate_method(:church_homepage).to(:church).as(:homepage) }
   
   it "builds from factory", internal:true do
     lambda { create(:podcast) }.should_not raise_error

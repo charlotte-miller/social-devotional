@@ -35,6 +35,8 @@ class Lesson < ActiveRecord::Base
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
   
+  delegate :title, :to => :study, prefix:true  # study_title
+  
   has_attached_file :audio,
     :storage => :s3,
     :bucket => AppConfig.s3.bucket,
@@ -95,10 +97,6 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
-  
-  def study_title
-    @study_title ||= Study.select(:title).where( id:study_id ).first.title
-  end
   
   def similar_lesson? other_lesson
     def scrub( dirty )

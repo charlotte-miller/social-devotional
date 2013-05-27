@@ -367,7 +367,7 @@ DEPENDENCIES
   rb-fsevent
   rspec-rails
   sass-rails (~> 3.2.3)
-  shoulda-matchers
+  shoulda-matchers (= 1.5.0)
   state_machine
   sunspot_rails
   sunspot_solr

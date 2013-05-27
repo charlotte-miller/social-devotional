@@ -17,7 +17,7 @@ class Podcast < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :church_id, :last_checked, :title, :url
-  delegate :name, :homepage, :to => :church, :prefix => 'church_'
+  delegate :name, :homepage, :to => :church, :prefix => :church # church_name, church_homepage
 
   # ---------------------------------------------------------------------------------
   # Associations

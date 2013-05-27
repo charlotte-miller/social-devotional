@@ -26,6 +26,7 @@ require 'spec_helper'
 describe Lesson do
   it { should belong_to( :study )}
   it { should have_many( :questions )}
+  it { should delegate_method(:study_title).to(:study).as(:title) }
   
   it "builds from factory", internal:true do
     lambda { create(:lesson) }.should_not raise_error

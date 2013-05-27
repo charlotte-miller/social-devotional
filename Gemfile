@@ -70,7 +70,7 @@ group :development, :test do
   gem "ffaker"
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '1.5.0' # 2.O removes delegate - release notes say it's comming back later
   gem 'syntax'
   gem 'zeus'
   

@@ -23,6 +23,7 @@ describe Study do
   it { should have_many(:lessons) }
   it { should belong_to(:podcast) }
   it { should have_one(:church).through(:podcast) }
+  it { should delegate_method(:church_name).to(:podcast)}
   
   it { should validate_presence_of(:slug) }
   it { should validate_presence_of(:title) }
