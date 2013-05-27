@@ -46,7 +46,7 @@ describe Podcast do
       Podcast.pull_updates(@podcast)
     end
     
-    describe '&on_complete' do
+    describe '- after fetching the podcast XML', internal:true do
       before(:each) do
         @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))      
         stub_request(:get, %r{/podcasts/audio_podcast.xml$}).to_return( :body => @podcast_xml, :status => 200 )
@@ -54,7 +54,7 @@ describe Podcast do
     
       it "updates each podcast" do
         @podcasts.each {|podcast| podcast.should_receive(:update_channel).once }
-        Podcast.pull_updates
+        Podcast.pull_updates(@podcasts)
       end
       
       it "skips up-to-date podcasts" do
@@ -63,7 +63,7 @@ describe Podcast do
         
         out_of_date.should_receive(:update_channel)
         up_to_date.should_not_receive(:update_channel)
-        Podcast.pull_updates
+        Podcast.pull_updates([out_of_date, up_to_date])
       end
     end
     
