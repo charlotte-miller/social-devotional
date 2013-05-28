@@ -78,7 +78,7 @@ class Lesson < ActiveRecord::Base
   belongs_to :study, counter_cache:true, touch:true
   has_many :questions, as: 'source'# , inverse_of: 'source'
   
-
+  
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
@@ -91,17 +91,23 @@ class Lesson < ActiveRecord::Base
   
   
   # ---------------------------------------------------------------------------------
+  # Callbacks
+  # ---------------------------------------------------------------------------------
+  # before_save :update_study_last_published_at
+  
+  
+  # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------
   # default_scope order: 'position ASC'
   scope :for_study, lambda {|study_id| where({ study_id: study_id }) }
   
-
+  
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
   class << self
-
+    
   end
   
   def similar_lesson? other_lesson
@@ -120,5 +126,11 @@ private
     target.downcase.gsub(/^(an?|the|for|by)\b/, '')
   end
   
-  
+  # def update_study_last_published_at
+  #   return unless new_record? || published_at_changed?
+  #   
+  #   unless study.last_published_at && study.last_published_at >= published_at
+  #     study.update_attribute :last_published_at, published_at
+  #   end 
+  # end
 end

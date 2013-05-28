@@ -23,7 +23,11 @@ class Podcast < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :church#, :inverse_of => :podcast
-  has_many :studies#,  :inverse_of => :podcast
+  has_many :studies do #,  :inverse_of => :podcast
+    def most_recent
+      order('last_published_at ASC').last
+    end
+  end
 
 
   # ---------------------------------------------------------------------------------
@@ -56,6 +60,7 @@ class Podcast < ActiveRecord::Base
   end #class << self
   
   def update_channel( normalized_channel )
-    # TODO
+    self.studies.most_recent
+    Study.update_from_channel()
   end
 end

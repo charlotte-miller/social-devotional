@@ -67,6 +67,10 @@ class Study < ActiveRecord::Base
       raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
       where(position:n).first
     end
+    
+    def sort_by_published_at
+      order('published_at ASC')
+    end
   end
     
   
@@ -98,6 +102,13 @@ class Study < ActiveRecord::Base
     lessons.size == 1 #lessons_count
   end
   
+  # def touch
+  #   last_published = lessons.sort_by_published_at.last
+  #   up_to_date     = !!(last_published_at && last_published_at >= last_published)
+  #   
+  #   update_attribute( :last_published_at, last_published ) unless up_to_date
+  #   super
+  # end
 private
 
   def searchable_title str
