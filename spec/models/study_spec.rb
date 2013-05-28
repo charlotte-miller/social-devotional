@@ -13,6 +13,7 @@
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
 #  lessons_count           :integer          default(0)
+#  last_published_at       :datetime
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #

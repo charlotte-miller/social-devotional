@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.integer  "audio_file_size"
     t.datetime "audio_updated_at"
     t.boolean  "machine_sorted",     :default => false
+    t.datetime "published_at"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end
@@ -184,11 +185,13 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
     t.integer  "poster_img_file_size"
     t.datetime "poster_img_updated_at"
     t.integer  "lessons_count",           :default => 0
+    t.datetime "last_published_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
 
-  add_index "studies", ["podcast_id"], :name => "index_studies_on_podcast_id"
+  add_index "studies", ["last_published_at"], :name => "index_studies_on_last_published_at"
+  add_index "studies", ["podcast_id", "last_published_at"], :name => "index_studies_on_podcast_id_and_last_published_at"
   add_index "studies", ["slug"], :name => "index_studies_on_slug", :unique => true
 
   create_table "users", :force => true do |t|

@@ -13,6 +13,7 @@
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
 #  lessons_count           :integer          default(0)
+#  last_published_at       :datetime
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #
@@ -32,11 +33,9 @@ FactoryGirl.define do
     description "We work through book of Matthew chapter by chapter using the inductive method"
     ref_link    "http://link.com/salt-and-light"
     poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'r')
+    # last_published_at nil 
     
-    before(:create, :stub) do
-      Study.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
-      # DELETE prepare_for_destroy:true OR stub all AWS calls: ``AWS.stub!``
-    end
+    before(:create, :stub) { AWS.stub! if Rails.env.test? }
     after(:create, :stub) do |study, context|
       stubbing = context.instance_variable_get('@build_strategy').is_a? FactoryGirl::Strategy::Stub
       if slug = context.slug

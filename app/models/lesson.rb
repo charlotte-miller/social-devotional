@@ -17,6 +17,7 @@
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
 #  machine_sorted     :boolean          default(FALSE)
+#  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
@@ -32,7 +33,7 @@ class Lesson < ActiveRecord::Base
   # friendly_id :position, :use => :scoped, :scope => :study
   
   acts_as_list scope: :study
-  attr_accessible :study, :study_id, :position, :title, :description, :backlink, :machine_sorted,
+  attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
   
   delegate :title, :to => :study, prefix:true  # study_title
@@ -77,6 +78,7 @@ class Lesson < ActiveRecord::Base
   belongs_to :study, counter_cache:true, touch:true
   has_many :questions, as: 'source'# , inverse_of: 'source'
   
+
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
@@ -94,9 +96,13 @@ class Lesson < ActiveRecord::Base
   # default_scope order: 'position ASC'
   scope :for_study, lambda {|study_id| where({ study_id: study_id }) }
   
+
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
+  class << self
+
+  end
   
   def similar_lesson? other_lesson
     def scrub( dirty )

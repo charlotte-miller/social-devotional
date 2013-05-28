@@ -9,10 +9,12 @@ class CreateStudies < ActiveRecord::Migration
       t.attachment :poster_img
       t.integer    :lessons_count, default: 0
 
+      t.datetime   :last_published_at
       t.timestamps
     end
     
     add_index :studies, :slug, unique: true
-    add_index :studies, :podcast_id
+    add_index :studies, [:podcast_id, :last_published_at]
+    add_index :studies, :last_published_at
   end
 end

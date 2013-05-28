@@ -17,6 +17,7 @@
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
 #  machine_sorted     :boolean          default(FALSE)
+#  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
@@ -25,9 +26,7 @@
 
 FactoryGirl.define do
   factory :lesson do
-    before(:create, :stub) do
-      Lesson.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
-    end
+    before(:create, :stub) { AWS.stub! if Rails.env.test? }
     
     study
     # position 1
@@ -36,5 +35,6 @@ FactoryGirl.define do
     backlink "http://link.com/salt-and-light"
     video File.new(Rails.root.join('spec/files', 'video.m4v'), 'r')
     audio File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')
+    published_at Time.now
   end
 end
