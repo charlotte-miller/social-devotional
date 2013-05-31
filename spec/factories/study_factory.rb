@@ -48,11 +48,13 @@ FactoryGirl.define do
   # creates a study w/ a single lesson
   factory :study_w_lesson, parent: 'study' do
     lesson {FactoryGirl.create(:lesson, study:build_stubbed(:study) )}
+    after(:create) {|study| study.reload }
   end
   
   # creates a study w/ 'n' number of assocaiated lessons
   factory :study_w_lessons, aliases:[:study_with_n_lessons], parent: 'study' do
     ignore  { n 2 }
     lessons { n.times.map {FactoryGirl.create(:lesson, study:build_stubbed(:study) )} }
+    after(:create) {|study| study.reload }
   end
 end

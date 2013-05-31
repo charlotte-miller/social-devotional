@@ -22,8 +22,8 @@ class Podcast < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :church#, :inverse_of => :podcast
-  has_many :studies do #,  :inverse_of => :podcast
+  belongs_to :church, :inverse_of => :podcasts
+  has_many :studies,  :inverse_of => :podcast do
     def most_recent
       order('last_published_at ASC').last
     end

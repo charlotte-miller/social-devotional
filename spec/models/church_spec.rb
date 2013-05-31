@@ -12,5 +12,13 @@
 require 'spec_helper'
 
 describe Church do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many :podcasts }
+  it { should have_many :studies  }
+  
+  it { should validate_presence_of(:name)     }
+  it { should validate_presence_of(:homepage) }
+  
+  it "builds from factory", internal:true do
+    lambda { create(:church) }.should_not raise_error
+  end
 end

@@ -71,6 +71,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'shoulda-matchers', '1.5.0' # 2.O removes delegate - release notes say it's comming back later
+  gem 'rspec_candy'
   gem 'syntax'
   gem 'zeus'
   

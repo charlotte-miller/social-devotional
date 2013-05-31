@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require "paperclip/matchers"
+require 'rspec_candy/all'
 require 'sunspot_test/rspec'
 require 'capybara/rspec'
 # require 'sidekiq/testing'

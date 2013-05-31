@@ -75,8 +75,8 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :study, counter_cache:true, touch:true
-  has_many :questions, as: 'source'# , inverse_of: 'source'
+  belongs_to :study, touch:true, :inverse_of => :lessons     # counter_cache rolled into Study#touch
+  has_many :questions, as: 'source' # , inverse_of: 'source'
   
   
   # ---------------------------------------------------------------------------------
@@ -93,7 +93,6 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Callbacks
   # ---------------------------------------------------------------------------------
-  # before_save :update_study_last_published_at
   
   
   # ---------------------------------------------------------------------------------
@@ -125,12 +124,5 @@ private
   def searchable_title target
     target.downcase.gsub(/^(an?|the|for|by)\b/, '')
   end
-  
-  # def update_study_last_published_at
-  #   return unless new_record? || published_at_changed?
-  #   
-  #   unless study.last_published_at && study.last_published_at >= published_at
-  #     study.update_attribute :last_published_at, published_at
-  #   end 
-  # end
+
 end

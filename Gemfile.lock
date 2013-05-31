@@ -250,6 +250,9 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    rspec_candy (0.2.9)
+      rspec
+      sneaky-save
     rubyzip (0.9.9)
     sass (3.2.5)
     sass-rails (3.2.6)
@@ -265,6 +268,8 @@ GEM
       activesupport (>= 3.0.0)
       bourne (~> 1.2.0)
     slop (3.4.4)
+    sneaky-save (0.0.4)
+      activerecord (>= 3.2.0)
     spin (0.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -366,6 +371,7 @@ DEPENDENCIES
   rails-backbone-generator
   rb-fsevent
   rspec-rails
+  rspec_candy
   sass-rails (~> 3.2.3)
   shoulda-matchers (= 1.5.0)
   state_machine

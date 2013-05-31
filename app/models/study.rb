@@ -51,7 +51,7 @@ class Study < ActiveRecord::Base
     string(  :title)                { searchable_title title } #, boost: 2.0 
     string(  :lesson_title    )     { searchable_title lessons.select(:title).map(&:title).join(' | ') }
     text     :description
-    string(  :church_name     )     { church.name       }
+    string(  :church_name     )     { church_name       }
     integer( :church_id       )     { podcast.church_id }
     # string(  :tags          )     { tags.select(:text).map(&:text).join(' | ')}
   end
@@ -60,16 +60,12 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :podcast#, :inverse_of => :studies
-  has_one :church,     :through => :podcast
-  has_many :lessons, :order => 'position ASC', :dependent => :destroy do
+  belongs_to :podcast, :inverse_of => :studies
+  has_one :church,     :through => :podcast, :inverse_of => :studies
+  has_many :lessons, :order => 'position ASC', :dependent => :destroy, :inverse_of => :study do
     def number(n, strict=false)
       raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
       where(position:n).first
-    end
-    
-    def sort_by_published_at
-      order('published_at ASC')
     end
   end
     
@@ -102,13 +98,14 @@ class Study < ActiveRecord::Base
     lessons.size == 1 #lessons_count
   end
   
-  # def touch
-  #   last_published = lessons.sort_by_published_at.last
-  #   up_to_date     = !!(last_published_at && last_published_at >= last_published)
-  #   
-  #   update_attribute( :last_published_at, last_published ) unless up_to_date
-  #   super
-  # end
+  # Replace original http://apidock.com/rails/ActiveRecord/Persistence/touch
+  def touch(name=nil)
+    self.lessons_count     = lessons.length
+    self.last_published_at = lessons.map(&:published_at).max
+    self.updated_at        = Time.now
+    self.save!
+  end
+  
 private
 
   def searchable_title str
