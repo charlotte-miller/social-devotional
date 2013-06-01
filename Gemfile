@@ -88,5 +88,6 @@ group :test do
   gem 'webmock'
   gem 'therubyracer', :platform => :ruby
   gem 'sunspot_test'
+  gem "activerecord-tableless", "~> 1.0"  #used by DummyClass when testing concerns
 end
 

@@ -22,6 +22,8 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-tableless (1.2.0)
+      activerecord (>= 2.3.0)
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -335,6 +337,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-tableless (~> 1.0)
   acts_as_list
   airbrake
   annotate (>= 2.5.0)

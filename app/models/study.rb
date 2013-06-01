@@ -19,18 +19,13 @@
 #
 
 class Study < ActiveRecord::Base
-  extend FriendlyId
-    
+  include Sluggable
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :description, :ref_link, :slug, :title, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
   delegate :church_name, to: :podcast
-  friendly_id :title #:slug_candidates #update after v 5.0.0
-  
-  def slug_candidates
-    [ :title, [:title, :church_name] ]
-  end
+  friendly_id :title #remove after v 5.0.0
   
   has_attached_file :poster_img,
     :storage => :s3,
@@ -45,6 +40,7 @@ class Study < ActiveRecord::Base
     self.poster_img=URI.parse(url_str)
     @poster_img_remote_url = url_str
   end
+  slug_candidates :title, [:title, :church_name]
 
   # http://sunspot.github.com/
   searchable do
