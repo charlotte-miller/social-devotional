@@ -19,3 +19,4 @@ config/*.local.yml
 .rvmrc
 solr/data/*
 solr/pids/*
+doc/app

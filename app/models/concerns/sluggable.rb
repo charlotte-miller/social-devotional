@@ -1,3 +1,5 @@
+# === Adds FriendlyId and adds #slug_candidates interface
+#
 module Sluggable
   extend ActiveSupport::Concern
 
