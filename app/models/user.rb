@@ -33,7 +33,9 @@
 class User < ActiveRecord::Base
   include AttachableFile
   
-  # Authentication Layer
+  # ---------------------------------------------------------------------------------
+  # Authentication
+  # ---------------------------------------------------------------------------------
   devise  :database_authenticatable, :trackable, :validatable, :lockable,
           :registerable, :recoverable, :confirmable, :rememberable, #:omniauthable,
           :lock_strategy => :failed_attempts, :unlock_strategy => :time, :maximum_attempts => 5, :unlock_in => 5.seconds,   # lockable
@@ -64,10 +66,11 @@ class User < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :email#, :first_name, :last_name
-  validates_length_of   :first_name, :last_name, :within => 0..60, :message => "is too long"
-  validates_length_of   :email, :within => 0..80, :message => "is too long"
-  validates_attachment :profile_image, :size => { :in => 0..10.megabytes }
+  validates_presence_of :email, :first_name, :last_name
+  validates_length_of   :email, :within => 0..80
+  validates_format_of   :email, :with => /.+@.+\..+/, :message => "looks wrong" #anything@anything.anything
+  validates_length_of   :first_name, :last_name, :within => 0..60
+  validates_attachment  :profile_image, :size => { :in => 0..10.megabytes }
     #, :presence => true,
     # :content_type => { :content_type => "image/jpg" }
     
