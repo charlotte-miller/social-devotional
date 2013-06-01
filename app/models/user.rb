@@ -31,6 +31,8 @@
 #
 
 class User < ActiveRecord::Base
+  include AttachableFile
+  
   # Authentication Layer
   devise  :database_authenticatable, :trackable, :validatable, :lockable,
           :registerable, :recoverable, :confirmable, :rememberable, #:omniauthable,
@@ -44,13 +46,10 @@ class User < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
-  has_attached_file :profile_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-    :storage => :s3,
-    :bucket => AppConfig.s3.bucket,
-    :s3_credentials => AppConfig.s3.credentials,
+  attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :profile_image
+  has_attachable_file :profile_image, 
+    :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
     :path => ':rails_env/:class/:attachment/:id/:updated_at.:extension'
-    # :url  => AppConfig.cloudfront.url
 
   
   

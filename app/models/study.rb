@@ -20,6 +20,8 @@
 
 class Study < ActiveRecord::Base
   include Sluggable
+  include AttachableFile
+  
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
@@ -27,20 +29,8 @@ class Study < ActiveRecord::Base
   delegate :church_name, to: :podcast
   friendly_id :title #remove after v 5.0.0
   
-  has_attached_file :poster_img,
-    :storage => :s3,
-    :bucket => AppConfig.s3.bucket,
-    :s3_credentials => AppConfig.s3.credentials,
-    :path => ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
-    # :url  => AppConfig.cloudfront.url
-    
-  # https://github.com/thoughtbot/paperclip/wiki/Attachment-downloaded-from-a-URL
-  attr_reader :poster_img_remote_url
-  def poster_img_remote_url=(url_str)
-    self.poster_img=URI.parse(url_str)
-    @poster_img_remote_url = url_str
-  end
   slug_candidates :title, [:title, :church_name]
+  has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
 
   # http://sunspot.github.com/
   searchable do

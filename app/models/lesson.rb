@@ -23,6 +23,7 @@
 #
 
 class Lesson < ActiveRecord::Base
+  include AttachableFile
   # include Comparable
   
   # ---------------------------------------------------------------------------------
@@ -38,32 +39,8 @@ class Lesson < ActiveRecord::Base
   
   delegate :title, :to => :study, prefix:true  # study_title
   
-  has_attached_file :audio,
-    :storage => :s3,
-    :bucket => AppConfig.s3.bucket,
-    :s3_credentials => AppConfig.s3.credentials,
-    :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
-    # :url  => AppConfig.cloudfront.url
-    
-  has_attached_file :video,
-    :storage => :s3,
-    :bucket => AppConfig.s3.bucket,
-    :s3_credentials => AppConfig.s3.credentials,
-    :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
-    # :url  => AppConfig.cloudfront.url
-  
-  
-  # https://github.com/thoughtbot/paperclip/wiki/Attachment-downloaded-from-a-URL
-  attr_reader :audio_remote_url, :video_remote_url
-  def audio_remote_url=(url_str)
-    self.audio=URI.parse(url_str)
-    @audio_remote_url = url_str
-  end
-  
-  def video_remote_url=(url_str)
-    self.video=URI.parse(url_str)
-    @video_remote_url = url_str
-  end
+  has_attachable_file :audio, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'  
+  has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
   
   # http://sunspot.github.com/
   # searchable do
