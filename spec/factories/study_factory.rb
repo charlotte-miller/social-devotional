@@ -25,6 +25,7 @@ FactoryGirl.define do
     ignore do
       lesson nil    # create an associated @lesson 
       slug   false  # override the generated slug
+      last_published_at nil
     end
           
     podcast
@@ -33,15 +34,17 @@ FactoryGirl.define do
     description "We work through book of Matthew chapter by chapter using the inductive method"
     ref_link    "http://link.com/salt-and-light"
     poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'r')
-    # last_published_at nil 
     
     before(:create, :stub) { AWS.stub! if Rails.env.test? }
     after(:create, :stub) do |study, context|
       stubbing = context.instance_variable_get('@build_strategy').is_a? FactoryGirl::Strategy::Stub
-      if slug = context.slug
-        study.slug = slug
-        study.save! unless stubbing
-      end
+      new_slug = context.slug
+      new_last_published_at = context.last_published_at
+      
+      # assign and save proteced attributes (non mass_assigned)
+      study.slug              = new_slug              if new_slug
+      study.last_published_at = new_last_published_at if new_last_published_at
+      study.save! if !stubbing && (new_slug || new_last_published_at)
     end
   end
   

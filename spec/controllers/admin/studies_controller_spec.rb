@@ -77,14 +77,14 @@ describe Admin::StudiesController do
       it "assigns a newly created but unsaved study as @study" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        post :create, {:study => { "slug" => "invalid value" }}
+        post :create, {:study => { "title" => "" }}
         assigns(:study).should be_a_new(Study)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        post :create, {:study => { "slug" => "invalid value" }}
+        post :create, {:study => { "title" => "" }}
         response.should render_template("new")
       end
     end
@@ -97,8 +97,8 @@ describe Admin::StudiesController do
         # specifies that the Study created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Study.any_instance.should_receive(:update_attributes).with({ "slug" => "MyString" })
-        put :update, {:id => study.to_param, :study => { "slug" => "MyString" }}
+        Study.any_instance.should_receive(:update_attributes).with({ "title" => "MyString" })
+        put :update, {:id => study.to_param, :study => { "title" => "MyString" }}
       end
 
       it "assigns the requested study as @study" do
@@ -117,14 +117,14 @@ describe Admin::StudiesController do
       it "assigns the study as @study" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
+        put :update, {:id => study.to_param, :study => { "title" => "" }}
         assigns(:study).should eq(study)
       end
 
       it "re-renders the 'edit' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Study.any_instance.stub(:save).and_return(false)
-        put :update, {:id => study.to_param, :study => { "slug" => "invalid value" }}
+        put :update, {:id => study.to_param, :study => { "title" => "" }}
         response.should render_template("edit")
       end
     end

@@ -26,7 +26,7 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :description, :ref_link, :slug, :title, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
+  attr_accessible :title, :description, :ref_link, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
   delegate :church_name, to: :podcast
   
   friendly_id :title #remove after v 5.0.0
@@ -62,7 +62,7 @@ class Study < ActiveRecord::Base
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :slug, :title, :podcast
-
+  # validates_uniqueness_of :title, :scope => :podcast_id
   
   
   # ---------------------------------------------------------------------------------
