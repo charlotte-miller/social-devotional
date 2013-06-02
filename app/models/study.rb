@@ -20,6 +20,7 @@
 
 class Study < ActiveRecord::Base
   include Sluggable
+  include Searchable
   include AttachableFile
   
   # ---------------------------------------------------------------------------------
@@ -27,9 +28,10 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible :description, :ref_link, :slug, :title, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
   delegate :church_name, to: :podcast
-  friendly_id :title #remove after v 5.0.0
   
+  friendly_id :title #remove after v 5.0.0
   slug_candidates :title, [:title, :church_name]
+  
   has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
 
   # http://sunspot.github.com/
@@ -60,7 +62,7 @@ class Study < ActiveRecord::Base
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :slug, :title, :podcast
-  
+
   
   
   # ---------------------------------------------------------------------------------
@@ -92,9 +94,4 @@ class Study < ActiveRecord::Base
     self.save!
   end
   
-private
-
-  def searchable_title str
-    str.downcase.gsub(/^(an?|the|for|by)\b/, '').strip
-  end
 end

@@ -29,6 +29,7 @@ describe Study do
   it { should validate_presence_of(:slug) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:podcast) }
+  # it { should validate_uniqueness_of(:title)}#.scope_to(:podcast_id)}
     
   it "builds from factory", internal:true do
     lambda { create(:study) }.should_not raise_error
@@ -87,22 +88,6 @@ describe Study do
     end
   end
   
-  describe 'private methods', internal:true do
-    describe '#searchable_title( str )' do
-      subject {Study.new.send(:searchable_title, @original_str)}
-      it "downcases the str" do
-        @original_str = "LOUD"
-        should eql 'loud'
-      end
-      
-      it "removes common leading words" do
-        %w{a an and the for by}.each do |over_used|
-          @original_str = over_used + ' glory and honor'
-          should eql 'glory and honor'
-        end
-      end
-    end
-    
-    
+  describe '[private]', internal:true do
   end
 end

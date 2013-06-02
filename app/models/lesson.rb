@@ -24,6 +24,7 @@
 
 class Lesson < ActiveRecord::Base
   include AttachableFile
+  include Searchable
   # include Comparable
   
   # ---------------------------------------------------------------------------------
@@ -43,11 +44,11 @@ class Lesson < ActiveRecord::Base
   has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
   
   # http://sunspot.github.com/
-  # searchable do
-  #   string( :title  )       { searchable_title title        }
-  #   string( :study_title ) { searchable_title study.title }
-  #   text    :description
-  # end 
+  searchable do
+    string( :title  )      { searchable_title title        }
+    string( :study_title ) { searchable_title study.title }
+    text    :description
+  end 
   
   # ---------------------------------------------------------------------------------
   # Associations
@@ -96,10 +97,5 @@ class Lesson < ActiveRecord::Base
     scrub(title) == scrub(other_lesson.title)
   end
   
-private
-  
-  def searchable_title target
-    target.downcase.gsub(/^(an?|the|for|by)\b/, '')
-  end
 
 end
