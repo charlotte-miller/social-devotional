@@ -85,17 +85,23 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   class << self
     
-  end
-  
-  def similar_lesson? other_lesson
-    def scrub( dirty )
-      roman_num = /(X{0,2})(IX|IV|V?I{1,3})?/ #up to 30
-      clean = dirty.strip.gsub(/\d/, '')
-      clean = clean.gsub(/\s#{roman_num}/,'')
+    # Builds a @lesson from a Podcast::Normalize::Item
+    def new_from_podcast_item(podcast_item)
+      
     end
     
-    scrub(title) == scrub(other_lesson.title)
   end
   
-
+  require 'lesson/similarity_heuristic/base'
+  # Determins how similar a lesson is to the other_lesson
+  # Loops through an array of heuristics looking for a match (stops after match)
+  # => returns true|false
+  #
+  def belongs_with? other_lesson
+    !!Lesson::SimilarityHeuristic::STRATEGIES.find do |strategy|
+      strategy.new(self, other_lesson).matches?
+    end
+  end
+  
+  
 end

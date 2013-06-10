@@ -74,14 +74,21 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
-  def organization
-    # future association
-  end
-
-  def tags
-    # future association
+  
+  # Answers "Is this lesson part of this study?"
+  def include?(lesson)
+    raise ArgumentError.new('Study#include? requires a @lesson') unless lesson.is_a? Lesson
+    lessons.include? lesson
   end
   
+  # Determins if a lesson SHOULD part of this study
+  # => false if lessons.empty?
+  def should_include?(lesson)
+    raise ArgumentError.new('Study#include? requires a @lesson') unless lesson.is_a? Lesson
+    lessons.last.try :belongs_with?, lesson
+  end
+  
+  # Single lesson study
   def stand_alone?
     lessons.size == 1 #lessons_count
   end
@@ -94,4 +101,11 @@ class Study < ActiveRecord::Base
     self.save!
   end
   
+  def organization
+    # future association
+  end
+
+  def tags
+    # future association
+  end
 end

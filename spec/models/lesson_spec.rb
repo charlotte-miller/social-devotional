@@ -45,24 +45,34 @@ describe Lesson do
     end
   end
     
-  describe '#similar_lesson?' do
-    it "matches lessons by similar title" do
-      matching_title_pairs = [
-        ['Mark Part 1', 'Mark Part 2'],
-        ['Mark [Part 1]', 'Mark [Part 2]'],
-        ['Mark (Part 1)', 'Mark (Part 2)'],
-        ['Mark Part I', 'Mark Part II']
-      ].each do |title_pair|
-        part_1, part_2 = title_pair.map {|title| build_stubbed(:lesson, title:title)}
-        (part_1.similar_lesson? part_2).should be_true
-      end
-      
-      non_matching_title_pairs = [
-        ['Mark Part 1', 'Moses Part 1']
-      ].each do |title_pair|
-        part_1, part_2 = title_pair.map {|title| build_stubbed(:lesson, title:title)}
-        (part_1.similar_lesson? part_2).should be_false
-      end
+  describe '.new_from_podcast_item(podcast_item)' do
+    before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
+    let!(:channel) { Podcast::Normalize::Channel.new(@podcast_xml) }
+    subject { Lesson.new_from_podcast_item(channel.items.first) }
+    
+    it "builds a lesson from a podcast_item" do
+      pending
+    end
+    
+    it "skips an existing lesson" do
+      pending
+    end
+  end
+  
+  describe '#belongs_with?( other_lesson )' do
+    subject { build_stubbed(:lesson) }
+    let(:other_lesson) { build_stubbed(:lesson) }
+    before(:each) do
+      Lesson::SimilarityHeuristic::STRATEGIES.each {|strategy| strategy.any_instance.stub(matches?:false) } #all stragegies 'off'
+    end
+    
+    it "returns TRUE if any of the Lesson::SimilarityHeuristic#matches?" do
+      Lesson::SimilarityHeuristic::STRATEGIES.last.any_instance.stub(matches?:true)
+      subject.belongs_with?( other_lesson ).should be_true
+    end
+    
+    it "returns FALSE if NONE of the Lesson::SimilarityHeuristic#matches?" do
+      subject.belongs_with?( other_lesson ).should be_false
     end
   end
 end

@@ -71,6 +71,8 @@ class Podcast < ActiveRecord::Base
     
     recent_studies = studies.most_recent(5)
     normalized_channel.items.each do |item|  
+      Lesson.new_from_podcast_item(item)
+      
       # 0) build lesson
       # 1) skip existing
       # 2) check if it's similar to the last lesson from the last 5 studies (last_published_at DESC)

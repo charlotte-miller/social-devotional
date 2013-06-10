@@ -30,12 +30,9 @@ describe Study do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:podcast) }
   # it { should validate_uniqueness_of(:title)}#.scope_to(:podcast_id)}
-    
+  
   it "builds from factory", internal:true do
     lambda { create(:study) }.should_not raise_error
-  end
-  
-  describe '- scopes' do
   end
   
   describe '#touch' do
@@ -85,6 +82,46 @@ describe Study do
     it "returns true if the study has one lesson" do
       create(:study_w_lesson).stand_alone?.should  be_true
       create(:study_w_lessons).stand_alone?.should be_false
+    end
+  end
+  
+  describe '#include?(lesson)' do
+    it "requires an argument of @lesson" do
+      lambda { subject.include?() }.should raise_error(ArgumentError, 'wrong number of arguments (0 for 1)')
+      lambda { subject.include?(nil) }.should raise_error(ArgumentError, 'Study#include? requires a @lesson')
+    end
+    
+    it "determins if a lesson is part of a study" do
+      study = create(:study_w_lesson)
+      inside_lesson  = study.lessons.first
+      outside_lesson = create(:lesson)
+      
+      study.include?( inside_lesson  ).should be_true
+      study.include?( outside_lesson ).should be_false
+    end
+  end
+  
+  describe '#should_include?(lesson)' do
+    it "requires an argument of @lesson" do
+      lambda { subject.include?() }.should raise_error(ArgumentError, 'wrong number of arguments (0 for 1)')
+      lambda { subject.include?(nil) }.should raise_error(ArgumentError, 'Study#include? requires a @lesson')
+    end
+    
+    # this doesn't mean it's bad to add this lesson... just that this isn't yet the lesson's 'home'
+    it "returns false if lessons are empty" do
+      Study.new.should_include?( Lesson.new ).should be_false
+    end
+    
+    # essentally delegates logic to Lesson#belongs_with?
+    it "returns true if this lesson belongs_with? the studies last lesson" do
+      study  = build_stubbed(:study_w_lesson)
+      lesson = study.lessons.last
+      
+      # positive and negative case
+      [true, false].each do |bool|
+        lesson.stub(belongs_with?:bool)
+        study.should_include?( Lesson.new ).should eql bool
+      end
     end
   end
   

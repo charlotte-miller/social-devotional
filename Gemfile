@@ -13,6 +13,7 @@ gem 'devise'
 gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9" #'~> 5.0.0'
 gem 'acts_as_list'
+gem 'acts_as_interface'
 gem 'state_machine'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
@@ -27,7 +28,7 @@ gem 'airbrake'
 # gem 'sinatra', :require => nil
 # gem 'ox'
 # gem 'jbuilder'
-# gem 'acts_as_interface'
+
 
 
 # Gems used only for assets and not required
