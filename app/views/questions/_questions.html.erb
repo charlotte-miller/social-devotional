@@ -1,0 +1,30 @@
+<div id="lesson_questions" class="tab-pane active" >
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a href="#q_popular"  data-toggle="pill">Popular</a></li>
+    <li><a href="#q_recent"   data-toggle="pill">Recent</a></li>
+    <li><a href="#q_timeline" data-toggle="pill">Timeline</a></li>
+  </ul>
+  
+  <h3>Questions: <small><%= @lesson.title %></small></h3>
+  <hr />
+  
+  <div class="pill-content">
+    <div id="q_popular", class="pill-pane active">
+      <ul id="q_popular" class="questions media-list">
+        <%= render( partial: 'questions/question', collection: @q_popular) || "No Popular Questions" %>
+      </ul>
+    </div>
+    
+    <div id="q_recent", class="pill-pane">
+      <ul id="q_recent" class="questions media-list">
+        <%= render( partial: 'questions/question', collection: @q_recent ) || "No Recent Questions" %>
+      </ul>
+    </div>
+    
+    <div id="q_timeline", class="pill-pane">    
+      <ul id="q_timeline" class="questions media-list">
+        <%= render( partial: 'questions/question', collection: @q_timeline ) || "No Question Timeline"%>
+      </ul>
+    </div>
+  </div>
+</div>

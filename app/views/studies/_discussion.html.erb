@@ -1,0 +1,14 @@
+<div id="discussion" class="span9">
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active"><a href="#lesson_questions"  data-toggle="tab">Questions</a></li>
+    <li><a href="#lesson_notes" data-toggle="tab">Notes</a></li>
+  </ul>
+  <!-- <form class="form-horizontal pull-right">
+    <input type="search" class="form-control" placeholder="Search">
+    <button type="submit" class="btn btn-default">Search</button>
+  </form> -->
+  <div class="tab-content">
+    <%= render partial: 'questions/questions' %>
+    <%= render partial: 'notes/notes' %>
+  </div>
+</div>

@@ -24,9 +24,14 @@ class StudiesController < ApplicationController
   # GET /library/1
   # GET /library/1.json
   def show
-    @study = find_or_redirect_to_study || return #redirecting
-    @lessons = @study.lessons
-    @video   = @lessons.first.video
+    @study      = find_or_redirect_to_study || return #redirecting
+    @lessons    = @study.lessons
+    @lesson     = @lessons.first
+    @video      = @lesson.video
+    # @questions  = @lesson.questions
+    @q_popular  = @lesson.questions.popular
+    @q_recent   = @lesson.questions.recent
+    @q_timeline = @lesson.questions.timeline
     
       
     respond_to do |format|      
