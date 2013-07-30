@@ -82,3 +82,8 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 * questions_controller before_filter assign url params
 * questions_controller before_filter assign author and source
 * questions/show shallow routes (for answers as well)
+
+## Security
+* Capistrano replace:
+* * database.yml
+* * secret_token.rb
