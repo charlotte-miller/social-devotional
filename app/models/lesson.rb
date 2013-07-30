@@ -25,6 +25,7 @@
 class Lesson < ActiveRecord::Base
   include AttachableFile
   include Searchable
+  include Questionable
   # include Comparable
   
   # ---------------------------------------------------------------------------------
@@ -54,7 +55,6 @@ class Lesson < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :study, touch:true, :inverse_of => :lessons     # counter_cache rolled into Study#touch
-  has_many :questions, as: 'source' # , inverse_of: 'source'
   
   
   # ---------------------------------------------------------------------------------
