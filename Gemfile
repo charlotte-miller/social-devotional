@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 gem 'mysql2'
+gem 'activerecord-import', '~> 0.3.0'
 gem 'unicorn'
 gem 'configy'
 gem 'oj'
@@ -83,6 +84,8 @@ group :development, :test do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'
   gem 'rails-backbone-generator', :require => false
+  
+  gem 'sunspot_test', :require => false
 end
 
 group :test do

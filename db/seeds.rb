@@ -2,6 +2,10 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
+require 'sunspot_test'
+require Rails.root.join('spec/support/quickerclip.rb')
+AWS.stub!
+
 puts "Building - Churces"
 churches = [
   {
@@ -22,7 +26,23 @@ podcasts.each do |podcast|
   puts "Building - Stuidies for #{podcast.church.name}"
   10.times do
     study = FactoryGirl.create(:study_with_n_lessons,  n: rand(3..14), podcast: podcast)
-    study.lessons.each {|lesson| FactoryGirl.create(:question, source: lesson) }
+    
+    # lessons
+    lessons = study.lessons.each do |lesson| 
+      user = User.order("RAND()").first if rand(9) > 6
+      user ||= FactoryGirl.create(:user)
+      
+      questions = 6.times.map do
+        FactoryGirl.build(:question, source: lesson, author: user, permanent_approver:nil)
+      end
+      Question.import questions
+      
+      answers = Question.last(6).map do |question|
+        rand(7).times.map { FactoryGirl.build(:answer, author: user, question: question) }
+      end.flatten
+      Answer.import answers
+    end
+    
   end
 end
 
