@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313045638) do
+ActiveRecord::Schema.define(:version => 20130731050223) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(:version => 20130313045638) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
   add_index "admin_users", ["unlock_token"], :name => "index_admin_users_on_unlock_token", :unique => true
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "author_id"
+    t.text     "text"
+    t.integer  "blocked_count", :default => 0
+    t.integer  "stared_count",  :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "answers", ["author_id"], :name => "index_answers_on_author_id"
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
 
   create_table "block_requests", :force => true do |t|
     t.integer  "admin_user_id"

@@ -30,7 +30,7 @@ podcasts.each do |podcast|
     # lessons
     lessons = study.lessons.each do |lesson| 
       user = User.order("RAND()").first if rand(9) > 6
-      user ||= FactoryGirl.create(:user)
+      user ||= FactoryGirl.create(:user, profile_image: nil)
       
       questions = 6.times.map do
         FactoryGirl.build(:question, source: lesson, author: user, permanent_approver:nil)

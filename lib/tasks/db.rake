@@ -5,9 +5,10 @@ namespace :db do
       'db:create',   
       'db:migrate',  
       'db:test:purge',
-      'db:test:load_schema'
+      'db:test:load_schema',
+      # 'db:seed'
     ].each { |task| Rake::Task[ task ].execute  } #rescue next
-    `annotate -f before`
+    # `annotate -f before`
   end
   
 end

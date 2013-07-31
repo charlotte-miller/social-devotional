@@ -2,6 +2,9 @@
 
 SocialDevotional::Application.routes.draw do
 
+  resources :answers
+
+
   # Library
   root :to => "studies#index"
   resources :studies, only: [:index, :show ], path: 'library' do

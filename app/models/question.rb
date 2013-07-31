@@ -31,19 +31,19 @@ class Question < ActiveRecord::Base
   belongs_to :permanent_approver, :class_name => "AdminUser", :foreign_key => "admin_user_id"
   belongs_to :source,   polymorphic: true  # Meeting, Lesson, Group
 
-  # has_many   :answers, inverse_of: :question do
-  #   def popular(n)
-  #     order('stared_count DESC, answers_count DESC').limit(n)
-  #   end
-  #   
-  #   def recent(n)
-  #     order('updated_at DESC').limit(n)
-  #   end
-  #   
-  #   def timeline(n)
-  #     order('created_at ASC').limit(n)
-  #   end
-  # end
+  has_many   :answers, inverse_of: :question do
+    def popular(n)
+      order('stared_count DESC, answers_count DESC').limit(n)
+    end
+    
+    def recent(n)
+      order('updated_at DESC').limit(n)
+    end
+    
+    def timeline(n)
+      order('created_at ASC').limit(n)
+    end
+  end
     
   
   # ---------------------------------------------------------------------------------
