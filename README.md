@@ -3,6 +3,8 @@ Now these are the gifts Christ gave to the church: the apostles, the prophets, t
 
 Then we will no longer be immature like children.  We won't we tossed and blown about by every wind of new teaching.  We will not be influenced when people try to trick us with lies so clever they sound like truth.  Instead we will **speak truth in love**, growing in every way more and more like Christ who is the head of his body, the church.  Ephesians 4:11-15  
 
+![Service Oriented Architectural Overview](https://bitbucket.org/chip_miller/social-devotional/raw/7ea5cb2092876e17801010e524288bb774002418/doc/soa_architecture.png)
+
 ## Integrated Resources
 * **Mars Hill**: http://marshill.org/teaching/podcast-info/
 * **Mars Hill**: http://feeds.marshill.com/marshill/mark-driscoll/video  (http://marshill.com/feeds)
