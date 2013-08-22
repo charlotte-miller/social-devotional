@@ -17,6 +17,7 @@
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
 #  machine_sorted     :boolean          default(FALSE)
+#  duration           :integer
 #  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -51,7 +52,8 @@ describe Lesson do
     subject { Lesson.new_from_podcast_item(channel.items.first) }
     
     it "builds a lesson from a podcast_item" do
-      pending
+      should be_a Lesson
+      should be_valid
     end
     
     it "skips an existing lesson" do

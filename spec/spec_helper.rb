@@ -8,7 +8,7 @@ require 'sunspot_test/rspec'
 require 'capybara/rspec'
 # require 'sidekiq/testing'
 require 'webmock/rspec'
-# require 'vcr'
+require 'vcr'
 require 'pry'
 
 # Requires supporting ruby files with custom matchers and macros, etc,

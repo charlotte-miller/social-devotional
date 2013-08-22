@@ -17,6 +17,7 @@
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
 #  machine_sorted     :boolean          default(FALSE)
+#  duration           :integer
 #  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null

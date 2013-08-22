@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.integer  "audio_file_size"
     t.datetime "audio_updated_at"
     t.boolean  "machine_sorted",     :default => false
+    t.integer  "duration"
     t.datetime "published_at"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
@@ -197,6 +198,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.string   "poster_img_content_type"
     t.integer  "poster_img_file_size"
     t.datetime "poster_img_updated_at"
+    t.text     "keywords",                               :null => false
     t.integer  "lessons_count",           :default => 0
     t.datetime "last_published_at"
     t.datetime "created_at",                             :null => false

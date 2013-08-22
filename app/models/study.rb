@@ -12,6 +12,7 @@
 #  poster_img_content_type :string(255)
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
+#  keywords                :text             default(""), not null
 #  lessons_count           :integer          default(0)
 #  last_published_at       :datetime
 #  created_at              :datetime         not null
@@ -28,6 +29,7 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible :title, :description, :ref_link, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
   delegate :church_name, to: :podcast
+  serialize :keywords
   
   friendly_id :title #remove after v 5.0.0
   slug_candidates :title, [:title, :church_name]
@@ -54,6 +56,10 @@ class Study < ActiveRecord::Base
     def number(n, strict=false)
       raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
       where(position:n).first
+    end
+
+    def each_last
+      map {|study| study.lessons.last}
     end
   end
     

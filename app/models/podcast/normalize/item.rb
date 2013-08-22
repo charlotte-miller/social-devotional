@@ -44,6 +44,18 @@ module Podcast::Normalize
       enclosure.type
     end
     
+
+    # Processed attributes
+    def media_audio
+      # audio conversion of video
+      media_link
+    end
+
+    def media_video
+      # if media_type.
+      media_link
+    end
+
     # Delegate missing methods to rss_item_obj
     def method_missing(meth, *args, &block)
       rss_item_obj.send(meth, *args, &block)

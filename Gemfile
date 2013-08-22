@@ -9,6 +9,7 @@ gem 'oj'
 gem 'celluloid'
 gem 'whenever', :require => false
 gem 'paperclip'
+gem 'paperclip-ffmpeg'
 gem 'aws-sdk'
 gem 'devise'
 gem 'devise-encryptable'
@@ -45,7 +46,7 @@ gem 'therubyracer', :platforms => :ruby, :require => false
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', '~> 2.2.6'
 gem 'bootstrap-datepicker-rails'
-
+gem "haml-rails"
 
 
 gem "newrelic_rpm"
@@ -53,6 +54,7 @@ gem "newrelic_rpm"
 group :development, :test do
   gem 'thin'
   gem 'capistrano', :require => nil
+  gem 'html2haml'
   
   # Jasmine
   gem 'jasmine-rails'
@@ -69,13 +71,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'timecop'
-  gem "ffaker"
+  gem "faker"
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'shoulda-matchers', '1.5.0' # 2.O removes delegate - release notes say it's comming back later
   gem 'rspec_candy'
   gem 'syntax'
   gem 'zeus'
+  gem 'vcr'
   
   # Debugger
   gem 'pry-rails'

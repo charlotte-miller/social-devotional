@@ -17,6 +17,7 @@
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
 #  machine_sorted     :boolean          default(FALSE)
+#  duration           :integer
 #  published_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -36,14 +37,23 @@ class Lesson < ActiveRecord::Base
   # friendly_id :position, :use => :scoped, :scope => :study
   
   acts_as_list scope: :study
+
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
+
+  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, as: 'sudo'
   
   delegate :title, :to => :study, prefix:true  # study_title
   
   has_attachable_file :audio, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'  
   has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
   
+  # has_attached_file :video, :styles => {
+  #      :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
+  #      :medium => { :geometry => "640x480", :format => 'flv' }
+  #      :mobile => {:geometry => "400x300", :format => 'mp4', :streaming => true}
+  #   }, :processors => [:ffmpeg, :qtfaststart]
+
   # http://sunspot.github.com/
   searchable do
     string( :title  )      { searchable_title title        }
@@ -86,8 +96,18 @@ class Lesson < ActiveRecord::Base
   class << self
     
     # Builds a @lesson from a Podcast::Normalize::Item
+    # WARN Study must be added later
     def new_from_podcast_item(podcast_item)
-      
+      lesson = new({
+        :study            => nil,
+        :title            => podcast_item.title,
+        :description      => podcast_item.description,
+        :backlink         => podcast_item.homepage,
+        :published_at     => podcast_item.published_at,
+        :duration         => podcast_item.media_length,
+        :audio_remote_url => podcast_item.media_audio,
+        :video_remote_url => podcast_item.media_video,
+      }, as:'sudo')
     end
     
   end
@@ -103,5 +123,7 @@ class Lesson < ActiveRecord::Base
     end
   end
   
-  
+  def duplicate? other_lesson
+    backlink == other_lesson.backlink
+  end
 end

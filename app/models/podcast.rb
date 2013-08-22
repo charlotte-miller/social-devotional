@@ -62,25 +62,39 @@ class Podcast < ActiveRecord::Base
     
   end #class << self
   
+
+  # Areas of Responcibility
+  # - podcast (self)
+  # - normalized_channel
+  # - studies
+  # - lesson
   def update_channel( normalized_channel )
-    # Areas of Responcibility
-    # - item
-    # - podcast (self)
-    # - studies 
-    # - lesson
-    
-    recent_studies = studies.most_recent(5)
     normalized_channel.items.each do |item|  
-      Lesson.new_from_podcast_item(item)
-      
       # 0) build lesson
+      lesson = Lesson.new_from_podcast_item(item)
+
       # 1) skip existing
-      # 2) check if it's similar to the last lesson from the last 5 studies (last_published_at DESC)
-      # => recent_studies.map(&:last_lesson).reverse.select {|lesson| lesson.similar? new_lesson}
-      # 3) assign or create study
+      recent_studies = studies.most_recent(5)
+      last_lessons   = recent_studies.map {|study|  study.lessons.each_last }
+      is_duplicate   = last_lessons.any {|last_lesson| last_lesson.duplicate? lesson }
+      return false if is_duplicate
+
+      # 2) assign or create study
+      study   = recent_studies.find {|study| study.should_include? lesson }
+      study ||= studies.create!({
+        title:              normalized_channel.title,
+        description:        normalized_channel.description,
+        ref_link:           normalized_channel.homepage,
+        poster_img:         normalized_channel.poster_image,
+        last_published_at:  normalized_channel.last_updated,
+      })
+      lesson.study = study
+
       # 4) save lesson
+      lesson.save!
     end
     
+    # 5) Update Podcast.timestamps
     touch(:last_updated)
   end
 end

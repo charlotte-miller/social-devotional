@@ -9,7 +9,7 @@ class CreateLessons < ActiveRecord::Migration
       t.has_attached_file   :video
       t.has_attached_file   :audio
       t.boolean             :machine_sorted,  default: false
-      
+      t.integer             :duration #in seconds
       t.datetime            :published_at
       t.timestamps
     end

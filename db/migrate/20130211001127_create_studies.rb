@@ -7,6 +7,7 @@ class CreateStudies < ActiveRecord::Migration
       t.string     :description
       t.string     :ref_link
       t.attachment :poster_img
+      t.text       :keywords,      null:false
       t.integer    :lessons_count, default: 0
 
       t.datetime   :last_published_at
