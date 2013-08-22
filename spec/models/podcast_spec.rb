@@ -16,9 +16,9 @@ require 'spec_helper'
 
 describe Podcast do
   before(:each) do
-    stub_request(:get, "http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3").
-             with(:headers => {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-             to_return(:status => 200, :body => "", :headers => {})
+    # http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3
+    @audio_file = File.read(File.join(Rails.root, 'spec/files', 'audio.mp3'))
+    stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => @audio_file, :status => 200 )
   end
   subject { create(:podcast) }
   
