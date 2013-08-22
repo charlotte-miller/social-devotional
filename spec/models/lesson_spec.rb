@@ -77,4 +77,20 @@ describe Lesson do
       subject.belongs_with?( other_lesson ).should be_false
     end
   end
+
+  describe '.new_from_podcast_item(podcast_item)' do
+    # let(:podcast_item) { '?' }
+    # subject {Lesson.new_from_podcast_item(podcast_item)}
+    
+    it "builds from a podcast_item" do
+      pending 'TODO'
+    end
+  end
+  
+  describe '#duplicate?' do
+    it "matches on backlink" do
+      a, b = 2.times.map { build_stubbed(:lesson, backlink:'foo') }
+      a.duplicate? b
+    end
+  end
 end

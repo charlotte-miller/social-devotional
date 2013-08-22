@@ -15,6 +15,11 @@
 require 'spec_helper'
 
 describe Podcast do
+  before(:each) do
+    stub_request(:get, "http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3").
+             with(:headers => {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+             to_return(:status => 200, :body => "", :headers => {})
+  end
   subject { create(:podcast) }
   
   it { should belong_to :church }
@@ -99,18 +104,22 @@ describe Podcast do
   end
   
   describe '#update_channel( normalized_channel )' do
+    let(:podcast) { create(:podcast) }
     let(:channel_obj) { Podcast::Normalize::Channel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
+    subject { podcast.update_channel( channel_obj ) }
     
     it "creates a lesson from a podcast item" do
-      pending
+      Lesson.count.should be 0
+      subject # execute
+      Lesson.count.should be > 0
     end
     
     it "skips existing podcast items" do
-      pending
+      pending 'TODO'
     end
     
     it "adds similar lessons to the same study" do
-      pending
+      pending 'TODO'
     end
     
     it "updates #last_updated" do
