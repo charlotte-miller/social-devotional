@@ -75,19 +75,13 @@ class Podcast < ActiveRecord::Base
 
       # 1) skip existing
       recent_studies = studies.most_recent(5)
-      last_lessons   = recent_studies.map {|study|  study.lessons.each_last }
+      last_lessons   = recent_studies.map {|study| study.lessons.each_last }
       is_duplicate   = last_lessons.any? {|last_lesson| last_lesson.duplicate? lesson }
       return false if is_duplicate
 
       # 2) assign or create study
       study   = recent_studies.find {|study| study.should_include? lesson }
-      study ||= studies.create!({
-        title:              normalized_channel.title,
-        description:        normalized_channel.description,
-        ref_link:           normalized_channel.homepage,
-        poster_img:         normalized_channel.poster_image,
-        last_published_at:  normalized_channel.last_updated,
-      }, as: 'sudo')
+      study ||= Study.new_from_podcast_channel(normalized_channel, podcast:self).save!
       lesson.study = study
 
       # 4) save lesson

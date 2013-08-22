@@ -36,6 +36,16 @@ describe Study do
     lambda { create(:study) }.should_not raise_error
   end
   
+  describe 'new_from_podcast_channel(normalized_channel, attribute_overrides={})' do
+    it "builds from a Podcast::Normalized::Channel" do
+      pending 'TODO'
+    end
+    
+    it "applies attribute_overrides" do
+      pending 'TODO'
+    end
+  end
+  
   describe '#touch' do
     let!(:study)           { create(:study_w_lesson) }
     let(:existing_lesson)  { study.lessons.first }
@@ -76,6 +86,15 @@ describe Study do
     
     it "returns an ArgumentError if 'strict=true'" do
       lambda {@study.lessons.number(3, :strict) }.should raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+  
+  describe '#lessons.each_last' do
+    let(:studies) {2.times.map {create(:study)} }
+    subject {studies.lessons.each_last}
+    
+    it "selects the last lesson from each" do
+      pending "passing them sql optimize"
     end
   end
   

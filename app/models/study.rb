@@ -28,7 +28,7 @@ class Study < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :title, :description, :ref_link, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
-  attr_accessible *column_names, :poster_img, as: 'sudo'
+  attr_accessible *column_names, *reflections.keys, :poster_img, :poster_img_remote_url, as: 'sudo'
   delegate :church_name, to: :podcast
   serialize :keywords
   
@@ -60,7 +60,8 @@ class Study < ActiveRecord::Base
     end
 
     def each_last
-      map {|study| study.lessons.last}
+      # optimize with where(MAX lessons.position)
+      map(&:last)
     end
   end
     
@@ -81,6 +82,18 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Methods
   # ---------------------------------------------------------------------------------
+  class << self
+    def new_from_podcast_channel(normalized_channel, attribute_overrides={})
+      new({
+        title:                  normalized_channel.title,
+        description:            normalized_channel.description,
+        ref_link:               normalized_channel.homepage,
+        poster_img_remote_url:  normalized_channel.poster_image,
+        last_published_at:      normalized_channel.last_updated,
+      }.merge(attribute_overrides), as: 'sudo')
+    end
+  end
+  
   
   # Answers "Is this lesson part of this study?"
   def include?(lesson)
