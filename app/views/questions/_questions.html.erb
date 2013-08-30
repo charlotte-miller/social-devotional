@@ -1,13 +1,37 @@
-<div id="lesson_questions" class="tab-pane active" >
-  <ul class="nav nav-pills pull-right">
+<div id="lesson_questions">
+  <div class="form-group">
+    <textarea class="form-control span12" id="ask_textarea" name="ask_textarea" placeholder="Ask A Question about <%= @lesson.title %>" rows='3'></textarea>
+    <div id="question_buttons" class="pull-right form-control hide">
+      <a href="#">Clear -</a>
+      <button type="submit" class="btn btn-default ">
+        Ask
+      </button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  
+  <hr />
+
+  <div class="input-group pull-right input-append">
+    <form class="form-search" action="questions" method="get" accept-charset="utf-8" role="search">
+      <input type="text" class="form-control" >
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <i class="glyphicon glyphicon-search"></i>
+          Search
+        </button>
+      </span>
+    </form>
+  </div>
+  
+  <!-- Question Nav -->
+  <ul class="nav nav-pills ">
     <li class="active"><a href="#q_popular"  data-toggle="pill">Popular</a></li>
     <li><a href="#q_recent"   data-toggle="pill">Recent</a></li>
     <li><a href="#q_timeline" data-toggle="pill">Timeline</a></li>
   </ul>
-  
-  <h3>Questions: <small><%= @lesson.title %></small></h3>
-  <hr />
-  
+    
+  <!-- Question Content -->
   <div class="pill-content">
     <div id="q_popular", class="pill-pane active">
       <ul id="q_popular" class="questions media-list">
