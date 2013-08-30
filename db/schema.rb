@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
   create_table "groups", :force => true do |t|
     t.string   "state",            :limit => 50,                   :null => false
     t.string   "name",                                             :null => false
-    t.text     "desription",                                       :null => false
+    t.text     "description",                                      :null => false
     t.boolean  "is_public",                      :default => true
     t.integer  "meets_every_days",               :default => 7
     t.integer  "meetings_count",                 :default => 0

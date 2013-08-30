@@ -5,13 +5,13 @@ describe "groups/index" do
     assign(:groups, [
       stub_model(Group,
         :name => "Name",
-        :desription => "MyText",
+        :description => "MyText",
         :study_id => 1,
         :created_at => Time.now
       ),
       stub_model(Group,
         :name => "Name",
-        :desription => "MyText",
+        :description => "MyText",
         :study_id => 1,
       :created_at => Time.now
       )

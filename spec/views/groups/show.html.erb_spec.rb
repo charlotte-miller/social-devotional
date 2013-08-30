@@ -4,7 +4,7 @@ describe "groups/show" do
   before(:each) do
     @group = assign(:group, stub_model(Group,
       :name => "Name",
-      :desription => "MyText",
+      :description => "MyText",
       :study_id => 1,
       :created_at => Time.now
     ))
