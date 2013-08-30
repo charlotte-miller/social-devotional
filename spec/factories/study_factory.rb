@@ -31,8 +31,8 @@ FactoryGirl.define do
           
     podcast
     lessons { [lesson].compact }
-    title       "Matthew Study - Chapter by Chapter"
-    description "We work through book of Matthew chapter by chapter using the inductive method"
+    title       { Faker::Lorem.sentence(rand(3..8))  }
+    description { Faker::Lorem.paragraph(rand(2..5)) }
     ref_link    "http://link.com/salt-and-light"
     poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'r')
     

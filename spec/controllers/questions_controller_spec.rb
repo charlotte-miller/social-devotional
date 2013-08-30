@@ -3,7 +3,7 @@ require 'spec_helper'
 describe QuestionsController do
   login_user
   
-  let!(:question)         { create(:question) }
+  let!(:question)        { create(:question) }
   let(:valid_attributes) { attributes_for(:question).merge(author: current_user) }
 
   describe 'from Lesson' do
@@ -62,13 +62,12 @@ describe QuestionsController do
     end
 
     describe "POST create" do
+      it "requires authentication" do
+        post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}, {}#clears current_user
+        should redirect_to '/login'
+      end
       
-      describe "with valid params" do
-        it "requires authentication" do
-          post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}, {}#clears current_user
-          should redirect_to '/login'
-        end
-        
+      describe "with valid params" do        
         it "creates a new Question" do
           expect {
             post :create, {study_id:study.id, lesson_id:lesson.id, :question => valid_attributes}
@@ -87,12 +86,7 @@ describe QuestionsController do
         end
       end
 
-      describe "with invalid params" do
-        it "requires authentication" do
-          post :create, {study_id:study.id, lesson_id:lesson.id, :question => { "text" => "" }}, {}#clears current_user
-          should redirect_to '/login'
-        end
-        
+      describe "with invalid params" do        
         it "assigns a newly created but unsaved question as @question" do
           # Trigger the behavior that occurs when invalid params are submitted
           Question.any_instance.stub(:save).and_return(false)

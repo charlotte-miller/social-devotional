@@ -12,26 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :question %><br />
-    <%= f.text_field :question %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
     <%= f.label :text %><br />
     <%= f.text_area :text %>
   </div>
-  <div class="field">
-    <%= f.label :blocked_count %><br />
-    <%= f.number_field :blocked_count %>
-  </div>
-  <div class="field">
-    <%= f.label :stared_count %><br />
-    <%= f.number_field :stared_count %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to 'Nevermind', '#' %>
+    <%= f.submit 'Post Answer' %>
   </div>
 <% end %>

@@ -2,21 +2,23 @@
 
 SocialDevotional::Application.routes.draw do
 
-  resources :answers
-
-
   # Library
   root :to => "studies#index"
   resources :studies, only: [:index, :show ], path: 'library' do
     resources :lessons, only: [:index, :show ] do
       resources :questions, only: [:index, :show, :new, :create], shallow: true do
         post :block, :star, :on => :member
-        resources :answers, shallow: true do
+        resources :answers, only: [:index, :show, :create, :update, :destroy], shallow: true do
           post :block, :star, :on => :member
         end
       end
     end
   end
+  
+  # # Questions
+  # resources :questions do
+  #   resources :answers
+  # end
 
   # Groups
   resources :groups do

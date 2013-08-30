@@ -80,7 +80,7 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 
 ## TODO
 * lesson and meeting to_params using position - verify routes and update controllers
-* scaffold answers
+* add delete to questions controller
 * questions_controller before_filter assign url params
 * questions_controller before_filter assign author and source
 * questions/show shallow routes (for answers as well)

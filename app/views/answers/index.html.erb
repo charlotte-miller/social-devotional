@@ -20,7 +20,6 @@
     <td><%= answer.blocked_count %></td>
     <td><%= answer.stared_count %></td>
     <td><%= link_to 'Show', answer %></td>
-    <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
     <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -28,4 +27,3 @@
 
 <br />
 
-<%= link_to 'New Answer', new_answer_path %>

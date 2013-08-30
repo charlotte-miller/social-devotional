@@ -22,7 +22,7 @@ FactoryGirl.define do
     permanent_approver
     author
     source { FactoryGirl.create(:lesson) }
-    text "Why did Jonnah try to avoid Gods command to 'go to Ninevah"
+    text   { Faker::Lorem.sentence(rand(3..6)) }
     # answers_count 0
   end
   

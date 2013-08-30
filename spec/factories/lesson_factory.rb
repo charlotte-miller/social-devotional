@@ -31,8 +31,8 @@ FactoryGirl.define do
     
     study
     # position 1
-    title "What it means to be Salt"
-    description "We are called to be salt and light.  But if salt looses it's saltiness it is worthless."
+    title       { Faker::Lorem.sentence(rand(3..6))  }
+    description { Faker::Lorem.paragraph(rand(2..5)) }
     backlink "http://link.com/salt-and-light"
     video File.new(Rails.root.join('spec/files', 'video.m4v'), 'r')
     audio File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')

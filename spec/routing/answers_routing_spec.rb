@@ -4,23 +4,15 @@ describe AnswersController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/answers").should route_to("answers#index")
-    end
-
-    it "routes to #new" do
-      get("/answers/new").should route_to("answers#new")
+      get("/questions/1/answers").should route_to("answers#index", :question_id => "1")
     end
 
     it "routes to #show" do
       get("/answers/1").should route_to("answers#show", :id => "1")
     end
 
-    it "routes to #edit" do
-      get("/answers/1/edit").should route_to("answers#edit", :id => "1")
-    end
-
     it "routes to #create" do
-      post("/answers").should route_to("answers#create")
+      post("/questions/1/answers").should route_to("answers#create", :question_id => "1")
     end
 
     it "routes to #update" do
@@ -31,5 +23,12 @@ describe AnswersController do
       delete("/answers/1").should route_to("answers#destroy", :id => "1")
     end
 
+    it "routes to #block" do
+      post("/answers/1/block").should route_to("answers#block", :id => "1")
+    end
+
+    it "routes to #star" do
+      post("/answers/1/star").should route_to("answers#star", :id => "1")
+    end
   end
 end

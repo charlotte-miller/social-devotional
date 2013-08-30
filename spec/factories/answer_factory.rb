@@ -18,7 +18,7 @@ FactoryGirl.define do
   factory :answer do
     question
     author
-    text "MyText"
+    text {Faker::Lorem.paragraph(rand(2..5))}
     blocked_count 1
     stared_count 1
   end

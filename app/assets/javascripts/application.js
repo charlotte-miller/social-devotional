@@ -15,9 +15,16 @@
 //= require_tree ./shared
 
 jQuery(document).ready(function($) {
-  $('#signin-email').click(function(){
-    // more complex logic to determine if the user has an account
-    // 1) check for cookie... if present then password and link to create account
-    $('#signin-dropdown').slideFadeShow();
+  // $('#signin-email').click(function(){
+  //   // more complex logic to determine if the user has an account
+  //   // 1) check for cookie... if present then password and link to create account
+  //   $('#signin-dropdown').slideFadeShow();
+  // });
+  
+  $('article').readmore({
+    speed: 75,
+    maxHeight: 400
   });
+  
+  
 });

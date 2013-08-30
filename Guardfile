@@ -36,7 +36,7 @@ guard 'rspec', rspec_options do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
-  watch(%r{^spec/factories/(.+)\.rb$}) do |m|
+  watch(%r{^spec/factories/(.+)_factory\.rb$}) do |m|
     %W[
       spec/models/#{m[1].singularize}_spec.rb
       spec/controllers/#{m[1]}_controller_spec.rb
