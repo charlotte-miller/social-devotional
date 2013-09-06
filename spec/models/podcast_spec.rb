@@ -16,9 +16,8 @@ require 'spec_helper'
 
 describe Podcast do
   before(:each) do
-    # http://feedproxy.google.com/~r/marshill/podcast/~5/0t1oQ0T4nGc/032413.mp3
-    @audio_file = File.read(File.join(Rails.root, 'spec/files', 'audio.mp3'))
-    stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => @audio_file, :status => 200 )
+    stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
+    stub_request(:get, /.*\.(png|jpg|jpeg|gif)/ ).to_return(:status => 200, :body => img_file, :headers => {})
   end
   subject { create(:podcast) }
   
@@ -106,6 +105,7 @@ describe Podcast do
   describe '#update_channel( normalized_channel )' do
     let(:podcast) { create(:podcast) }
     let(:channel_obj) { Podcast::Normalize::Channel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
+    let(:recycle_file) { Lesson.any_instance.stub(:duplicate?)  }
     subject { podcast.update_channel( channel_obj ) }
     
     it "creates a lesson from a podcast item" do
@@ -115,7 +115,9 @@ describe Podcast do
     end
     
     it "skips existing podcast items" do
-      pending 'TODO'
+      inital_lessons_count = subject.studies.sum(&:lessons_count)
+      subject.update_channel(channel_obj) # same file
+      subject.studies.sum(&:lessons_count).should be inital_lessons_count
     end
     
     it "adds similar lessons to the same study" do
@@ -124,7 +126,7 @@ describe Podcast do
     
     it "updates #last_updated" do
       inital_last_updated = subject.last_updated
-      Timecop.travel(1.minute) { subject.update_channel(channel_obj) }
+      Timecop.travel(1.minute) { recycle_file; subject.update_channel(channel_obj) }
       subject.last_updated.should be > inital_last_updated
     end
   end

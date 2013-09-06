@@ -27,8 +27,8 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :title, :description, :ref_link, :poster_img, :poster_img_remote_url, :podcast, :podcast_id
-  attr_accessible *column_names, *reflections.keys, :poster_img, :poster_img_remote_url, as: 'sudo'
+  attr_accessible :title, :description, :ref_link,  :poster_img, :poster_img_remote_url, :podcast, :podcast_id
+  attr_accessible *column_names, *reflections.keys, :poster_img, :poster_img_remote_url, :podcast, :podcast_id, as: 'sudo'
   delegate :church_name, to: :podcast
   serialize :keywords
   
@@ -57,11 +57,6 @@ class Study < ActiveRecord::Base
     def number(n, strict=false)
       raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
       where(position:n).first
-    end
-
-    def each_last
-      # optimize with where(MAX lessons.position)
-      map(&:last)
     end
   end
     

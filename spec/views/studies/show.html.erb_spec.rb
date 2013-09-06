@@ -8,6 +8,7 @@ describe "studies/show" do
       :ref_link => "http://www.church.org/podcast/1234"
     ))
     @lessons = assign(:lessons, @study.lessons)
+    @lesson  = assign(:lesson, @lessons.first)
     @video   = assign(:video, @lessons.first.video)
   end
 

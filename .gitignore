@@ -20,3 +20,4 @@ config/*.local.yml
 solr/data/*
 solr/pids/*
 doc/app
+.tmtags

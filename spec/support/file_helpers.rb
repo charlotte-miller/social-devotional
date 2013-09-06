@@ -6,6 +6,10 @@ def audio_file
   File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')
 end
 
+def img_file
+  File.new(Rails.root.join('spec/files', 'pixel.gif'), 'r')
+end
+
 def video_upload
   Rack::Test::UploadedFile.new(video_file.path, 'video/x-m4v')
 end

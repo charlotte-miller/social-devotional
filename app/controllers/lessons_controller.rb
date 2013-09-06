@@ -20,7 +20,7 @@ class LessonsController < ApplicationController
     @lessons = @study.lessons.all
     raise ActiveRecord::RecordNotFound if @lessons.empty?
 
-    @lesson = Lesson.find(params[:id]).w_questions
+    @lesson = Lesson.w_questions.find(params[:id])
     # lesson_number = params[:id].to_i
     # lesson_number = (lesson_number > @lessons.count) ? 0 : lesson_number-1
     # @lesson  = @lessons[ lesson_number ]

@@ -90,7 +90,7 @@ describe Study do
   end
   
   describe '#lessons.each_last' do
-    let(:studies) {2.times.map {create(:study)} }
+    let(:studies) {2.times.map {create(:study_w_lessons)} }
     subject {studies.lessons.each_last}
     
     it "selects the last lesson from each" do

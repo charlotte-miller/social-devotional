@@ -36,4 +36,9 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = true
 
   config.order = "random"
+  
+  # config.before(:suite) do
+  #   WebMock.stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
+  #   WebMock.stub_request(:get, /.*\.(png|jpg|jpeg|gif)/ ).to_return(:status => 200, :body => img_file, :headers => {})
+  # end
 end

@@ -12,7 +12,7 @@ describe Admin::StudiesController do
   let!(:study){ create(:study, podcast:podcast) }
   let(:valid_attributes){ 
     attributes_for(:study)
-    .merge({ podcast_id:podcast.id })
+    .merge({ podcast_id:podcast.id, title:study.slug })
     .except(:lessons)
     .tap {|hash| hash[:poster_img]= fixture_file_upload(hash[:poster_img].to_path) }
   }

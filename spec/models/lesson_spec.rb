@@ -47,13 +47,23 @@ describe Lesson do
   end
     
   describe '.new_from_podcast_item(podcast_item)' do
-    before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
+    before(:each) do
+      @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))
+      stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
+    end
+    
+    before(:all) {  }
     let!(:channel) { Podcast::Normalize::Channel.new(@podcast_xml) }
     subject { Lesson.new_from_podcast_item(channel.items.first) }
     
     it "builds a lesson from a podcast_item" do
       should be_a Lesson
+      subject.study = Study.new
       should be_valid
+    end
+    
+    it "requires a study sepratly" do
+      subject.errors.messages.should eq( :study => ["can't be blank"] )
     end
     
     it "skips an existing lesson" do

@@ -2,6 +2,8 @@ module Questionable
   extend ActiveSupport::Concern
   
   included do
+    scope :w_questions, includes(:questions)
+    
     has_many :questions, as: 'source' do  # , inverse_of: 'source'
       def popular(n=5)
         order('stared_count DESC, answers_count DESC').limit(n)
@@ -15,9 +17,6 @@ module Questionable
         order('created_at ASC').limit(n)
       end
     end
-    
-    
-    scope :w_questions, includes(:questions)
   end
   
 end

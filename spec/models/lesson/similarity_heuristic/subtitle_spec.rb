@@ -3,7 +3,7 @@ require 'spec_helper'
 module Lesson::SimilarityHeuristic
   describe Subtitle do
     it "needs tests" do
-      should_fail
+      pending
     end
   end
 end

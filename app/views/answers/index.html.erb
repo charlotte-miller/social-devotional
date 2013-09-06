@@ -14,8 +14,8 @@
 
 <% @answers.each do |answer| %>
   <tr>
-    <td><%= answer.question %></td>
-    <td><%= answer.author %></td>
+    <td><%= answer.question.text %></td>
+    <td><%= answer.author.first_name %></td>
     <td><%= answer.text %></td>
     <td><%= answer.blocked_count %></td>
     <td><%= answer.stared_count %></td>
