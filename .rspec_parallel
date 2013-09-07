@@ -1,0 +1,6 @@
+--require parallel_tests
+--format ParallelTests::RSpec::RuntimeLogger 
+--out tmp/parallel_runtime_rspec.log
+
+--format ParallelTests::RSpec::SummaryLogger
+--out tmp/parallel_runtime_rspec.log

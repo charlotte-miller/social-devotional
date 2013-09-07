@@ -79,6 +79,9 @@ group :development, :test do
   gem 'syntax'
   gem 'zeus'
   gem 'vcr'
+  gem "parallel_tests"
+  gem "zeus-parallel_tests"
+  gem "rspec-instafail"
   
   # Debugger
   gem 'pry-rails'
@@ -95,6 +98,7 @@ group :test do
   gem 'webmock'
   gem 'therubyracer', :platform => :ruby
   gem 'sunspot_test'
+  gem 'simplecov', :require => false
   gem "activerecord-tableless", "~> 1.0"  #used by DummyClass when testing concerns
 end
 

@@ -21,3 +21,4 @@ solr/data/*
 solr/pids/*
 doc/app
 .tmtags
+/coverage

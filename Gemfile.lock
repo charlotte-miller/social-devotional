@@ -211,6 +211,9 @@ GEM
       mime-types
     paperclip-ffmpeg (0.11.0)
       paperclip (>= 2.5.2)
+    parallel (0.8.0)
+    parallel_tests (0.15.3)
+      parallel
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     profanalyzer (1.2.0)
@@ -264,6 +267,7 @@ GEM
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
+    rspec-instafail (0.2.4)
     rspec-mocks (2.12.2)
     rspec-rails (2.12.2)
       actionpack (>= 3.0)
@@ -292,6 +296,10 @@ GEM
     shoulda-matchers (1.5.0)
       activesupport (>= 3.0.0)
       bourne (~> 1.2.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (3.4.4)
     sneaky-save (0.0.4)
       activerecord (>= 3.2.0)
@@ -356,6 +364,9 @@ GEM
       nokogiri (~> 1.3)
     zeus (0.13.3)
       method_source (>= 0.6.7)
+    zeus-parallel_tests (0.2.4)
+      parallel_tests (>= 0.11.3)
+      zeus (~> 0.13.3)
 
 PLATFORMS
   ruby
@@ -395,6 +406,7 @@ DEPENDENCIES
   oj
   paperclip
   paperclip-ffmpeg
+  parallel_tests
   profanalyzer
   progress_bar
   pry-rails
@@ -402,10 +414,12 @@ DEPENDENCIES
   rails (~> 3.2.13)
   rails-backbone-generator
   rb-fsevent
+  rspec-instafail
   rspec-rails
   rspec_candy
   sass-rails (~> 3.2.3)
   shoulda-matchers (= 1.5.0)
+  simplecov
   state_machine
   sunspot_rails
   sunspot_solr
@@ -422,3 +436,4 @@ DEPENDENCIES
   webmock
   whenever
   zeus
+  zeus-parallel_tests

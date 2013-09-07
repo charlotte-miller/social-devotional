@@ -1,4 +1,6 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
+# require 'simplecov'
+# SimpleCov.start
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
@@ -37,8 +39,16 @@ RSpec.configure do |config|
 
   config.order = "random"
   
-  # config.before(:suite) do
-  #   WebMock.stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
-  #   WebMock.stub_request(:get, /.*\.(png|jpg|jpeg|gif)/ ).to_return(:status => 200, :body => img_file, :headers => {})
-  # end
+  config.before(:all) do
+    DeferredGarbageCollection.start
+  end
+
+  config.after(:all) do
+    DeferredGarbageCollection.reconsider
+  end
+  
+  # http://railscasts.com/episodes/413-fast-tests?view=asciicast
+  # config.treat_symbols_as_metadata_keys_with_true_values = true
+  # config.filter_run focus: true
+  # config.run_all_when_everything_filtered = true
 end
