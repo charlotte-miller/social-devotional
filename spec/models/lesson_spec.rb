@@ -40,9 +40,11 @@ describe Lesson do
     study.lessons.first.save!
   end
     
-  describe '[scopes]' do
+  describe '[scopes]'do
     describe 'for_study(:study_id)' do
-      pending
+      it "adds WHERE(study_id=n)" do
+        Lesson.for_study(1).to_sql.should match /WHERE `lessons`.`study_id` = 1/
+      end
     end
   end
     
@@ -65,10 +67,6 @@ describe Lesson do
     it "requires a study sepratly" do
       subject.errors.messages.should eq( :study => ["can't be blank"] )
     end
-    
-    it "skips an existing lesson" do
-      pending
-    end
   end
   
   describe '#belongs_with?( other_lesson )' do
@@ -85,15 +83,6 @@ describe Lesson do
     
     it "returns FALSE if NONE of the Lesson::SimilarityHeuristic#matches?" do
       subject.belongs_with?( other_lesson ).should be_false
-    end
-  end
-
-  describe '.new_from_podcast_item(podcast_item)' do
-    # let(:podcast_item) { '?' }
-    # subject {Lesson.new_from_podcast_item(podcast_item)}
-    
-    it "builds from a podcast_item" do
-      pending 'TODO'
     end
   end
   
