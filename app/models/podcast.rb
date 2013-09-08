@@ -26,7 +26,7 @@ class Podcast < ActiveRecord::Base
   belongs_to :church, :inverse_of => :podcasts
   has_many :studies,  :inverse_of => :podcast do
     def most_recent(n=nil)
-      order('last_published_at ASC').last(n)
+      except(:order).order('last_published_at DESC').first(n)
     end
   end
 
@@ -69,17 +69,16 @@ class Podcast < ActiveRecord::Base
   # - studies
   # - lesson
   def update_channel( normalized_channel )
-    normalized_channel.items.each do |item|  
+    # Process in cron order
+    new_lessons = normalized_channel.items.reverse.map do |item|
       # 0) build lesson
       lesson = Lesson.new_from_podcast_item(item)
 
       # 1) skip existing
-      recent_studies = studies.w_lessons.most_recent(5)
-      last_lessons   = recent_studies.map {|study| study.lessons.last }
-      is_duplicate   = last_lessons.any? {|last_lesson| last_lesson.duplicate? lesson }
-      return self if is_duplicate
+      next if lesson.duplicate?
 
       # 2) assign or create study
+      recent_studies = studies.reload.w_lessons.most_recent(5)
       study   = recent_studies.find {|study| study.should_include? lesson }
       study ||= Study.new_from_podcast_channel(normalized_channel, podcast:self).tap(&:save!)
       lesson.study = study
@@ -89,7 +88,7 @@ class Podcast < ActiveRecord::Base
     end
     
     # 5) Update Podcast.timestamps
-    touch(:last_updated)
+    touch(:last_updated) if new_lessons.any?
     
     self #chain
   end

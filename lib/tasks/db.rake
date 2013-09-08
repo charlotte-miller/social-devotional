@@ -6,6 +6,7 @@ namespace :db do
       'db:migrate',  
       'db:test:purge',
       'db:test:load_schema',
+      # 'parallel:prepare'
       # 'db:seed'
     ].each { |task| Rake::Task[ task ].execute  } #rescue next
     # `annotate -f before`

@@ -18,6 +18,7 @@ describe Podcast do
   before(:each) do
     stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
     stub_request(:get, /.*\.(png|jpg|jpeg|gif)/ ).to_return(:status => 200, :body => img_file, :headers => {})
+    stub_request(:put, /.*/)
   end
   subject { create(:podcast) }
   
@@ -38,6 +39,7 @@ describe Podcast do
     
     it "returns the most recently published lessons" do
       @podcast.studies.most_recent.last_published_at.should be > @study1.last_published_at 
+      @podcast.studies.most_recent.should eql @podcast.studies.last
     end
         
     it "returns an obj or sorted collection (depending on N)" do
@@ -120,8 +122,9 @@ describe Podcast do
       subject.studies.sum(&:lessons_count).should be inital_lessons_count
     end
     
-    it "adds similar lessons to the same study" do
-      pending 'TODO'
+    it "groups similar lessons in the same study" do
+      # pp subject.studies.map(&:lessons).map {|l| l.map(&:title)}
+      subject.studies.map(&:lessons_count).any? {|count| count > 1}.should be_true
     end
     
     it "updates #last_updated" do
