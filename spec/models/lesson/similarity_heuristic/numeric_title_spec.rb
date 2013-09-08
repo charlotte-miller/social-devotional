@@ -9,7 +9,7 @@ module Lesson::SimilarityHeuristic
           ['Mark Part 1', 'Mark Part 2'],
           ['Mark [Part 1]', 'Mark [Part 2]'],
           ['Mark (Part 1)', 'Mark (Part 2)'],
-          ['Mark Part I', 'Mark Part II']
+          ['Mark Part I', 'Mark Part II'],
         ].each do |title_pair|
           part_1, part_2 = title_pair.map {|title| build_stubbed(:lesson, title:title)}
           (NumericTitle.new(part_1, part_2).matches?).should be_true

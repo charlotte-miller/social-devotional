@@ -7,10 +7,10 @@ module Lesson::SimilarityHeuristic
 
   private
     
+    # strips sub-title by [sub], (sub), :sub
     def find_main_title(full_title)
-      full_title
-      # strips sub-title
-      # return main_title
+      main_title = full_title.scan(/^[^:\[\(\-]*/).first
+      main_title
     end
     
   end
