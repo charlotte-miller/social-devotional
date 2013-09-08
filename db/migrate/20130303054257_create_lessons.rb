@@ -15,5 +15,6 @@ class CreateLessons < ActiveRecord::Migration
     end
     
     add_index :lessons, [:study_id, :position]
+    add_index :lessons, :backlink
   end
 end

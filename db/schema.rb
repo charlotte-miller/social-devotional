@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.datetime "updated_at",                            :null => false
   end
 
+  add_index "lessons", ["backlink"], :name => "index_lessons_on_backlink"
   add_index "lessons", ["study_id", "position"], :name => "index_lessons_on_study_id_and_position"
 
   create_table "meetings", :force => true do |t|

@@ -123,7 +123,7 @@ class Lesson < ActiveRecord::Base
     end
   end
   
-  def duplicate? other_lesson
-    backlink == other_lesson.backlink
+  def duplicate?
+    Lesson.where(backlink: backlink).exists?
   end
 end

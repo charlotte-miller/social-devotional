@@ -99,8 +99,9 @@ describe Lesson do
   
   describe '#duplicate?' do
     it "matches on backlink" do
-      a, b = 2.times.map { build_stubbed(:lesson, backlink:'foo') }
-      a.duplicate? b
+      a, b = 2.times.map { build(:lesson, backlink:'foo') }
+      a.save
+      b.should be_duplicate
     end
   end
 end
