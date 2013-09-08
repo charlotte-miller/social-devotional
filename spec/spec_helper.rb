@@ -48,7 +48,7 @@ RSpec.configure do |config|
   end
   
   # http://railscasts.com/episodes/413-fast-tests?view=asciicast
-  # config.treat_symbols_as_metadata_keys_with_true_values = true
-  # config.filter_run focus: true
-  # config.run_all_when_everything_filtered = true
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 end
