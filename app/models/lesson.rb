@@ -112,13 +112,13 @@ class Lesson < ActiveRecord::Base
     
   end
   
-  require 'lesson/similarity_heuristic/base'
   # Determins how similar a lesson is to the other_lesson
   # Loops through an array of heuristics looking for a match (stops after match)
   # => returns true|false
   #
   def belongs_with? other_lesson
-    !!Lesson::SimilarityHeuristic::STRATEGIES.find do |strategy|
+    require 'lesson/similarity_heuristic/base'
+    !!Lesson::SimilarityHeuristic::Base::STRATEGIES.find do |strategy|
       strategy.new(self, other_lesson).matches?
     end
   end

@@ -34,7 +34,7 @@ class Group < ActiveRecord::Base
   has_many :group_memberships,  :dependent => :destroy
   accepts_nested_attributes_for :group_memberships, 
                                 allow_destroy: true, 
-                                reject_if: lambda { !(attributes[:members_attributes].try([], :user_id)) }
+                                reject_if: lambda { !(attributes[:members_attributes].try(:[], :user_id)) }
   
   
   def leaders; members.where('group_memberships.role_level > 1') ;end

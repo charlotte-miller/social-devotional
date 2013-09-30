@@ -54,7 +54,7 @@ class Podcast < ActiveRecord::Base
         podcast_obj.touch(:last_checked)
         
         channel = Podcast::Normalize::Channel.new(podcast_xml)
-        if channel.last_updated > podcast_obj.last_updated
+        if (channel.last_updated > podcast_obj.last_updated rescue true)
           podcast_obj.update_channel( channel )
         end
       end.run!

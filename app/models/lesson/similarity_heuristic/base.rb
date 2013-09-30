@@ -11,12 +11,13 @@ module Lesson::SimilarityHeuristic
       @context      = context
       @other_lesson = other_lesson
     end
+  
+    # Load STRATEGIES into a single array
+    Dir.glob("#{__FILE__}/**/*").each {|file| require file}
+    STRATEGIES = [
+      Lesson::SimilarityHeuristic::NumericTitle,
+      Lesson::SimilarityHeuristic::Subtitle,
+    ]
   end
   
-  # Load STRATEGIES into a single array
-  Dir.glob("#{__FILE__}/**/*").each {|file| require file}
-  STRATEGIES = [
-    Lesson::SimilarityHeuristic::NumericTitle,
-    Lesson::SimilarityHeuristic::Subtitle,
-  ]
 end

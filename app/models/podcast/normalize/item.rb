@@ -38,6 +38,8 @@ module Podcast::Normalize
     
     def media_length
       enclosure.length.to_i
+    rescue
+      0
     end
     
     def media_type

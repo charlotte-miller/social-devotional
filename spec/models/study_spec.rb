@@ -21,7 +21,7 @@
 
 require 'spec_helper'
 
-describe Study do
+describe Study, :focus do
   it { should have_many(:lessons) }
   it { should belong_to(:podcast) }
   it { should have_one(:church).through(:podcast) }
@@ -88,16 +88,7 @@ describe Study do
       lambda {@study.lessons.number(3, :strict) }.should raise_error(ActiveRecord::RecordNotFound)
     end
   end
-  
-  describe '#lessons.each_last' do
-    let(:studies) {2.times.map {create(:study_w_lessons)} }
-    subject {studies.lessons.each_last}
     
-    it "selects the last lesson from each" do
-      pending "passing them sql optimize"
-    end
-  end
-  
   describe '#stand_alone?' do
     it "returns true if the study has one lesson" do
       create(:study_w_lesson).stand_alone?.should  be_true

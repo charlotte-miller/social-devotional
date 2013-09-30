@@ -65,6 +65,7 @@ describe Lesson do
     end
     
     it "requires a study sepratly" do
+      subject.valid?
       subject.errors.messages.should eq( :study => ["can't be blank"] )
     end
   end
@@ -73,11 +74,11 @@ describe Lesson do
     subject { build_stubbed(:lesson) }
     let(:other_lesson) { build_stubbed(:lesson) }
     before(:each) do
-      Lesson::SimilarityHeuristic::STRATEGIES.each {|strategy| strategy.any_instance.stub(matches?:false) } #all stragegies 'off'
+      Lesson::SimilarityHeuristic::Base::STRATEGIES.each {|strategy| strategy.any_instance.stub(matches?:false) } #all stragegies 'off'
     end
     
     it "returns TRUE if any of the Lesson::SimilarityHeuristic#matches?" do
-      Lesson::SimilarityHeuristic::STRATEGIES.last.any_instance.stub(matches?:true)
+      Lesson::SimilarityHeuristic::Base::STRATEGIES.last.any_instance.stub(matches?:true)
       subject.belongs_with?( other_lesson ).should be_true
     end
     
