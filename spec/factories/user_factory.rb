@@ -35,7 +35,7 @@
 FactoryGirl.define do
   factory :user, aliases: [:requester, :author, :member] do
     before(:create, :stub) do
-      User.any_instance.stub({ save_attached_files: true }) if Rails.env.test?
+      AWS.stub! if Rails.env.test?
     end
     
     first_name  'Fred'

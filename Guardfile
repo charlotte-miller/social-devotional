@@ -27,9 +27,9 @@ spec_location = "spec/javascripts/%s_spec"
 rspec_options ={
   all_on_start:   false,
   all_after_pass: false,
-  bundle:         false,
+  bundler:        false,
   zeus:           true,
-  parallel:       true,
+  parallel:       false,
   run_all: { 
     parallel:       true,
     cli:"--tag ~internal" } #--profile

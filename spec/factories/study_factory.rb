@@ -43,6 +43,7 @@ FactoryGirl.define do
       new_last_published_at = context.last_published_at
       
       # assign and save proteced attributes (non mass_assigned)
+      study.stub(touch:true)                          if stubbing
       study.slug              = new_slug              if new_slug
       study.last_published_at = new_last_published_at if new_last_published_at
       study.save! if !stubbing && (new_slug || new_last_published_at)

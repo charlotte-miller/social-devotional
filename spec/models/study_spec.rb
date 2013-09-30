@@ -21,7 +21,7 @@
 
 require 'spec_helper'
 
-describe Study, :focus do
+describe Study do
   it { should have_many(:lessons) }
   it { should belong_to(:podcast) }
   it { should have_one(:church).through(:podcast) }

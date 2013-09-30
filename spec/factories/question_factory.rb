@@ -18,7 +18,9 @@
 
 
 FactoryGirl.define do
-  factory :question do  
+  factory :question do
+    before(:create, :stub) { AWS.stub! if Rails.env.test? }
+    
     permanent_approver
     author
     source { FactoryGirl.create(:lesson) }
