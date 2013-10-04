@@ -29,10 +29,10 @@ rspec_options ={
   all_after_pass: false,
   bundler:        false,
   zeus:           true,
-  parallel:       false,
-  run_all: { 
-    parallel:       true,
-    cli:"--tag ~internal" } #--profile
+  parallel:       true,
+  # run_all: { 
+  #   parallel:       true,   # parallel_cli: '-n 8'
+  #   cli:"--tag ~internal" } #--profile
 }
 
 guard 'rspec', rspec_options do  
