@@ -57,7 +57,7 @@ describe Podcast do
     before(:each) do
       @podcasts = 2.times.map { create(:podcast, last_updated: Time.parse('Mon, 25 Mar 2013')) }
       @podcast  = Podcast.first
-      @runner   = stub(run!:true)
+      @runner   = double(run!:true)
     end
     
     it "updates all by default" do
