@@ -35,12 +35,21 @@ module AttachableFile
       
       # https://github.com/thoughtbot/paperclip/wiki/Attachment-downloaded-from-a-URL
       class_eval %Q{
+        # non_original_url compatability
+        attr_accessor :#{attachment_name}_original_url unless column_names.include? '#{attachment_name}_original_url'
+        
         attr_reader :#{attachment_name}_remote_url
         def #{attachment_name}_remote_url=(url_str)
-          self.#{attachment_name}=URI.parse(url_str)
-          @#{attachment_name}_remote_url = url_str
+          self.#{attachment_name}_original_url = url_str
+          
+          # require lib/extensions/active_record/instance_after_save
+          def self.after_save
+            return if @already_queued
+            AttachmentDownloader.perform_async(self.to_findable_hash, :#{attachment_name}) && @already_queued=true
+          end
         end
       }
+      
     end
   end
 end

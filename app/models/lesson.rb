@@ -12,10 +12,12 @@
 #  video_content_type :string(255)
 #  video_file_size    :integer
 #  video_updated_at   :datetime
+#  video_original_url :string(255)
 #  audio_file_name    :string(255)
 #  audio_content_type :string(255)
 #  audio_file_size    :integer
 #  audio_updated_at   :datetime
+#  audio_original_url :string(255)
 #  machine_sorted     :boolean          default(FALSE)
 #  duration           :integer
 #  published_at       :datetime

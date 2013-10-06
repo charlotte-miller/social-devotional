@@ -25,6 +25,16 @@ describe AttachableFile do
       should respond_to :wonderful_img_remote_url=
     end
   end
+  
+  describe '#<attachment>_remote_url=' do
+    it "stores the url as <attachment>_original_url " do
+      raise NotImplementedError
+    end
+    
+    it "queues a Sidekiq job to download the <attachment>" do
+      raise NotImplementedError
+    end
+  end
 end
 
 class DummyClass < ActiveRecord::Base
