@@ -11,16 +11,26 @@
 #   xml_rpc_url: http://localhost:8008/
 
 common:
+  dev_user: developer
+  dev_pass: developer
   s3:
     bucket: social-devotional
     credentials:
       access_key_id: AKIAJAW4PTOXOO6POA7Q
       secret_access_key: 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
+  redis:
+    host: 'localhost'
+    port: 6379
+    timeout: 2
+    pool: 5
 
 development:
 
 test:
 
 production:
+  redis:
+    host: 'redis-master.socialdevotional.com'
+    pool: 10
 
 #custom_environment:

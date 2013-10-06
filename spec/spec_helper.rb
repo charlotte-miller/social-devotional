@@ -8,7 +8,7 @@ require "paperclip/matchers"
 require 'rspec_candy/all'
 require 'sunspot_test/rspec'
 require 'capybara/rspec'
-# require 'sidekiq/testing'
+require 'sidekiq/testing'
 require 'webmock/rspec'
 require 'vcr'
 require 'pry'

@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'activerecord-import', '~> 0.3.0'
 gem 'unicorn'
 gem 'configy'
+gem 'hashie'
 gem 'oj'
 gem 'celluloid'
 gem 'whenever', :require => false
@@ -24,10 +25,11 @@ gem 'profanalyzer'
 gem 'airbrake'
 
 # SideKiq Monitoring
-# gem 'sidekiq'
+gem 'sidekiq'
+gem 'request_store'
 # gem "thin", "~> 1.4.1"
-# gem 'slim', '<= 1.3.0'
-# gem 'sinatra', :require => nil
+gem 'slim', '<= 1.3.0'
+gem 'sinatra', :require => nil
 # gem 'ox'
 # gem 'jbuilder'
 

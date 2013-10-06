@@ -45,5 +45,7 @@ SocialDevotional::Application.routes.draw do
   namespace  :admin do
     resources :studies, :lessons
   end
-
+  
+  require 'mixins/http_authentication'
+  mount HttpAuthentication::Sidekiq => '/queue'
 end

@@ -29,7 +29,7 @@ rspec_options ={
   all_after_pass: false,
   bundler:        false,
   zeus:           true,
-  parallel:       true,
+  parallel:       false,
   # run_all: { 
   #   parallel:       true,   # parallel_cli: '-n 8'
   #   cli:"--tag ~internal" } #--profile
@@ -54,6 +54,8 @@ guard 'rspec', rspec_options do
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
+  watch(%r{^app/(models|controllers)/concerns})       { |m| "spec/#{m[1]}"}
+  watch(%r{^(lib/extensions.+)\.rb})                  { |m| "spec/#{m[1]}_spec.rb"}
 
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
