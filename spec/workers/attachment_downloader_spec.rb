@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe AttachmentDownloader do
+  it { should be_processed_in 'attachments' }
+  it { should be_retryable true}
+  it { should be_unique }
   
   describe '#perform(obj_hash, attachment_names=[])' do
     let(:any_model) { create(:study, poster_img: nil, poster_img_original_url:'http://foo.com/poster.jpg') }

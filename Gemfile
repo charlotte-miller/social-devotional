@@ -101,5 +101,6 @@ group :test do
   gem 'sunspot_test'
   gem 'simplecov', :require => false
   gem "activerecord-tableless", "~> 1.0"  #used by DummyClass when testing concerns
+  gem "rspec-sidekiq"
 end
 

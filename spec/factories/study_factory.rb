@@ -36,6 +36,7 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph(rand(2..5)) }
     ref_link    "http://link.com/salt-and-light"
     poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'r')
+    poster_img_original_url 'http://example.com/poster_image.jpg'
     
     before(:create, :stub) { AWS.stub! if Rails.env.test? }
     after(:create, :stub) do |study, context|

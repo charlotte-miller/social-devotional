@@ -2,9 +2,10 @@ require 'spec_helper'
 
 describe AttachableFile do
   subject { DummyClass.new }
-  let(:paperclip_obj) { subject.wonderful_img }
   
   describe '.has_attachable_file' do
+    let(:paperclip_obj) { subject.wonderful_img }
+    
     it "adds paperclip for <attribute>" do
       should respond_to :wonderful_img
       subject.wonderful_img.should be_a Paperclip::Attachment
@@ -27,12 +28,24 @@ describe AttachableFile do
   end
   
   describe '#<attachment>_remote_url=' do
-    it "stores the url as <attachment>_original_url " do
-      raise NotImplementedError
+    before(:each) do
+      @img_location = 'http://foo.com/bar.jpg'
+      subject.wonderful_img_remote_url = @img_location
     end
     
-    it "queues a Sidekiq job to download the <attachment>" do
-      raise NotImplementedError
+    it "stores the url as <attachment>_original_url " do
+      expect(subject.wonderful_img_original_url).to eq @img_location
+    end
+    
+    it "adds an after_save hook" do
+      expect(subject).to respond_to(:after_save) 
+    end
+    
+    context "on save - " do      
+      it "queues a Sidekiq job to download the <attachment> (once)" do
+        expect { subject.after_save }.to change(AttachmentDownloader.jobs, :size).by(1)
+        expect { subject.after_save }.to change(AttachmentDownloader.jobs, :size).by(0)
+      end
     end
   end
 end

@@ -38,6 +38,8 @@ FactoryGirl.define do
     backlink "http://link.com/salt-and-light"
     video File.new(Rails.root.join('spec/files', 'video.m4v'), 'r')
     audio File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')
+    video_original_url 'http://example.com/video.m4v'
+    audio_original_url 'http://example.com/audio.m4a'
     published_at Time.now
   end
 end

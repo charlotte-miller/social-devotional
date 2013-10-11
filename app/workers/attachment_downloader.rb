@@ -3,6 +3,10 @@ require 'uri'
 
 class AttachmentDownloader
   include Sidekiq::Worker
+  sidekiq_options({
+    queue: :attachments, 
+    unique: true,
+    backtrace: true})
 
   def perform(obj_hash, attachment_names=[])
     @obj_instance = obj_hash.to_obj

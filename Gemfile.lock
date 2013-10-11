@@ -279,6 +279,9 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    rspec-sidekiq (0.5.1)
+      rspec (~> 2.0)
+      sidekiq (>= 2.4.0)
     rspec_candy (0.3.0)
       rspec
       sneaky-save
@@ -430,6 +433,7 @@ DEPENDENCIES
   request_store
   rspec-instafail
   rspec-rails
+  rspec-sidekiq
   rspec_candy
   sass-rails (~> 3.2.3)
   shoulda-matchers (~> 2.4.0)
