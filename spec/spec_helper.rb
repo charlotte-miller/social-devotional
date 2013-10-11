@@ -4,11 +4,11 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require "paperclip/matchers"
+# require "paperclip/matchers" # /support
+# require 'sidekiq/testing'    # /support
 require 'rspec_candy/all'
 require 'sunspot_test/rspec'
 require 'capybara/rspec'
-require 'sidekiq/testing'
 require 'webmock/rspec'
 require 'vcr'
 require 'pry'
@@ -39,13 +39,6 @@ RSpec.configure do |config|
 
   config.order = "random"
   
-  config.before(:all) do
-    DeferredGarbageCollection.start
-  end
-
-  config.after(:all) do
-    DeferredGarbageCollection.reconsider
-  end
   
   # http://railscasts.com/episodes/413-fast-tests?view=asciicast
   config.treat_symbols_as_metadata_keys_with_true_values = true
