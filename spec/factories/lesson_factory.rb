@@ -27,9 +27,15 @@
 
 
 
+require 'cocaine'
 FactoryGirl.define do
   factory :lesson do
-    before(:create, :stub) { AWS.stub! if Rails.env.test? }
+    before(:create, :stub) do
+      if Rails.env.test?
+        AWS.stub!
+        Cocaine::CommandLine.any_instance.stub(:run) 
+      end
+    end
     
     study
     # position 1

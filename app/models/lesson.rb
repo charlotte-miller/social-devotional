@@ -26,35 +26,27 @@
 #
 
 class Lesson < ActiveRecord::Base
-  include AttachableFile
   include Searchable
   include Questionable
+  include Lesson::AttachedMedia
   # include Comparable
-  
+
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
   # http://rubydoc.info/github/FriendlyId/friendly_id/master/FriendlyId/Scoped
   # extend FriendlyId
   # friendly_id :position, :use => :scoped, :scope => :study
-  
+
   acts_as_list scope: :study
 
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
 
   attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, as: 'sudo'
-  
+
   delegate :title, :to => :study, prefix:true  # study_title
-  
-  has_attachable_file :audio, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'  
-  has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension'
-  
-  # has_attached_file :video, :styles => {
-  #      :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
-  #      :medium => { :geometry => "640x480", :format => 'flv' }
-  #      :mobile => {:geometry => "400x300", :format => 'mp4', :streaming => true}
-  #   }, :processors => [:ffmpeg, :qtfaststart]
+
 
   # http://sunspot.github.com/
   searchable do
@@ -77,7 +69,7 @@ class Lesson < ActiveRecord::Base
   # validates_attachment_presence :audio, :video
   
   # http://stackoverflow.com/questions/3181845/validate-attachment-content-type-paperclip
-  # validates_attachment_content_type :audio
+  # validates_attachment_content_type :video, :audio
   
   
   # ---------------------------------------------------------------------------------
