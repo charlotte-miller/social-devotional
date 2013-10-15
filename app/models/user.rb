@@ -49,9 +49,9 @@ class User < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :profile_image
-  has_attachable_file :profile_image, 
-    :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
-    :path => ':rails_env/:class/:attachment/:id/:updated_at.:extension'
+  
+  has_attachable_file :profile_image, :path => ':rails_env/:class/:attachment/:id/:updated_at.:extension',
+                      :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   
   

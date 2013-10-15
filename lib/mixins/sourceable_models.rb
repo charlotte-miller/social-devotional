@@ -1,3 +1,5 @@
+# TODO migrate to models/concerns
+
 module SourceableModels
   
   def self.included(base)

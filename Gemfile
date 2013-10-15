@@ -11,6 +11,7 @@ gem 'celluloid'
 gem 'whenever', :require => false
 gem 'paperclip'
 gem 'paperclip-ffmpeg'
+# gem 'paperclip-optimizer'
 gem 'aws-sdk'
 gem 'devise'
 gem 'devise-encryptable'
