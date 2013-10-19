@@ -1,5 +1,44 @@
-# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
+# Beta Mode
+User-Agent: *
+Disallow: /
+
+
+# # Whitelist Bots - http://danbirken.com/seo/2013/10/17/who-exactly-is-crawling-my-site.html
+# 
+# User-Agent: Googlebot
+# Allow: /
+# 
+# User-Agent: Googlebot-Mobile
+# Allow: /
+# 
+# User-Agent: msnbot
+# Allow: /
+# 
+# User-Agent: bingbot
+# Allow: /
+# 
+# # Adsense
+# User-Agent: Mediapartners-Google
+# Allow: / 
+# 
+# # archive.org
+# User-Agent: ia_archiver
+# Allow: /
+# 
+# # Yahoo!
+# User-agent: Slurp
+# Allow: /
+# 
+# # Blekko
+# User-agent: ScoutJet
+# Allow: /
+# 
+# User-Agent: Yandex
+# Allow: /
+# 
+# User-Agent: DuckDuckBot
+# Allow: /
+# 
 # User-Agent: *
 # Disallow: /
+# Sitemap: http://socialdevotional.com/sitemap.xml.gz

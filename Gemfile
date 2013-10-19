@@ -6,8 +6,9 @@ gem 'configy'
 gem 'hashie'
 gem 'oj'
 gem 'celluloid'
-gem 'whenever',   :require => false
-gem 'capistrano', :require => false
+gem 'whenever',          :require => false
+gem 'capistrano',        :require => false
+gem 'sitemap_generator', :require => false
 # gem 'ox'
 # gem 'profanalyzer'
 # gem 'activerecord-import', '~> 0.3.0'

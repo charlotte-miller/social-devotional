@@ -303,6 +303,8 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sitemap_generator (4.2.0)
+      builder
     slim (1.0.1)
       temple (~> 0.3.0)
       tilt (~> 1.2)
@@ -428,6 +430,7 @@ DEPENDENCIES
   sidekiq
   simplecov
   sinatra
+  sitemap_generator
   slim (<= 1.3.0)
   state_machine
   sunspot_rails
