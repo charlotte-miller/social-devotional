@@ -26,7 +26,9 @@ describe AttachmentDownloader do
   # Not really a unit test! More of a sanity check
   # describe '[private] #curl_to', :integration do
   #   it "downloads the url to a file" do
-  #     subject.bypass.curl_to 'http://jasonlefkowitz.net/wp-content/uploads/2013/07/Cute-Cats-cats-33440930-1280-800.jpg', '~/Desktop/cat.jpg'
+  #     Cocaine::CommandLine.unfake!
+  #     subject.bypass.curl_to 'http://jasonlefkowitz.net/wp-content/uploads/2013/07/Cute-Cats-cats-33440930-1280-800.jpg', "#{`cd ~ && pwd`.chomp}/Desktop/all_creatures.jpg"
+  #     Cocaine::CommandLine.fake!
   #   end
   # end
 end
