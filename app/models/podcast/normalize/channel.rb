@@ -28,7 +28,7 @@ module Podcast::Normalize
     end
     
     def poster_image
-      sanitize_url(channel.image.url)
+      sanitize_url(channel.image.try :url)
     end
     
     def keywords
