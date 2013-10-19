@@ -3,7 +3,7 @@
 #
 
 require 'sunspot_test'
-require Rails.root.join('spec/support/quickerclip.rb')
+require Rails.root.join('spec/support/initializers/quickerclip.rb')
 AWS.stub!
 
 puts "Building - Churces"
