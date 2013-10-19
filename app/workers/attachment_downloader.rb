@@ -19,7 +19,7 @@ private
   # Paperclip assignment will trigger any Paperclip::Processor
   def download_and_assign( attachment_name )
     url_str   = @obj_instance.send("#{attachment_name}_original_url")
-    file_name = URI(url_str).path.sub(/^\//,'')
+    file_name = File.basename(URI(url_str).path)
     
     Tempfile.open(file_name) do |tempfile|
       curl_to(url_str, tempfile.path)
