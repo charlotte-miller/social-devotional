@@ -25,17 +25,9 @@
 #  updated_at         :datetime         not null
 #
 
-
-
-require 'cocaine'
 FactoryGirl.define do
   factory :lesson do
-    before(:create, :stub) do
-      if Rails.env.test?
-        AWS.stub!
-        Cocaine::CommandLine.any_instance.stub(:run) 
-      end
-    end
+    before(:create, :stub) { AWS.stub! if Rails.env.test? }
     
     study
     # position 1

@@ -13,8 +13,8 @@ module Lesson::AttachedMedia
     MOBILE_SIZE = '480x270#'
     
     has_attachable_file :audio, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension',
-                        :processors => [],
-                        :styles => {ogg:true, mp3:true}
+                        :processors => []
+                        # :styles => {ogg:true, mp3:true}
 
     has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension',
                         :processors => [:ffmpeg, :qtfaststart],
