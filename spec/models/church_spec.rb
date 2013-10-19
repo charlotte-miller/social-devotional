@@ -18,7 +18,7 @@ describe Church do
   it { should validate_presence_of(:name)     }
   it { should validate_presence_of(:homepage) }
   
-  it "builds from factory", internal:true do
+  it "builds from factory", :internal do
     lambda { create(:church) }.should_not raise_error
   end
 end

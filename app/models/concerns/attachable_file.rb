@@ -1,4 +1,6 @@
-# === Configures Paperclip/S3 and adds methods for a remote_url
+# === Configures Paperclip/S3
+# - Provides a _generic_ method for storing files in the cloud
+# - Adds the +<attachment>_remote_url=+ method to process hosted files asyncanously 
 #
 module AttachableFile
   extend ActiveSupport::Concern

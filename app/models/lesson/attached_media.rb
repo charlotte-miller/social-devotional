@@ -1,3 +1,7 @@
+# === Configuration for processing & storing a Lesson's audio/video files. 
+# - Uses the AttachableFile module
+# - Uses paperclip-ffmpeg for transcoding
+#
 module Lesson::AttachedMedia
   extend  ActiveSupport::Concern
   include AttachableFile

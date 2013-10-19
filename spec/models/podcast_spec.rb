@@ -27,7 +27,7 @@ describe Podcast do
   it { should delegate_method(:name).to(:church).with_prefix }
   it { should delegate_method(:homepage).to(:church).with_prefix }
   
-  it "builds from factory", internal:true do
+  it "builds from factory", :internal do
     lambda { create(:podcast) }.should_not raise_error
   end
   
@@ -75,7 +75,7 @@ describe Podcast do
       Podcast.pull_updates(@podcast)
     end
         
-    describe '- after fetching the podcast XML', internal:true do
+    describe '- after fetching the podcast XML', :internal do
       before(:each) do
         @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))      
         stub_request(:get, %r{/podcasts/audio_podcast.xml$}).to_return( :body => @podcast_xml, :status => 200 )

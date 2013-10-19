@@ -33,7 +33,7 @@ describe Study do
   it { should validate_presence_of(:podcast) }
   # it { should validate_uniqueness_of(:title)}#.scope_to(:podcast_id)}
   
-  it "builds from factory", internal:true do
+  it "builds from factory", :internal do
     lambda { create(:study) }.should_not raise_error
   end
   
@@ -137,6 +137,6 @@ describe Study do
     end
   end
   
-  describe '[private]', internal:true do
+  describe '[private]', :internal do
   end
 end

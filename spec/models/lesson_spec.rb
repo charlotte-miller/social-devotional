@@ -37,11 +37,11 @@ describe Lesson do
   it { should have_many( :questions )}
   it { should delegate_method(:title).to(:study).with_prefix }
   
-  it "builds from factory", internal:true do
+  it "builds from factory", :internal do
     lambda { create(:lesson) }.should_not raise_error
   end
   
-  it "touches the associated Study on update", internal:true do
+  it "touches the associated Study on update", :internal do
     study = create(:study_w_lesson)
     study.should_receive(:touch).once
     study.lessons.first.save!

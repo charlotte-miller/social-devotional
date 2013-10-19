@@ -37,15 +37,15 @@ class Lesson < ActiveRecord::Base
   # http://rubydoc.info/github/FriendlyId/friendly_id/master/FriendlyId/Scoped
   # extend FriendlyId
   # friendly_id :position, :use => :scoped, :scope => :study
-
+  delegate :title, :to => :study, prefix:true  # study_title
   acts_as_list scope: :study
 
+  # Private 'sudo' access to everything
+  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, as: 'sudo'
+  
+  # Public
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url
-
-  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, as: 'sudo'
-
-  delegate :title, :to => :study, prefix:true  # study_title
 
 
   # http://sunspot.github.com/

@@ -125,7 +125,7 @@ describe Podcast::Normalize::Item do
   #   end
   # end
   
-  describe '#method_missing', internal:true do
+  describe '#method_missing', :internal do
     it "delegates to podcast_obj" do
       [:valid?, :guid, :itunes_keywords].each do |sample_podcast_method|
         subject.should_not respond_to sample_podcast_method   # we didn't overwrite the method

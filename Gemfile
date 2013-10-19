@@ -2,42 +2,59 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 gem 'mysql2'
-gem 'activerecord-import', '~> 0.3.0'
-gem 'unicorn'
 gem 'configy'
 gem 'hashie'
 gem 'oj'
 gem 'celluloid'
-gem 'whenever', :require => false
-gem 'paperclip'
-gem 'paperclip-ffmpeg'
-# gem 'paperclip-optimizer'
-gem 'aws-sdk'
+gem 'whenever',   :require => false
+gem 'capistrano', :require => false
+# gem 'ox'
+# gem 'profanalyzer'
+# gem 'activerecord-import', '~> 0.3.0'
+# gem 'unicorn'
+# gem 'puma'
+
+
+# Model Extentions
+# ================
+gem 'state_machine'
+gem 'acts_as_list'
+gem 'acts_as_interface'
 gem 'devise'
 gem 'devise-encryptable'
 gem "friendly_id", "~> 4.0.9" #'~> 5.0.0'
-gem 'acts_as_list'
-gem 'acts_as_interface'
-gem 'state_machine'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
-gem 'typhoeus'
-gem 'profanalyzer'
-gem 'airbrake'
 
-# SideKiq Monitoring
+
+# Media Download/Processing/Storage
+# =================================
+gem 'typhoeus'
+gem 'cocaine'
+gem 'posix-spawn'
+gem 'aws-sdk'
+gem 'paperclip'
+gem 'paperclip-ffmpeg'
+# gem 'paperclip-optimizer'
+
+
+# SideKiq Queue
+# =============
 gem 'sidekiq'
 gem 'request_store'
 # gem "thin", "~> 1.4.1"
 gem 'slim', '<= 1.3.0'
 gem 'sinatra', :require => nil
-# gem 'ox'
-# gem 'jbuilder'
 
 
 
-# Gems used only for assets and not required
-# in production environments by default.
+# Monitoring
+# ==========
+gem "newrelic_rpm"
+gem 'airbrake'
+
+
+# Not required in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -48,11 +65,9 @@ gem 'jquery-rails'
 gem 'therubyracer', :platforms => :ruby, :require => false
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', '~> 2.2.6'
-gem 'bootstrap-datepicker-rails'
+# gem 'bootstrap-datepicker-rails'
 gem "haml-rails"
 
-
-gem "newrelic_rpm"
 
 group :development, :test do
   gem 'thin'
