@@ -13,11 +13,12 @@ module Lesson::AttachedMedia
     MOBILE_SIZE = '480x270#'
     
     has_attachable_file :audio, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension',
-                        :processors => []
-                        # :styles => {ogg:true, mp3:true}
+                        :processors => [:video_to_audio]
+                        # :styles => {
+                        #   ogg:true, mp3:true}
 
     has_attachable_file :video, :path => ':rails_env/:class/:attachment/:updated_at-:basename.:extension',
-                        :processors => [:ffmpeg, :qtfaststart],
+                        :processors => [:audio_to_video, :ffmpeg,],  #, :qtfaststart
                         :styles => {
                           poster_img:    { geometry: SD_SIZE,  :format => 'png', :time => 8 },
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },

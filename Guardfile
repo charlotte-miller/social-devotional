@@ -56,6 +56,9 @@ guard 'rspec', rspec_options do
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
   # watch(%r{^app/(models|controllers)/concerns})       { |m| "spec/#{m[1]}"}
   watch(%r{^(lib/extensions.+)\.rb})                  { |m| "spec/#{m[1]}_spec.rb"}
+  
+  # Short Term
+  watch(%r{^lib/paperclip_processors/(.+)\.rb}) { 'spec/models/lesson/attached_media_spec.rb'}
 
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }

@@ -16,15 +16,14 @@ http://docs.sublimevideo.net/write-proper-video-elements
   http://mdeering.com/posts/018-paperclip-processors-doing-so-much-more-with-your-attachment
   http://jimneath.org/2008/06/03/converting-videos-with-rails-converting-the-video.html
   
+  [Conditional Processor](http://stackoverflow.com/questions/8590822/apply-processor-with-paperclip-if-condition-its-true)
+  [Conditional Styles](http://stackoverflow.com/questions/9086011/conditionally-applying-styles-to-paperclip-attachments-in-rails-3-1)
+  (basic takeaway... use lambda's and ``attachment.instance`` to dynamically pass options)
   
-  S3 Permissions and reduced redundancy in paperclip config
+  [Chainable Processors](https://gist.github.com/emcmanus/2689440) - Though processors appear chained by default, this gives you more fine-grained control of the chain.
+  
+  S3 Permissions for a single
   ```
-    s3_storage_class: :reduced_redundancy
-
-    :s3_permissions => :public_read
-
-    Or something more specific like:
-
     :s3_permissions => {
       :original => :private
     }
@@ -39,7 +38,12 @@ http://docs.sublimevideo.net/write-proper-video-elements
 ## FFMPEG
   ``brew install ffmpeg --with-libvpx --with-libvorbis``
   Temporarily missing: ``brew install libvpx``
+  [Sublime Recommendations](http://docs.sublimevideo.net/encode-videos-for-the-web)
   [ffmpeg wrapper gem](https://github.com/streamio/streamio-ffmpeg)
+
+### Streaming (qt-faststart)
+  [ffmpeg w/ faststart](http://ffmpeg.org/trac/ffmpeg/wiki/MacOSXCompilationGuide#CompileFFmpeg)
+  [ffmpeg -flag](http://stackoverflow.com/questions/8061798/post-processing-in-ffmpeg-to-move-moov-atom-in-mp4-files-qt-faststart#answer-14706197)
 
 ## Audio
   http://stackoverflow.com/questions/5887311/ffmpeg-1-image-1-audio-file-1-video

@@ -46,8 +46,7 @@ module Podcast::Normalize
       enclosure.type
     end
     
-
-    # Processed attributes
+    # TODO: split audio from video OR handle audio only
     def media_audio
       # audio conversion of video
       media_link
