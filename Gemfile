@@ -36,6 +36,7 @@ gem 'posix-spawn'
 gem 'aws-sdk'
 gem 'paperclip'
 gem 'paperclip-ffmpeg'
+gem 'streamio-ffmpeg'
 # gem 'paperclip-optimizer'
 
 
