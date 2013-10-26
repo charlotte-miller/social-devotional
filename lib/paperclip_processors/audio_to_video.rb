@@ -15,7 +15,7 @@ module Paperclip
     
     def already_video?
       formats = %w{.m4v .mp4 .ogg .mov .webm .avi .flv .wmv}
-      formats.include? File.extname(file.original_filename)
+      formats.include? File.extname(file.basename) # original_filename
     end
   end
 end
