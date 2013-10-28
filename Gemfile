@@ -35,7 +35,7 @@ gem 'cocaine'
 gem 'posix-spawn'
 gem 'aws-sdk'
 gem 'paperclip'
-gem 'paperclip-ffmpeg'
+gem 'paperclip-ffmpeg', git: 'git@github.com:chip-miller/paperclip-ffmpeg.git'
 gem 'streamio-ffmpeg'
 # gem 'paperclip-optimizer'
 

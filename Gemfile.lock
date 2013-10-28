@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:chip-miller/paperclip-ffmpeg.git
+  revision: c174d89c6ac8b6e66a8b88bb3d006d45ec6aa60a
+  specs:
+    paperclip-ffmpeg (1.0.0)
+      paperclip (>= 2.5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -196,8 +203,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
-    paperclip-ffmpeg (1.0.0)
-      paperclip (>= 2.5.2)
     parallel (0.8.4)
     parallel_tests (0.16.0)
       parallel
@@ -412,7 +417,7 @@ DEPENDENCIES
   newrelic_rpm
   oj
   paperclip
-  paperclip-ffmpeg
+  paperclip-ffmpeg!
   parallel_tests
   posix-spawn
   progress_bar
