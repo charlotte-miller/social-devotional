@@ -2,27 +2,31 @@
 #
 # Table name: lessons
 #
-#  id                 :integer          not null, primary key
-#  study_id           :integer          not null
-#  position           :integer          default(0)
-#  title              :string(255)      not null
-#  description        :text
-#  backlink           :string(255)
-#  video_file_name    :string(255)
-#  video_content_type :string(255)
-#  video_file_size    :integer
-#  video_updated_at   :datetime
-#  video_original_url :string(255)
-#  audio_file_name    :string(255)
-#  audio_content_type :string(255)
-#  audio_file_size    :integer
-#  audio_updated_at   :datetime
-#  audio_original_url :string(255)
-#  machine_sorted     :boolean          default(FALSE)
-#  duration           :integer
-#  published_at       :datetime
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id                      :integer          not null, primary key
+#  study_id                :integer          not null
+#  position                :integer          default(0)
+#  title                   :string(255)      not null
+#  description             :text
+#  backlink                :string(255)
+#  poster_img_file_name    :string(255)
+#  poster_img_content_type :string(255)
+#  poster_img_file_size    :integer
+#  poster_img_updated_at   :datetime
+#  video_file_name         :string(255)
+#  video_content_type      :string(255)
+#  video_file_size         :integer
+#  video_updated_at        :datetime
+#  video_original_url      :string(255)
+#  audio_file_name         :string(255)
+#  audio_content_type      :string(255)
+#  audio_file_size         :integer
+#  audio_updated_at        :datetime
+#  audio_original_url      :string(255)
+#  machine_sorted          :boolean          default(FALSE)
+#  duration                :integer
+#  published_at            :datetime
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 
 require 'spec_helper'

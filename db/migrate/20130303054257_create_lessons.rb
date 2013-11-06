@@ -6,6 +6,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string        :title,           null: false
       t.text          :description
       t.string        :backlink
+      t.attachment    :poster_img
       t.attachment    :video
       t.string        :video_original_url
       t.attachment    :audio

@@ -112,11 +112,15 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
   add_index "groups", ["state", "is_public"], :name => "index_groups_on_state_and_is_public"
 
   create_table "lessons", :force => true do |t|
-    t.integer  "study_id",                              :null => false
-    t.integer  "position",           :default => 0
-    t.string   "title",                                 :null => false
+    t.integer  "study_id",                                   :null => false
+    t.integer  "position",                :default => 0
+    t.string   "title",                                      :null => false
     t.text     "description"
     t.string   "backlink"
+    t.string   "poster_img_file_name"
+    t.string   "poster_img_content_type"
+    t.integer  "poster_img_file_size"
+    t.datetime "poster_img_updated_at"
     t.string   "video_file_name"
     t.string   "video_content_type"
     t.integer  "video_file_size"
@@ -127,11 +131,11 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.integer  "audio_file_size"
     t.datetime "audio_updated_at"
     t.string   "audio_original_url"
-    t.boolean  "machine_sorted",     :default => false
+    t.boolean  "machine_sorted",          :default => false
     t.integer  "duration"
     t.datetime "published_at"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   add_index "lessons", ["backlink"], :name => "index_lessons_on_backlink"
