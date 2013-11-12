@@ -37,6 +37,7 @@ class Study < ActiveRecord::Base
   slug_candidates :title, [:title, :church_name]
   
   has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
+                      # :styles => { thumb: { geometry: SD_SIZE, format: 'png', convert_options: "-strip" }}
 
   # http://sunspot.github.com/
   searchable do

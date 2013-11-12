@@ -12,7 +12,7 @@ module Paperclip
       subject { VideoToAudio.new(video_file) }
       
       it "creates an audio file" do
-        result.format.should eql 'mp3'
+        result.extname.should eql 'mp3'
       end
     end
 

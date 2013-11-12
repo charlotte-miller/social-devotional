@@ -45,11 +45,11 @@ class Lesson < ActiveRecord::Base
   acts_as_list scope: :study
 
   # Private 'sudo' access to everything
-  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, as: 'sudo'
+  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, :poster_img, as: 'sudo'
   
   # Public
   attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
-                  :audio, :video, :audio_remote_url, :video_remote_url
+                  :audio, :video, :audio_remote_url, :video_remote_url, :poster_img
 
 
   # http://sunspot.github.com/
@@ -63,7 +63,7 @@ class Lesson < ActiveRecord::Base
   # Associations
   # ---------------------------------------------------------------------------------
   belongs_to :study, touch:true, :inverse_of => :lessons     # counter_cache rolled into Study#touch
-  has_one :poster_maker, :class_name => "Lesson::PosterMaker", :dependent => :destroy
+  # has_one :poster_maker, :class_name => "Lesson::PosterMaker", :dependent => :destroy
   
   # ---------------------------------------------------------------------------------
   # Validations
@@ -108,6 +108,7 @@ class Lesson < ActiveRecord::Base
       }, as:'sudo')
     end
     
+    # TODO def new_from_crawler(crawler_obj)
   end
   
   # Determins how similar a lesson is to the other_lesson

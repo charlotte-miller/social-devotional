@@ -6,6 +6,7 @@ module Paperclip
     def make
       return file if already_video?
       # TODO: Do the conversion
+      file
     end
     
   private
@@ -14,8 +15,8 @@ module Paperclip
     end
     
     def already_video?
-      formats = %w{.m4v .mp4 .ogg .mov .webm .avi .flv .wmv}
-      formats.include? File.extname(file.basename) # original_filename
+      formats = %w{.m4v .mp4 .m4p .ogg .mov .webm .avi .flv .wmv}
+      formats.include? file.extname
     end
   end
 end

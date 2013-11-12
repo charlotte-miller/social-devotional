@@ -37,9 +37,10 @@ FactoryGirl.define do
     # position 1
     title       { Faker::Lorem.sentence(rand(3..6))  }
     description { Faker::Lorem.paragraph(rand(2..5)) }
-    backlink "http://link.com/salt-and-light"
-    video File.new(Rails.root.join('spec/files', 'video.m4v'), 'r')
-    audio File.new(Rails.root.join('spec/files', 'audio.m4a'), 'r')
+    backlink    "http://link.com/salt-and-light"
+    poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'rb')
+    video       File.new(Rails.root.join('spec/files', 'video.m4v'), 'rb')
+    audio       File.new(Rails.root.join('spec/files', 'audio.m4a'), 'rb')
     video_original_url 'http://example.com/video.m4v'
     audio_original_url 'http://example.com/audio.m4a'
     published_at Time.now

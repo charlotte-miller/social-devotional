@@ -12,7 +12,7 @@ describe Admin::LessonsController do
   let!(:lesson){ create(:lesson, study:study)}
   let(:valid_attributes){ 
     attributes_for(:lesson).merge( study_id:study.id)
-    .tap {|hash| [:audio, :video].each {|media| hash[media]= fixture_file_upload(hash[media].to_path)} }
+    .tap {|hash| [:audio, :video, :poster_img].each {|media| hash[media]= fixture_file_upload(hash[media].to_path)} }
   }
   
   describe "GET index" do

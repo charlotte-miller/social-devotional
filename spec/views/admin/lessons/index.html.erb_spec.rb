@@ -19,9 +19,9 @@ describe "admin/lessons/index" do
         :audio => @audio,
       )
     ])
-    base_url = 'http://s3.amazonaws.com/social-devotional/test/lessons'
-    @audio_url_matcher = %r`#{base_url}/audios/\d{10}-#{@audio.basename}\?\d{10}`
-    @video_url_matcher = %r`#{base_url}/videos/\d{10}-#{@video.basename}\?\d{10}`
+    base_url = 'http://s3.amazonaws.com/social-devotional/test/lessons/\d+'
+    @audio_url_matcher = %r`#{base_url}/audios/original/#{@audio.basename}\?\d{10}`
+    @video_url_matcher = %r`#{base_url}/videos/original/#{@video.basename}\?\d{10}`
   end
 
   it "renders a list of lessons" do

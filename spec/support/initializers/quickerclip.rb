@@ -13,6 +13,12 @@ module Paperclip
       return dst
     end
   end
+  
+  class Ffmpeg
+    def identify
+      {}
+    end
+  end
 end
 
 # module Paperclip

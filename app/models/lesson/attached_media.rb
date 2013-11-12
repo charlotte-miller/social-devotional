@@ -33,9 +33,9 @@ module Lesson::AttachedMedia
 
     has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:style.:extension',
                         :styles => {
-                          sd:     { geometry: SD_SIZE,     :format => 'png', :convert_options => "-strip" },
-                          hd:     { geometry: HD_SIZE,     :format => 'png', :convert_options => "-strip" },
-                          mobile: { geometry: MOBILE_SIZE, :format => 'png', :convert_options => "-strip" }}
+                          sd:     { geometry: SD_SIZE,     format: 'png', convert_options: "-strip" },
+                          hd:     { geometry: HD_SIZE,     format: 'png', convert_options: "-strip" },
+                          mobile: { geometry: MOBILE_SIZE, format: 'png', convert_options: "-strip" }}
 
   end
 end

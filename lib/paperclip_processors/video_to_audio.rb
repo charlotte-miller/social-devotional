@@ -18,8 +18,8 @@ module Paperclip
     # end
 
     def already_audio?
-      formats = %w{.ogg .mp3 .mp2 .acc .wav}
-      formats.include? File.extname(file.basename)  #original_filename
+      formats = %w{.ogg .mp3 .mp2 .acc .wav .m4a}
+      formats.include? file.extname  #original_filename
     end
   end
 end

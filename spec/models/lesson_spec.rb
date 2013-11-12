@@ -33,10 +33,6 @@ require 'spec_helper'
 require 'cocaine'
 
 describe Lesson do
-  before(:each) do
-    Cocaine::CommandLine.any_instance.stub(:run)
-  end
-  
   it { should belong_to( :study )}
   it { should have_many( :questions )}
   it { should delegate_method(:title).to(:study).with_prefix }
