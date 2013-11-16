@@ -108,7 +108,6 @@ class Lesson < ActiveRecord::Base
       }, as:'sudo')
     end
     
-    # TODO def new_from_crawler(crawler_obj)
   end
   
   # Determins how similar a lesson is to the other_lesson

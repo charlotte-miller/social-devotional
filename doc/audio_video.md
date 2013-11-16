@@ -48,3 +48,15 @@ http://docs.sublimevideo.net/write-proper-video-elements
 ## Audio
   http://stackoverflow.com/questions/5887311/ffmpeg-1-image-1-audio-file-1-video
   [Normalize Audio](https://github.com/zmillman/paperclip-normalize) [experimental]
+  [What Bitrate](http://crave.cnet.co.uk/digitalmusic/which-mp3-bit-rate-should-i-use-49290353/)
+    - 24k   agressive speech (mobile only - not recommended)
+    - 64k   speech
+    - 128k  radio
+    - 160k  CD
+  
+
+## Convert
+options: audio_bitrate: '128k', stereo:true
+
+Video-to-Audio: ``ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 Sample.mp3``  [explain](http://linuxpoison.blogspot.com/2010/04/how-to-extract-audio-from-video-file.html)
+Audio-to-Video: 
