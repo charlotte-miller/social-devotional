@@ -69,10 +69,10 @@ class Podcast < ActiveRecord::Base
   # - studies
   # - lesson
   def update_channel( normalized_channel )
-    # Process in cron order
+    # Process in chronological order
     new_lessons = normalized_channel.items.reverse.map do |item|
       # 0) build lesson
-      lesson = Lesson.new_from_podcast_item(item)
+      lesson = Lesson.new_from_adapter( Lesson::Adapters::Podcast.new(item) )
 
       # 1) skip existing
       next if lesson.duplicate?

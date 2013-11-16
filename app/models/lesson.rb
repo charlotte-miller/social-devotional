@@ -111,6 +111,11 @@ class Lesson < ActiveRecord::Base
       }, as:'sudo')
     end
     
+    # Builds a lesson from an instance of Lesson::Adapters::'Klass'
+    # WARN Study must be added later
+    def new_from_adapter(lesson_adapter)
+      new(lesson_adapter.to_hash, as:'sudo')
+    end
   end
   
   # Determins how similar a lesson is to the other_lesson

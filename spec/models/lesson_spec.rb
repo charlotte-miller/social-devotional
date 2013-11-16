@@ -57,7 +57,21 @@ describe Lesson do
       end
     end
   end
+
+  describe '.new_from_adapter(lesson_adapter)' do
+    context "w/ Lesson::Adapters::Podcast -" do
+      it "has tests" do
+        raise NotImplementedError
+      end
+    end
     
+    context "w/ Lesson::Adapters::Web -" do
+      it "has tests" do
+        raise NotImplementedError
+      end
+    end
+  end
+
   describe '.new_from_podcast_item(podcast_item)' do
     before(:each) do
       @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))

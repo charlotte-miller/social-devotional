@@ -30,6 +30,7 @@ gem 'sunspot_solr'
 
 # Media Download/Processing/Storage
 # =================================
+gem 'anemone'
 gem 'typhoeus'
 gem 'cocaine'
 gem 'posix-spawn'

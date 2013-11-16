@@ -1,0 +1,1 @@
+Typhoeus::USER_AGENT = AppConfig.crawler_user_agent

@@ -89,3 +89,7 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 * Capistrano replace:
 * * database.yml
 * * secret_token.rb
+
+
+## Lesson::Adapters
+SOMEDAY: move to lib so they are not auto loaded into the app (ultimately they will only be loaded by cron/sidekiq)
