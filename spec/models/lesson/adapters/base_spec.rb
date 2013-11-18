@@ -12,6 +12,12 @@ describe Lesson::Adapters::Base do
     attrs.each {|attr| klass.should have_attr_accessor attr}
   end
 
+  it "validates_presense_of attribtues" do
+    attrs.each do |attr|
+      klass.should validate_presence_of attr
+    end
+  end
+
   describe '#to_hash' do
     it "returns a hash of it's attributes" do
       attrs.each {|attr| klass.send("#{attr}=", 'foo')}

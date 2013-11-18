@@ -3,9 +3,10 @@
 #
 class Lesson::Adapters::Base
   include ActsAsInterface
+  include ActiveModel::Validations
 
   abstract_methods :initialize
-  ATTRIBUTES = [
+  attr_accessor *ATTRIBUTES = [
     :title,
     :description,
     :backlink,
@@ -14,12 +15,11 @@ class Lesson::Adapters::Base
     :audio_remote_url,
     :video_remote_url ]
     # :poster_img_remote_url
-  attr_accessor *ATTRIBUTES
+
+    validates_presence_of *ATTRIBUTES  #does NOT raise on initialize
 
   def to_hash
-    instance_variables.inject(HashWithIndifferentAccess.new) do |hash, attr|
-      hash[attr[1..-1]]= instance_variable_get(attr)
-      hash
-    end
+    raise "InvalidAdapter" if invalid?
+    ATTRIBUTES.inject(HashWithIndifferentAccess.new) {|hash, attr| hash[attr]= send(attr); hash }
   end
 end
