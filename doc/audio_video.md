@@ -37,7 +37,6 @@ http://docs.sublimevideo.net/write-proper-video-elements
 
 ## FFMPEG
   ``brew install ffmpeg --with-libvpx --with-libvorbis``
-  Temporarily missing: ``brew install libvpx``
   [Sublime Recommendations](http://docs.sublimevideo.net/encode-videos-for-the-web)
   [ffmpeg wrapper gem](https://github.com/streamio/streamio-ffmpeg)
 
@@ -59,4 +58,4 @@ http://docs.sublimevideo.net/write-proper-video-elements
 options: audio_bitrate: '128k', stereo:true
 
 Video-to-Audio: ``ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 Sample.mp3``  [explain](http://linuxpoison.blogspot.com/2010/04/how-to-extract-audio-from-video-file.html)
-Audio-to-Video: 
+Audio-to-Video: ``ffmpeg -i Sample.jpg -i Sample.mp3 -vcodec libx264 result2.mp4``
