@@ -13,9 +13,8 @@ module Lesson::AttachedMedia
     MOBILE_SIZE = '480x270#'
     
     has_attachable_file :audio, :path => ':rails_env/:class/:id/:attachment/:style/:filename',
-                        :processors => [:video_to_audio]
-                        # :styles => {
-                        #   ogg:true, mp3:true}
+                        :processors => [:video_to_audio],  #styles required for processors to run
+                        :styles => {mp3:'true'} #ogg:true
 
     
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
@@ -32,6 +31,7 @@ module Lesson::AttachedMedia
     
 
     has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:style.:extension',
+                        # :processors => [:thumbnail, :pngquant],
                         :styles => {
                           sd:     { geometry: SD_SIZE,     format: 'png', convert_options: "-strip" },
                           hd:     { geometry: HD_SIZE,     format: 'png', convert_options: "-strip" },
