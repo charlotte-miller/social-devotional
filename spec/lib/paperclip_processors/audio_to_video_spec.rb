@@ -49,15 +49,11 @@ module Paperclip
           poster_img_path.should eql img_file.path
         end
         
-        it "defaults to the attachment's poster_img" do
-          @options = {}
-          subject.should_receive_chain(:attachment, :instance, :poster_img, :to_tempfile).and_return(img_file)
-          run_make
-          poster_img_path.should eql img_file.path
-          
-          # Slightly more holistic
-          Paperclip::Attachment.any_instance.should_receive(:to_tempfile).and_return img_file
-          DummyKlass.new.foo = audio_file
+        it "defaults to the attachment's poster_img_w_study_backfill" do
+          dummy = DummyKlass.new
+          dummy.poster_img = img_file
+          dummy.foo = audio_file
+          dummy.foo.queued_for_write[:bar].extname.should eql '.mp4'
         end
       
         context "when the poster_img has odd dementions" do
@@ -81,6 +77,8 @@ end
 
 class DummyKlass < SimplePaperclip
   attr_accessor :foo_file_name, :poster_img_file_name
-  has_attached_file :poster_img
+  has_attached_file :poster_img, url: ':rails_root/spec/files/:filename', path: ':rails_root/spec/files/:filename'
   has_attached_file :foo, :styles => {bar:'true'}, :processors => [:audio_to_video]
+  
+  alias_method :poster_img_w_study_backfill, :poster_img
 end

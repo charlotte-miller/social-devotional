@@ -14,6 +14,9 @@ class Paperclip::Attachment
   end
   
   def to_tempfile(style=:original)
-    copy_to_local_file(style, Tempfile.new([self.basename, self.extname]).binmode)
+    raise 'Missing Paperclip::Attachment in #to_tempfile' unless self.present?
+    
+    copy_to_local_file(style, tempfile = Tempfile.new([self.basename, self.extname]).binmode)
+    tempfile
   end
 end

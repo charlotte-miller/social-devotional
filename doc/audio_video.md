@@ -3,6 +3,7 @@
 ## HTML5
 http://www.quirksmode.org/html5/tests/video.html
 https://developer.mozilla.org/en-US/docs/HTML/Supported_media_formats
+[<audio>](http://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_audio)
 
 read!
 http://docs.sublimevideo.net/encode-videos-for-the-web
@@ -34,6 +35,7 @@ http://docs.sublimevideo.net/write-proper-video-elements
 ## AWS
   it looks like uploads are auto streamed by the gem, but if you need more info.  You can also configure the 'large' threshold.
   http://stackoverflow.com/questions/9589664/stream-uploading-large-files-using-aws-sdk
+  - Cloudfront should ONLY have access to the prod directory
 
 ## FFMPEG
   ``brew install ffmpeg --with-libvpx --with-libvorbis``
@@ -49,7 +51,9 @@ http://docs.sublimevideo.net/write-proper-video-elements
   [Normalize Audio](https://github.com/zmillman/paperclip-normalize) [experimental]
   [What Bitrate](http://crave.cnet.co.uk/digitalmusic/which-mp3-bit-rate-should-i-use-49290353/)
     - 24k   agressive speech (mobile only - not recommended)
+    - 48k   podcast
     - 64k   speech
+    - 96k   happy medium?
     - 128k  radio
     - 160k  CD
   
@@ -59,3 +63,4 @@ options: audio_bitrate: '128k', stereo:true
 
 Video-to-Audio: ``ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 Sample.mp3``  [explain](http://linuxpoison.blogspot.com/2010/04/how-to-extract-audio-from-video-file.html)
 Audio-to-Video: ``ffmpeg -i Sample.jpg -i Sample.mp3 -vcodec libx264 result2.mp4``
+Audio-Downsample ``ffmpeg -i long_sample.mp3 -ar 44100 -ac 2 -ab 64k -f mp3 long_sample_smaller.mp3``

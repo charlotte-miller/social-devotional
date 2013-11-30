@@ -42,7 +42,13 @@ module Lesson::AttachedMedia
                           hd:     { geometry: HD_SIZE,     format: 'png', convert_options: "-strip" },
                           mobile: { geometry: MOBILE_SIZE, format: 'png', convert_options: "-strip" }}
 
+  end #included
+
+  def poster_img_w_study_backfill
+    return poster_img if self.poster_img.present?
+    study.poster_img
   end
+
 end
 
 # Source:

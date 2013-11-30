@@ -44,6 +44,20 @@ describe Lesson::AttachedMedia do
     it "runs the :pngquant processor" do
       pending
       PngQuant.should_receive(:new)
+    end    
+  end
+  
+  describe '#poster_img_w_study_backfill' do
+    subject { create(:lesson, poster_img:@img) }
+    
+    it "returns Lesson#poster_img if avalible" do
+      @img = img_file
+      subject.poster_img_w_study_backfill.instance.should be_kind_of Lesson
+    end
+    
+    it "returns Study#poster_img if Lesson#poster_img is not set" do
+      @img = nil
+      subject.poster_img_w_study_backfill.instance.should be_kind_of Study
     end
   end
 end
