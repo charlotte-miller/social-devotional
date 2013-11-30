@@ -40,8 +40,9 @@ module AttachableFile
           :s3_permissions   => :public_read,
           :bucket           => AppConfig.s3.bucket,
           :s3_credentials   => AppConfig.s3.credentials,
-          # :url            => AppConfig.cloudfront.url 
-          # :path => [ DEFINE IN OPTIONS ]
+          :url              => AppConfig.domains.media, # Override for CDN assets (non-large)
+          :hash_secret      => 'faffb797c3645584210908fea09473f330f9a07857e3ea84fa37c732f6b5af667d3d3f71ed292726bdba0d7d935f2f5813fe3454f0b44cf332a69153562cc6e9',
+          # :path           => [ DEFINE IN OPTIONS ]
         }.deep_merge(options)
       end
       

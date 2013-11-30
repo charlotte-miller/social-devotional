@@ -121,16 +121,19 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.string   "poster_img_content_type"
     t.integer  "poster_img_file_size"
     t.datetime "poster_img_updated_at"
+    t.string   "poster_img_fingerprint"
     t.string   "video_file_name"
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
     t.string   "video_original_url"
+    t.string   "video_fingerprint"
     t.string   "audio_file_name"
     t.string   "audio_content_type"
     t.integer  "audio_file_size"
     t.datetime "audio_updated_at"
     t.string   "audio_original_url"
+    t.string   "audio_fingerprint"
     t.boolean  "machine_sorted",          :default => false
     t.integer  "duration"
     t.datetime "published_at"
@@ -206,6 +209,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.integer  "poster_img_file_size"
     t.datetime "poster_img_updated_at"
     t.string   "poster_img_original_url"
+    t.string   "poster_img_fingerprint"
     t.text     "keywords",                               :null => false
     t.integer  "lessons_count",           :default => 0
     t.datetime "last_published_at"
@@ -241,6 +245,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.string   "profile_image_content_type"
     t.integer  "profile_image_file_size"
     t.datetime "profile_image_updated_at"
+    t.string   "profile_image_fingerprint"
     t.datetime "created_at",                                               :null => false
     t.datetime "updated_at",                                               :null => false
   end

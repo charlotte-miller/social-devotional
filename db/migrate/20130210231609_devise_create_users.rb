@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Profile Image
       t.attachment :profile_image
+      t.string     :profile_image_fingerprint
       
       t.timestamps
     end

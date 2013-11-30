@@ -26,6 +26,7 @@
 #  profile_image_content_type :string(255)
 #  profile_image_file_size    :integer
 #  profile_image_updated_at   :datetime
+#  profile_image_fingerprint  :string(255)
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
 #

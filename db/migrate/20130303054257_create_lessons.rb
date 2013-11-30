@@ -7,10 +7,13 @@ class CreateLessons < ActiveRecord::Migration
       t.text          :description
       t.string        :backlink
       t.attachment    :poster_img
+      t.string        :poster_img_fingerprint
       t.attachment    :video
       t.string        :video_original_url
+      t.string        :video_fingerprint
       t.attachment    :audio
       t.string        :audio_original_url
+      t.string        :audio_fingerprint
       t.boolean       :machine_sorted,  default: false
       t.integer       :duration #in seconds
       t.datetime      :published_at

@@ -12,13 +12,15 @@ module Lesson::AttachedMedia
     HD_SIZE     = '1280x720#'
     MOBILE_SIZE = '480x270#'
     
-    has_attachable_file :audio, :path => ':rails_env/:class/:id/:attachment/:style/:filename',
-                        :processors => [:video_to_audio],  #styles required for processors to run
-                        :styles => {mp3:'true'} #ogg:true
+    has_attachable_file :audio, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
+                        # :hash_data         => ":class/:attachment/:id/:style",
+                        :processors => [:video_to_audio],
+                        :styles => {mp3:{audio_bitrate:'64k'}} #ogg:true
 
     
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
-    has_attachable_file :video, :path => ':rails_env/:class/:id/:attachment/:style/:filename',
+    has_attachable_file :video, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
+                        # :hash_data         => ":class/:attachment/:id/:style",
                         :processors => [:audio_to_video, :ffmpeg,],  #, :qtfaststart
                         :styles => {
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },
@@ -30,8 +32,11 @@ module Lesson::AttachedMedia
                           mp4_mobile:    { geometry: MOBILE_SIZE,  :format => 'mp4' , :streaming => true}}
     
 
-    has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:style.:extension',
-                        # :processors => [:thumbnail, :pngquant],
+    
+    has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:hash.:extension',
+                        :hash_data         => ":class/:attachment/:id/:fingerprint-:style",
+                        :url               => AppConfig.domains.cdn,
+                        # :processors      => [:thumbnail, :pngquant],
                         :styles => {
                           sd:     { geometry: SD_SIZE,     format: 'png', convert_options: "-strip" },
                           hd:     { geometry: HD_SIZE,     format: 'png', convert_options: "-strip" },

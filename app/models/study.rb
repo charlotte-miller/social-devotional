@@ -13,6 +13,7 @@
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
 #  poster_img_original_url :string(255)
+#  poster_img_fingerprint  :string(255)
 #  keywords                :text             default(""), not null
 #  lessons_count           :integer          default(0)
 #  last_published_at       :datetime
@@ -36,9 +37,11 @@ class Study < ActiveRecord::Base
   friendly_id :title #remove after v 5.0.0
   slug_candidates :title, [:title, :church_name]
   
-  has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:updated_at-:basename.:extension'
+  has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:hash.:extension',
+                      :hash_data => ":class/:attachment/:id/:fingerprint-:style",
+                      :url => AppConfig.domains.cdn
                       # :styles => { thumb: { geometry: SD_SIZE, format: 'png', convert_options: "-strip" }}
-                      # :processors => [:pngquant]
+                      # :processors => [:thumbnail, :pngquant]
 
   # http://sunspot.github.com/
   searchable do

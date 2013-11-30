@@ -8,6 +8,7 @@ class CreateStudies < ActiveRecord::Migration
       t.string      :ref_link
       t.attachment  :poster_img
       t.string      :poster_img_original_url
+      t.string      :poster_img_fingerprint
       t.text        :keywords,      null:false
       t.integer     :lessons_count, default: 0
                     

@@ -26,6 +26,7 @@
 #  profile_image_content_type :string(255)
 #  profile_image_file_size    :integer
 #  profile_image_updated_at   :datetime
+#  profile_image_fingerprint  :string(255)
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
 #
@@ -50,7 +51,9 @@ class User < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :profile_image
   
-  has_attachable_file :profile_image, :path => ':rails_env/:class/:attachment/:id/:updated_at.:extension',
+  has_attachable_file :profile_image, :path => ':rails_env/:class/:attachment/:id/:hash.:extension',
+                      :hash_data => ":class/:attachment/:id/:fingerprint-:style",
+                      :url => AppConfig.domains.cdn,
                       :styles => { 
                         :medium => { geometry: "300x300>", format: 'jpg', convert_options: "-strip" }, 
                         :thumb  => { geometry: "100x100>", format: 'jpg', convert_options: "-strip" }}

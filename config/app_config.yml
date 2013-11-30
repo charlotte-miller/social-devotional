@@ -13,6 +13,10 @@
 common:
   dev_user: developer
   dev_pass: developer
+  domains:
+    media: media.socialdevotional.com
+    cdn: www.socialdevotional.com
+    origin: origin.socialdevotional.com
   s3:
     bucket: social-devotional
     credentials:

@@ -13,6 +13,7 @@
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
 #  poster_img_original_url :string(255)
+#  poster_img_fingerprint  :string(255)
 #  keywords                :text             default(""), not null
 #  lessons_count           :integer          default(0)
 #  last_published_at       :datetime
