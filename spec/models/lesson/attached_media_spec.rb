@@ -44,7 +44,13 @@ describe Lesson::AttachedMedia do
     it "runs the :pngquant processor" do
       pending
       PngQuant.should_receive(:new)
-    end    
+    end  
+    
+    it "is processed first (the audio_to_video processor requires :poster_img)" do
+      subject.instance_variable_set(:@attachments_for_processing, [:foo, :poster_img, :bar, :baz])
+      subject.save!
+      subject.instance_variable_get(:@attachments_for_processing).should eql [:poster_img, :foo, :bar, :baz]
+    end  
   end
   
   describe '#poster_img_w_study_backfill' do

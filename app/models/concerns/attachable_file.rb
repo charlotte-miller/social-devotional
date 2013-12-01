@@ -23,11 +23,12 @@ module AttachableFile
     #  def video_remote_url=(url_str)
     #    return if url_str.nil?
     #    self.video_original_url = @video_remote_url = url_str
+    #    (@attachments_for_processing ||= []) << :video
     #    
     #    # require lib/extensions/active_record/instance_after_save
     #    def self.after_save
     #      return if @already_queued
-    #      AttachmentDownloader.perform_async(self.to_findable_hash, :video) && @already_queued=true
+    #      AttachmentDownloader.perform_async(self.to_findable_hash, @attachments_for_processing) && @already_queued=true
     #    end
     #  end
     #  
@@ -56,11 +57,12 @@ module AttachableFile
         def #{attachment_name}_remote_url=(url_str)
           return if url_str.nil?
           self.#{attachment_name}_original_url = @#{attachment_name}_remote_url = url_str
+          (@attachments_for_processing ||= []) << :#{attachment_name}
           
           # require lib/extensions/active_record/instance_after_save
           def self.after_save
             return if @already_queued
-            AttachmentDownloader.perform_async(self.to_findable_hash, :#{attachment_name}) && @already_queued=true
+            AttachmentDownloader.perform_async(self.to_findable_hash, @attachments_for_processing) && @already_queued=true
           end
         end
       }

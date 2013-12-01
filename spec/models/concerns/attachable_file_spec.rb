@@ -55,11 +55,33 @@ describe AttachableFile do
       end
     end
   end
+
+  context "with multiple attachments -" do
+    let(:queue_workers) { subject.after_save }
+    let(:attachment_names_argument) { AttachmentDownloader.jobs.first["args"][1] }
+    
+    before(:each) do 
+      subject.wonderful_img_remote_url   = 'http://foo.com/bar.jpg'
+      subject.wonderful_video_remote_url = 'http://foo.com/bar.mp4'
+      # NO assignment to :not_so_wonderful
+    end
+    
+    it "creates ONE job per model-object" do
+      expect { queue_workers }.to change(AttachmentDownloader.jobs, :size).by(1)
+    end
+    
+    it "passes each ASSIGNED :attachment_name to the worker" do
+      queue_workers
+      attachment_names_argument.should eql ['wonderful_img', 'wonderful_video']
+    end
+  end
 end
 
 class DummyClass < ActiveRecord::Base
   has_no_table
   
   include AttachableFile
-  has_attachable_file :wonderful_img, path: '/path/of/wonder'
+  has_attachable_file :wonderful_img,     path: '/path/of/wonder'
+  has_attachable_file :wonderful_video,   path: '/path/of/wonder-video'
+  has_attachable_file :not_so_wonderful,  path: '/path/of/less-wonder'
 end

@@ -6,6 +6,7 @@ module Lesson::AttachedMedia
   extend  ActiveSupport::Concern
   include AttachableFile
   included do
+    before_save :process_poster_img_first
     
     # Video Dimensions
     SD_SIZE     = '640x360#'
@@ -13,14 +14,14 @@ module Lesson::AttachedMedia
     MOBILE_SIZE = '480x270#'
     
     has_attachable_file :audio, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
-                        # :hash_data         => ":class/:attachment/:id/:style",
+                        :hash_data         => ":class/:attachment/:id/:style",
                         :processors => [:video_to_audio],
                         :styles => {mp3:{audio_bitrate:'64k'}} #ogg:true
 
     
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
     has_attachable_file :video, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
-                        # :hash_data         => ":class/:attachment/:id/:style",
+                        :hash_data         => ":class/:attachment/:id/:style",
                         :processors => [:audio_to_video, :ffmpeg,],  #, :qtfaststart
                         :styles => {
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },
@@ -47,6 +48,14 @@ module Lesson::AttachedMedia
   def poster_img_w_study_backfill
     return poster_img if self.poster_img.present?
     study.poster_img
+  end
+  
+private
+
+  # the audio_to_video processor requires :poster_img
+  def process_poster_img_first
+    return unless Array.wrap(@attachments_for_processing).include? :poster_img
+    @attachments_for_processing.delete(:poster_img) && @attachments_for_processing.unshift(:poster_img)
   end
 
 end
