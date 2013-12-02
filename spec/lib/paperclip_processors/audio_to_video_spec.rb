@@ -55,12 +55,6 @@ module Paperclip
           dummy.foo = audio_file
           dummy.foo.queued_for_write[:bar].extname.should eql '.mp4'
         end
-      
-        context "when the poster_img has odd dementions" do
-          it "ensures even dementions" do
-            pending 'ensure_even_dementions(img=@poster_img)'
-          end
-        end
       end
     end
 

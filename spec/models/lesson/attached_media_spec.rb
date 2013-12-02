@@ -6,43 +6,39 @@ describe Lesson::AttachedMedia do
   it { should respond_to :audio }
   it { should respond_to :video }
   it { should respond_to :poster_img }
-  
-  it "has better tests" do
-    raise NotImplementedError
-  end
-    
+      
   describe 'attached audio -' do
-    it "runs the audio_to_video processor" do
-      pending
-      AudioToVideo.should_receive(:new)
+    it "runs the :video_to_audio processor" do
+      Paperclip::VideoToAudio.should_receive_chain(:new, :make).at_least(:once).and_return(audio_file)
+      subject.audio = audio_file
     end
   end
   
   describe 'attached video -' do
-    it "runs the video_to_audio processor" do
-      pending
-      VideoToAudio.should_receive(:new)
+    it "runs the :audio_to_video processor" do
+      Paperclip::AudioToVideo.should_receive_chain(:new, :make).at_least(:once).and_return(video_file)
+      subject.video = video_file
     end
     
-    it "runs the ffmpeg processor" do
-      pending
-      Ffmpeg.should_receive(:new)
+    it "runs the :ffmpeg processor" do
+      Paperclip::Ffmpeg.should_receive_chain(:new, :make).at_least(:once).and_return(video_file)
+      subject.video = video_file
     end
     
-    it "runs the qtfaststart processor" do
-      pending
-      QtFastStart.should_receive(:new)
+    it "runs the :qtfaststart processor" do
+      Paperclip::Qtfaststart.should_receive_chain(:new, :make).at_least(:once).and_return(video_file)
+      subject.video = video_file
     end
   end
   
   describe 'attached poster_img -' do
     it "runs the :thumbnail processor" do
-      pending
-      Thumbnail.should_receive(:new)
+      Paperclip::Thumbnail.should_receive_chain(:new, :make).at_least(:once).and_return(img_file)
+      subject.poster_img = img_file
     end
     
     it "runs the :pngquant processor" do
-      pending
+      pending 'TODO'
       PngQuant.should_receive(:new)
     end  
     

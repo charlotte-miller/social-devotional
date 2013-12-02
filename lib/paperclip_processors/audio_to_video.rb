@@ -22,12 +22,8 @@ module Paperclip
       @destination_file ||= Tempfile.new([@basename, ".mp4"]).binmode   # Hard-coded to mp4 for libx264
     end
     
-    def ensure_even_dementions(img=@poster_img)
-      #TODO ensure even dementions for the image (ffmpeg requirement)
-    end
-    
     def poster_img_path
-      @poster_img ||= attachment.instance.poster_img_w_study_backfill.to_tempfile(:original) 
+      @poster_img ||= attachment.instance.poster_img_w_study_backfill.to_tempfile(:sd) # :original 
       
       already_a_valid_path = (@poster_img.is_a? String) && (File.exists? @poster_img)
       return @poster_img if already_a_valid_path

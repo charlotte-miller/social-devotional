@@ -6,7 +6,6 @@ module Lesson::AttachedMedia
   extend  ActiveSupport::Concern
   include AttachableFile
   included do
-    before_save :process_poster_img_first
     
     # Video Dimensions
     SD_SIZE     = '640x360#'
@@ -14,15 +13,15 @@ module Lesson::AttachedMedia
     MOBILE_SIZE = '480x270#'
     
     has_attachable_file :audio, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
-                        :hash_data         => ":class/:attachment/:id/:style",
+                        :hash_data  => ":class/:attachment/:id/:style",
                         :processors => [:video_to_audio],
                         :styles => {mp3:{audio_bitrate:'64k'}} #ogg:true
 
     
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
     has_attachable_file :video, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
-                        :hash_data         => ":class/:attachment/:id/:style",
-                        :processors => [:audio_to_video, :ffmpeg,],  #, :qtfaststart
+                        :hash_data  => ":class/:attachment/:id/:style",
+                        :processors => [:audio_to_video, :ffmpeg, :qtfaststart],  #, :qtfaststart
                         :styles => {
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },
                           mp4:           { geometry: SD_SIZE,  :format => 'mp4' , :streaming => true},
@@ -35,8 +34,8 @@ module Lesson::AttachedMedia
 
     
     has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:hash.:extension',
-                        :hash_data         => ":class/:attachment/:id/:fingerprint-:style",
-                        :url               => AppConfig.domains.cdn,
+                        :hash_data => ":class/:attachment/:id/:fingerprint-:style",
+                        :url => AppConfig.domains.cdn,
                         # :processors      => [:thumbnail, :pngquant],
                         :styles => {
                           sd:     { geometry: SD_SIZE,     format: 'png', convert_options: "-strip" },
@@ -45,6 +44,11 @@ module Lesson::AttachedMedia
 
   end #included
 
+
+  # ---------------------------------------------------------------------------------
+  # Methods
+  # ---------------------------------------------------------------------------------
+  
   def poster_img_w_study_backfill
     return poster_img if self.poster_img.present?
     study.poster_img
