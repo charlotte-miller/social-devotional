@@ -1,29 +1,25 @@
 require 'spec_helper'
 require 'open-uri'
 
-describe Lesson::Adapters::Web do
-  describe '.new_from_url(url)' do
-    after(:each) { VCR.eject_cassette }
-    before(:each) do
-      VCR.insert_cassette('lesson_adapters_web', :record => :new_episodes) #:new_episodes
-    end
-
-    it "has tests" do
-      raise NotImplementedError
+describe Lesson::Adapters::Web, :focus do
+  vcr_lesson_web
+  
+  let(:url) { 'http://www.something.com' }
+  let(:nokogiri_doc) { Nokogiri::HTML(open url) }
+  subject { Lesson::Adapters::Web.new(url, nokogiri_doc) }
+  
+  describe '.new_from_url(url)' do    
+    it "creates a Lesson::Adapters::Web" do
+      Lesson::Adapters::Web.new_from_url(url).should be_an_instance_of Lesson::Adapters::Web
     end
   end
-
-  let(:nokogiri_doc) { Nokogiri::HTML(open 'http://www.something.com') }
-  subject { Lesson::Adapters::Web.new(nokogiri_doc) }
-
-  it "builds from a Nokogiri::HTML doc" do
-    nokogiri_doc.should be_an_instance_of Nokogiri::HTML
-    subject.should be_an_instance_of Lesson::Adapters::Web
+  
+  it "loads the correct SiteAdapters class" do
+    pending
+  end
+  
+  Lesson::Adapters::Base::ATTRIBUTES.each do |attr|
+    it { should delegate_method(attr).to(:domain_adapter) }
   end
 
-  # it "assigns data to every attribute in the interface" do
-  #   Lesson::Adapters::Base::ATTRIBUTES.each do |attr|
-  #     subject.send(attr).should_not be_nil
-  #   end
-  # end
 end

@@ -3,9 +3,9 @@
 # Usage:
 #
 #     describe Post do
-#       it { should delegate(:name).to(:author).with_prefix } # post.author_name
-#       it { should delegate(:month).to(:created_at) }
-#       it { should delegate(:year).to(:created_at) }
+#       it { should delegate_method(:name).to(:author).with_prefix } # post.author_name
+#       it { should delegate_method(:month).to(:created_at) }
+#       it { should delegate_method(:year).to(:created_at) }
 #     end
  
 RSpec::Matchers.define :delegate_method do |method|

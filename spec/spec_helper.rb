@@ -26,6 +26,13 @@ RSpec.configure do |config|
   # ## Mock Framework
   config.mock_with :rspec #:mocha
 
+  VCR.configure do |c|
+    c.default_cassette_options = { :record => :none } # :new_episodes
+    c.allow_http_connections_when_no_cassette = false
+    c.cassette_library_dir = "#{Rails.root}/spec/files/vcr_cassettes"
+    c.hook_into :webmock
+  end
+  
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
