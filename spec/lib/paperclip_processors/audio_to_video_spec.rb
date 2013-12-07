@@ -66,13 +66,13 @@ module Paperclip
       end
     end
   end
-end
-
-
-class DummyKlass < SimplePaperclip
-  attr_accessor :foo_file_name, :poster_img_file_name
-  has_attached_file :poster_img, url: ':rails_root/spec/files/:filename', path: ':rails_root/spec/files/:filename'
-  has_attached_file :foo, :styles => {bar:'true'}, :processors => [:audio_to_video]
   
-  alias_method :poster_img_w_study_backfill, :poster_img
+  
+  class DummyKlass < SimplePaperclip
+    attr_accessor :foo_file_name, :poster_img_file_name
+    has_attached_file :poster_img, url: ':rails_root/spec/files/:filename', path: ':rails_root/spec/files/:filename'
+    has_attached_file :foo, :styles => {bar:'true'}, :processors => [:audio_to_video]
+
+    alias_method :poster_img_w_study_backfill, :poster_img
+  end
 end
