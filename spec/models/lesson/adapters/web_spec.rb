@@ -1,10 +1,10 @@
 require 'spec_helper'
 require 'open-uri'
 
-describe Lesson::Adapters::Web, :focus do
+describe Lesson::Adapters::Web do
   vcr_lesson_web
   
-  let(:url) { 'http://www.something.com' }
+  let(:url) { @url || 'http://www.something.com' }
   let(:nokogiri_doc) { Nokogiri::HTML(open url) }
   subject { Lesson::Adapters::Web.new(url, nokogiri_doc) }
   
@@ -14,12 +14,22 @@ describe Lesson::Adapters::Web, :focus do
     end
   end
   
-  it "loads the correct SiteAdapters class" do
-    pending
+  it "loads the correct domain adapter class" do
+    subject.domain_adapter.should be_kind_of Lesson::Adapters::Web::SomethingCom
+  end
+  
+  it "raises AdapterNotFound if no domain adapter exist" do
+    @url = 'http://example.com'
+    lambda { subject }.should raise_error Lesson::Adapters::NotFound, "No adapter for: Lesson::Adapters::Web::ExampleCom"
   end
   
   Lesson::Adapters::Base::ATTRIBUTES.each do |attr|
     it { should delegate_method(attr).to(:domain_adapter) }
   end
 
+end
+
+# DummyKlass
+class Lesson::Adapters::Web::SomethingCom
+  def initialize(path, nokogiri_doc)  end
 end
