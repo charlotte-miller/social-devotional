@@ -100,4 +100,825 @@ http_interactions:
         information...</a></p>\n</div>\n</body>\n</html>\n"
     http_version: 
   recorded_at: Sat, 07 Dec 2013 19:26:39 GMT
+- request:
+    method: get
+    uri: http://www.thevillagechurch.net/sermon/the-promise-of-a-savior/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Dec 2013 19:50:08 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.2.9
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - PHPSESSID=gjs97upk3jlact6g16pvsc9ht5; path=/
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - text/html
+    body:
+      encoding: US-ASCII
+      string: ! "      \n\n\n<!DOCTYPE html>\n<!--[if lt IE 7 ]><html lang=\"en\"
+        class=\"no-js ie6\" xmlns:og=\"http://ogp.me/ns#\" xmlns:fb=\"http://www.facebook.com/2008/fbml\">
+        <![endif]-->\n<!--[if IE 7 ]><html lang=\"en\" class=\"no-js ie7\" xmlns:og=\"http://ogp.me/ns#\"
+        xmlns:fb=\"http://www.facebook.com/2008/fbml\"> <![endif]-->\n<!--[if IE 8
+        ]><html lang=\"en\" class=\"no-js ie8\" xmlns:og=\"http://ogp.me/ns#\" xmlns:fb=\"http://www.facebook.com/2008/fbml\">
+        <![endif]-->\n<!--[if IE 9 ]><html lang=\"en\" class=\"no-js ie9\" xmlns:og=\"http://ogp.me/ns#\"
+        xmlns:fb=\"http://www.facebook.com/2008/fbml\"> <![endif]-->\n<!--[if (gt
+        IE 9)|!(IE)]><!--><html lang=\"en\" class=\"no-js\" xmlns:og=\"http://ogp.me/ns#\"
+        xmlns:fb=\"http://www.facebook.com/2008/fbml\"> <!--<![endif]-->\n<head>\n\n<meta
+        charset=\"UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n\n<title>The
+        Promise of a Savior > The Village Church</title>\n<meta name=\"description\"
+        content=\"For more resources, please visit www.thevillagechurch.net.\" />\n<meta
+        name=\"keywords\" content=\"\" />\n\n<meta name=\"viewport\" content=\"width=1024\"
+        />\n\n\n<meta name=\"apple-itunes-app\" content=\"app-id=483253023\"/>\n\n<script
+        type=\"text/javascript\" src=\"http://use.typekit.com/gys2dae.js\"></script>\n<script
+        type=\"text/javascript\">try{Typekit.load();}catch(e){}</script>\n\n<link
+        href=\"http://fast.fonts.com/cssapi/3d30f3e7-51f4-408f-bd45-96ee0903b56c.css\"
+        rel=\"stylesheet\" type=\"text/css\" />\n\n<link rel=\"stylesheet\" href=\"/_css/reset.css?t=20131003093907\"
+        />\n<link rel=\"stylesheet\" href=\"/_css/styles.css?t=20131011095145\" title=\"default\"
+        media='screen' />\n<link rel=\"stylesheet\" href=\"/_css/responsive-tables.css?t=20131003093909\"
+        />\n<link rel=\"stylesheet\" href=\"/_css/styles-mobile.css?t=20131011125659\"
+        media=\"screen and (min-device-width : 320px) and (max-width: 568px)\" />\n<link
+        rel=\"stylesheet\" href=\"/_css/print.css?t=20131003093908\" media=\"print\"
+        />\n<link rel=\"stylesheet\" href=\"/_css/colorbox.css?t=20131003093907\"
+        />\n<link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\"/>\n<link
+        rel=\"shortcut icon\" type=\"image/ico\" href=\"/favicon.ico\" />\n\n<!--[if
+        IE 7]>\n<link rel=\"stylesheet\"  href=\"/_css/ie7.css\" title=\"default\"
+        />\n<![endif]-->\n\n<!--[if IE 8]>\n<link rel=\"stylesheet\"  href=\"/_css/ie8.css\"
+        title=\"default\" />\n<![endif]-->\n\n<script src=\"/_js/modernizr-1.6.min.js\"></script>\n\n\n\n\n<meta
+        property=\"fb:admins\" content=\"1207724312\"/>\n<meta property=\"og:site_name\"
+        content=\"The Village Church\"/>\n<meta property=\"og:title\" content=\"The
+        Promise of a Savior\"/>\n<meta property=\"og:type\" content=\"website\"/>\n<meta
+        property=\"og:url\" content=\"http://www.thevillagechurch.net/sermon/the-promise-of-a-savior/\"/>\n<meta
+        property=\"og:image\" content=\"http://www.thevillagechurch.net/mediafiles/uploaded/d/0e2186975_default-facebook-image.jpg\"/>\n<meta
+        property=\"og:description\" content=\"For more resources, please visit www.thevillagechurch.net.\"/>\n\n<link
+        rel=\"stylesheet\" href='/_player/skin/audio/player.css'/>\n\n</head>\n\n<body
+        id=\"sub\" class='flower-mound'>\n\n<div id='metanav-wrap'>\n\n\t<div id=\"metanav\"
+        class=\"UIStandardFrame_Container clearfix\">\n    \n    \t<div id=\"campus-select\"
+        class=\"uiFloatLeft clearfix\">\n            <p class=\"uiFloatLeft\">Select
+        Campus</p>\n\t\t\t<div id=\"campus-menu\" class=\"uiFloatLeft\">\n                <a
+        class=\"campus-current\">Flower Mound</a>\n                <a class=\"campus-current
+        mobile-content\"><img src=\"/_img/mobile_logo.png\" alt=\"The Village Church\"
+        />Flower Mound</a>\n              \t<div id=\"campus-list\">\n                    <a
+        href=\"/flower-mound\" class=\"flower-mound setcampus\" rel=\"flower-mound\">Flower
+        Mound</a> \n                    <a href=\"/denton\" class=\"denton setcampus\"
+        rel=\"denton\">Denton</a>      \n                    <a href=\"/dallas-northway\"
+        class=\"dallas-northway setcampus\" rel=\"dallas-northway\">Dallas Northway</a>\n
+        \               \t<a href=\"/fort-worth\" class=\"fort-worth setcampus\" rel=\"fort-worth\">Fort
+        Worth</a>\n             \t</div>\n        \t</div>          \n        </div>\n
+        \       \n        <div class=\"service-times uiFloatLeft\"><a href=\"#\" class=\"service-times-link\">Service
+        Info</a>\n        \t<div class=\"service-times-wrap\">\n            \t<div
+        class=\"service-times-cap\"></div>\n                <div class=\"service-times-dd\">\n
+        \               \t<h3>Inclement Weather</h3>\r\n<p class=\"times\"><span>SERVICES
+        CANCELLED</span></p>\r\n<!--<h3>Saturday Evening</h3>\r\n<p class=\"times\"><span>5
+        p.m.</span><span>7:15 p.m.</span></p>\r\n<h3>Sunday Morning</h3>\r\n<p class=\"times\"><span>9
+        a.m.</span><span>11:15 a.m.</span></p>\r\n<p>Please make sure and show up
+        15-30 minutes early. <a onclick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Home Service Times', 'Why']);\" href=\"/flower-mound/about-us/new-here/\">Why?</a></p>\r\n<p
+        class=\"google-link\"><a onclick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Home Service Times', 'Google Map']);\" target=\"_blank\" href=\"http://www.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2101+Justin+Road,+Flower+Mound,+TX&amp;aq=&amp;sll=33.072162,-97.045267&amp;sspn=0.027835,0.052872&amp;ie=UTF8&amp;hq=&amp;hnear=2101+Justin+Rd,+Flower+Mound,+Texas+75028&amp;z=17\">Google
+        Map</a></p>-->                  </div>\n        \t</div>\n    \t</div>\n        \n
+        \       <div id=\"search\" class=\"uiFloatRight\"><a class=\"mobile-search
+        mobile-content\"><img src=\"/_img/mobile_search_go.png\" alt=\"Search\" /></a><form
+        action=\"/search-results/\" method=\"get\" id=\"searchForm\" class=\"clearfix\"><div
+        class=\"mobile-content\"><a id=\"search_close\" href=\"#\"><img src=\"/_img/mobile_search_close.png\"
+        width=\"32\" height=\"32\" alt=\"Close\" /></a></div><fieldset class=\"clearfix\">\n<input
+        type=\"text\" id=\"search_term\" name=\"keywords\" value=\"search\" class=\"clearClick\"
+        />\n<a id=\"search_go\" href=\"#\" class=\"mcmsSearch\">Go</a>\n<div class=\"mobile-content\"><a
+        id=\"search_go_mobile\" href=\"#\" class=\"mcmsSearch\"><img src=\"/_img/search_go.png\"
+        alt=\"Search\" /></a></div>\n<input type=\"hidden\" name=\"show_results\"
+        value=\"N%3B\" /> \n</fieldset></form>\n</div>\n        \n        <div id=\"global-nav\"
+        class=\"uiFloatRight\">\n        \t<a class=\"mobile-menu mobile-content\"><img
+        src=\"/_img/mobile_btn_menu.png\" alt=\"Menu\" /></a>\n            <div class=\"mobile-menu-dd\">\n
+        \           <ul id=\"global-nav-links\" class=\"uiFloatRight clearfix\">\n
+        \               <li class='the-city'><a href='/resources/stay-connected/the-city'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Meta Nav', '/resources/stay-connected/the-city']);\">The
+        City</a></li><li class='events'><a href='/flower-mound/ministries/events/featured-events'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Meta Nav', '/flower-mound/ministries/events/featured-events']);\">Events</a></li><li
+        class='contact-us'><a href='/flower-mound/about-us/who-we-are/contact-us'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Meta Nav', '/flower-mound/about-us/who-we-are/contact-us']);\">Contact
+        Us</a></li>            </ul>\n            <div class=\"mobile-content\"><nav
+        \ class=\"main uiFloatRight clearfix\">\n        \n    <ul id=\"nav\">\n    <li
+        id=\"nav_flower-mound_about-us\"><a href='/flower-mound/about-us/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/']);\">About Us</a>\n
+        \     <ul>\n      <li id=\"nav_flower-mound_about-us_who-we-are\"><a href='#'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '#']);\">Who
+        We Are</a>\n        <ul>\n        <li id=\"nav_flower-mound_about-us_who-we-are_our-staff\"><a
+        href='/flower-mound/about-us/who-we-are/our-staff/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/our-staff/']);\">Our
+        Staff</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_our-story\"><a
+        href='/flower-mound/about-us/who-we-are/our-story/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/our-story/']);\">Our
+        Story</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_what-we-believe\"><a
+        href='/flower-mound/about-us/who-we-are/what-we-believe/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/what-we-believe/']);\">What
+        We Believe</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_finances\"><a
+        href='/flower-mound/about-us/who-we-are/finances/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/finances/']);\">Finances</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_giving\"><a href='/flower-mound/about-us/who-we-are/giving/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/giving/']);\">Giving</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_membership\"><a href='/flower-mound/about-us/who-we-are/membership/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/membership/']);\">Membership</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_baptism\"><a href='/flower-mound/about-us/who-we-are/baptism/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/baptism/']);\">Baptism</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_contact-us\"><a href='/flower-mound/about-us/who-we-are/contact-us/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/contact-us/']);\">Contact
+        Us</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_about-us_stories-of-life-change\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Stories of Life Change</a>\n        <ul>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_audio-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/audio-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/audio-stories/']);\">Audio
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_video-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/video-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/video-stories/']);\">Video
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_written-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/written-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/written-stories/']);\">Written
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_share-your-story\"><a
+        href='/flower-mound/about-us/stories-of-life-change/share-your-story/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/share-your-story/']);\">Share
+        Your Story</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_about-us_new-here\"><a
+        href='/flower-mound/about-us/new-here/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/new-here/']);\">New
+        Here?</a></li>\n    </ul>\n    </li>\n    <li id=\"nav_flower-mound_ministries\"><a
+        href='/flower-mound/ministries/' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/flower-mound/ministries/']);\">Ministries</a>\n      <ul>\n
+        \     <li id=\"nav_flower-mound_ministries_next-generation\"><a href='#' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '#']);\">Next Generation</a>\n        <ul>\n
+        \       <li id=\"nav_flower-mound_ministries_next-generation_preschool-birth-k\"><a
+        href='/flower-mound/ministries/next-generation/preschool-birth-k/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/preschool-birth-k/']);\">Preschool
+        (Birth - K)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_children-1st-5th\"><a
+        href='/flower-mound/ministries/next-generation/children-1st-5th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/children-1st-5th/']);\">Children
+        (1st - 5th)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_middle-school-6th-8th\"><a
+        href='/flower-mound/ministries/next-generation/middle-school-6th-8th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/middle-school-6th-8th/']);\">Middle
+        School (6th - 8th)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_high-school-9th-12th\"><a
+        href='/flower-mound/ministries/next-generation/high-school-9th-12th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/high-school-9th-12th/']);\">High
+        School (9th - 12th)</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_helping-you\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Helping You</a>\n        <ul>\n        <li id=\"nav_flower-mound_ministries_helping-you_becoming-a-believer\"><a
+        href='/flower-mound/ministries/helping-you/becoming-a-believer/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/becoming-a-believer/']);\">Becoming
+        a Believer</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_biblical-counseling\"><a
+        href='/flower-mound/ministries/helping-you/biblical-counseling/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/biblical-counseling/']);\">Biblical
+        Counseling</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_deaf-hard-of-hearing\"><a
+        href='/flower-mound/ministries/helping-you/deaf-hard-of-hearing/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/deaf-hard-of-hearing/']);\">Deaf
+        &amp; Hard of Hearing</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_financial-assistance\"><a
+        href='/flower-mound/ministries/helping-you/financial-assistance/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/financial-assistance/']);\">Financial
+        Assistance</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_funerals\"><a
+        href='/flower-mound/ministries/helping-you/funerals/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/funerals/']);\">Funerals</a></li>\n
+        \       <li id=\"nav_flower-mound_ministries_helping-you_hospital-home-visits\"><a
+        href='/flower-mound/ministries/helping-you/hospital-home-visits/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/hospital-home-visits/']);\">Hospital
+        &amp; Home Visits</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_premarital-counseling\"><a
+        href='/flower-mound/ministries/helping-you/premarital-counseling/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/premarital-counseling/']);\">Premarital
+        Counseling</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_weddings\"><a
+        href='/flower-mound/ministries/helping-you/weddings/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/weddings/']);\">Weddings</a></li>\n
+        \     </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_groups\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Groups</a>\n        <ul>\n        <li id=\"nav_flower-mound_ministries_groups_home-groups\"><a
+        href='/flower-mound/ministries/groups/home-groups/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/groups/home-groups/']);\">Home
+        Groups</a></li>\n        <li id=\"nav_flower-mound_ministries_groups_recovery-groups\"><a
+        href='/flower-mound/ministries/groups/recovery-groups/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/groups/recovery-groups/']);\">Recovery
+        Groups</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_spacer\"><a
+        href='http://#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        'http://#']);\">Spacer</a></li>\n      <li id=\"nav_flower-mound_ministries_volunteer-opportunities\"><a
+        href='/flower-mound/ministries/volunteer-opportunities/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/volunteer-opportunities/']);\">Volunteer
+        Opportunities</a></li>\n      <li id=\"nav_flower-mound_ministries_events\"><a
+        href='/flower-mound/ministries/events/featured-events/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/featured-events/']);\">Events</a>\n
+        \       <ul>\n        <li id=\"nav_flower-mound_ministries_events_featured-events\"><a
+        href='/flower-mound/ministries/events/featured-events/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/featured-events/']);\">Featured
+        Events</a></li>\n        <li id=\"nav_flower-mound_ministries_events_calendar\"><a
+        href='/flower-mound/ministries/events/calendar/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/calendar/']);\">Calendar</a></li>\n
+        \   </ul>\n    </li>\n    </ul>\n    </li>\n    <li id=\"nav_flower-mound_outreach\"><a
+        href='/flower-mound/outreach/' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/flower-mound/outreach/']);\">Outreach</a>\n      <ul>\n      <li
+        id=\"nav_flower-mound_outreach_in-the-community\"><a href='#' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '#']);\">In the Community</a>\n        <ul>\n
+        \       <li id=\"nav_flower-mound_outreach_in-the-community_campus-outreach\"><a
+        href='/flower-mound/outreach/in-the-community/campus-outreach/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/campus-outreach/']);\">Campus
+        Outreach</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_champions-of-hope\"><a
+        href='/flower-mound/outreach/in-the-community/champions-of-hope/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/champions-of-hope/']);\">Champions
+        of Hope</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_chin-refugee-ministry\"><a
+        href='/flower-mound/outreach/in-the-community/chin-refugee-ministry/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/chin-refugee-ministry/']);\">Chin
+        Refugee Ministry</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_communities-in-schools\"><a
+        href='/flower-mound/outreach/in-the-community/communities-in-schools/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/communities-in-schools/']);\">Communities
+        in Schools</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_free-city-international\"><a
+        href='/flower-mound/outreach/in-the-community/free-city-international/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/free-city-international/']);\">Free
+        City International</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_intl-student-fellowship\"><a
+        href='/flower-mound/outreach/in-the-community/intl-student-fellowship/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/intl-student-fellowship/']);\">Int'l
+        Student Fellowship</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_jesus-said-love\"><a
+        href='/flower-mound/outreach/in-the-community/jesus-said-love/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/jesus-said-love/']);\">Jesus
+        Said Love</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_outreach_our-relationships\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Our Relationships</a>\n        <ul>\n        <li id=\"nav_flower-mound_outreach_our-relationships_partner-churches\"><a
+        href='/flower-mound/outreach/our-relationships/partner-churches/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/partner-churches/']);\">Partner
+        Churches</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_partner-organizations\"><a
+        href='/flower-mound/outreach/our-relationships/partner-organizations/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/partner-organizations/']);\">Partner
+        Organizations</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_church-planters\"><a
+        href='/flower-mound/outreach/our-relationships/church-planters/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/church-planters/']);\">Church
+        Planters</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_missionaries\"><a
+        href='/flower-mound/outreach/our-relationships/missionaries/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/missionaries/']);\">Missionaries</a></li>\n
+        \     </ul>\n      </li>\n      <li id=\"nav_flower-mound_outreach_short-term-trips\"><a
+        href='/flower-mound/outreach/short-term-trips/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/short-term-trips/']);\">Short-term
+        Trips</a></li>\n      <li id=\"nav_flower-mound_outreach_sending-program\"><a
+        href='/flower-mound/outreach/sending-program/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/sending-program/']);\">Sending
+        Program</a></li>\n    </ul>\n  </li>\n        <li id=\"nav_flower-mound_resources\"
+        class=\"resources-dd\"><a href=\"/resources-flower-mound\">Resources</a>\n
+        \       \t<ul class=\"clearfix\">\n            \t<li><a href=\"#\">Categories</a>\n
+        \               \t<ul>\n                    <li class='articles-papers'><a
+        href='/resources/articles-papers' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/articles-papers']);\">Articles & Papers</a></li><li
+        class='bible-studies-classes'><a href='/resources/bibles-studies-classes'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/bibles-studies-classes']);\">Bible
+        Studies & Classes</a></li><li class='music'><a href='/resources/music' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/music']);\">Music</a></li><li class='parenting'><a
+        href='/resources/parenting' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/parenting']);\">Parenting</a></li><li class='questions-answers'><a
+        href='/resources/questions-answers' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/questions-answers']);\">Questions & Answers</a></li><li
+        class='recommended-books'><a href='/recommended-books/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/recommended-books/']);\">Recommended Books</a></li><li
+        class='sermons'><a href='/resources/sermons' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/sermons']);\">Sermons</a></li><li
+        class='recovery-groups-steps'><a href='/resources/recovery-groups-steps' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/recovery-groups-steps']);\">Recovery
+        Groups: Steps</a></li><li class='retreats-conferences'><a href='/resources/retreats-conferences'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/retreats-conferences']);\">Retreats
+        & Conferences</a></li>                    </ul>\n                </li>\n               <li
+        class='the-village-blog'><a href='http://www.thevillagechurch.net/the-village-blog/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', 'http://www.thevillagechurch.net/the-village-blog/']);\">The
+        Village Blog</a></li><li class='stay-connected'><a href='/resources/stay-connected'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/stay-connected']);\">Stay
+        Connected</a></li><li class='latest-message'><a class=\"mcms_audioplayer\"
+        href=\"https://my.ekklesia360.com/Clients/download.php?sid=5356&amp;url=http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3&amp;mediaBID=2558163&amp;template=https://my.ekklesia360.com/Clients/player/videoplayer.php&amp;module=sermon&amp;content_id=670105&amp;type=sound&amp;CMSCODE=EKK&amp;skin=&amp;CMS_LINK=https://my.ekklesia360.com&amp;width=400&amp;height=225&amp;fullscreen=&amp;image=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;overrideImage=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;playlist=false&amp;autostart=true&amp;find_category=sermons\">Latest
+        Message</a></li><li class='feeds-podcast'><a href='/resources/feeds-podcasts'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/feeds-podcasts']);\">Feeds
+        & Podcasts</a></li>            </ul>\n        </li>\n     </ul>\n\t</nav>\n</div>\n
+        \           </div>\n       </div>\n            \n\t</div>\n    \n   <div id=\"campus-select-mobile\"><div
+        class=\"inner\">\n\t<div class=\"top\"><img src=\"/_img/mobile_logo_lrg.png\"
+        alt=\"The Village Church\" /><h3>Select the Campus Near You</h3></div>\n\t\t\n
+        \       <div class=\"campus flower-mound\">\n        \t<a href=\"/flower-mound\"
+        class=\"flower-mound setcampus\" rel=\"flower-mound\"><img src=\"/_img/mobile_times_flowermound.png\"
+        alt=\"Flower Mound\" class=\"map\" /></a>\n            <div class=\"buttons\"><a
+        class=\"service-times\" rel=\"flower-mound\">Service Times &amp; Locations</a></div>\n
+        \           <div class=\"buttons clearfix\"><a href=\"/flower-mound/about-us/who-we-are/contact-us/\"
+        class=\"email\">Email Us <span><img src=\"/_img/mobile_times_arrow.png\" /></span></a><a
+        href=\"tel:9725371100\" class=\"call\">Call Us <span><img src=\"/_img/mobile_times_arrow.png\"
+        /></span></a></div>\n            <div class=\"buttons\"><a href=\"/flower-mound\"
+        class=\"flower-mound setcampus\" rel=\"flower-mound\">Select Flower Mound
+        <span><img src=\"/_img/mobile_times_check.png\" /></span></a> </div>\n   \t\t\t<div
+        class=\"service-times-mobile flower-mound\">\n            \t<a class=\"service-times-close\"
+        rel=\"flower-mound\"><img src=\"/_img/mobile_times_close.png\" /></a>\n                <div
+        class=\"inner\">\n                \t<h3>Inclement Weather</h3>\r\n<p class=\"times\"><span>SERVICES
+        CANCELLED</span></p>\r\n<!--<h3>Saturday Evening</h3>\r\n<p class=\"times\"><span>5
+        p.m.</span><span>7:15 p.m.</span></p>\r\n<h3>Sunday Morning</h3>\r\n<p class=\"times\"><span>9
+        a.m.</span><span>11:15 a.m.</span></p>\r\n<p>Please make sure and show up
+        15-30 minutes early. <a onclick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Home Service Times', 'Why']);\" href=\"/flower-mound/about-us/new-here/\">Why?</a></p>\r\n<p
+        class=\"google-link\"><a onclick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Home Service Times', 'Google Map']);\" target=\"_blank\" href=\"http://www.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2101+Justin+Road,+Flower+Mound,+TX&amp;aq=&amp;sll=33.072162,-97.045267&amp;sspn=0.027835,0.052872&amp;ie=UTF8&amp;hq=&amp;hnear=2101+Justin+Rd,+Flower+Mound,+Texas+75028&amp;z=17\">Google
+        Map</a></p>-->                  </div>\n        \t</div>\n        </div><!--campus
+        flower-mound-->\n        \n        <div class=\"campus denton\">\n        \t<a
+        href=\"/denton\" class=\"denton setcampus\" rel=\"denton\"><img src=\"/_img/mobile_times_denton.png\"
+        alt=\"Denton\" class=\"map\" /></a>\n            <div class=\"buttons\"><a
+        class=\"service-times\" rel=\"denton\">Service Times &amp; Locations</a></div>\n
+        \           <div class=\"buttons clearfix\"><a href=\"/denton/about-us/who-we-are/contact-us/\"
+        class=\"email\">Email Us <span><img src=\"/_img/mobile_times_arrow.png\" /></span></a><a
+        href=\"tel:9403828888\" class=\"call\">Call Us <span><img src=\"/_img/mobile_times_arrow.png\"
+        /></span></a></div>\n            <div class=\"buttons\"><a href=\"/denton\"
+        class=\"denton setcampus\" rel=\"denton\">Select Denton <span><img src=\"/_img/mobile_times_check.png\"
+        /></span></a> </div>\n   \t\t\t<div class=\"service-times-mobile denton\">\n
+        \           \t<a class=\"service-times-close\" rel=\"denton\"><img src=\"/_img/mobile_times_close.png\"
+        /></a>\n                <div class=\"inner\">\n                \t<h3>Inclement
+        Weather</h3>\r\n<p class=\"times\"><span>SERVICES CANCELLED</span></p>\r\n<!--<h3>Sunday
+        Morning</h3>\r\n<p class=\"times\"><span>9 a.m.</span><span>11:15 a.m.</span></p>\r\n<h3>Sunday
+        Evening</h3>\r\n<p class=\"times\"><span>5 p.m.</span><span>7:15 p.m.</span></p>\r\n<p>Please
+        make sure and show up 15-30 minutes early. <a href=\"/denton/about-us/new-here/\"
+        onclick=\"_gaq.push(['_trackEvent', 'denton', 'Home Service Times', 'Why']);\">Why?</a></p>\r\n<p
+        class=\"google-link\"><a href=\"http://www.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1106+West+Oak+Street,+Denton,+TX&amp;aq=&amp;sll=33.070291,-97.060378&amp;sspn=0.006959,0.013218&amp;ie=UTF8&amp;hq=&amp;hnear=1106+W+Oak+St,+Denton,+Texas+76201&amp;z=17\"
+        target=\"_blank\" onclick=\"_gaq.push(['_trackEvent', 'denton', 'Home Service
+        Times', 'Google Map']);\">Google Map</a></p>-->                  </div>\n
+        \       \t</div>\n        </div><!--campus denton-->\n        \n        <div
+        class=\"campus dallas-northway\">\n        \t<a href=\"/dallas-northway\"
+        class=\"dallas-northway setcampus\" rel=\"dallas-northway\"><img src=\"/_img/mobile_times_dallasnorthway.png\"
+        alt=\"Dallas Northway\" class=\"map\" /></a>\n            <div class=\"buttons\"><a
+        class=\"service-times\" rel=\"dallas-northway\">Service Times &amp; Locations</a></div>\n
+        \           <div class=\"buttons clearfix\"><a href=\"/dallas-northway/about-us/who-we-are/contact-us/\"
+        class=\"email\">Email Us <span><img src=\"/_img/mobile_times_arrow.png\" /></span></a><a
+        href=\"tel:9725371320\" class=\"call\">Call Us <span><img src=\"/_img/mobile_times_arrow.png\"
+        /></span></a></div>\n            <div class=\"buttons\"><a href=\"/dallas-northway\"
+        class=\"dallas-northway setcampus\" rel=\"dallas-northway\">Select Dallas
+        Northway <span><img src=\"/_img/mobile_times_check.png\" /></span></a> </div>\n
+        \  \t\t\t<div class=\"service-times-mobile dallas-northway\">\n            \t<a
+        class=\"service-times-close\" rel=\"dallas-northway\"><img src=\"/_img/mobile_times_close.png\"
+        /></a>\n                <div class=\"inner\">\n                \t<h3>Inclement
+        Weather</h3>\r\n<p class=\"times\"><span>SERVICES CANCELLED</span></p>\r\n<!--<h3>Sunday
+        Morning</h3>\r\n<p class=\"times\"><span>9 a.m.</span><span>11:15 a.m.</span></p>\r\n<h3>Sunday
+        Evening</h3>\r\n<p class=\"times\"><span>5 p.m.</span><span>7:15 p.m.</span></p>\r\n<p>Please
+        make sure and show up 15-30 minutes early. <a onclick=\"_gaq.push(['_trackEvent',
+        'dallas-northway', 'Home Service Times', 'Why']);\" href=\"/dallas-northway/about-us/new-here/\">Why?</a></p>\r\n<p
+        class=\"google-link\"><a onclick=\"_gaq.push(['_trackEvent', 'dallas-northway',
+        'Home Service Times', 'Google Map']);\" href=\"http://www.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=3877+Walnut+Hill+Lane,+Dallas,+TX&amp;aq=&amp;sll=33.216088,-97.143912&amp;sspn=0.006947,0.013218&amp;ie=UTF8&amp;hq=&amp;hnear=3877+Walnut+Hill+Ln,+Dallas,+Texas+75229&amp;z=17\"
+        target=\"_blank\">Google Map</a></p>-->                  </div>\n        \t</div>\n
+        \       </div><!--campus dallas-northway-->\n        \n        <div class=\"campus
+        fort-worth\">\n        \t<a href=\"/fort-worth\" class=\"fort-worth setcampus\"
+        rel=\"fort-worth\"><img src=\"/_img/mobile_times_fortworth.png\" alt=\"Fort
+        Worth\" class=\"map\" /></a>\n            <div class=\"buttons\"><a class=\"service-times\"
+        rel=\"fort-worth\">Service Times &amp; Locations</a></div>\n            <div
+        class=\"buttons clearfix\"><a href=\"/fort-worth\" class=\"email\">Email Us
+        <span><img src=\"/_img/mobile_times_arrow.png\" /></span></a><a href=\"9725371241\"
+        class=\"call\">Call Us <span><img src=\"/_img/mobile_times_arrow.png\" /></span></a></div>\n
+        \           <div class=\"buttons\"><a href=\"/fort-worth\" class=\"fort-worth
+        setcampus\" rel=\"fort-worth\">Select Fort Worth <span><img src=\"/_img/mobile_times_check.png\"
+        /></span></a> </div>\n   \t\t\t<div class=\"service-times-mobile fort-worth\">\n
+        \           \t<a class=\"service-times-close\" rel=\"fort-worth\"><img src=\"/_img/mobile_times_close.png\"
+        /></a>\n                <div class=\"inner\">\n                \t<h3>Inclement
+        Weather</h3>\r\n<p class=\"times\"><span>SERVICES CANCELLED</span></p>\r\n<!--<h3>Sunday
+        Morning</h3>\r\n<p class=\"times\"><span>9 a.m.</span><span>11:15 a.m.</span></p>\r\n<h3>Sunday
+        Evening</h3>\r\n<p class=\"times\"><span>5 p.m.</span></p>\r\n<p>Please make
+        sure and show up 15-30 minutes early. <a href=\"/fort-worth/about-us/new-here/\"
+        onclick=\"_gaq.push(['_trackEvent', 'denton', 'Home Service Times', 'Why']);\">Why?</a></p>\r\n<p
+        class=\"google-link\"><a href=\"https://www.google.com/maps?q=2100+Morrison+Drive,+Fort+Worth,+TX&amp;hl=en&amp;sll=33.070291,-97.060378&amp;sspn=0.006689,0.012199&amp;hnear=2100+Morrison+Dr,+Fort+Worth,+Texas+76112&amp;t=m&amp;z=17\"
+        target=\"_blank\" onclick=\"_gaq.push(['_trackEvent', 'fort-worth', 'Home
+        Service Times', 'Google Map']);\">Google Map</a></p>-->                  </div>\n
+        \       \t</div>\n        </div><!--campus fort-worth-->\n        \n         <div
+        class=\"campus fort-worth\">\n            <div class=\"buttons\"><a href=\"/resources-flower-mound\"
+        class=\"setcampus no-campus\" rel=\"fort-worth\" style=\"text-align:center;\">I
+        don't attend a campus</a> </div>\n        </div><!--no campus-->\n        \n
+        \t</div>\n</div>\t\n          \n</div><!--end metanav-wrap-->\n\n<div id='wrap'>\n<div
+        id='container' class='UIStandardFrame_Container'>\n\n<div id=\"header\" class=\"clearfix\">\n\t\t<div
+        class=\"logo uiFloatLeft\">\n    \t\t<div><a href=\"/flower-mound\"><img src=\"/_img/logo_header.png\"
+        width=\"311\" height=\"21\" alt=\"The Village Church\" /></a></div>\n  \t\t\t<p
+        class=\"tagline\">flower mound</p>\n        </div>\n        <nav  class=\"main
+        uiFloatRight clearfix\">\n        \n    <ul id=\"nav\">\n    <li id=\"nav_flower-mound_about-us\"><a
+        href='/flower-mound/about-us/' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/flower-mound/about-us/']);\">About Us</a>\n      <ul>\n      <li
+        id=\"nav_flower-mound_about-us_who-we-are\"><a href='#' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '#']);\">Who We Are</a>\n        <ul>\n        <li
+        id=\"nav_flower-mound_about-us_who-we-are_our-staff\"><a href='/flower-mound/about-us/who-we-are/our-staff/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/our-staff/']);\">Our
+        Staff</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_our-story\"><a
+        href='/flower-mound/about-us/who-we-are/our-story/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/our-story/']);\">Our
+        Story</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_what-we-believe\"><a
+        href='/flower-mound/about-us/who-we-are/what-we-believe/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/what-we-believe/']);\">What
+        We Believe</a></li>\n        <li id=\"nav_flower-mound_about-us_who-we-are_finances\"><a
+        href='/flower-mound/about-us/who-we-are/finances/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/finances/']);\">Finances</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_giving\"><a href='/flower-mound/about-us/who-we-are/giving/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/giving/']);\">Giving</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_membership\"><a href='/flower-mound/about-us/who-we-are/membership/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/membership/']);\">Membership</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_baptism\"><a href='/flower-mound/about-us/who-we-are/baptism/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/baptism/']);\">Baptism</a></li>\n
+        \       <li id=\"nav_flower-mound_about-us_who-we-are_contact-us\"><a href='/flower-mound/about-us/who-we-are/contact-us/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/flower-mound/about-us/who-we-are/contact-us/']);\">Contact
+        Us</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_about-us_stories-of-life-change\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Stories of Life Change</a>\n        <ul>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_audio-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/audio-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/audio-stories/']);\">Audio
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_video-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/video-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/video-stories/']);\">Video
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_written-stories\"><a
+        href='/flower-mound/about-us/stories-of-life-change/written-stories/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/written-stories/']);\">Written
+        Stories</a></li>\n        <li id=\"nav_flower-mound_about-us_stories-of-life-change_share-your-story\"><a
+        href='/flower-mound/about-us/stories-of-life-change/share-your-story/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/stories-of-life-change/share-your-story/']);\">Share
+        Your Story</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_about-us_new-here\"><a
+        href='/flower-mound/about-us/new-here/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/about-us/new-here/']);\">New
+        Here?</a></li>\n    </ul>\n    </li>\n    <li id=\"nav_flower-mound_ministries\"><a
+        href='/flower-mound/ministries/' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/flower-mound/ministries/']);\">Ministries</a>\n      <ul>\n
+        \     <li id=\"nav_flower-mound_ministries_next-generation\"><a href='#' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '#']);\">Next Generation</a>\n        <ul>\n
+        \       <li id=\"nav_flower-mound_ministries_next-generation_preschool-birth-k\"><a
+        href='/flower-mound/ministries/next-generation/preschool-birth-k/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/preschool-birth-k/']);\">Preschool
+        (Birth - K)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_children-1st-5th\"><a
+        href='/flower-mound/ministries/next-generation/children-1st-5th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/children-1st-5th/']);\">Children
+        (1st - 5th)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_middle-school-6th-8th\"><a
+        href='/flower-mound/ministries/next-generation/middle-school-6th-8th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/middle-school-6th-8th/']);\">Middle
+        School (6th - 8th)</a></li>\n        <li id=\"nav_flower-mound_ministries_next-generation_high-school-9th-12th\"><a
+        href='/flower-mound/ministries/next-generation/high-school-9th-12th/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/next-generation/high-school-9th-12th/']);\">High
+        School (9th - 12th)</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_helping-you\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Helping You</a>\n        <ul>\n        <li id=\"nav_flower-mound_ministries_helping-you_becoming-a-believer\"><a
+        href='/flower-mound/ministries/helping-you/becoming-a-believer/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/becoming-a-believer/']);\">Becoming
+        a Believer</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_biblical-counseling\"><a
+        href='/flower-mound/ministries/helping-you/biblical-counseling/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/biblical-counseling/']);\">Biblical
+        Counseling</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_deaf-hard-of-hearing\"><a
+        href='/flower-mound/ministries/helping-you/deaf-hard-of-hearing/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/deaf-hard-of-hearing/']);\">Deaf
+        &amp; Hard of Hearing</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_financial-assistance\"><a
+        href='/flower-mound/ministries/helping-you/financial-assistance/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/financial-assistance/']);\">Financial
+        Assistance</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_funerals\"><a
+        href='/flower-mound/ministries/helping-you/funerals/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/funerals/']);\">Funerals</a></li>\n
+        \       <li id=\"nav_flower-mound_ministries_helping-you_hospital-home-visits\"><a
+        href='/flower-mound/ministries/helping-you/hospital-home-visits/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/hospital-home-visits/']);\">Hospital
+        &amp; Home Visits</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_premarital-counseling\"><a
+        href='/flower-mound/ministries/helping-you/premarital-counseling/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/premarital-counseling/']);\">Premarital
+        Counseling</a></li>\n        <li id=\"nav_flower-mound_ministries_helping-you_weddings\"><a
+        href='/flower-mound/ministries/helping-you/weddings/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/helping-you/weddings/']);\">Weddings</a></li>\n
+        \     </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_groups\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Groups</a>\n        <ul>\n        <li id=\"nav_flower-mound_ministries_groups_home-groups\"><a
+        href='/flower-mound/ministries/groups/home-groups/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/groups/home-groups/']);\">Home
+        Groups</a></li>\n        <li id=\"nav_flower-mound_ministries_groups_recovery-groups\"><a
+        href='/flower-mound/ministries/groups/recovery-groups/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/groups/recovery-groups/']);\">Recovery
+        Groups</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_ministries_spacer\"><a
+        href='http://#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        'http://#']);\">Spacer</a></li>\n      <li id=\"nav_flower-mound_ministries_volunteer-opportunities\"><a
+        href='/flower-mound/ministries/volunteer-opportunities/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/volunteer-opportunities/']);\">Volunteer
+        Opportunities</a></li>\n      <li id=\"nav_flower-mound_ministries_events\"><a
+        href='/flower-mound/ministries/events/featured-events/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/featured-events/']);\">Events</a>\n
+        \       <ul>\n        <li id=\"nav_flower-mound_ministries_events_featured-events\"><a
+        href='/flower-mound/ministries/events/featured-events/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/featured-events/']);\">Featured
+        Events</a></li>\n        <li id=\"nav_flower-mound_ministries_events_calendar\"><a
+        href='/flower-mound/ministries/events/calendar/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/ministries/events/calendar/']);\">Calendar</a></li>\n
+        \   </ul>\n    </li>\n    </ul>\n    </li>\n    <li id=\"nav_flower-mound_outreach\"><a
+        href='/flower-mound/outreach/' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/flower-mound/outreach/']);\">Outreach</a>\n      <ul>\n      <li
+        id=\"nav_flower-mound_outreach_in-the-community\"><a href='#' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '#']);\">In the Community</a>\n        <ul>\n
+        \       <li id=\"nav_flower-mound_outreach_in-the-community_campus-outreach\"><a
+        href='/flower-mound/outreach/in-the-community/campus-outreach/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/campus-outreach/']);\">Campus
+        Outreach</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_champions-of-hope\"><a
+        href='/flower-mound/outreach/in-the-community/champions-of-hope/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/champions-of-hope/']);\">Champions
+        of Hope</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_chin-refugee-ministry\"><a
+        href='/flower-mound/outreach/in-the-community/chin-refugee-ministry/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/chin-refugee-ministry/']);\">Chin
+        Refugee Ministry</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_communities-in-schools\"><a
+        href='/flower-mound/outreach/in-the-community/communities-in-schools/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/communities-in-schools/']);\">Communities
+        in Schools</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_free-city-international\"><a
+        href='/flower-mound/outreach/in-the-community/free-city-international/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/free-city-international/']);\">Free
+        City International</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_intl-student-fellowship\"><a
+        href='/flower-mound/outreach/in-the-community/intl-student-fellowship/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/intl-student-fellowship/']);\">Int'l
+        Student Fellowship</a></li>\n        <li id=\"nav_flower-mound_outreach_in-the-community_jesus-said-love\"><a
+        href='/flower-mound/outreach/in-the-community/jesus-said-love/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/in-the-community/jesus-said-love/']);\">Jesus
+        Said Love</a></li>\n      </ul>\n      </li>\n      <li id=\"nav_flower-mound_outreach_our-relationships\"><a
+        href='#' onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation',
+        '#']);\">Our Relationships</a>\n        <ul>\n        <li id=\"nav_flower-mound_outreach_our-relationships_partner-churches\"><a
+        href='/flower-mound/outreach/our-relationships/partner-churches/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/partner-churches/']);\">Partner
+        Churches</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_partner-organizations\"><a
+        href='/flower-mound/outreach/our-relationships/partner-organizations/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/partner-organizations/']);\">Partner
+        Organizations</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_church-planters\"><a
+        href='/flower-mound/outreach/our-relationships/church-planters/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/church-planters/']);\">Church
+        Planters</a></li>\n        <li id=\"nav_flower-mound_outreach_our-relationships_missionaries\"><a
+        href='/flower-mound/outreach/our-relationships/missionaries/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/our-relationships/missionaries/']);\">Missionaries</a></li>\n
+        \     </ul>\n      </li>\n      <li id=\"nav_flower-mound_outreach_short-term-trips\"><a
+        href='/flower-mound/outreach/short-term-trips/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/short-term-trips/']);\">Short-term
+        Trips</a></li>\n      <li id=\"nav_flower-mound_outreach_sending-program\"><a
+        href='/flower-mound/outreach/sending-program/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/flower-mound/outreach/sending-program/']);\">Sending
+        Program</a></li>\n    </ul>\n  </li>\n        <li id=\"nav_flower-mound_resources\"
+        class=\"resources-dd\"><a href=\"/resources-flower-mound\">Resources</a>\n
+        \       \t<ul class=\"clearfix\">\n            \t<li><a href=\"#\">Categories</a>\n
+        \               \t<ul>\n                    <li class='articles-papers'><a
+        href='/resources/articles-papers' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/articles-papers']);\">Articles & Papers</a></li><li
+        class='bible-studies-classes'><a href='/resources/bibles-studies-classes'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/bibles-studies-classes']);\">Bible
+        Studies & Classes</a></li><li class='music'><a href='/resources/music' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/music']);\">Music</a></li><li class='parenting'><a
+        href='/resources/parenting' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/parenting']);\">Parenting</a></li><li class='questions-answers'><a
+        href='/resources/questions-answers' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Navigation', '/resources/questions-answers']);\">Questions & Answers</a></li><li
+        class='recommended-books'><a href='/recommended-books/' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/recommended-books/']);\">Recommended Books</a></li><li
+        class='sermons'><a href='/resources/sermons' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/sermons']);\">Sermons</a></li><li
+        class='recovery-groups-steps'><a href='/resources/recovery-groups-steps' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Navigation', '/resources/recovery-groups-steps']);\">Recovery
+        Groups: Steps</a></li><li class='retreats-conferences'><a href='/resources/retreats-conferences'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/retreats-conferences']);\">Retreats
+        & Conferences</a></li>                    </ul>\n                </li>\n               <li
+        class='the-village-blog'><a href='http://www.thevillagechurch.net/the-village-blog/'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', 'http://www.thevillagechurch.net/the-village-blog/']);\">The
+        Village Blog</a></li><li class='stay-connected'><a href='/resources/stay-connected'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/stay-connected']);\">Stay
+        Connected</a></li><li class='latest-message'><a class=\"mcms_audioplayer\"
+        href=\"https://my.ekklesia360.com/Clients/download.php?sid=5356&amp;url=http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3&amp;mediaBID=2558163&amp;template=https://my.ekklesia360.com/Clients/player/videoplayer.php&amp;module=sermon&amp;content_id=670105&amp;type=sound&amp;CMSCODE=EKK&amp;skin=&amp;CMS_LINK=https://my.ekklesia360.com&amp;width=400&amp;height=225&amp;fullscreen=&amp;image=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;overrideImage=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;playlist=false&amp;autostart=true&amp;find_category=sermons\">Latest
+        Message</a></li><li class='feeds-podcast'><a href='/resources/feeds-podcasts'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Navigation', '/resources/feeds-podcasts']);\">Feeds
+        & Podcasts</a></li>            </ul>\n        </li>\n     </ul>\n\t</nav>\n</div><!--#header-->\n\n<div
+        id=\"resource-filter-wrap\">\n    \t\t    \t\t<div id=\"resource-search\">\n
+        \       \t\t<div class=\"search-box\">\n                <form action=\"/resource-search\"
+        method=\"get\" id=\"searchForm2\" >\n                  <fieldset>\n                    <input
+        type=\"text\" id=\"search_term2\" name=\"keywords\" value=\"Search Resources\"
+        class=\"clearClick\" />\n                    <a id=\"search_go2\" href=\"#\"
+        class=\"mcmsSearch2\"><img src=\"/_img/resources_filter_go.png\" alt=\"Search\"
+        /></a>\n                  </fieldset>\n                  </form>\n                  </div>\n
+        \       \t</div><!--#resources-search-->\n</div><!--#resource-filter-wrap-->\n\n<div
+        id='page-return'><p class='return'><a href='/resources-flower-mound/'>Back
+        to Resources</a></p></div><!--#page-return-->\n\n<div id=\"content-wrap\"
+        class=\"clearfix\">\n\n    <aside class='uiColumn colSpan2 left'>\n<section
+        class=\"filter\">\n              <h4>Browse by Category</h4>\n              <ul
+        class=\"mcms_filter_list\">\n              \t<li class='articles-papers'><a
+        href='/resources/articles-papers'>Articles & Papers</a></li><li class='bible-studies-classes'><a
+        href='/resources/bibles-studies-classes'>Bible Studies & Classes</a></li><li
+        class='music'><a href='/resources/music'>Music</a></li><li class='parenting'><a
+        href='/resources/parenting'>Parenting</a></li><li class='questions-answers'><a
+        href='/resources/questions-answers'>Questions & Answers</a></li><li class='recommended-books'><a
+        href='/recommended-books/'>Recommended Books</a></li><li class='sermons'><a
+        href='/resources/sermons'>Sermons</a></li><li class='recovery-groups-steps'><a
+        href='/resources/recovery-groups-steps'>Recovery Groups: Steps</a></li><li
+        class='retreats-conferences'><a href='/resources/retreats-conferences'>Retreats
+        & Conferences</a></li>              </ul>\n</section>\n<section class=\"feed-links\">\n\t<ul>\n\t\t
+        <li class='the-village-blog'><a href='http://www.thevillagechurch.net/the-village-blog/'>The
+        Village Blog</a></li><li class='stay-connected'><a href='/resources/stay-connected'>Stay
+        Connected</a></li><li class='latest-message'><a class=\"mcms_audioplayer\"
+        href=\"https://my.ekklesia360.com/Clients/download.php?sid=5356&amp;url=http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3&amp;mediaBID=2558163&amp;template=https://my.ekklesia360.com/Clients/player/videoplayer.php&amp;module=sermon&amp;content_id=670105&amp;type=sound&amp;CMSCODE=EKK&amp;skin=&amp;CMS_LINK=https://my.ekklesia360.com&amp;width=400&amp;height=225&amp;fullscreen=&amp;image=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;overrideImage=http://www.thevillagechurch.net/_img/player_holder.jpg&amp;playlist=false&amp;autostart=true&amp;find_category=sermons\">Latest
+        Message</a></li><li class='feeds-podcasts'><a href='/resources/feeds-podcasts'>Feeds
+        & Podcasts</a></li>    </ul>\n</section>          \t\t\n\n</aside><!--aside-->\n\n
+        \   <div id=\"content\" class=\"uiColumn colSpan2\">\n    <div id='resources'
+        class='items'>\n      <article class='detail sermons'><header><div class='embed-video'><iframe
+        src=\"http://player.vimeo.com/video/80900234?title=0&byline=0&portrait=0&color=ffffff\"
+        width=\"694\" height=\"390\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen
+        allowFullScreen></iframe></div><h3 class='realtitle'>The Promise of a Savior</h3><h3
+        class='displaytitle'>The Promise of  a Savior</h3><time>Dec 01, 2013</time><p
+        class='meta'><span class='category'>Category</span>: Sermons<span class='series'>Topic</span>:
+        Advent (2013)<span class='author'>Author</span>: Matt Chandler</p></header><div
+        class='media'><div class='audio-player' data-audio-url='https://my.ekklesia360.com/Clients/download.php?sid=5356&amp;url=http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3&amp;mediaBID=2558163'><div
+        class='player'><div id='jquery_jplayer_670105' class='jp-jplayer'></div><div
+        id='jp_container_670105' class='jp-audio'><div class='jp-type-single'><div
+        class='jp-gui jp-interface'><div class='jp-play-button'><a href='javascript:;'
+        class='jp-play' tabindex='1'>Play</a><a href='javascript:;' class='jp-pause'
+        tabindex='1'>Pause</a></div><div class='jp-progress'><div class='jp-seek-bar'><div
+        class='jp-play-bar'></div></div><div class='jp-time-holder'><div class='jp-current-time'></div><div
+        class='jp-duration'></div></div></div><div class='jp-volume-holder'><div class='jp-volume-controls'><a
+        href='javascript:;' class='jp-mute' tabindex='1' title='mute'>Mute</a><a href='javascript:;'
+        class='jp-unmute' tabindex='1' title='unmute'>Unmute</a></div><div class='jp-volume-bar-holder'><div
+        class='jp-volume-bar'><div class='jp-volume-bar-value'></div></div></div></div></div></div></div></div></div><div
+        class='download'><p>Download:<span class='itunes'><a href='https://my.ekklesia360.com/Clients/download.php?sid=5356&amp;url=http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3&amp;mediaBID=2558163'
+        onClick=\"_gaq.push(['_trackEvent', 'Resources', 'Sermons MP3 Download', 'The
+        Promise of a Savior']);\">MP3</a></span></p></div><div class='share-media'><div
+        class='addthis_toolbox addthis_default_style'><a class='addthis_button_facebook'
+        addthis:url='http://www.thevillagechurch.net/sermon/the-promise-of-a-savior'
+        fb:like:href='[http://www.thevillagechurch.net/sermon/the-promise-of-a-savior]''
+        addthis:title='The Promise of a Savior'></a><a class='addthis_button_twitter'
+        addthis:url='http://www.thevillagechurch.net/sermon/the-promise-of-a-savior'
+        addthis:title='The Promise of a Savior'></a><a class='addthis_button_email'
+        addthis:url='http://www.thevillagechurch.net/sermon/the-promise-of-a-savior'
+        addthis:title='The Promise of a Savior'></a><a class='addthis_button_compact'
+        addthis:url='http://www.thevillagechurch.net/sermon/the-promise-of-a-savior'
+        addthis:title='The Promise of a Savior'></a></div></div></div><div class='text'></div></article>
+        \       \n        \n    </div>\n    </div><!--#content-->\n\n</div><!--#content-wrap-->\n\n<div
+        id='footer'>\n\t\t<div class=\"mobile-content tweets\">\n        \t<h3>Latest
+        from Twitter</h3>\n        \t<div id=\"tweets\"></div>\n        </div>\n\t\t<div
+        class=\"sitemap\">\n    \t<ul>\n        <li><a href='/flower-mound' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Footer Links', '/flower-mound']);\">Home</a></li><li><a href='/flower-mound/about-us'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', '/flower-mound/about-us']);\">About
+        Us</a></li><li><a href='/flower-mound/ministries' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Footer Links', '/flower-mound/ministries']);\">Ministries</a></li><li><a
+        href='/flower-mound/outreach' onClick=\"_gaq.push(['_trackEvent', 'flower-mound',
+        'Footer Links', '/flower-mound/outreach']);\">Outreach</a></li><li><a href='/resources-flower-mound'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', '/resources-flower-mound']);\">Resources</a></li>
+        \       </ul>\n         <p>2101 Justin Rd. &bull; Flower Mound, Texas 75028
+        &bull; Phone: (972) 537-1100 &bull; Fax: (972) 537-1101</p>             <div
+        class=\"mobile-content\"><ul class=\"social-links\">\n            \t<li class='facebook'><a
+        href='http://www.facebook.com/TheVillageChurch' onClick=\"_gaq.push(['_trackEvent',
+        'flower-mound', 'Footer Links', 'http://www.facebook.com/TheVillageChurch']);\"
+        target='_blank'>Facebook</a></li><li class='twitter'><a href='http://twitter.com/villagechurchtx'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', 'http://twitter.com/villagechurchtx']);\"
+        target='_blank'>Twitter</a></li><li class='vimeo'><a href='http://www.vimeo.com/thevillagechurch'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', 'http://www.vimeo.com/thevillagechurch']);\"
+        target='_blank'>Vimeo</a></li>            </ul></div>\n        </div>\n        <div
+        class=\"copyright\">\n        \t<p>&copy; 2013 The Village Church </p>\n        \t<ul
+        class=\"social-links\">\n            \t<li class='facebook'><a href='http://www.facebook.com/TheVillageChurch'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', 'http://www.facebook.com/TheVillageChurch']);\"
+        target='_blank'>Facebook</a></li><li class='twitter'><a href='http://twitter.com/villagechurchtx'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', 'http://twitter.com/villagechurchtx']);\"
+        target='_blank'>Twitter</a></li><li class='vimeo'><a href='http://www.vimeo.com/thevillagechurch'
+        onClick=\"_gaq.push(['_trackEvent', 'flower-mound', 'Footer Links', 'http://www.vimeo.com/thevillagechurch']);\"
+        target='_blank'>Vimeo</a></li>            </ul>\n            <div class=\"credits\"><div
+        class='poweredby'><span>Powered by</span> <a href=\"http://www.ekklesia360.com/\"
+        title='Ekklesia 360 | Web Development &amp; CMS' >Ekklesia 360</a></div></div>
+        \ \n        </div>\n    </div><!--#footer-->\n    <a id=\"campus-switch\"
+        href=\"/campus-popup.php\" class=\"campus-popup\">Campus Select</a>\n<script
+        type=\"text/javascript\">\r\n\r\n  var _gaq = _gaq || [];\r\n  _gaq.push(['_setAccount',
+        'UA-3409879-2']);\r\n  _gaq.push(['_trackPageview']);\r\n\r\n  (function()
+        {\r\n    var ga = document.createElement('script'); ga.type = 'text/javascript';
+        ga.async = true;\r\n    ga.src = ('https:' == document.location.protocol ?
+        'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r\n    var
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga,
+        s);\r\n  })();\r\n\r\n</script>  \n\n</div><!--#container-->\n</div><!--#wrap-->\n\n<script
+        src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>\n<script>!window.jQuery
+        && document.write(unescape('%3Cscript src=\"/_js/jquery-1.7.2.js\"%3E%3C/script%3E'))</script>\n\n<script
+        src=\"/_js/jquery.respond.js\"></script>\n<script src=\"http://api.monkcms.com/Clients/monkcms-dev.js\"></script>\n<script
+        src=\"/_js/jquery-cookies.js\"></script>\n<script src=\"/_js/jquery.colorbox-min.js\"></script>\n<script
+        src=\"/_js/jquery.cycle.min.js\"></script>\n<script src=\"/_js/responsive-tables.js\"></script>\n<!--
+        <script src=\"/_js/jquery.getTweets.js\"></script> -->\n<script src=\"/_js/site.js?t=20131011135119\"></script>\n\n<script
+        type=\"text/javascript\">\n$('document').ready(function(){\n\t$('#campus-list
+        a.flower-mound').addClass('current');\n\t\tshowCampusSwitch();\n\t});\n</script>\n<script
+        src=\"/_player/jquery.jplayer.min.js\"></script>\n<script src=\"/_js/jquery-ui.min.js\"></script>\n<script
+        src=\"/_js/ui.selectmenu.js\"></script>\n<script type=\"text/javascript\">\n\t$(document).ready(function(){\n\t\t\t\t$('#jquery_jplayer_670105').jPlayer({ready:
+        function (event) {\n\t\t\t$(this).jPlayer('setMedia', {mp3:'http://media.thevillagechurch.net/sermons/audio/201312011115FMWC21ASAAA_MattChandler_AdventPt1-ThePromiseOfASavior.mp3'
+        });},\n\t\t\tswfPath: '/_player',\n\t\t\tsupplied: 'mp3',\n\t\t\tcssSelectorAncestor:
+        '#jp_container_670105',\n\t\t\twmode: 'window',\n\t\t\tsmoothPlayBar: false,\n\t\t\tkeyEnabled:
+        true\n\t\t});\n\t\t\t\t$('.articles--papers .author').text('Author');\n\t\t$('#nav_flower-mound_resources').addClass('current');\n\t\t$('.media
+        .download span:first-child').addClass('first');\n\t\t$('#resources article').each(function()
+        {\n\t\t\tif ($(this).find('.displaytitle').length > 0) {\n\t\t\t\t$(this).find('.realtitle').hide();\n\t\t\t}\n\t\t});
+        \n\t\tif ($('.download a').length == 0){\n\t\t\t $('.download').remove();\n\t\t}\n\t$('.mcms_filter_list
+        .sermons').addClass('current');\t});\n</script>\n<script type=\"text/javascript\">\n\tvar
+        addthis_config = {\"data_track_clickback\":true, ui_click: true};\n\tvar addthis_share
+        = {\n\ttemplates: { twitter: '{{title}} from @villagechurchtx - {{url}}' },\n\turl_transforms:
+        { shorten: { twitter: 'bitly' }},\n    shorteners: {\n        bitly: {\n             login:
+        'villagechurchtx',\n             apiKey: 'R_851fd1621531781b2b306d082707ccc6'\n
+        \       }\n    }\n\t}\n</script>\n<script type=\"text/javascript\" src=\"http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e04c5cf1189146a&domready=1\"></script>\n<link
+        rel=\"stylesheet\" href=\"/_css/reftagger.css\" />\n<script src=\"http://bible.logos.com/jsapi/referencetagging.js\"
+        type=\"text/javascript\"></script>\n<script type=\"text/javascript\">\n\tLogos.ReferenceTagging.lbsCssOverride
+        = true;\n    Logos.ReferenceTagging.lbsBibleVersion = \"ESV\";\n    Logos.ReferenceTagging.lbsLinksOpenNewWindow
+        = true;\n    Logos.ReferenceTagging.lbsLogosLinkIcon = \"dark\";\n    Logos.ReferenceTagging.lbsNoSearchTagNames
+        = [ \"h2\", \"h3\", \"h3\", \"h4\", \"h5\", \"h6\" ];\n    Logos.ReferenceTagging.lbsTargetSite
+        = \"biblia\";\n    Logos.ReferenceTagging.tag();\n</script>\n\n<!-- BEGING
+        CRAZYEGG TRACKING -->\n<script type=\"text/javascript\">\nsetTimeout(function(){var
+        a=document.createElement(\"script\");\nvar b=document.getElementsByTagName(\"script\")[0];\na.src=document.location.protocol+\"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/0301.js?\"+Math.floor(new
+        Date().getTime()/3600000);\na.async=true;a.type=\"text/javascript\";b.parentNode.insertBefore(a,b)},
+        1);\n</script>\n<!-- END CRAZYEGG TRACKING -->\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Sat, 07 Dec 2013 19:50:08 GMT
+- request:
+    method: get
+    uri: http://player.vimeo.com/video/80900234
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/31.0.1650.57 Safari/537.36
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Expires:
+      - Sun, 08 12 2013 22:09:46 GMT
+      Vary:
+      - Accept-Encoding
+      Server:
+      - TornadoServer/3.1.1
+      Etag:
+      - ! '"05d58734d47a7cd663f8d1b7609f06e730c52f28"'
+      P3p:
+      - CP="This is not a P3P policy! See http://vimeo.com/privacy"
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sun, 08 Dec 2013 02:55:53 GMT
+      X-Varnish:
+      - 3960158762 3949781604
+      Age:
+      - '17167'
+      Via:
+      - 1.1 varnish
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      X-Player2:
+      - '1'
+      X-Varnish-Cache:
+      - '1'
+      Connection:
+      - close
+      X-Vserver:
+      - 10.90.128.192
+    body:
+      encoding: US-ASCII
+      string: ! '<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport
+        content="width=device-width,initial-scale=1,user-scalable=no"><link rel=canonical
+        href="http://vimeo.com/80900234"><title>The Promise of a Savior from The Village
+        Church on Vimeo</title><style>body,html,iframe,#player,.fallback{width:100%;height:100%;margin:0;padding:0;background-color:#000;overflow:hidden}.player.loading{opacity:0}</style><body><div
+        id=player class=player><noscript><object id=flash-object type="application/x-shockwave-flash"
+        width="100%" height="100%" data="/moog/80900234"><param name=flashvars value="clip_id=80900234&amp;api=1&amp;moogaloop_type=moogaloop&amp;noscript"><param
+        name=movie value="/moog/80900234?noscript"><param name=allowfullscreen value=true><param
+        name=allowscriptaccess value=always><param name=wmode value=opaque><param
+        name=quality value=high><param name=scalemode value=noscale><div class=fallback><iframe
+        src="/video/80900234/fallback?noscript" frameborder=0 title="Player Fallback
+        Message"></iframe></div></object></noscript></div><script>(function(a,g){var
+        c="webkitEnterFullScreen"in a.createElement("video"),e=c||"exitFullscreen"in
+        a||"webkitExitFullscreen"in a||"webkitCancelFullScreen"in a||"mozCancelFullScreen"in
+        a||"msExitFullscreen"in a,d=e&&(c||a.fullscreenEnabled||a.webkitFullscreenEnabled||a.mozFullScreenEnabled||a.msFullscreenEnabled),c=!1;try{c=!(!navigator.mimeTypes["application/x-shockwave-flash"]&&!(navigator.plugins["Shockwave
+        Flash"]||window.ActiveXObject&&new ActiveXObject("ShockwaveFlash.ShockwaveFlash")))}catch(r){}var
+        k=
+
+        /MSIE 9/.test(navigator.userAgent)&&/Windows Phone/.test(navigator.userAgent),q=/IE
+        10/.test(navigator.userAgent),k=e&&d||e&&!d&&!c||q&&!c||k,e=a.getElementsByTagName("script")[0],d=a.createElement("script"),h=!1,j=!1,b={"cdn_url":"http://a.vimeocdn.com","view":1,"request":{"files":{"h264":{"mobile":{"profile":116,"origin":"ns3.pdl","url":"http://pdl.vimeocdn.com/60551/075/209498976.mp4?token2=1386475104_f3fe0e0e01cec69e5e7f1204570deb2d&aksessionid=a834078dd7ba5941","height":270,"width":480,"id":209498976,"bitrate":541,"availability":60},"hd":{"profile":113,"origin":"ns3.pdl","url":"http://pdl.vimeocdn.com/30028/547/209498966.mp4?token2=1386475104_d4ba7ab850c69a0a4f7a68226aab8a9b&aksessionid=e162e7b11e4a30ac","height":720,"width":1280,"id":209498966,"bitrate":1919,"availability":60},"sd":{"profile":112,"origin":"ns3.pdl","url":"http://pdl.vimeocdn.com/12788/387/209498961.mp4?token2=1386475104_ab9847fb11fcc79f94f27b09a766cdc6&aksessionid=9ba616a2aa5a2724","height":360,"width":640,"id":209498961,"bitrate":666,"availability":60}},"hls":{"all":"http://av34.hls.vimeocdn.com/i/,12788/387/209498961,30028/547/209498966,60551/075/209498976,.mp4.csmil/master.m3u8?primaryToken=1386475104_6019280342e6063a09036f798a37f0ae","hd":"http://av34.hls.vimeocdn.com/i/,30028/547/209498966,.mp4.csmil/master.m3u8?primaryToken=1386475104_af776a8d7cf3a5c0c42679cb4f08fe93"},"codecs":["h264"]},"ga_account":"UA-76641-35","timestamp":1386471353,"expires":3751,"prefix":"/v2","session":"2e79c641e37653d6a16c2bf80404684f","cookie":{"scaling":1,"volume":1,"hd":null},"referrer":null,"conviva_account":"c3.Vimeo","flags":{"login":1,"preload_video":1,"plays":1,"partials":1,"conviva":1},"build":{"player":"7c9d1398","js":"2.1.17"},"urls":{"canvas_js":"http://a.vimeocdn.com/p/2.1.17/js/player.canvas.js","zeroclip_js":"http://a.vimeocdn.com/p/external/zeroclipboard/ZeroClipboard-patch.js","moog_js":"http://a.vimeocdn.com/p/2.1.17/js/moogaloop.js","moog":"http://a.vimeocdn.com/p/flash/moogaloop/5.5.8/moogaloop.swf?clip_id=80900234","conviva":"http://livepassdl.conviva.com/ver/2.72.0.13589/LivePass.js","zeroclip_swf":"http://a.vimeocdn.com/p/external/zeroclipboard/ZeroClipboard.swf","js":"http://a.vimeocdn.com/p/2.1.17/js/player.js","conviva_service":"http://livepass.conviva.com","css":"http://a.vimeocdn.com/p/2.1.17/css/player.css","flideo":"http://a.vimeocdn.com/p/flash/flideo/1.0.3b10/flideo.swf"},"signature":"a9da98e5b705cf40e8101dfda08b4580"},"player_url":"player.vimeo.com","video":{"rating":{"id":6},"allow_hd":1,"height":720,"owner":{"account_type":"pro","name":"The
+        Village Church","img":"http://b.vimeocdn.com/ps/287/354/2873542_75.jpg","url":"http://vimeo.com/thevillagechurch","img_2x":"http://b.vimeocdn.com/ps/287/354/2873542_300.jpg","id":549249},"thumbs":{"1280":"http://b.vimeocdn.com/ts/456/926/456926173_1280.jpg","960":"http://b.vimeocdn.com/ts/456/926/456926173_960.jpg","640":"http://b.vimeocdn.com/ts/456/926/456926173_640.jpg"},"duration":2851,"id":80900234,"hd":1,"embed_code":"<iframe
+        src=\"//player.vimeo.com/video/80900234\" width=\"500\" height=\"281\" webkitallowfullscreen
+        mozallowfullscreen allowfullscreen></iframe>","default_to_hd":0,"title":"The
+        Promise of a Savior","url":"http://vimeo.com/80900234","privacy":"anybody","share_url":"http://vimeo.com/80900234","width":1280,"embed_permission":"public","fps":30.0},"build":{"player":"7c9d1398","rpc":"dev"},"embed":{"player_id":null,"outro":"text","api":2,"context":"embed.main","time":0,"color":"ffffff","settings":{"volume":1,"fullscreen":1,"byline":0,"like":0,"playbar":1,"title":0,"color":1,"branding":0,"share":1,"scaling":1,"logo":0,"info_on_pause":0,"watch_later":0,"portrait":0,"embed":0,"badge":0},"on_site":0,"loop":0,"autoplay":0},"vimeo_url":"vimeo.com","user":{"liked":0,"account_type":"none","logged_in":0,"owner":0,"watch_later":0,"id":0,"mod":0}};if(b.request){"vod"in
+        b.video&&b.video.vod.is_feature&&c&&(k=!1);if(k){g.className="player loading";var
+        l=(new Date).getTime(),c=a.createElement("div");c.innerHTML="<svg/>";d.src="http://www.w3.org/2000/svg"===(c.firstChild&&c.firstChild.namespaceURI)?b.request.urls.js:
+
+        b.request.urls.canvas_js;e.parentNode.insertBefore(d,e);d["onreadystatechange"in
+        d?"onreadystatechange":"onload"]=function(){if(!h&&(!this.readyState||"loaded"===this.readyState||"complete"===this.readyState)){h=!0;var
+        a=(new Date).getTime()-l;_gaq.push(["player._trackTiming","Player","JavaScript
+        Load",a]);j=new VimeoPlayer(g,b,m||{link:f,startTime:l})}};var m=!1,f=a.createElement("link");f.rel="stylesheet";f.href=b.request.urls.css;f.id="main";a.getElementsByTagName("head")[0].appendChild(f);f.onload=
+
+        function(){m=!0;var a=(new Date).getTime()-l;_gaq.push(["player._trackTiming","Player","CSS
+        Load",a])}}else if(c){g.innerHTML=''<object id="flash-object" type="application/x-shockwave-flash"
+        width="100%" height="100%" data="''+b.request.urls.moog+"&z="+(new Date).getTime()+''"><param
+        name="flashvars" value="clip_id=''+b.video.id+"&amp;embed_location="+b.request.referrer+''&amp;js_getConfig=getConfig&amp;js_setConfig=setConfig&amp;js_onLoad=onMoogaloopLoaded&amp;api=1&amp;moogaloop_type=moogaloop"><param
+        name="movie" value="''+
+
+        b.request.urls.moog+"&z="+(new Date).getTime()+''"><param name="allowfullscreen"
+        value="true"><param name="allowscriptaccess" value="always"><param name="wmode"
+        value="opaque"><param name="quality" value="high"><param name="scalemode"
+        value="noscale"></object>'';var n=!1,p=a.getElementById("flash-object");window.onMoogaloopLoaded=function(){n=!0;!j&&h&&(g.className="player",j=new
+        VimeoPlayer(p,b))};window.getConfig=function(){return b};window.setConfig=function(a){b=a};d.src=b.request.urls.moog_js;
+
+        e.parentNode.insertBefore(d,e);d["onreadystatechange"in d?"onreadystatechange":"onload"]=function(){if(!h&&(!this.readyState||"loaded"===this.readyState||"complete"===this.readyState))h=!0,!j&&n&&(j=new
+        VimeoPlayer(p,b))}}else g.innerHTML=''<div class="fallback"><iframe src="/video/80900234/fallback?js&amp;referrer=''+encodeURIComponent(b.request.referrer)+''"
+        frameborder="0"></iframe></div>'';window._gaq=[["player._setAccount",''UA-76641-35''],["player._setDomainName","player.vimeo.com"],
+
+        ["player._trackPageview"]];c=a.createElement("script");c.async=!0;c.src="http://www.google-analytics.com/ga.js";e.parentNode.insertBefore(c,e)}})(document,document.getElementById("player"));
+
+        </script>'
+    http_version: 
+  recorded_at: Sun, 08 Dec 2013 02:55:53 GMT
 recorded_with: VCR 2.6.0

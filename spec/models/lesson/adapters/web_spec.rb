@@ -8,28 +8,28 @@ describe Lesson::Adapters::Web do
   let(:nokogiri_doc) { Nokogiri::HTML(open url) }
   subject { Lesson::Adapters::Web.new(url, nokogiri_doc) }
   
-  describe '.new_from_url(url)' do    
-    it "creates a Lesson::Adapters::Web" do
-      Lesson::Adapters::Web.new_from_url(url).should be_an_instance_of Lesson::Adapters::Web
-    end
-  end
-  
   it "loads the correct domain adapter class" do
-    subject.domain_adapter.should be_kind_of Lesson::Adapters::Web::SomethingCom
+    subject.domain_adapter.should be_kind_of Lesson::Adapters::WebSites::SomethingCom
   end
   
   it "raises AdapterNotFound if no domain adapter exist" do
     @url = 'http://example.com'
-    lambda { subject }.should raise_error Lesson::Adapters::NotFound, "No adapter for: Lesson::Adapters::Web::ExampleCom"
+    lambda { subject }.should raise_error Lesson::Adapters::NotFound, "No adapter for: Lesson::Adapters::WebSites::ExampleCom"
   end
   
   Lesson::Adapters::Base::ATTRIBUTES.each do |attr|
     it { should delegate_method(attr).to(:domain_adapter) }
   end
 
+  describe '.new_from_url(url)' do    
+    it "creates a Lesson::Adapters::Web" do
+      Lesson::Adapters::Web.new_from_url(url).should be_an_instance_of Lesson::Adapters::Web
+    end
+  end
+
 end
 
 # DummyKlass
-class Lesson::Adapters::Web::SomethingCom
+class Lesson::Adapters::WebSites::SomethingCom
   def initialize(path, nokogiri_doc)  end
 end

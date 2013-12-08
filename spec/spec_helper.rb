@@ -16,6 +16,9 @@ require 'pry'
 # Requires supporting ruby files with custom matchers and macros, etc,
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Requires shared_examples using the convention: _shared_example_name.rb (similar to view partials)
+Dir.glob(Rails.root.join('spec/**/_*.rb')).each {|f| require f}
+
 RSpec.configure do |config|
   config.include Devise::TestHelpers,      :type => :controller
   config.extend  Devise::ControllerHelper, :type => :controller
@@ -33,13 +36,8 @@ RSpec.configure do |config|
     c.hook_into :webmock
   end
   
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
   config.use_transactional_fixtures = true
-
   config.infer_base_class_for_anonymous_controllers = true
-
   config.order = "random"
   
   # http://railscasts.com/episodes/413-fast-tests?view=asciicast

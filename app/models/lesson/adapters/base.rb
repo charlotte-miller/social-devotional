@@ -12,9 +12,11 @@ module Lesson::Adapters
     attr_accessor *ATTRIBUTES = [
       :title,
       :description,
+      :author,
       :backlink,
       :published_at,
       :duration,
+      :poster_img_remote_url,
       :audio_remote_url,
       :video_remote_url ]
       # :poster_img_remote_url
