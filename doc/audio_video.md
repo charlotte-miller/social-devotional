@@ -33,6 +33,8 @@ http://docs.sublimevideo.net/write-proper-video-elements
   ```
 
 ## AWS
+  http://explainshell.com/
+  
   it looks like uploads are auto streamed by the gem, but if you need more info.  You can also configure the 'large' threshold.
   http://stackoverflow.com/questions/9589664/stream-uploading-large-files-using-aws-sdk
   - Cloudfront should ONLY have access to the prod directory
@@ -59,7 +61,7 @@ http://docs.sublimevideo.net/write-proper-video-elements
   
 
 ## Convert
-options: audio_bitrate: '128k', stereo:true
+http://xkcd.com/927/
 
 Video-to-Audio: ``ffmpeg -i Sample.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 Sample.mp3``  [explain](http://linuxpoison.blogspot.com/2010/04/how-to-extract-audio-from-video-file.html)
 Audio-to-Video: ``ffmpeg -i Sample.jpg -i Sample.mp3 -vcodec libx264 result2.mp4``

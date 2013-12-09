@@ -21,7 +21,7 @@ module Lesson::AttachedMedia
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
     has_attachable_file :video, :path => ':rails_env/:class/:id/:attachment/:style/:filename', # :hash.:extension
                         :hash_data  => ":class/:attachment/:id/:style",
-                        :processors => [:audio_to_video, :ffmpeg, :qtfaststart],  #, :qtfaststart
+                        :processors => [:audio_to_video, :ffmpeg, :qtfaststart],
                         :styles => {
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },
                           mp4:           { geometry: SD_SIZE,  :format => 'mp4' , :streaming => true},
