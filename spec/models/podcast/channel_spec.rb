@@ -75,14 +75,14 @@ describe Podcast::Channel do
     end
   end
   
-  describe '#poster_image' do
+  describe '#poster_img' do
     it "is the channel's image" do
-      subject.poster_image.should == 'http://marshill.org/teaching/files/powerpress/marslogo.png'
+      subject.poster_img.should == 'http://marshill.org/teaching/files/powerpress/marslogo.png'
     end
 
     it "ignores javascript urls" do
       @spamy_content = @podcast_xml.gsub('<url>http://marshill.org/teaching/files/powerpress/marslogo.png', '<url>javascript://alert("spam")')
-      spamy.poster_image.should == nil
+      spamy.poster_img.should == nil
     end
   end
   

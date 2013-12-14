@@ -89,7 +89,7 @@ class Study < ActiveRecord::Base
         title:                  podcast_channel.title,
         description:            podcast_channel.description,
         ref_link:               podcast_channel.homepage,
-        poster_img_remote_url:  podcast_channel.poster_image,
+        poster_img_remote_url:  podcast_channel.poster_img,
         last_published_at:      podcast_channel.last_updated,
       }.merge(attribute_overrides), as: 'sudo')
     end

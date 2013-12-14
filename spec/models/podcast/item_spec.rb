@@ -118,18 +118,24 @@ describe Podcast::Item do
     # end
   end
   
-  describe 'media_length' do
+  describe '#media_length' do
     it "is the byte length of the media" do
       subject.media_length.should == 17689826
     end
   end
   
-  describe 'media_type' do
+  describe '#media_type' do
     it "is a string describing the file format" do
       subject.media_type.should == 'audio/mpeg'
     end
   end
   
+  describe '#poster_img' do
+    it "returns the parent_channel's poster_img" do
+      subject.poster_img.should eql 'http://marshill.org/teaching/files/powerpress/marslogo.png'
+    end
+  end
+
   # describe '#next' do
   #   it "returns the next item" do
   #     pending

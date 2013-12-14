@@ -30,7 +30,7 @@ class Podcast::Channel
     sanitize_url(channel.link)
   end
   
-  def poster_image
+  def poster_img
     sanitize_url(channel.image.try :url)
   end
   

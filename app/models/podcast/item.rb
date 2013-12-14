@@ -69,7 +69,7 @@ class Podcast::Item
   end
   
   def poster_img
-    parent_channel.poster_image
+    parent_channel.poster_img
   end
 
   # Delegate missing methods to rss_item_obj
