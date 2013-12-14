@@ -66,7 +66,10 @@ module AttachableFile
           end
         end
       }
-      
+
+    # Required for rails to load before the database is migrated
+    rescue StandardError => error
+      raise error if self.table_exists?
     end
   end
 end
