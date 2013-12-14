@@ -24,10 +24,12 @@ module Lesson::Adapters
         attrs.each {|attr| klass.send("#{attr}=", 'foo')}
         klass.to_hash.symbolize_keys.should eql({
           title:'foo',
+          author:'foo',
           description:'foo',
           backlink:'foo',
           published_at:'foo',
           duration:'foo',
+          poster_img_remote_url:'foo',
           audio_remote_url:'foo',
           video_remote_url:'foo',
         })

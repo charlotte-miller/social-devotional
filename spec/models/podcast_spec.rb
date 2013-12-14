@@ -106,7 +106,7 @@ describe Podcast do
   
   describe '#update_channel( normalized_channel )' do
     let(:podcast) { create(:podcast) }
-    let(:channel_obj) { Podcast::Normalize::Channel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
+    let(:channel_obj) { Podcast::Channel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
     let(:recycle_file) { Lesson.any_instance.stub(:duplicate?)  }
     subject { podcast.update_channel( channel_obj ) }
     

@@ -39,7 +39,7 @@ describe Study do
   end
   
   describe 'new_from_podcast_channel(normalized_channel, attribute_overrides={})' do
-    it "builds from a Podcast::Normalized::Channel" do
+    it "builds from a Podcast::Channel" do
       pending 'TODO'
     end
     

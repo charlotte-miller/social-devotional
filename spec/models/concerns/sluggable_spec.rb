@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe Sluggable do
-  subject { DummyClass.new }
+  subject { SluggableDummyClass.new }
   
   describe 'FriendlyId integration' do
     it "responds_to friendly_id" do
-      DummyClass.should respond_to :friendly_id
+      SluggableDummyClass.should respond_to :friendly_id
     end
   end
   
@@ -18,7 +18,7 @@ describe Sluggable do
 end
 
  
-class DummyClass < ActiveRecord::Base
+class SluggableDummyClass < ActiveRecord::Base
   has_no_table
   
   include Sluggable

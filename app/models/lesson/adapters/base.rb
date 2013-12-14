@@ -2,9 +2,11 @@
 # Provides a common interface for any lesson-source
 #
 module Lesson::Adapters
-  class NotFound < StandardError;  end
+  class Invalid  < StandardError; end
+  class NotFound < StandardError; end
 
   class Base
+    include Sanitizable
     include ActsAsInterface
     include ActiveModel::Validations
 
@@ -16,15 +18,14 @@ module Lesson::Adapters
       :backlink,
       :published_at,
       :duration,
-      :poster_img_remote_url,
       :audio_remote_url,
-      :video_remote_url ]
-      # :poster_img_remote_url
+      :video_remote_url,
+      :poster_img_remote_url ]
 
       validates_presence_of *ATTRIBUTES  #does NOT raise on initialize
 
     def to_hash
-      raise "InvalidAdapter" if invalid?
+      raise Invalid.new(@errors.messages) if invalid?
       ATTRIBUTES.inject(HashWithIndifferentAccess.new) {|hash, attr| hash[attr]= send(attr); hash }
     end
   end

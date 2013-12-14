@@ -53,7 +53,7 @@ class Podcast < ActiveRecord::Base
       Podcast::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
         podcast_obj.touch(:last_checked)
         
-        channel = Podcast::Normalize::Channel.new(podcast_xml)
+        channel = Podcast::Channel.new(podcast_xml)
         if (channel.last_updated > podcast_obj.last_updated rescue true)
           podcast_obj.update_channel( channel )
         end
@@ -65,12 +65,12 @@ class Podcast < ActiveRecord::Base
 
   # Areas of Responcibility
   # - podcast (self)
-  # - normalized_channel
+  # - podcast_channel
   # - studies
   # - lesson
-  def update_channel( normalized_channel )
+  def update_channel( podcast_channel )
     # Process in chronological order
-    new_lessons = normalized_channel.items.reverse.map do |item|
+    new_lessons = podcast_channel.items.reverse.map do |item|
       # 0) build lesson
       lesson = Lesson.new_from_adapter( Lesson::Adapters::Podcast.new(item) )
 
@@ -80,7 +80,7 @@ class Podcast < ActiveRecord::Base
       # 2) assign or create study
       recent_studies = studies.reload.w_lessons.most_recent(5)
       study   = recent_studies.find {|study| study.should_include? lesson }
-      study ||= Study.new_from_podcast_channel(normalized_channel, podcast:self).tap(&:save!)
+      study ||= Study.new_from_podcast_channel(podcast_channel, podcast:self).tap(&:save!)
       lesson.study = study
 
       # 4) save lesson

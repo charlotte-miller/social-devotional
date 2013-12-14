@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AttachableFile do
-  subject { DummyClass.new }
+  subject { AttachableFileDummyClass.new }
   
   describe '.has_attachable_file' do
     let(:paperclip_obj) { subject.wonderful_img }
@@ -77,7 +77,7 @@ describe AttachableFile do
   end
 end
 
-class DummyClass < ActiveRecord::Base
+class AttachableFileDummyClass < ActiveRecord::Base
   has_no_table
   
   include AttachableFile

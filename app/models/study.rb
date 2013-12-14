@@ -84,13 +84,13 @@ class Study < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   class << self
-    def new_from_podcast_channel(normalized_channel, attribute_overrides={})
+    def new_from_podcast_channel(podcast_channel, attribute_overrides={})
       new({
-        title:                  normalized_channel.title,
-        description:            normalized_channel.description,
-        ref_link:               normalized_channel.homepage,
-        poster_img_remote_url:  normalized_channel.poster_image,
-        last_published_at:      normalized_channel.last_updated,
+        title:                  podcast_channel.title,
+        description:            podcast_channel.description,
+        ref_link:               podcast_channel.homepage,
+        poster_img_remote_url:  podcast_channel.poster_image,
+        last_published_at:      podcast_channel.last_updated,
       }.merge(attribute_overrides), as: 'sudo')
     end
   end

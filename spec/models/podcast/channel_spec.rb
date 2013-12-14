@@ -16,17 +16,17 @@
 
 require 'spec_helper'
 
-describe Podcast::Normalize::Channel do
+describe Podcast::Channel do
   before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
-  subject { Podcast::Normalize::Channel.new(@podcast_xml) }
-  let(:spamy) { Podcast::Normalize::Channel.new(@spamy_content) }
+  subject { Podcast::Channel.new(@podcast_xml) }
+  let(:spamy) { Podcast::Channel.new(@spamy_content) }
   
   describe '.new(xml_str)' do
     it "requires an xml string" do
-      lambda { Podcast::Normalize::Channel.new }.should raise_error(ArgumentError)
-      lambda { Podcast::Normalize::Channel.new('') }.should raise_error(ArgumentError)
-      lambda { Podcast::Normalize::Channel.new('<not xml>')}.should raise_error(RSS::NotWellFormedError)
-      lambda { Podcast::Normalize::Channel.new(@podcast_xml) }.should_not raise_error
+      lambda { Podcast::Channel.new }.should raise_error(ArgumentError)
+      lambda { Podcast::Channel.new('') }.should raise_error(ArgumentError)
+      lambda { Podcast::Channel.new('<not xml>')}.should raise_error(RSS::NotWellFormedError)
+      lambda { Podcast::Channel.new(@podcast_xml) }.should_not raise_error
     end
   end
   
@@ -102,9 +102,9 @@ describe Podcast::Normalize::Channel do
   end
   
   describe 'items' do
-    it "is an array of Podcast::Normalize::Item" do
+    it "is an array of Podcast::Item" do
       subject.items.should be_a Array
-      subject.items.first.should be_a Podcast::Normalize::Item
+      subject.items.first.should be_a Podcast::Item
     end
   end
   

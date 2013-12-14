@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-describe Podcast::Normalize::Base do
+describe Sanitizable do
+  subject { SanitizableDummy.new }
   
   describe '#plain_text(str)' do
     before(:all) do
@@ -60,4 +61,9 @@ describe Podcast::Normalize::Base do
       subject.send(:sanitize_url, bad_url).should be_nil
     end
   end
+  
+end
+
+class SanitizableDummy
+  include Sanitizable
 end

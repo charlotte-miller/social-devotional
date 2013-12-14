@@ -49,11 +49,11 @@ class Lesson < ActiveRecord::Base
   acts_as_list scope: :study
 
   # Private 'sudo' access to everything
-  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, :poster_img, as: 'sudo'
+  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, :poster_img, :poster_img_remote_url, as: 'sudo'
   
   # Public
   attr_accessible :study, :study_id, :position, :title, :author, :description, :backlink, :published_at, :machine_sorted,
-                  :audio, :video, :audio_remote_url, :video_remote_url, :poster_img
+                  :audio, :video, :poster_img, :audio_remote_url, :video_remote_url, :poster_img_remote_url
 
 
   # http://sunspot.github.com/
@@ -97,7 +97,7 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   class << self
     
-    # Builds a @lesson from a Podcast::Normalize::Item
+    # Builds a @lesson from a Podcast::Item
     # WARN Study must be added later
     def new_from_podcast_item(podcast_item)
       lesson = new({

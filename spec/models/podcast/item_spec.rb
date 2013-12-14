@@ -16,17 +16,31 @@
 
 require 'spec_helper'
 
-describe Podcast::Normalize::Item do
+describe Podcast::Item do
   before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
-  let!(:channel) { Podcast::Normalize::Channel.new(@podcast_xml) }
-  let(:spamy) { Podcast::Normalize::Channel.new(@spamy_content).items.first }
-  subject { channel.items.first }
+  let!(:parent_channel) { Podcast::Channel.new(@podcast_xml) }
+  let(:spamy) { Podcast::Channel.new(@spamy_content).items.first }
+  subject { parent_channel.items.first }
   
-  describe '.new(rss_item_obj)' do
+  describe '.new(parent_channel, rss_item_obj)' do
+    it "requires a Podcast::Channel" do
+      lambda { Podcast::Item.new(nil, nil) }.should raise_error(ArgumentError, 'Podcast::Channel required')
+      lambda { Podcast::Item.new('NOT Podcast::Channel', nil)}.should raise_error(ArgumentError, 'Podcast::Channel required')
+    end
+    
     it "requires a RSS::Rss::Channel::Item" do
-      lambda { Podcast::Normalize::Item.new }.should raise_error(ArgumentError)
-      lambda { Podcast::Normalize::Item.new('NOT RSS::Rss::Channel::Item')}.should raise_error(ArgumentError)
-      lambda { Podcast::Normalize::Item.new( channel.native_rss_items.first ) }.should_not raise_error
+      lambda { Podcast::Item.new( parent_channel, nil ) }.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
+      lambda { Podcast::Item.new( parent_channel, 'NOT RSS::Rss::Channel::Item')}.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
+    end
+    
+    it "builds from proper arguments" do
+      lambda { Podcast::Item.new( parent_channel, parent_channel.native_rss_items.first ) }.should_not raise_error
+    end
+  end
+  
+  describe '#parent_channel' do
+    it "returns the parent_channel" do
+      subject.parent_channel.should eql parent_channel
     end
   end
   

@@ -83,7 +83,7 @@ describe Lesson do
     end
     
     before(:all) {  }
-    let!(:channel) { Podcast::Normalize::Channel.new(@podcast_xml) }
+    let!(:channel) { Podcast::Channel.new(@podcast_xml) }
     subject { Lesson.new_from_podcast_item(channel.items.first) }
     
     it "builds a lesson from a podcast_item" do
