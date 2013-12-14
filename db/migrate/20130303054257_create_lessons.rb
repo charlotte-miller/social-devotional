@@ -5,6 +5,7 @@ class CreateLessons < ActiveRecord::Migration
       t.integer       :position,        default: 0
       t.string        :title,           null: false
       t.text          :description
+      t.string        :author
       t.string        :backlink
       t.attachment    :poster_img
       t.string        :poster_img_fingerprint

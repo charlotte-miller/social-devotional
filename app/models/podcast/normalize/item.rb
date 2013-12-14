@@ -11,8 +11,12 @@ module Podcast::Normalize
       plain_text(rss_item_obj.title)
     end
     
+    def author
+      plain_text( rss_item_obj.try_these(:author, :itunes_author) )
+    end
+    
     def description
-      plain_text( rss_item_obj.description )
+      plain_text( rss_item_obj.try_these(:description, :itunes_summary) )
     end
     
     def homepage

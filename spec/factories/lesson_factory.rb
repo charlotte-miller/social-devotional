@@ -7,6 +7,7 @@
 #  position                :integer          default(0)
 #  title                   :string(255)      not null
 #  description             :text
+#  author                  :string(255)
 #  backlink                :string(255)
 #  poster_img_file_name    :string(255)
 #  poster_img_content_type :string(255)
@@ -40,6 +41,7 @@ FactoryGirl.define do
     # position 1
     title       { Faker::Lorem.sentence(rand(3..6))  }
     description { Faker::Lorem.paragraph(rand(2..5)) }
+    author      { Faker::Name.name }
     backlink    "http://link.com/salt-and-light"
     poster_img  File.new(Rails.root.join('spec/files', 'poster_image.jpg'), 'rb')
     video       File.new(Rails.root.join('spec/files', 'video.m4v'), 'rb')

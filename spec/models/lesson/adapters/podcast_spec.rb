@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: podcasts
+#
+#  id           :integer          not null, primary key
+#  church_id    :integer          not null
+#  title        :string(100)
+#  url          :string(255)      not null
+#  last_checked :datetime
+#  last_updated :datetime
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Lesson::Adapters::Podcast do

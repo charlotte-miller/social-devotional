@@ -7,6 +7,7 @@
 #  position                :integer          default(0)
 #  title                   :string(255)      not null
 #  description             :text
+#  author                  :string(255)
 #  backlink                :string(255)
 #  poster_img_file_name    :string(255)
 #  poster_img_content_type :string(255)
@@ -51,7 +52,7 @@ class Lesson < ActiveRecord::Base
   attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, :poster_img, as: 'sudo'
   
   # Public
-  attr_accessible :study, :study_id, :position, :title, :description, :backlink, :published_at, :machine_sorted,
+  attr_accessible :study, :study_id, :position, :title, :author, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :audio_remote_url, :video_remote_url, :poster_img
 
 
@@ -71,7 +72,7 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :study, :title
+  validates_presence_of :study, :title, :author
   # validates_uniqueness_of :position, :scope => :study_id
   # validates_attachment_presence :audio, :video
   
@@ -102,6 +103,7 @@ class Lesson < ActiveRecord::Base
       lesson = new({
         :study            => nil,
         :title            => podcast_item.title,
+        :author           => podcast_item.author,
         :description      => podcast_item.description,
         :backlink         => podcast_item.homepage,
         :published_at     => podcast_item.published_at,

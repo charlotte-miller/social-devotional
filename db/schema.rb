@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.integer  "position",                :default => 0
     t.string   "title",                                      :null => false
     t.text     "description"
+    t.string   "author"
     t.string   "backlink"
     t.string   "poster_img_file_name"
     t.string   "poster_img_content_type"

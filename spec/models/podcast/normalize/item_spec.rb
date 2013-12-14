@@ -41,6 +41,17 @@ describe Podcast::Normalize::Item do
     end
   end
   
+  describe '#author' do
+    it "returns a description of the item" do
+      subject.author.should == 'Mars Hill'
+    end
+    
+    it "returns plain text" do
+      @spamy_content = @podcast_xml.gsub('<itunes:author>Mars Hill', '<itunes:author><![CDATA[<h1>Mars Hill</h1><script>alert("spam")</script>]]>')
+      spamy.author.should == 'Mars Hill'
+    end
+  end
+  
   describe '#description' do
     it "returns a description of the item" do
       subject.description.should == 'Michael Hidalgo'
