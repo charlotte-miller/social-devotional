@@ -34,10 +34,14 @@
 require 'spec_helper'
 
 describe User do
+  subject { build(:user) }
+
   it "builds from factory", :internal do
     expect { create(:user) }.to_not raise_error
   end
-  
+
+  it_behaves_like 'it has_public_id', {prefix:'MEM', length:20}
+
   it { should have_many(:group_memberships) }
   it { should have_many(:groups) }
   it { should have_many(:block_requests) }

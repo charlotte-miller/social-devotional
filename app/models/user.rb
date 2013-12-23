@@ -33,6 +33,7 @@
 
 class User < ActiveRecord::Base
   include AttachableFile
+  include Uuidable
   
   # ---------------------------------------------------------------------------------
   # Authentication
@@ -50,6 +51,8 @@ class User < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible   :email, :first_name, :last_name, :password, :password_confirmation, :remember_me, :profile_image
+  
+  has_public_id :public_id, prefix:'MEM', length:20
   
   has_attachable_file :profile_image, :path => ':rails_env/:class/:attachment/:id/:hash.:extension',
                       :hash_data => ":class/:attachment/:id/:fingerprint-:style",
@@ -79,8 +82,7 @@ class User < ActiveRecord::Base
     #, :presence => true,
     # :content_type => { :content_type => "image/jpg" }
     
-  
-  
+    
   # ---------------------------------------------------------------------------------
   # Scopes
   # ---------------------------------------------------------------------------------

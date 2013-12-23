@@ -4,6 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # Greetings
       t.string :first_name, :limit => 60
       t.string :last_name,  :limit => 60
+      t.string :public_id,  :limit => 20
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => "", :limit => 80
@@ -43,8 +44,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :users, :email,                :unique => true
-    add_index :users, :reset_password_token, :unique => true
-    add_index :users, :confirmation_token,   :unique => true
+    add_index :users, :email,                  unique: true
+    add_index :users, :reset_password_token,   unique: true
+    add_index :users, :confirmation_token,     unique: true
+    add_index :users, :public_id,  length:20,  unique: true
   end
 end
