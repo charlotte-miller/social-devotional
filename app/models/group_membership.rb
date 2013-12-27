@@ -17,13 +17,14 @@ class GroupMembership < ActiveRecord::Base
   # Attributes
   # ---------------------------------------------------------------------------------
   attr_accessible :group_id, :user_id, :is_public
+  alias_attribute :last_attended_at, :updated_at
     
   
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :group# ,                          inverse_of: 'group_memberships'
-  belongs_to :member, :class_name => "User", foreign_key: 'user_id'# ,  inverse_of: 'group_memberships'
+  belongs_to :group,                                                  inverse_of: :group_memberships
+  belongs_to :member, :class_name => "User", foreign_key: 'user_id',  inverse_of: :group_memberships
   # belongs_to :invitation, :class_name => "Message"
   # alias_method :invitation, :request
   
@@ -32,6 +33,7 @@ class GroupMembership < ActiveRecord::Base
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :group, :member
+  validates_uniqueness_of :group_id, scope: :user_id
   
   
   # ---------------------------------------------------------------------------------

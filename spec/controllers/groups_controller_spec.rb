@@ -7,29 +7,33 @@ describe GroupsController do
   describe 'new or logged-out user' do
     
     describe "GET index" do
+      let(:load_page!) { get :index, {} }
+      
       it "loads" do
-        get :index, {}
+        load_page!
         should assign_to(:groups)
         should respond_with(:success)
       end
 
 
       it "assigns all groups as @groups" do
-        get :index, {}
+        load_page!
         should assign_to(:groups)
         assigns(:groups).should eq([group])
       end
     end
 
     describe "GET show" do
+      let(:load_page!) { get :show, {:id => group.to_param} }
+      
       it "loads" do
-        get :show, { :id => group.to_param }
+        load_page!
         should respond_with(:success)
       end
 
 
       it "assigns the requested group as @group" do
-        get :show, {:id => group.to_param}
+        load_page!
         assigns(:group).should eq(group)
       end
     end
@@ -37,6 +41,12 @@ describe GroupsController do
     describe "trying to access logged_in content" do
       it ":new redirects to :index" do
         get :new, {}
+        should redirect_to(new_user_session_url)
+      end
+      
+      it ":show redirects to :index if a non-public group is attempted" do
+        group = create(:group, is_public:false)
+        get :show, {:id => group.to_param}
         should redirect_to(new_user_session_url)
       end
       
@@ -68,36 +78,46 @@ describe GroupsController do
     before(:each){  group.members << current_user }
     
     describe "GET index" do
+      let(:load_page!) { get :index, {} }
+      
       it "loads" do
-        get :index, {}
+        load_page!
         should respond_with(:success)
       end
 
-
       it "assigns all groups as @groups" do
-        get :index, {}
+        load_page!
         assigns(:groups).should eq([group])
       end
       
       it "scopes queries to the current_user" do
+        load_page!
         pending
       end
     end
 
     describe "GET show" do
+      let(:load_page!) { get :show, { :id => group.to_param } }
+      
       it "loads" do
-        get :show, { :id => group.to_param }
+        load_page!
         should respond_with(:success)
       end
 
 
-      it "assigns the requested group as @group" do
-        get :show, {:id => group.to_param}
+      it "assigns the requested @group and @membership" do
+        load_page!
         assigns(:group).should eq(group)
+        assigns(:membership).should eq(group.group_memberships.first)
       end
       
       it "scopes queries to the current_user" do
         pending
+      end
+      
+      it "updates the users GroupMembership#last_attended_at" do
+        Timecop.freeze('12/12/2012') { load_page! }
+        current_user.membership_in(group.id).last_attended_at.should eql Time.parse('12/12/2012')
       end
     end
 
@@ -247,6 +267,7 @@ describe GroupsController do
       
       describe 'logged in users' do
         login_user
+        let(:run_private_methods) { [:safe_select_groups, :safe_select_group].each {|meth| controller.send( meth ) } }
         # before(:each){  group.members << current_user }
         
         it "scopes @groups to the current user" do
@@ -254,7 +275,7 @@ describe GroupsController do
           user_group     = create(:group_w_member, new_member:@user)
           
           controller.params[:id] = user_group.id
-          controller.send( :safe_select_group )
+          run_private_methods
           
           should assign_to(:groups)
           assigns(:groups).should     include(user_group)
@@ -267,7 +288,7 @@ describe GroupsController do
           user_group     = create(:group_w_member, new_member:@user)
           
           controller.params[:id] = user_group
-          controller.send( :safe_select_group )
+          run_private_methods
           
           should assign_to(:groups).with([user_group])
           should assign_to(:group).with(user_group)

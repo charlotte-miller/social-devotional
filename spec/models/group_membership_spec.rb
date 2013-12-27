@@ -17,6 +17,11 @@ describe GroupMembership do
   it { should belong_to( :member ).class_name( 'User' )}
   it { should belong_to :group }
   
+  it "validate_uniqueness_of(:group_id).scoped_to(:user_id)" do
+    create(:group_membership) # shoulda-hack: create a valid record for comparison
+    should validate_uniqueness_of(:group_id).scoped_to(:user_id)
+  end
+  
   it "builds from factory", :internal do
     lambda { create(:group_membership) }.should_not raise_error
   end
@@ -33,5 +38,11 @@ describe GroupMembership do
     end
   end
   
-  
+  describe '#last_attended_at' do
+    it "should alias updated_at" do
+      Timecop.freeze('12/12/2012') {  subject.touch }
+      subject.last_attended_at.should eql Time.parse('12/12/2012')
+    end
+    
+  end
 end

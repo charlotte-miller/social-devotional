@@ -66,10 +66,16 @@ class User < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :group_memberships, :dependent => :destroy# ,        inverse_of: 'member'
-  has_many :groups,            :through => :group_memberships#, inverse_of: 'member'
-  has_many :block_requests# ,                                   inverse_of: 'requester'
+  has_many :block_requests,                                     inverse_of: :requester
+  has_many :groups,            :through => :group_memberships#,  inverse_of: :members
+  has_many :group_memberships, :dependent => :destroy,          inverse_of: :member do
     
+    # association wrapped in #membership_in(group)
+    def for_group(group)
+      group_id = group.is_a?( Group ) ? group.id : group
+      where(group_id:group_id).first
+    end
+  end 
   
   # ---------------------------------------------------------------------------------
   # Validations
@@ -95,5 +101,10 @@ class User < ActiveRecord::Base
   
   def name
     "#{first_name} #{last_name}"
+  end
+  
+  # returns a GroupMembership
+  def membership_in(group)
+    group_memberships.for_group(group)
   end
 end

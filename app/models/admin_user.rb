@@ -46,7 +46,7 @@ class AdminUser < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  has_many :block_requests# ,   inverse_of: 'approver'
+  has_many :block_requests, inverse_of: :approver
   belongs_to :user
   
   

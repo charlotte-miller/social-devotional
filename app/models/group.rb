@@ -29,7 +29,7 @@ class Group < ActiveRecord::Base
   has_many :meetings,           :dependent => :destroy,             :class_name => "Meeting", foreign_key: 'group_id'
   has_many :questions,          as: 'source'
   
-  has_many :members,            :through => :group_memberships, source:'member'# ,     inverse_of: 'group'  
+  has_many :members,            :through => :group_memberships, source:'member', inverse_of: :groups  
   # has_many :leaders,            :through => :group_memberships, source: 'member', conditions: 'group_memberships.role_level > 1'
   has_many :group_memberships,  :dependent => :destroy
   accepts_nested_attributes_for :group_memberships, 

@@ -80,5 +80,22 @@ describe User do
       build_stubbed(:user, first_name:'Billy', last_name:'Bob').name.should eql 'Billy Bob'
     end
   end
+  
+  describe '#membership_in(group)' do
+    before(:each) do
+      @membership_1, @membership_2 = memberships = 2.times.map { create(:group_membership, member:subject ) }
+      @group_1, @group_2 = memberships.map(&:group)
+    end
+    
+    it "finds a single group " do
+      membership = subject.membership_in(@group_1)
+      membership.should be_a GroupMembership
+    end
+    
+    it "finds the correct GroupMembership" do
+      subject.membership_in(@group_1).should eql @membership_1
+      subject.membership_in(@group_2).should eql @membership_2
+    end
+  end
 end
     

@@ -4,7 +4,7 @@ module Questionable
   included do
     scope :w_questions, includes(:questions)
     
-    has_many :questions, as: 'source' do  # , inverse_of: 'source'
+    has_many :questions, as: 'source', inverse_of: :source do
       def popular(n=5)
         order('stared_count DESC, answers_count DESC').limit(n)
       end

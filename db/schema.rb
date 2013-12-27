@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.datetime "updated_at",                   :null => false
   end
 
-  add_index "group_memberships", ["group_id", "user_id"], :name => "index_group_memberships_on_group_id_and_user_id"
+  add_index "group_memberships", ["group_id", "user_id"], :name => "index_group_memberships_on_group_id_and_user_id", :unique => true
   add_index "group_memberships", ["user_id", "is_public"], :name => "index_group_memberships_on_user_id_and_is_public"
 
   create_table "groups", :force => true do |t|
