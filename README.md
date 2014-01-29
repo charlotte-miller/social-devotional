@@ -1,8 +1,19 @@
 # Social Devotional
-Now these are the gifts Christ gave to the church: the apostles, the prophets, the evangelists, and the pastors and teachers.  **Their responsibility is to equip God's people** to do his work and build up the church, the body of Christ.  This will continue until we all come to such unity in our faith and knowledge of God's Son that we will be mature in the Lord, measuring up to the full and complete standard of Christ.
 
-Then we will no longer be immature like children.  We won't we tossed and blown about by every wind of new teaching.  We will not be influenced when people try to trick us with lies so clever they sound like truth.  Instead we will **speak truth in love**, growing in every way more and more like Christ who is the head of his body, the church.  Ephesians 4:11-15  
+**Our mission** is to educate, encourage and equip the church with every effective technology.  
 
+  - **Educate:** 	Clarify the nature of God and creation
+  - **Encourage:** 	Stir the faith of the young, tired, & dry believer
+  - **Equip:**		Supply resources to stand against evil
+
+**Our plan** is to spread the existing work of apostles, prophets, evangelists, pastors, and teachers as wise stewards of the technology gifted to our generation.
+
+**Ephesians 4:11-15**  
+*Now these are the gifts Christ gave to the church: the apostles, the prophets, the evangelists, and the pastors and teachers.  Their responsibility is to equip God's people to do his work and build up the church, the body of Christ.  This will continue until we all come to such unity in our faith and knowledge of God's Son that we will be mature in the Lord, measuring up to the full and complete standard of Christ.*
+
+*Then we will no longer be immature like children.  We won't we tossed and blown about by every wind of new teaching.  We will not be influenced when people try to trick us with lies so clever they sound like truth.  Instead we will speak truth in love, growing in every way more and more like Christ who is the head of his body, the church.*    
+
+## Technical Architecture
 ![Service Oriented Architectural Overview](https://bitbucket.org/chip_miller/social-devotional/raw/7ea5cb2092876e17801010e524288bb774002418/doc/soa_architecture.png)
 
 ## Integrated Resources
@@ -92,4 +103,11 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 
 
 ## Lesson::Adapters
-SOMEDAY: move to lib so they are not auto loaded into the app (ultimately they will only be loaded by cron/sidekiq)
+How to store vimeo/youtube?
+
+Consider a model (previously considered as a Description model) that handles content processing, filter/triggering, moderating, etc
+- should has_one [:questions, :answers, :comments, etc]
+  - belongs_to :content, :class => UserPost
+  - STI?
+  - Polymorphic the other direction?
+
