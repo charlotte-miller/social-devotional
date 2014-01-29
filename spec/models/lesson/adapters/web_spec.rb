@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'open-uri'
+require 'spec/models/lesson/adapters/web_sites/dummy_klass'
 
 describe Lesson::Adapters::Web do
   vcr_lesson_web
@@ -27,9 +28,4 @@ describe Lesson::Adapters::Web do
     end
   end
 
-end
-
-# DummyKlass
-class Lesson::Adapters::WebSites::SomethingCom
-  def initialize(path, nokogiri_doc)  end
 end

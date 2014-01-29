@@ -35,6 +35,7 @@
 
 require 'spec_helper'
 require 'cocaine'
+require 'spec/models/lesson/adapters/web_sites/dummy_klass'
 
 describe Lesson do
   it { should belong_to( :study )}
@@ -63,38 +64,41 @@ describe Lesson do
   end
 
   describe '.new_from_adapter(lesson_adapter)' do
+    subject { Lesson.new_from_adapter(adapter) }
+    
     context "w/ Lesson::Adapters::Podcast -" do
-      it "has tests" do
-        raise NotImplementedError
+      let(:podcast_xml) { File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
+      let(:podcast_item) { Podcast::Channel.new(podcast_xml).items.first }
+      let(:adapter) { Lesson::Adapters::Podcast.new(podcast_item) }
+      
+      it "builds a @lesson from an adapter" do
+        should be_a Lesson
+        subject.study = Study.new
+        should be_valid
+      end
+
+      it "requires a study sepratly" do
+        subject.valid?
+        subject.errors.messages.should eq( :study => ["can't be blank"] )
       end
     end
     
     context "w/ Lesson::Adapters::Web -" do
-      it "has tests" do
-        raise NotImplementedError
+      vcr_lesson_web
+      let(:url) { @url || 'http://www.something.com' }
+      let(:nokogiri_doc) { Nokogiri::HTML(open url) }
+      let(:adapter) { Lesson::Adapters::Web.new(url, nokogiri_doc) }
+      
+      it "builds a @lesson from an adapter" do
+        should be_a Lesson
+        subject.study = Study.new
+        should be_valid
       end
-    end
-  end
 
-  describe '.new_from_podcast_item(podcast_item)' do
-    before(:each) do
-      @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))
-      stub_request(:get, /feedproxy\.google\.com.*\.mp3$/  ).to_return( :body => audio_file, :status => 200 )
-    end
-    
-    before(:all) {  }
-    let!(:channel) { Podcast::Channel.new(@podcast_xml) }
-    subject { Lesson.new_from_podcast_item(channel.items.first) }
-    
-    it "builds a lesson from a podcast_item" do
-      should be_a Lesson
-      subject.study = Study.new
-      should be_valid
-    end
-    
-    it "requires a study sepratly" do
-      subject.valid?
-      subject.errors.messages.should eq( :study => ["can't be blank"] )
+      it "requires a study sepratly" do
+        subject.valid?
+        subject.errors.messages.should eq( :study => ["can't be blank"] )
+      end
     end
   end
   

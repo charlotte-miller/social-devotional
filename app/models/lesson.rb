@@ -96,23 +96,7 @@ class Lesson < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   class << self
-    
-    # Builds a @lesson from a Podcast::Item
-    # WARN Study must be added later
-    def new_from_podcast_item(podcast_item)
-      lesson = new({
-        :study            => nil,
-        :title            => podcast_item.title,
-        :author           => podcast_item.author,
-        :description      => podcast_item.description,
-        :backlink         => podcast_item.homepage,
-        :published_at     => podcast_item.published_at,
-        :duration         => podcast_item.media_length,
-        :audio_remote_url => podcast_item.media_audio,
-        :video_remote_url => podcast_item.media_video,
-      }, as:'sudo')
-    end
-    
+      
     # Builds a lesson from an instance of Lesson::Adapters::'Klass'
     # WARN Study must be added later
     def new_from_adapter(lesson_adapter)
