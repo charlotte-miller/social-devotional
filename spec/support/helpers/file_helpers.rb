@@ -24,5 +24,10 @@ end
 
 RSpec.configure do |config|
   config.before(:all) { @_opened_files = [] }
-  config.after( :all) { @_opened_files.each &:close }
+  config.after( :all) do
+    @_opened_files.length.times do
+      file = @_opened_files.pop
+      file.close unless file.closed?
+    end
+  end
 end
