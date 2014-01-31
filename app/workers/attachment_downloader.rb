@@ -17,9 +17,13 @@ class AttachmentDownloader
 private
 
   # Paperclip assignment will trigger any Paperclip::Processor
+  # Skips original_urls matching the Paperclip options[:skip_processing_urls]
   def download_and_assign( attachment_name )
     url_str   = @obj_instance.send("#{attachment_name}_original_url")
-    file_name = File.basename(URI(url_str).path)
+    file_name = File.basename( URI(url_str).path )
+    
+    # Paperclip options[:skip_processing_urls]
+    return if @obj_instance.send(attachment_name).trusted_third_party?
     
     Tempfile.open(file_name) do |tempfile|
       curl_to(url_str, tempfile.path)
@@ -33,4 +37,5 @@ private
     curl = Cocaine::CommandLine.new('curl', ":from_url -o :to_file_path --silent")
     curl.run(from_url:from_url, to_file_path:to_file_path)
   end
+  
 end

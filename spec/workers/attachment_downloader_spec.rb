@@ -15,11 +15,16 @@ describe AttachmentDownloader do
     end
     
     it "downloads and assigns the [attachments]" do
-      subject.stub :curl_to #don't use system curl
-      
       expect(any_model.poster_img).not_to be_present
       subject.perform( obj_hash, :poster_img )
       expect(obj_hash.to_obj.poster_img).to be_present
+    end
+    
+    it "skips attachments specified in :skip_processing_urls" do
+      # Assumes Lesson#video skips YouTube
+      picky_model = create(:lesson, video:nil, video_original_url:'https://www.youtube.com/watch?v=0JR6xt9S02o&t=3')
+      subject.perform( picky_model.to_findable_hash, :video )
+      expect(picky_model.reload.video).not_to be_present
     end
   end
   

@@ -103,8 +103,6 @@ So my dear brothers and sisters, be strong and immovable. Always work enthusiast
 
 
 ## Lesson::Adapters
-How to store vimeo/youtube?
-
 Consider a model (previously considered as a Description model) that handles content processing, filter/triggering, moderating, etc
 - should has_one [:questions, :answers, :comments, etc]
   - belongs_to :content, :class => UserPost

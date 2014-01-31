@@ -40,7 +40,7 @@ module Lesson::Adapters
 
     # www.foo-bar.com #=> foo_bar_com
     def normalized_underscored_domain
-      base_domain = uri_obj.host.match(/[^\.]+\.\w+$/).to_s
+      base_domain = uri_obj.host_w_out_subdomains
       underscored = base_domain.gsub(/\.|-/,'_')
     end
   end
