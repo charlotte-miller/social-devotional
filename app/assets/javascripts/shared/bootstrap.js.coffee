@@ -1,4 +1,4 @@
-#= require twitter/bootstrap
+#= require bootstrap
 
 jQuery(document).ready ($) ->
   $("a[rel=popover]").popover()

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,16 +38,16 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
+    <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-inner">
-        <div class="container-fluid">
+        <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">SocialDevotional</a>
-          <div class="container-fluid nav-collapse">
+          <div class="container nav-collapse">
             <%= render partial: 'layouts/signin' %>
             <ul id="primary_nav" class="nav">
               <li><%= link_to "Library", "/library"  %></li>
@@ -56,12 +57,12 @@
           </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
+    </nav>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
+    <div class="container">
+      <div class="row">
         <div class="<%= content_for?(:sidebar) ? 'span9' : 'span12' %>">
-          <%= bootstrap_flash %>
+          <%#= bootstrap_flash %>
           <%= yield %>
         </div>
         <%= yield :sidebar %>
