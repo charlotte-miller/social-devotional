@@ -30,8 +30,8 @@
 %ul.thumbnails
   - @studies.each do |study|
     %li.span3.study
-      <a class="thumbnail", href="#{study_path(study)}">
-      \#{image_tag(study.poster_img)}
+      %a{:href => study_path(study)} 
+        = image_tag(study.poster_img)
       %h3= study.title
       .details.hide
         %p= study.description
