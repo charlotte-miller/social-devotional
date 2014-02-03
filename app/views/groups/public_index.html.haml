@@ -1,0 +1,20 @@
+= (render partial: 'sidebar')
+%h1 Public Listing groups
+%table
+  %tr
+    %th Name
+    %th Desription
+    %th Study
+    %th
+    %th
+    %th
+  - @groups.each do |group|
+    %tr
+      %td= group.name
+      %td= group.description
+      %td= group.study_id
+      %td= link_to 'Show', group
+      %td= link_to 'Edit', edit_group_path(group)
+      %td= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Group', new_group_path

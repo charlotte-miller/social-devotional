@@ -1,0 +1,13 @@
+= (render partial: 'sidebar')
+.page-header
+  %h1= truncate( @question.text )
+%dl#question.dl-horizontal
+  %dt
+    %strong Author:
+  %dd= @question.user_id
+  %dt
+    %strong Question:
+  %dd= @question.text
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    :back, :class => 'btn'                                   |

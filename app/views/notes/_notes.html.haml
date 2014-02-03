@@ -1,0 +1,15 @@
+#lesson_notes
+  %h3
+    Notes:
+    %small= @lesson.title
+  %form#public_notes_opt_in.form-inline.pull-right{:role => "form"}
+    %label.checkbox
+      %input#public_notes{:type => "checkbox", :value => "false"}/
+      Share Notes w/ Everybody
+  .form-group
+    %textarea#notes_textarea.form-control.span12{:name => "notes_textarea", :placeholder => "Take Notes from the Lesson", :rows => "9"}
+    #question_buttons.pull-right.form-control.hide
+      %a{:href => "#"} Clear -
+      %button.btn.btn-default{:type => "submit"}
+        Save
+    .clearfix

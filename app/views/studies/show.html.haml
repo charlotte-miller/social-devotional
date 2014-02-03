@@ -1,0 +1,47 @@
+- model_class = Study
+.page-header
+  %h1
+    = @study.title
+.row-fluid
+  #current_study.span12
+    #lesson_player.row-fluid
+      = tag :video, {                              |
+        # poster: @study.poster_img,               |
+        id:    "video-for-#{@study.id}",           |
+        class: "video-js vjs-default-skin span12", |
+        controls:true,                             |
+        preload:"auto",                            |
+        data:{                                     |
+          setup:'{}'                               |
+        }}, :leave_tag_open                        |
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.mp4", :type => "video/mp4"}/
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.webm", :type => "video/webm"}/
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.ogv", :type => "video/ogg"}/
+    #lesson_carasel.row-fluid
+      %ul
+        - @study.lessons.each do |lesson|
+          %li.lessons{:id => "lesson_#{lesson.id}"}= lesson.video.url
+    #lesson_credits.row-fluid
+      %dl#study.dl-horizontal
+        %dt
+          %strong
+            = model_class.human_attribute_name(:slug)
+            \:
+        %dd= @study.slug
+        %dt
+          %strong
+            = model_class.human_attribute_name(:description)
+            \:
+        %dd= @study.description
+        %dt
+          %strong
+            = model_class.human_attribute_name(:ref_link)
+            \:
+        %dd= @study.ref_link
+  #recommended_studies.span3.mobile-hidden
+    / TODO fix .mobile-hidden w/ correct class
+    Recommended Studies
+%hr/
+%h3 Ask a Question or Take Notes
+%hr/
+= render partial: 'studies/discussion'

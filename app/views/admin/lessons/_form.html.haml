@@ -1,0 +1,33 @@
+= form_for [:admin, @lesson], :html => { :class => 'form-horizontal', multipart:true } do |f|
+  .control-group
+    = f.label :study_id, :class => 'control-label'
+    .controls
+      = f.number_field :study_id, :class => 'number_field'
+  .control-group
+    = f.label :position, :class => 'control-label'
+    .controls
+      = f.number_field :position, :class => 'number_field'
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'text_field'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :class => 'text_area'
+  .control-group
+    = f.label :backlink, :class => 'control-label'
+    .controls
+      = f.text_field :backlink, :class => 'text_field'
+  .control-group
+    = f.label :video, :class => 'control-label'
+    .controls
+      = f.file_field :video, :class => 'text_field'
+  .control-group
+    = f.label :audio, :class => 'control-label'
+    .controls
+      = f.file_field :audio, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+      admin_lessons_path, :class => 'btn'                          |

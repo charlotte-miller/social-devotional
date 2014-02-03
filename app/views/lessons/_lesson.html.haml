@@ -1,0 +1,15 @@
+%dt
+  %strong Title:
+%dd= link_to lesson.title, study_lesson_path( @study, lesson )
+%dt
+  %strong Description:
+%dd= lesson.description
+%dt
+  %strong Backlink:
+%dd= lesson.backlink
+%dt
+  %strong Video URL:
+%dd= lesson.video.url
+%dt
+  %strong Audio URL:
+%dd= lesson.audio.url

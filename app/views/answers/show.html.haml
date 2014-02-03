@@ -1,0 +1,17 @@
+%p#notice= notice
+%p
+  %b Question:
+  = @answer.question
+%p
+  %b Author:
+  = @answer.author
+%p
+  %b Text:
+  = @answer.text
+%p
+  %b Blocked count:
+  = @answer.blocked_count
+%p
+  %b Stared count:
+  = @answer.stared_count
+= link_to 'Back', question_answers_path(@question)

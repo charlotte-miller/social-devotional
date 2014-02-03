@@ -1,0 +1,35 @@
+#lesson_questions
+  .form-group
+    %textarea#ask_textarea.form-control.span12{:name => "ask_textarea", :placeholder => "Ask A Question about #{@lesson.title}", :rows => "3"}
+    #question_buttons.pull-right.form-control.hide
+      %a{:href => "#"} Clear -
+      %button.btn.btn-default{:type => "submit"}
+        Ask
+    .clearfix
+  %hr/
+  .input-group.pull-right.input-append
+    %form.form-search{"accept-charset" => "utf-8", :action => "questions", :method => "get", :role => "search"}
+      %input.form-control{:type => "text"}/
+      %span.input-group-btn
+        %button.btn.btn-default{:type => "button"}
+          %i.glyphicon.glyphicon-search
+          Search
+  / Question Nav
+  %ul.nav.nav-pills
+    %li.active
+      %a{"data-toggle" => "pill", :href => "#q_popular"} Popular
+    %li
+      %a{"data-toggle" => "pill", :href => "#q_recent"} Recent
+    %li
+      %a{"data-toggle" => "pill", :href => "#q_timeline"} Timeline
+  / Question Content
+  .pill-content
+    <div id="q_popular", class="pill-pane active">
+    %ul#q_popular.questions.media-list
+      = render( partial: 'questions/question', collection: @q_popular) || "No Popular Questions"
+  <div id="q_recent", class="pill-pane">
+  %ul#q_recent.questions.media-list
+    = render( partial: 'questions/question', collection: @q_recent ) || "No Recent Questions"
+<div id="q_timeline", class="pill-pane">
+%ul#q_timeline.questions.media-list
+  = render( partial: 'questions/question', collection: @q_timeline ) || "No Question Timeline"

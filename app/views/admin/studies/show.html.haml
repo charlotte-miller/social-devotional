@@ -1,0 +1,41 @@
+- model_class = Study
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+%dl#study.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:slug)
+      \:
+  %dd= @study.slug
+  %dt
+    %strong
+      = model_class.human_attribute_name(:title)
+      \:
+  %dd= @study.title
+  %dt
+    %strong
+      = model_class.human_attribute_name(:description)
+      \:
+  %dd= @study.description
+  %dt
+    %strong
+      = model_class.human_attribute_name(:ref_link)
+      \:
+  %dd= @study.ref_link
+  %dt
+    %strong
+      = model_class.human_attribute_name(:poster_img)
+      \:
+  %dd= @study.poster_img.url
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    admin_studies_path, :class => 'btn'                      |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_admin_study_path(@study), :class => 'btn'           |
+  -#
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    admin_study_path(@study),                                                                                    |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

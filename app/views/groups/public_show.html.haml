@@ -1,0 +1,15 @@
+= (render partial: 'sidebar')
+%h2 Public
+%p#notice= notice
+%p
+  %b Name:
+  = @group.name
+%p
+  %b Desription:
+  = @group.description
+%p
+  %b Study:
+  = @group.study_id
+= link_to 'Edit', edit_group_path(@group)
+|
+\#{link_to 'Back', groups_path}

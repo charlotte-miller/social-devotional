@@ -1,0 +1,8 @@
+= form_for @question, :path => polymorphic_questions_path, :method => "post" , :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :text, :class => 'control-label'
+    .controls
+      = f.text_area :text, :class => 'text_area'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), polymorphic_questions_path, :class => 'btn'

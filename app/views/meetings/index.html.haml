@@ -1,0 +1,13 @@
+%h1 Listing meetings
+%table
+  %tr
+    %th
+    %th
+    %th
+  - @meetings.each do |meeting|
+    %tr
+      %td= link_to 'Show', group_meeting_path(@group, meeting)
+      %td= link_to 'Edit', edit_group_meeting_path(@group, meeting)
+      %td= link_to 'Destroy', group_meeting_path(@group, meeting), method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Meeting', new_group_meeting_path(@group)

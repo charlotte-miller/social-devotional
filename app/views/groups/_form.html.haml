@@ -1,0 +1,27 @@
+= form_for(@group) do |f|
+  - if @group.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@group.errors.count, "error")
+        prohibited this group from being saved:
+      %ul
+        - @group.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :study_id, name: 'Study'
+    %br/
+    = f.number_field :study_id
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :is_public, name: 'Public?'
+    %br/
+    = f.number_field :is_public
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .actions
+    = f.submit

@@ -1,0 +1,51 @@
+- model_class = Lesson
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human
+%dl#lesson.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:study_id)
+      \:
+  %dd= @lesson.study_id
+  %dt
+    %strong
+      = model_class.human_attribute_name(:position)
+      \:
+  %dd= @lesson.position
+  %dt
+    %strong
+      = model_class.human_attribute_name(:title)
+      \:
+  %dd= @lesson.title
+  %dt
+    %strong
+      = model_class.human_attribute_name(:description)
+      \:
+  %dd= @lesson.description
+  %dt
+    %strong
+      = model_class.human_attribute_name(:backlink)
+      \:
+  %dd= @lesson.backlink
+  %dt
+    %strong
+      = model_class.human_attribute_name(:video)
+      \:
+  %dd= @lesson.video.url
+  %dt
+    %strong
+      = model_class.human_attribute_name(:audio)
+      \:
+  %dd= @lesson.audio.url
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    admin_lessons_path, :class => 'btn'                      |
+  -#
+  = link_to t('.edit', :default => t("helpers.links.edit")), |
+    edit_admin_lesson_path(@lesson), :class => 'btn'         |
+  -#
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    admin_lesson_path(@lesson),                                                                                  |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |
