@@ -13,6 +13,7 @@
   #logo{ 
     @extend .navbar-brand; 
     font-size:30px;
+    font-family:"Museo Slab";
     font-weight:lighter;
   }
   
@@ -42,20 +43,26 @@
 #library-search{
   @extend .col-sm-offset-1;
   @extend .col-sm-10;
-
-  #form{
-    @extend .form-control;
-  }
-  input{
-    @extend .form-control;
-    @extend .input-lg;
-    height:48px;
-  }
   
   #library-search-inputs{
-//    @extend .input-group;
-//    @extend .input-group-lg;
+    @extend .input-group;
+    @extend .input-group-lg;
+    margin-top:25px;
     
+    input{
+      @extend .form-control;
+      @extend .input-lg;
+      height:50px;
+      margin-top:1px;
+    }
+    
+    button{
+      @extend .btn;
+      @extend .btn-lg;
+      @extend .btn-primary;
+      @extend .dropdown-toggle;
+      height:52px !important;
+    }
   }
 }
 

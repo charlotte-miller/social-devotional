@@ -1,7 +1,7 @@
 !!!
 %html{:lang => "en"}
   %head
-    %meta{ 'http-equiv'=>"refresh", content:"5"}
+    -# %meta{ 'http-equiv'=>"refresh", content:"5"}
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
@@ -35,30 +35,7 @@
     .container-fluid
       = yield
     
-    -# %nav.navbar.navbar-default{:role => "navigation"}
-    -#   .navbar-inner
-    -#     .container
-    -#       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-    -#         %span.icon-bar
-    -#         %span.icon-bar
-    -#         %span.icon-bar
-    -#       %a.brand{:href => "/"} SocialDevotional
-    -#       .container.nav-collapse
-    -#         = render partial: 'layouts/signin'
-    -#         %ul#primary_nav.nav
-    -#           %li= link_to "Library", "/library"
-    -#           %li= link_to "Groups", "/groups"
-    -#           %li= link_to "Questions", "/questions"
-    -#       / /.nav-collapse
-    -# .container
-    -#   .row
-    -#     %div{:class => content_for?(:sidebar) ? 'span9' : 'span12'}
-    -#       = yield
-    -#     = yield :sidebar
-    -#   / /row
-    -#   %footer
-    -#     %p &copy; Social Devotional 2013
-    -# / /container
+      
     -# /
       Javascripts
       \==================================================

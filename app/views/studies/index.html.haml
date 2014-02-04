@@ -1,38 +1,22 @@
 .row
   #library-search
-    %form
+    %form{role:'form'}
       #library-search-inputs
-        %input{type:'text', placeholder:'Search the Library'}
+        .input-group-btn
+          %button{type:'button', data:{toggle:'dropdown'}}
+            Search All
+            %span.caret
+          %ul.dropdown-menu
+            %li 
+              %a{:href => "#"} Title
+            %li 
+              %a{:href => "#"} Church
+            %li 
+              %a{:href => "#"} Keywords
+        %input{type:'text', placeholder:'What do you want to learn?'}
       
--# .hero-unit
--#   .control-group
--#   #hero_sidebar.span11.offset1
--#     .tabbable.tabs-left
--#       %ul#hero_tabs.nav.nav-tabs
--#         %li.nav-header Sort By:
--#         %li
--#           %a{"data-toggle" => "tab", :href => "#tab_recent"} Recent
--#         %li
--#           %a{"data-toggle" => "tab", :href => "#tab_popular"} Popular:
--#         %li
--#           %a{"data-toggle" => "tab", :href => "#tab_search"} Search:
--#       .tab-content
--#         #tab_recent.tab-pane
--#           %p I'm in Section 1.
--#         #tab_popular.tab-pane
--#           %p I'm in Section 2.
--#         #tab_search.tab-pane.active
--#           #message.span8
--#             %h1
--#               The Library
--#             %p
--#               Search and watch sermons podcasts.
--#           #search.span10
--#             = form_for studies_path do |f|
--#               .control-group
--#                 = f.text_field :search, placeholder: 'Search the Library', :class => 'span9'
--#                 = f.collection_select :category, ['All', 'Title', 'Church', 'Topic'].inject({}){|hash, category| hash[category.downcase]= category; hash }, :first, :last, {}, {:class => 'span3'}
--#   .clearfix
+.row
+  
 -# %ul.thumbnails
 -#   - @studies.each do |study|
 -#     %li.span3.study
