@@ -1,50 +1,5 @@
-//= require_self
-//= require_tree .
-
+@import "theme/variables";
 @import "bootstrap";
-@import "bootstrap/theme";
-
-.small dt, .small dd {
-  display:inline;
-}
-
-#hero_sidebar{
-  text-align:right;
-}
-#message {
-  text-align:left;
-  margin-left: 20px;
-}
-
-#login-btn-group{
-  position: relative;
-  top: 2px;
-}
-
-.question_article{
-  min-height: 40px;
-}
-
-.Q_and_A{
-  line-height: 40px;
-  font: italic 38.5px 'Marck Script', Helvetica, sans-serif;
-    color: #2b2b2b;
-/*    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);*/
-  min-width:40px;
-  text-align:right;
-}
-
-.question_article{
-  margin-top:10px;
-}
-
-.row-fluid {
-  ul.thumbnails {
-    li.span12 + li { margin-left : 0px; }
-    li.span6:nth-child(2n + 3) { margin-left : 0px; }
-    li.span4:nth-child(3n + 4) { margin-left : 0px; }
-    li.span3:nth-child(4n + 5) { margin-left : 0px; }
-    li.span2:nth-child(6n + 7) { margin-left : 0px; }
-    li.span1:nth-child(12n + 13) { margin-left : 0px; }
-  }
-}
+//@import "bootstrap/mixins";
+@import "theme/bootswatch";
+//@import "base";

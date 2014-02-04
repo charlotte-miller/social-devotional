@@ -62,9 +62,10 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3', :require => false
+  # gem 'bootswatch-rails', git: 'git@github.com:log0ymxm/bootswatch-rails.git'
 end
 
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'therubyracer', :platforms => :ruby, :require => false
 gem 'bootstrap-sass', '~> 3.1.0'
 gem "haml-rails"
@@ -73,7 +74,6 @@ gem "haml-rails"
 group :development, :test do
   gem 'thin'
   gem 'capistrano', :require => nil
-  gem 'html2haml'
   
   # Jasmine
   gem 'jasmine-rails'
