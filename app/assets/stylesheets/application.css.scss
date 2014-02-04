@@ -3,3 +3,68 @@
 //@import "bootstrap/mixins";
 @import "theme/bootswatch";
 //@import "base";
+
+//nav{
+  #main{
+    @extend .navbar;
+    @extend .navbar-default;
+  }
+  
+  #logo{ 
+    @extend .navbar-brand; 
+    font-size:30px;
+    font-weight:lighter;
+  }
+  
+  #main-nav-options{
+    @extend .collapse;
+    @extend .navbar-collapse;
+  }
+  
+  #nav-links{
+    @extend .navbar-right;
+    @extend .nav;
+    @extend .navbar-nav;
+  }
+  
+  #login-links{
+    @extend .btn-group;
+    padding-left: 15px;
+    
+    a{
+      @extend .navbar-btn;
+      @extend .btn;
+      @extend .btn-sm;
+    }
+  }
+//}
+
+#library-search{
+  @extend .col-sm-offset-1;
+  @extend .col-sm-10;
+
+  #form{
+    @extend .form-control;
+  }
+  input{
+    @extend .form-control;
+    @extend .input-lg;
+    height:48px;
+  }
+  
+  #library-search-inputs{
+//    @extend .input-group;
+//    @extend .input-group-lg;
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
