@@ -2,7 +2,6 @@
 //
 //= require_tree ../../../vendor/assets/javascripts/browser_compatibility
 //= require jquery/jquery-1.8.0
-//= require jquery/jquery-ui.min
 //= require jquery/jquery.easing-1.3
 //= require jquery/select2-3.2
 //= require backbone/handlebars-1.0.rc.1

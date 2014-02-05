@@ -29,7 +29,7 @@
             -# %li= link_to "Questions", "/questions"
             %li
               #login-links
-                %a.btn-primary{:href => new_registrations_path} Join
+                %a.btn-primary{:href => new_registrations_path} Join the Discussion
                 %a{:href => new_user_session_path} Login
             
     .container-fluid
@@ -40,3 +40,4 @@
       Javascripts
       \==================================================
     = javascript_include_tag "application"
+    = yield(:js_includes)
