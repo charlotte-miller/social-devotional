@@ -14,8 +14,8 @@ module StudiesHelper
     count.times.inject([]) do |array,index|
       trailing_n_rows = array[[index-rows_since_possible_repeat, 0].max...index]
     
-      layout = random_column_division
-      while trailing_n_rows.include?(layout); layout = random_column_division ;end
+      layout = random_column_layout
+      while trailing_n_rows.include?(layout); layout = random_column_layout ;end
       array << layout
     end
   end
