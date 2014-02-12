@@ -70,16 +70,43 @@
 #library-media{
   margin-top:30px;
   
-  .item{
-    height:250px;
+  .media-row{ 
+    @extend .row;
+    &:nth-of-type(4n+1){ height:250px; }
+    &:nth-of-type(4n+2){ height:175px; }
+    &:nth-of-type(4n+3){ height:215px; }
+    &:nth-of-type(4n+4){ height:190px; }
+    &:nth-of-type(5n+1){ height:300px; }
+  }
+  
+  .media-item{
+    height:inherit;
     border:1px solid #fff;
-    background: url(http://lorempixel.com/a/400/200/) no-repeat center center;
+    background: transparent no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://lorempixel.com/a/400/200/', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://lorempixel.com/a/400/200/', sizingMethod='scale')";
+    // filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://lorempixel.com/a/400/200/', sizingMethod='scale');
+    // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://lorempixel.com/a/400/200/', sizingMethod='scale')";
+    
+    a{
+      display:block;
+      height:100%;
+      width:100%;
+    }
+  }
+  
+  @media screen and (max-width: $screen-xs-max){
+    
+    .media-row{ height:inherit !important; }
+    .media-item{
+      &:nth-of-type(4n+1){ height:250px; }
+      &:nth-of-type(4n+2){ height:175px; }
+      &:nth-of-type(4n+3){ height:215px; }
+      &:nth-of-type(4n+4){ height:190px; }
+      &:nth-of-type(5n+1){ height:300px; }
+    }
   }
 }
 

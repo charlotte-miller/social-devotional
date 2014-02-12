@@ -20,9 +20,12 @@
         %input{type:'text', placeholder:'What do you want to learn?'}
       
 #library-media
+  - n = 0
   - random_column_layouts(100).each do |col_array|
-    .row
+    .media-row
       - col_array.each do |col_count|
-        .item{:class=>"col-sm-#{col_count}", style:"background-image:url('http://lorempixel.com/#{('a'..'z').to_a[rand(26)]}/400/200/');" }
-          = col_count
-      
+        - study_image = "http://lorempixel.com/#{('a'..'z').to_a[rand(26)]}/400/200/"
+        .media-item{:class=>"col-sm-#{col_count}", style:"background-image:url('#{study_image}');" }
+          %a{:href => "##{n+=1}"}
+            = n
+    
