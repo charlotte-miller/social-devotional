@@ -68,15 +68,16 @@
 
 
 #library-media{
+  $library-row-heights: ('250px','175px','215px','190px','300px');
   margin-top:30px;
   
   .media-row{ 
     @extend .row;
-    &:nth-of-type(4n+1){ height:250px; }
-    &:nth-of-type(4n+2){ height:175px; }
-    &:nth-of-type(4n+3){ height:215px; }
-    &:nth-of-type(4n+4){ height:190px; }
-    &:nth-of-type(5n+1){ height:300px; }
+    &:nth-of-type(4n+1){ height:unquote(nth($library-row-heights, 1)); }
+    &:nth-of-type(4n+2){ height:unquote(nth($library-row-heights, 2)); }
+    &:nth-of-type(4n+3){ height:unquote(nth($library-row-heights, 3)); }
+    &:nth-of-type(4n+4){ height:unquote(nth($library-row-heights, 4)); }
+    &:nth-of-type(5n+1){ height:unquote(nth($library-row-heights, 5)); }
   }
   
   .media-item{
@@ -101,11 +102,11 @@
     
     .media-row{ height:inherit !important; }
     .media-item{
-      &:nth-of-type(4n+1){ height:250px; }
-      &:nth-of-type(4n+2){ height:175px; }
-      &:nth-of-type(4n+3){ height:215px; }
-      &:nth-of-type(4n+4){ height:190px; }
-      &:nth-of-type(5n+1){ height:300px; }
+      &:nth-of-type(4n+1){ height:unquote(nth($library-row-heights, 1)); }
+      &:nth-of-type(4n+2){ height:unquote(nth($library-row-heights, 2)); }
+      &:nth-of-type(4n+3){ height:unquote(nth($library-row-heights, 3)); }
+      &:nth-of-type(4n+4){ height:unquote(nth($library-row-heights, 4)); }
+      &:nth-of-type(5n+1){ height:unquote(nth($library-row-heights, 5)); }
     }
   }
 }
