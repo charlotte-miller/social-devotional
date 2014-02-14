@@ -21,7 +21,7 @@
       
 #library-media
   - n = 0
-  - random_column_layouts(100).each do |col_array|
+  - random_grid_layouts(100).each do |col_array|
     .media-row
       - col_array.each do |col_count|
         - study_image = "http://lorempixel.com/#{('a'..'z').to_a[rand(26)]}/400/200/"
