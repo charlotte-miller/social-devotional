@@ -1,3 +1,4 @@
+@import "animate";
 @import "theme/variables";
 @import "bootstrap";
 //@import "bootstrap/mixins";
@@ -96,6 +97,14 @@
       height:100%;
       width:100%;
     }
+    
+    .study-details{
+      display:none;
+    
+      .lessons{
+        @extend .hidden-xs;
+      }
+    }
   }
   
   @media screen and (max-width: $screen-xs-max){
@@ -109,8 +118,19 @@
       &:nth-of-type(5n+1){ height:unquote(nth($library-row-heights, 5)); }
     }
   }
+  
+  .drawer{
+    @extend .fluid-row;
+    display:block;
+    opacity:0;
+    height:0px;
+    
+    &>img{ @extend .col-xs-3; }
+    .credits{
+      @extend .col-xs-9;
+    }
+  }
 }
-
 
 
 

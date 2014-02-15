@@ -1,5 +1,5 @@
 - content_for :js_includes do
-  = javascript_include_tag "library"
+  = javascript_include_tag "backbone", "library"
 
 
 .row
@@ -20,12 +20,21 @@
         %input{type:'text', placeholder:'What do you want to learn?'}
       
 #library-media
-  - n = 0
-  - random_grid_layouts(100).each do |col_array|
+  - random_grid_layouts(15).each do |col_array|
     .media-row
       - col_array.each do |col_count|
         - study_image = "http://lorempixel.com/#{('a'..'z').to_a[rand(26)]}/400/200/"
         .media-item{:class=>"col-sm-#{col_count}", style:"background-image:url('#{study_image}');" }
-          %a{:href => "##{n+=1}"}
-            = n
-    
+          %a{:href => "#"}
+            .study-details
+              %img{src:'/img/study_poster'}
+              .credits
+                %h2 Study Title
+                .author Frank Frankly
+                .chruch Methodist Presbyterian
+                .description Lorem ipsum full description maybe loaded via ajax...
+                %ol.lessons.hidden-xs
+                  %li Lorem ipsum dolor sit amet, maybe loaded via ajax consectetur adipisicing elit.
+                  %li Lorem ipsum dolor sit amet, maybe loaded via ajax consectetur adipisicing elit.
+                  %li Lorem ipsum dolor sit amet, maybe loaded via ajax consectetur adipisicing elit.
+                  %li Lorem ipsum dolor sit amet, maybe loaded via ajax consectetur adipisicing elit.
