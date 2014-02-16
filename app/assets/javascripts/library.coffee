@@ -1,17 +1,37 @@
-$ -> 
-  $('.media-item > a').click (event)->
-    event.preventDefault()
-    $study_details = $('.study-details', @)
-    $drawer = $('<cite class="drawer">')
-    $drawer = $drawer.append($study_details.html())
+$ ->     
+  
+  jQuery.fn.rigMediaItems = ->
+    $('.media-item',@).each ->
+      $media_item = $(@)
+      
+      # Rig click events    
+      $('> a', @).click (event)->
+        return true if $media_item.hasClass('active')
+        event.preventDefault()
+        
+        drawer =
+          cleanupOld: ->
+            $('.media-item.active').removeClass('active')
+            $('.study-detail-display').slideFadeHide 350, 'easeInOutQuint', -> $(@).remove()
     
-    $old_drawer = $('.drawer')
-    $old_drawer.animate {height:'0px', opacity:0}, 350, 'easeInOutQuint', ->
-      $(this).remove()
+          insertNew: =>
+            $study_details   = $('.study-details', @)
+            $display= $('<cite class="study-detail-display"><span class="close" >&times;</span></cite>')
+            $('.close',$display).click -> drawer.cleanupOld()
+            $display.append($study_details.html())
+      
+            if is_mobile_layout = $(window).width() < 768
+              $study_details.after($display)
+            else
+              $(@).parents('.media-row').after($display)
+      
+            $display.slideFadeShow 350, 'easeInOutQuint'
+          
+          activateMediaItem: ->
+            $media_item.addClass('active')
     
-    if $(window).width() < 768
-      $study_details.after($drawer)
-    else
-      $(@).parents('.media-row').after($drawer)
-    
-    $drawer.animate({height:'300px', opacity:1}, 350, 'easeInOutQuint')
+        drawer.cleanupOld()
+        drawer.insertNew()
+        drawer.activateMediaItem()
+  
+  $('#library-media').rigMediaItems()
