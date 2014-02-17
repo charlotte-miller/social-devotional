@@ -11,7 +11,7 @@ $ ->
           return true 
         event.preventDefault()
         
-        drawer =
+        base =
           isMobileLayout: -> $(window).width() < 768
           
           drawerOut: ->
@@ -19,7 +19,7 @@ $ ->
           
           cleanupOld: ->
             $('.media-item.active').removeClass('active')
-            ($('.study-detail-display').slideFadeHide 350, 'easeInOutQuint', -> $(@).remove()) if drawer.drawerOut()
+            ($('.study-detail-display').slideFadeHide 350, 'easeInOutQuint', -> $(@).remove()) if base.drawerOut()
     
           insertNew: =>
             $study_details   = $('.study-details', @)
@@ -27,11 +27,11 @@ $ ->
               <cite class="study-detail-display">
                 <span class="close" >&times;</span>
               </cite>''')
-            $('.close',$display).click -> drawer.cleanupOld()
+            $('.close',$display).click -> base.cleanupOld()
             $display.append($study_details.html())
       
-            if drawer.isMobileLayout()
-              drawer.cleanupOld()
+            if base.isMobileLayout()
+              base.cleanupOld()
             else
               $(@).parents('.media-row').after($display)
               
@@ -41,10 +41,9 @@ $ ->
             $media_item.addClass('active')
           
           handleScroll: ()->
-            # $media_item.smoothScroll(350, 'easeInOutQuint')
             media_offset  = $media_item.offset().top
-            drawer_offset = drawer.drawerOut() && $('.study-detail-display').offset().top
-            drawer_height = drawer.drawerOut() && $('.study-detail-display').height()
+            drawer_offset = base.drawerOut() && $('.study-detail-display').offset().top
+            drawer_height = base.drawerOut() && $('.study-detail-display').height()
             
             if drawer_height && drawer_offset && media_offset > drawer_offset
               # remove the height of the olde drawer from the $media_item
@@ -52,9 +51,9 @@ $ ->
             else
               $media_item.smoothScroll(350, 'easeInOutQuint')
         
-        drawer.cleanupOld()
-        drawer.insertNew()
-        drawer.activateMediaItem()
-        drawer.handleScroll()
+        base.cleanupOld()
+        base.insertNew()
+        base.activateMediaItem()
+        base.handleScroll()
   
   $('#library-media').rigMediaItems()

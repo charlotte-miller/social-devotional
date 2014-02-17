@@ -98,10 +98,10 @@
       height:100%;
       width:100%;
       
-      .study-details{ 
+      .study-details{
         position:absolute;
         top:0px;
-        @include opacity(0); 
+        @include opacity(0);
       }
       .click_to_play{ 
         background-color:rgba(0,0,0,0.8);
@@ -133,22 +133,24 @@
   }
   
 
-  
   .study-detail-display{
-//    @extend .fluid-row;
     display:none;
     opacity:0;
     height:300px;
-    
+
     .close{
       color:white;
       padding:10px;
       font-size:25px;
     }
-    
-    &>img{ @extend .col-xs-3; }
+  }
+  .study-detail-display, .study-details{
+    &>img{ 
+      @extend .col-xs-5; 
+      height:inherit;
+    }
     .credits{
-      @extend .col-xs-9;
+      @extend .col-xs-7;
       
       .lessons{
         @extend .hidden-xs;
