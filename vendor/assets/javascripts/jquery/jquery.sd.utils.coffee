@@ -1,4 +1,4 @@
-$ ->  
+# $ ->  
   jQuery.fn.slideFadeToggle = (speed, easing, callback) ->
     @animate
       opacity: "toggle"
@@ -19,3 +19,13 @@ $ ->
       opacity: 1
       height: "#{target_height }px"
     , speed, easing, callback
+    
+  jQuery.fn.smoothScroll = (speed, easing, options={}, callback) ->
+    target = $(@)
+    if target.length
+      $("html,body").animate
+        scrollTop: target.offset().top + (options.offset || 0),
+        speed,
+        easing,
+        callback
+  
