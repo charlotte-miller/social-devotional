@@ -98,7 +98,11 @@
       height:100%;
       width:100%;
       
-      .study-details{ display:none; }
+      .study-details{ 
+        position:absolute;
+        top:0px;
+        @include opacity(0); 
+      }
       .click_to_play{ 
         background-color:rgba(0,0,0,0.8);
         width:100%;
@@ -116,6 +120,7 @@
           bottom: 0; top: 0; right: 0; left: 0;
           position: absolute;
           margin: auto;
+          @include opacity(1);
         }
       }
     }
@@ -127,17 +132,7 @@
     }
   }
   
-  @media screen and (max-width: $screen-xs-max){
-    
-    .media-row{ height:inherit !important; }
-    .media-item{
-      &:nth-of-type(4n+1){ height:unquote(nth($library-row-heights, 1)); }
-      &:nth-of-type(4n+2){ height:unquote(nth($library-row-heights, 2)); }
-      &:nth-of-type(4n+3){ height:unquote(nth($library-row-heights, 3)); }
-      &:nth-of-type(4n+4){ height:unquote(nth($library-row-heights, 4)); }
-      &:nth-of-type(5n+1){ height:unquote(nth($library-row-heights, 5)); }
-    }
-  }
+
   
   .study-detail-display{
 //    @extend .fluid-row;
@@ -157,6 +152,31 @@
       
       .lessons{
         @extend .hidden-xs;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $screen-xs-max){
+    
+    .media-row{ height:inherit !important; }
+    .media-item{
+      &:nth-of-type(4n+1){ height:unquote(nth($library-row-heights, 1)); }
+      &:nth-of-type(4n+2){ height:unquote(nth($library-row-heights, 2)); }
+      &:nth-of-type(4n+3){ height:unquote(nth($library-row-heights, 3)); }
+      &:nth-of-type(4n+4){ height:unquote(nth($library-row-heights, 4)); }
+      &:nth-of-type(5n+1){ height:unquote(nth($library-row-heights, 5)); }
+      
+      .click_to_play{
+        .call_to_action{
+          opacity:0 !important;
+        }
+      }
+      
+      &.active{
+        .study-details{
+          opacity:1 !important;
+          @include transition(opacity 0.35s ease-in-out);
+        }
       }
     }
   }

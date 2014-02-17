@@ -12,6 +12,8 @@ $ ->
         event.preventDefault()
         
         drawer =
+          isMobileLayout: -> $(window).width() < 768
+          
           drawerOut: ->
             $('.study-detail-display').length
           
@@ -28,8 +30,8 @@ $ ->
             $('.close',$display).click -> drawer.cleanupOld()
             $display.append($study_details.html())
       
-            if is_mobile_layout = $(window).width() < 768
-              $study_details.after($display)
+            if drawer.isMobileLayout()
+              drawer.cleanupOld()
             else
               $(@).parents('.media-row').after($display)
               
@@ -41,12 +43,10 @@ $ ->
           handleScroll: ()->
             # $media_item.smoothScroll(350, 'easeInOutQuint')
             media_offset  = $media_item.offset().top
-            drawer_offset = drawer.drawerOut && $('.study-detail-display').offset().top
-            drawer_height = drawer.drawerOut && $('.study-detail-display').height()
+            drawer_offset = drawer.drawerOut() && $('.study-detail-display').offset().top
+            drawer_height = drawer.drawerOut() && $('.study-detail-display').height()
             
-            # debugger
-            
-            if drawer_offset && media_offset > drawer_offset
+            if drawer_height && drawer_offset && media_offset > drawer_offset
               # remove the height of the olde drawer from the $media_item
               $media_item.smoothScroll(350, 'easeInOutQuint', {offset: -drawer_height})
             else
