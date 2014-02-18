@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.2.14)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-import (0.3.1)
+      activerecord (~> 3.0)
     activerecord-tableless (1.3.3)
       activerecord (>= 2.3.0)
     activeresource (3.2.14)
@@ -368,6 +370,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import (~> 0.3.0)
   activerecord-tableless (~> 1.0)
   acts_as_interface
   acts_as_list

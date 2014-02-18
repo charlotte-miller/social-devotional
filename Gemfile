@@ -11,7 +11,6 @@ gem 'capistrano',        :require => false
 gem 'sitemap_generator', :require => false
 # gem 'ox'
 # gem 'profanalyzer'
-# gem 'activerecord-import', '~> 0.3.0'
 # gem 'unicorn'
 # gem 'puma'
 
@@ -110,11 +109,12 @@ group :development, :test do
   gem 'rails-backbone-generator', :require => false
   
   gem 'sunspot_test', :require => false
+  
+  gem 'activerecord-import', '~> 0.3.0'
 end
 
 group :test do
   gem 'webmock'
-  gem 'therubyracer', :platform => :ruby
   gem 'sunspot_test'
   gem 'simplecov', :require => false
   gem "activerecord-tableless", "~> 1.0"  #used by DummyClass when testing concerns

@@ -22,6 +22,7 @@
 #
 
 
+require 'rspec/mocks/standalone'
 
 FactoryGirl.define do
   factory :study do
