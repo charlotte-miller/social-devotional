@@ -25,7 +25,7 @@
       - col_array.each do |col_count|
         - study_image = "http://lorempixel.com/#{('a'..'z').to_a[rand(26)]}/400/200/"
         .media-item{:class=>"col-sm-#{col_count}", style:"background-image:url('#{study_image}');" }
-          %a{:href => "http://cornerstone-sf.org"} 
+          %a{:href => study_url(this_study = Study.first)} 
             .click_to_play
               .call_to_action
             .study-details

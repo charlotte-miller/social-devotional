@@ -1,10 +1,10 @@
-#discussion.span8
+#discussion-tabs
   %ul.nav.nav-tabs
     %li.active
       %a{"data-toggle" => "tab", :href => "#tab_lesson_notes"} Notes
     %li
       %a{"data-toggle" => "tab", :href => "#tab_lesson_questions"}
-        Discussion
+        Questions
         %span.badge= @discussion_activity_count || 8
   /
     <form class="form-horizontal pull-right">

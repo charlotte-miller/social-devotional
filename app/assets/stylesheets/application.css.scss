@@ -184,7 +184,18 @@
   }
 }
 
+.page-header{
+  margin-top:-20px;
+}
 
+#lesson_carasel{
+  list-style-type: none;
+  margin-top: 15px;
+  height: 200px;
+  display: block;
+  overflow-y: hidden;
+}
 
-
-
+#discussion{
+  margin-top:15px;
+}

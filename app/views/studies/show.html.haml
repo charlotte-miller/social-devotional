@@ -1,50 +1,51 @@
 - content_for :js_includes do
-  = javascript_include_tag "backbone", "lessons"
+  = javascript_include_tag "backbone", "//cdn.sublimevideo.net/js/lqhbkm50.js", "lessons"
   
 - model_class = Study
-.page-header
-  %h1
-    = @study.title
-.row-fluid
-  #current_study.span12
-    #lesson_player.row-fluid
-      = tag :video, {                              |
-        poster: @study.poster_img,                 |
-        id:    "video-for-#{@study.id}",           |
-        class: "video-js vjs-default-skin span12", |
-        controls:true,                             |
-        preload:"auto",                            |
-        data:{                                     |
-          setup:'{}'                               |
-        }}, :leave_tag_open                        |
+#media.fluid-row
+  .page-header.col-xs-12
+    %h1
+      %span.title= @study.title
+      .small
+        %span.church
+          = @study.church.name
+        %span.hidden-xs
+          |
+          %span.description
+            = @study.description
+    .description
+  #current_study.col-xs-9
+    #lesson_player.row
+      %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
+        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
+        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}
+        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.webm"}
+        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.webm"}
+      / = tag :video, {                                   |
+      /   poster: @study.poster_img,                      |
+      /   id:    "video-for-#{@study.id}",                |
+      /   class: "video-js vjs-default-skin .col-xs-12",  |
+      /   controls:true,                                  |
+      /   preload:"auto",                                 |
+      /   data:{                                          |
+      /     setup:'{}'                                    |
+      /   }}, :leave_tag_open                             |
       %source{:src => "http://video-js.zencoder.com/oceans-clip.mp4", :type => "video/mp4"}/
       %source{:src => "http://video-js.zencoder.com/oceans-clip.webm", :type => "video/webm"}/
       %source{:src => "http://video-js.zencoder.com/oceans-clip.ogv", :type => "video/ogg"}/
-    #lesson_carasel.row-fluid
-      %ul
-        - @study.lessons.each do |lesson|
-          %li.lessons{:id => "lesson_#{lesson.id}"}= lesson.video.url
-    #lesson_credits.row-fluid
-      %dl#study.dl-horizontal
-        %dt
-          %strong
-            = model_class.human_attribute_name(:slug)
-            \:
-        %dd= @study.slug
-        %dt
-          %strong
-            = model_class.human_attribute_name(:description)
-            \:
-        %dd= @study.description
-        %dt
-          %strong
-            = model_class.human_attribute_name(:ref_link)
-            \:
-        %dd= @study.ref_link
-  #recommended_studies.span3.mobile-hidden
+      .source
+        Source:
+        = @study.ref_link
+    %ol#lesson_carasel.row
+      - @study.lessons.each do |lesson|
+        %li.lessons{:id => "lesson_#{lesson.id}", class:'col-xs-6 col-md-3'}
+          = link_to( image_tag(lesson.poster_img.url(:thumbnail), height:200, width:300), [@study, lesson], class:'thumbnail')
+          
+  #recommended_studies.col-xs-3.hidden-xs
     / TODO fix .mobile-hidden w/ correct class
     Recommended Studies
-%hr/
-%h3 Ask a Question or Take Notes
-%hr/
-= render partial: 'studies/discussion'
+
+.clearfix
+#discussion.fluid-row
+  / %h3 Take Notes -or- Ask a Question
+  = render partial: 'studies/discussion'
