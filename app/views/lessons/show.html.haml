@@ -14,7 +14,8 @@
           %span.description
             = @study.description
     .description
-  #current_study.col-xs-9
+  .clearfix
+  #current_study.col-lg-9
     #lesson_player
       %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
         %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
@@ -38,18 +39,22 @@
         = link_to @church.name, @church.homepage
         |
         = link_to @study.ref_link, @study.ref_link
+        #carasel-toggle More Lessons from this Study
+        
     #lesson_carasel
       %ol
         - @study.lessons.each do |lesson|
-          %li.lessons{:id => "lesson_#{lesson.id}", class:''}
+          %li.lessons{:id => "lesson_#{lesson.id}"}
             = link_to( image_tag(lesson.poster_img.url(:thumbnail), height:200, width:300), [@study, lesson], class:'thumbnail')
             %span.lesson-number= lesson.position
           
-  #recommended_studies
-    / TODO fix .mobile-hidden w/ correct class
-    Recommended Studies
+  #similar-studies-lg
+    = render partial: 'lessons/similar_studies'
 
 .clearfix
 #discussion.fluid-row
   / %h3 Take Notes -or- Ask a Question
-  = render partial: 'studies/discussion'
+  = render partial: 'lessons/discussion'
+  
+#similar-studies-sm-screen
+  = render partial: 'lessons/similar_studies'

@@ -13,7 +13,7 @@ $ ->
   # Main Nav hiding on downscroll
   $('nav#main-nav').headroom
     tolerance: 5
-    offset: 205
+    offset: 180
     classes:
       initial: "main-nav"
       pinned: "pinned"

@@ -85,6 +85,12 @@
     @extend .col-xs-12;
     margin-top:45px;
     margin-bottom:15px;
+  
+    @media screen and (max-width: $screen-md-min){
+      h1 {
+        font-size:28px !important;
+      }
+    }
   }
   
   #current-study{
@@ -98,8 +104,8 @@
     @extend .col-xs-12;
     margin-top: 15px;
     height: 180px;
-    display: block;
-    overflow-y: auto;
+    display: none;
+    overflow: auto !important;
     
     ol{
       list-style-type: none;
@@ -108,7 +114,7 @@
       
       .lessons{
         display: inline-block;
-        width: 150px;
+        width: 120px;
         position:relative;
         
         .lesson-number{
@@ -130,13 +136,40 @@
   .source a{
     color:$gray-lighter;
   }
+  
+  #carasel-toggle{
+    @extend .btn;
+    @extend .btn-default;
+    @extend .btn-xs;
+    @extend .pull-right;
+  }
 
-  #recommended_studies{
-    @extend .col-xs-3;
-    @extend .hidden-xs
+  .similar_studies{
+    @extend .col-md-3;
+    @extend .visible-lg;
+    
+    .thumbnail{
+      height:200px;
+      
+    }
   }
 }
 
 #discussion{
   margin-top:15px;
+  
+  #lesson_notes{
+    
+  }
+}
+
+#similar-studies-sm-screen{
+  .similar_studies{
+    @extend .hidden-lg;
+    
+    .thumbnail{
+      height:200px;
+      
+    }
+  }
 }
