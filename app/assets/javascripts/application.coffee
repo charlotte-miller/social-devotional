@@ -4,18 +4,20 @@
 #= require jquery/jquery-1.8.0
 #= require jquery/jquery.easing-1.3
 #= require jquery/jquery.sd.utils
+#= require jquery/headroom-0.4.0
+#= require jquery/jquery.headroom
 
 # Site-wide behavior
 $ ->
-  # # Smooth scrole to hash links
-  # $("a[href*=#]:not([href=#])").click ->
-  #   if location.pathname.replace(/^\//, "") is @pathname.replace(/^\//, "") and location.hostname is @hostname
-  #     target = $(@hash)
-  #     target = (if target.length then target else $("[name=" + @hash.slice(1) + "]"))
-  #     if target.length
-  #       $("html,body").animate
-  #         scrollTop: target.offset().top
-  #       , 1000
-  #       false
-  # 
-  # return
+  
+  # Main Nav hiding on downscroll
+  $('nav#main-nav').headroom
+    tolerance: 5
+    offset: 205
+    classes:
+      initial: "main-nav"
+      pinned: "pinned"
+      unpinned: "unpinned"
+    
+  
+  

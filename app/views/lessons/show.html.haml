@@ -1,13 +1,54 @@
-.page-header
-  %h1
-    = t '.title', :default => study_title
-    %small= @lesson.position
-%h3
-  = study_title
-  \:
-  %small= @lesson.position
-%dl#lesson.dl-horizontal
-  = render partial: 'lesson', locals: {lesson: @lesson}
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), |
-    study_lessons_path(@study), :class => 'btn'              |
+- content_for :js_includes do
+  = javascript_include_tag "backbone", "//cdn.sublimevideo.net/js/lqhbkm50.js", "lessons"
+  
+- model_class = Study
+#media
+  #media-header
+    %h1
+      %span.title= @study.title
+      .small
+        %span.church
+          = @study.church.name
+        %span.hidden-xs
+          |
+          %span.description
+            = @study.description
+    .description
+  #current_study
+    #lesson_player
+      %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
+        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
+        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}
+        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.webm"}
+        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.webm"}
+      / = tag :video, {                                   |
+      /   poster: @study.poster_img,                      |
+      /   id:    "video-for-#{@study.id}",                |
+      /   class: "video-js vjs-default-skin .col-xs-12",  |
+      /   controls:true,                                  |
+      /   preload:"auto",                                 |
+      /   data:{                                          |
+      /     setup:'{}'                                    |
+      /   }}, :leave_tag_open                             |
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.mp4", :type => "video/mp4"}/
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.webm", :type => "video/webm"}/
+      %source{:src => "http://video-js.zencoder.com/oceans-clip.ogv", :type => "video/ogg"}/
+      .source
+        Source:
+        = link_to @church.name, @church.homepage
+        |
+        = link_to @study.ref_link, @study.ref_link
+    #lesson_carasel
+      %ol
+        - @study.lessons.each do |lesson|
+          %li.lessons{:id => "lesson_#{lesson.id}", class:''}
+            = link_to( image_tag(lesson.poster_img.url(:thumbnail), height:200, width:300), [@study, lesson], class:'thumbnail')
+          
+  #recommended_studies
+    / TODO fix .mobile-hidden w/ correct class
+    Recommended Studies
+
+.clearfix
+#discussion.fluid-row
+  / %h3 Take Notes -or- Ask a Question
+  = render partial: 'studies/discussion'

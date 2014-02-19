@@ -26,16 +26,12 @@ class StudiesController < ApplicationController
   def show
     @study      = find_or_redirect_to_study || return #redirecting
     @lessons    = @study.lessons
-    @lesson     = @lessons.first
-    @video      = @lesson.video
-    # @questions  = @lesson.questions
-    @q_popular  = @lesson.questions.popular
-    @q_recent   = @lesson.questions.recent
-    @q_timeline = @lesson.questions.timeline
     
+    # Users last watched or... for now
+    @lesson = @lessons.first
       
     respond_to do |format|      
-      format.html # show.html.erb
+      format.html { redirect_to [@study, @lesson] }
       format.json { render json: @study }
     end
   end
