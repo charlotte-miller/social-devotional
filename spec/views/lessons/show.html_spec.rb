@@ -2,25 +2,27 @@ require 'spec_helper'
 
 describe "lessons/show" do
   before(:each) do
-    @study  = assign(:study,  build_stubbed(:study) )
-    @lesson = assign(:lesson, stub_model(Lesson,
-      :study    => @study,
-      :position => 2,
-      :title => "Title",
-      :description => "MyText",
-      :video => video_file,
-      :audio => audio_file,
-      :created_at => Time.now,
-      :study_title => 'Matthew Study'
+    @study = assign(:study, build_stubbed(:study_w_lessons,
+      :title => "Road to Damascus",
+      :description => "God famously meets us in the low places.  This is a study on God intersecting our high-points",
+      :ref_link => "http://www.church.org/podcast/1234"
     ))
+    @church  = assign(:church, build_stubbed(:church))
+    @lessons = assign(:lessons, @study.lessons)
+    @lesson  = assign(:lesson, @lessons.first)
+    @video   = assign(:video, @lessons.first.video)
   end
 
   it "renders attributes in <p>" do
     render
-    assert_select "#lesson", :count => 1
-    rendered.should match(/2/)
-    rendered.should match(/Title/)
-    rendered.should match(/MyText/)
+    assert_select '#study',   count:1
+    assert_select '.lessons', count:2
+    @lessons.each {|lesson| assert_select "#lesson_#{lesson.id}"}
+    
+    rendered.should have_content "Road to Damascus"
+    rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
+    rendered.should have_content "http://www.church.org/podcast/1234"
+    
     rendered.should match( url_to_regex(@lesson.video.url) )
     rendered.should match( url_to_regex(@lesson.audio.url) )
   end

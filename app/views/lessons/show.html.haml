@@ -1,14 +1,13 @@
 - content_for :js_includes do
   = javascript_include_tag "backbone", "//cdn.sublimevideo.net/js/lqhbkm50.js", "lessons"
   
-- model_class = Study
-#media
-  #media-header
+#study
+  #study-header
     %h1
       %span.title= @study.title
       .small
         %span.church
-          = @study.church.name
+          = @church.name
         %span.hidden-xs
           |
           %span.description
@@ -16,7 +15,7 @@
     .description
   .clearfix
   #current_study.col-lg-9
-    #lesson_player
+    #lesson
       %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
         %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
         %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}
@@ -41,7 +40,7 @@
         = link_to @study.ref_link, @study.ref_link
         #carasel-toggle More Lessons from this Study
         
-    #lesson_carasel
+    #all-lessons
       %ol
         - @study.lessons.each do |lesson|
           %li.lessons{:id => "lesson_#{lesson.id}"}

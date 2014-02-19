@@ -2,4 +2,4 @@
 
 $ ->
   $('#carasel-toggle').click ->
-    $('#lesson_carasel').slideFadeToggle();
+    $('#all-lessons').slideFadeToggle(350, 'easeInOutQuint')
