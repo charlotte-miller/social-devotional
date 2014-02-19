@@ -45,7 +45,7 @@ private
   def find_or_redirect_to_study
     study = Study.w_lessons.find(params[:study_id]) 
     unless !!(%r{#{study_path(study)}/} =~ request.path)
-      redirect_to( study, status: :moved_permanently ) && (return false)
+      redirect_to( study_lesson_url(study, params[:id]), status: :moved_permanently ) && (return false)
     end
     return study
   end
