@@ -87,10 +87,17 @@
     margin-bottom:15px;
   }
   
+  #current-study{
+    // Has to be in markup O_o
+    //@extend .col-xs-9;
+  }
+  
+  #lesson_player{ }
+  
   #lesson_carasel{
-    @extend .col-xs-9;
+    @extend .col-xs-12;
     margin-top: 15px;
-    height: 185px;
+    height: 180px;
     display: block;
     overflow-y: auto;
     
@@ -107,14 +114,6 @@
   
   .source a{
     color:$gray-lighter;
-  }
-  
-  #current-study{
-    @extend .col-xs-9;
-    
-    #lesson_player{
-      @extend .row;
-    }
   }
 
   #recommended_studies{
