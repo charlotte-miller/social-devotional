@@ -43,6 +43,7 @@
         - @study.lessons.each do |lesson|
           %li.lessons{:id => "lesson_#{lesson.id}", class:''}
             = link_to( image_tag(lesson.poster_img.url(:thumbnail), height:200, width:300), [@study, lesson], class:'thumbnail')
+            %span.lesson-number= lesson.position
           
   #recommended_studies
     / TODO fix .mobile-hidden w/ correct class

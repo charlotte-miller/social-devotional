@@ -105,10 +105,25 @@
       list-style-type: none;
       display: inline-flex;
       padding:0px;
-    }
-    .lessons{
-      display: inline-block;
-      width: 150px;
+      
+      .lessons{
+        display: inline-block;
+        width: 150px;
+        position:relative;
+        
+        .lesson-number{
+          height: inherit;
+          width: inherit;
+          font-size: 100px;
+          bottom: 0;
+          top: 0;
+          right: 0;
+          left: 0;
+          position: absolute;
+          text-align: center;
+          @include opacity(0.5);
+        }
+      }
     }
   }
   
