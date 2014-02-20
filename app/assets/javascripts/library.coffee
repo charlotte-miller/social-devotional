@@ -1,7 +1,7 @@
 $ ->     
   
   jQuery.fn.rigMediaItems = ->
-    $('.media-item',@).each ->
+    $('.study',@).each ->
       $media_item = $(@)
       
       # Rig click events    
@@ -18,7 +18,7 @@ $ ->
             $('.study-detail-display').length
           
           cleanupOld: ->
-            $('.media-item.active').removeClass('active')
+            $('.study.active').removeClass('active')
             ($('.study-detail-display').slideFadeHide 350, 'easeInOutQuint', -> $(@).remove()) if base.drawerOut()
     
           insertNew: =>
@@ -33,7 +33,7 @@ $ ->
             if base.isMobileLayout()
               base.cleanupOld()
             else
-              $(@).parents('.media-row').after($display)
+              $(@).parents('.study-row').after($display)
               
             $display.slideFadeShow 350, 'easeInOutQuint'
           
@@ -56,4 +56,4 @@ $ ->
         base.activateMediaItem()
         base.handleScroll()
   
-  $('#library-media').rigMediaItems()
+  $('#study-library').rigMediaItems()

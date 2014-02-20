@@ -91,6 +91,7 @@ group :development, :test do
   gem "faker"
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'capybara-screenshot', git:'git@github.com:mattheworiordan/capybara-screenshot.git'
   gem 'shoulda-matchers', '~> 2.4.0'
   gem 'rspec_candy'
   gem 'syntax'
