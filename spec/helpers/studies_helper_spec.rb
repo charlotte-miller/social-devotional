@@ -8,7 +8,7 @@ describe StudiesHelper, :focus do
   
   describe '::GridLayout' do
     let(:collection) { (1..5).to_a }
-    subject { StudiesHelper::GridLayout.new(collection) }
+    subject { StudiesHelper::GridLayout.new(collection, (@options || {})) }
     
     describe "#random_grid_layout" do
       it "grabs a random sample of LAYOUT_COLUMN_COUNTS" do
@@ -29,7 +29,8 @@ describe StudiesHelper, :focus do
     
       it "does not repeat for 'rows_since_possible_repeat'" do
         StudiesHelper::GridLayout::LAYOUT_COLUMN_COUNTS = [[1], [2], [3]] # length must be > rows_since_possible_repeat
-        subject.rows_for(6, 2).flatten.sort.should eq [1,1,2,2,3,3]
+        @options = { rows_since_possible_repeat: 2}
+        subject.rows_for(6).flatten.sort.should eq [1,1,2,2,3,3]
       end
     
       it "does not allow immediately repeated values for first/last value" do

@@ -13,11 +13,10 @@ module StudiesHelper
       ].inject([]) {|array,grid_width| (array | grid_width.permutation.to_a.uniq)}
     
     def initialize(collection, options={})
-      options = {
+      @collection = collection
+      @options = {
         rows_since_possible_repeat: 3
       }.merge(options)
-      
-      @collection = collection
       @rows = []
     end
     
@@ -26,19 +25,22 @@ module StudiesHelper
     end
     
     # Creates a visually 'random' grid 
-    def rows_for(count=10, rows_since_possible_repeat=3)    
-      count.times.inject([]) do |array,index|      
-        @trailing_n_rows = array[[index-rows_since_possible_repeat, 0].max...index]
-        array << find_uniq_layout
-      end
+    def rows_for(count=10)    
+      count.times { @rows << find_uniq_layout }
+      @rows
     end
     
   private
+    def trailing_rows
+      floor = [@rows.count - @options[:rows_since_possible_repeat], 0].max
+      @trailing_rows_cache = Array.wrap( @rows[floor...@rows.count] )
+    end
+    
     def find_uniq_layout
-      @trailing_n_rows.empty? ? (return random_grid_layout) : (maybe = random_grid_layout)
-      maybe = find_uniq_layout if @trailing_n_rows.include?(maybe)
-      maybe = find_uniq_layout if @trailing_n_rows.last[0] == maybe[0]
-      maybe = find_uniq_layout if @trailing_n_rows.last[-1] == maybe[-1]
+      trailing_rows.empty? ? (return random_grid_layout) : (maybe = random_grid_layout)
+      maybe = find_uniq_layout if @trailing_rows_cache.include?(maybe)
+      maybe = find_uniq_layout if @trailing_rows_cache.last[0] == maybe[0]
+      maybe = find_uniq_layout if @trailing_rows_cache.last[-1] == maybe[-1]
       maybe
     end
   end
