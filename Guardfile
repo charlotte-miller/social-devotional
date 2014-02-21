@@ -61,5 +61,5 @@ guard 'rspec', rspec_options do
   # watch(%r{^lib/paperclip_processors/(.+)\.rb}) { 'spec/models/lesson/attached_media_spec.rb'}
 
   # Capybara request specs
-  watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
+  # watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end

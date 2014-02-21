@@ -11,19 +11,30 @@ describe "lessons/show" do
     @lessons = assign(:lessons, @study.lessons)
     @lesson  = assign(:lesson, @lessons.first)
     @video   = assign(:video, @lessons.first.video)
+    
+    render
   end
 
-  it "renders attributes in <p>" do
-    render
-    assert_select '#study',   count:1
-    assert_select '.lessons', count:2
-    @lessons.each {|lesson| assert_select "#lesson_#{lesson.id}"}
-    
-    rendered.should have_content "Road to Damascus"
-    rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
-    rendered.should have_content "http://www.church.org/podcast/1234"
-    
+  it "renders the Study's info" do
+    [ @study.title,
+      @study.description,
+      @study.ref_link,
+      @church.name,
+    ].each {|info| rendered.should have_content(info) }    
+  end
+  
+  it "renders the Study's media" do
+    # assert_select '#study',   count:1
     rendered.should match( url_to_regex(@lesson.video.url) )
     rendered.should match( url_to_regex(@lesson.audio.url) )
+  end
+    
+  it "renders links to the Study's lessons" do
+    # assert_select '.lessons', count:@lessons.length
+    @lessons.each do |lesson| 
+      # assert_select "#lesson_#{lesson.id}"
+      assert_select "img[src=#{lesson.poster_img.url}]"
+      rendered.should match( url_to_regex(study_lesson_path(@study, lesson)) )
+    end
   end
 end

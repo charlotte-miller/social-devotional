@@ -16,29 +16,37 @@
   .clearfix
   #current_study.col-lg-9
     #lesson
-      %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
-        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
-        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}
-        %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.webm"}
-        %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.webm"}
-      / = tag :video, {                                   |
-      /   poster: @study.poster_img,                      |
-      /   id:    "video-for-#{@study.id}",                |
-      /   class: "video-js vjs-default-skin .col-xs-12",  |
-      /   controls:true,                                  |
-      /   preload:"auto",                                 |
-      /   data:{                                          |
-      /     setup:'{}'                                    |
-      /   }}, :leave_tag_open                             |
-      %source{:src => "http://video-js.zencoder.com/oceans-clip.mp4", :type => "video/mp4"}/
-      %source{:src => "http://video-js.zencoder.com/oceans-clip.webm", :type => "video/webm"}/
-      %source{:src => "http://video-js.zencoder.com/oceans-clip.ogv", :type => "video/ogg"}/
-      .source
+      / %video#a240e92d.sublime{"data-autoresize" => "fit", "data-uid" => "a240e92d", height: "360", poster: "https://cdn.sublimevideo.net/vpa/ms_800.jpg", preload: "none", title: "Midnight Sun", width: "640"}
+      %video{                                     |
+        id:    "video-for-#{@study.id}",          |
+        class: "col-xs-12 sublime",               |
+        height: "360",                            |
+        width: "640",                             |
+        poster: @lesson.poster_img.url,           |
+        title: @lesson.title,                     |
+        preload:"auto",                           |
+        data:{ autoresize:'fit',uid: "a240e92d"}} |
+        %source{src:@lesson.video.url}
+        / webm:          { geometry: SD_SIZE,  :format => 'webm' },
+        / mp4:           { geometry: SD_SIZE,  :format => 'mp4' , :streaming => true},
+        / 
+        / webm_hd:       { geometry: HD_SIZE,  :format => 'webm' },
+        / mp4_hd:        { geometry: HD_SIZE,  :format => 'mp4' , :streaming => true},
+        / 
+        / mp4_mobile:    { geometry: MOBILE_SIZE,  :format => 'mp4' , :streaming => true}}
+        
+        / %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
+        / %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}
+        / %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.webm"}
+        / %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.webm"}
+      .lesson-source
         Source:
         = link_to @church.name, @church.homepage
         |
         = link_to @study.ref_link, @study.ref_link
-        #carasel-toggle More Lessons from this Study
+        #carasel-toggle More From This Study
+        %br
+        = link_to 'Download Audio', @lesson.audio.url
         
     #all-lessons
       %ol
