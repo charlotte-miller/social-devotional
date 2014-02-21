@@ -39,4 +39,7 @@ class Church < ActiveRecord::Base
   # Methods
   # ---------------------------------------------------------------------------------
   
+  def to_s
+    name
+  end
 end

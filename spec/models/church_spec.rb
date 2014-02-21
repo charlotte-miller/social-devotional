@@ -21,4 +21,9 @@ describe Church do
   it "builds from factory", :internal do
     lambda { create(:church) }.should_not raise_error
   end
+  
+  it "#to_s is #name" do
+    church = build_stubbed(:church)
+    church.to_s.should eq church.name
+  end
 end
