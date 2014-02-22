@@ -37,7 +37,7 @@ module Lesson::Adapters::WebSites
     end
     
     def poster_img_remote_url
-      thumbs_hash = Oj.load vimeo_page.xpath('//script').text.match(/"thumbs":({[^}]*})/)[1].to_s
+      thumbs_hash = JSON.parse vimeo_page.xpath('//script').text.match(/"thumbs":({[^}]*})/)[1].to_s
       thumbs_hash["1280"] #1280, 960, 640
     end
   

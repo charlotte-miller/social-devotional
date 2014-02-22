@@ -26,14 +26,11 @@
         title: @lesson.title,                     |
         preload:"auto",                           |
         data:{ autoresize:'fit',uid: "a240e92d"}} |
-        %source{src:@lesson.video.url}
-        / webm:          { geometry: SD_SIZE,  :format => 'webm' },
-        / mp4:           { geometry: SD_SIZE,  :format => 'mp4' , :streaming => true},
-        / 
-        / webm_hd:       { geometry: HD_SIZE,  :format => 'webm' },
-        / mp4_hd:        { geometry: HD_SIZE,  :format => 'mp4' , :streaming => true},
-        / 
-        / mp4_mobile:    { geometry: MOBILE_SIZE,  :format => 'mp4' , :streaming => true}}
+        %source{src:@lesson.video.url(:webm)}
+        %source{src:@lesson.video.url(:mp4)}
+        %source{src:@lesson.video.url(:webm_hd, data:{quality:'hd'})}
+        %source{src:@lesson.video.url(:mp4_hd)}
+        %source{src:@lesson.video.url(:mp4_mobile)}
         
         / %source{"data-quality" => "hd", src: "https://cdn.sublimevideo.net/vpa/ms_720p.mp4"}
         / %source{src: "https://cdn.sublimevideo.net/vpa/ms_360p.mp4"}

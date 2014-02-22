@@ -25,15 +25,17 @@ describe "lessons/show" do
   
   it "renders the Study's media" do
     # assert_select '#study',   count:1
-    rendered.should match( url_to_regex(@lesson.video.url) )
-    rendered.should match( url_to_regex(@lesson.audio.url) )
+    rendered.should match( url_to_regex( @lesson.audio.url ))
+    [:webm, :mp4, :webm_hd, :mp4_hd, :mp4_mobile].each do |format|
+      rendered.should match( url_to_regex( @lesson.video.url(format) ))
+    end
   end
     
   it "renders links to the Study's lessons" do
     # assert_select '.lessons', count:@lessons.length
     @lessons.each do |lesson| 
       # assert_select "#lesson_#{lesson.id}"
-      assert_select "img[src=#{lesson.poster_img.url}]"
+      assert_select "img[src=#{lesson.poster_img.url(:thumbnail)}]"
       rendered.should match( url_to_regex(study_lesson_path(@study, lesson)) )
     end
   end

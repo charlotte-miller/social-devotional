@@ -7,7 +7,7 @@ describe "Lessons" do
   describe "GET library/matthew-study-1/lessons" do  
     it "works! (now write some real specs)" do
       get study_lessons_path(study)
-      response.status.should be(200)
+      response.status.should be(302)
     end
   end
   
