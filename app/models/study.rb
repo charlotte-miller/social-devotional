@@ -39,7 +39,7 @@ class Study < ActiveRecord::Base
   
   has_attachable_file :poster_img, path: ':rails_env/:class/:attachment/:id/:hash.:extension',
                       :hash_data => ":class/:attachment/:id/:fingerprint-:style",
-                      :url => AppConfig.domains.cdn
+                      :s3_host_alias => AppConfig.domains.media_cdn
                       # :styles => { thumb: { geometry: SD_SIZE, format: 'png', convert_options: "-strip" }}
                       # :processors => [:thumbnail, :pngquant]
 

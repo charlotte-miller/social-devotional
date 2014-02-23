@@ -15,10 +15,10 @@ common:
   dev_pass: developer
   domains:
     media: media.socialdevotional.com
+    media_cdn: media-cdn.socialdevotional.com
     cdn: www.socialdevotional.com
-    origin: origin.socialdevotional.com
   s3:
-    bucket: social-devotional
+    bucket: media.socialdevotional.com
     credentials:
       access_key_id: AKIAJAW4PTOXOO6POA7Q
       secret_access_key: 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
@@ -30,18 +30,15 @@ common:
   crawler_user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36' #http://www.useragentstring.com/pages/All/
 
 development:
-  # domains:
-  #   media: social-devotional.s3.amazonaws.com
-  #   cdn:   social-devotional.s3.amazonaws.com
+  domains:
+    cdn: www.socialdevotional.com
+    media: media.socialdevotional.com
+    media_cdn: media.socialdevotional.com 
     
 
 test:
 
 production:
-  domains:
-    media:  media.socialdevotional.com
-    cdn:    www.socialdevotional.com
-    origin: origin.socialdevotional.com
   
   redis:
     host: 'redis-master.socialdevotional.com'

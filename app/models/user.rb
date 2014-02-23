@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   
   has_attachable_file :profile_image, :path => ':rails_env/:class/:attachment/:id/:hash.:extension',
                       :hash_data => ":class/:attachment/:id/:fingerprint-:style",
-                      :url => AppConfig.domains.cdn,
+                      :s3_host_alias => AppConfig.domains.media_cdn,
                       :styles => { 
                         :medium => { geometry: "300x300>", format: 'jpg', convert_options: "-strip" }, 
                         :thumb  => { geometry: "100x100>", format: 'jpg', convert_options: "-strip" }}
