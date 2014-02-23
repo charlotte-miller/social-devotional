@@ -8,6 +8,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string        :author
       t.string        :backlink
       t.attachment    :poster_img
+      t.string        :poster_img_original_url
       t.string        :poster_img_fingerprint
       t.attachment    :video
       t.string        :video_original_url

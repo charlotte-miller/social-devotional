@@ -21,11 +21,14 @@ private
   def download_and_assign( attachment_name )
     url_str   = @obj_instance.send("#{attachment_name}_original_url")
     file_name = File.basename( URI(url_str).path )
+    extention = File.extname(URI(url_str).path )
     
     # Paperclip options[:skip_processing_urls]
     return if @obj_instance.send(attachment_name).trusted_third_party?
     
-    Tempfile.open(file_name) do |tempfile|
+    # tempfile = Tempfile.new([self.basename, self.extname]).binmode)
+    Tempfile.open([file_name, extention]) do |tempfile|
+      tempfile.binmode
       curl_to(url_str, tempfile.path)
       @obj_instance.send("#{attachment_name}=", tempfile)
     end
@@ -34,7 +37,7 @@ private
   # Uses system `curl` to avoid buffering content into ruby
   # This can be updated when Curb/Typhoeus supports the --output option 
   def curl_to(from_url, to_file_path)
-    curl = Cocaine::CommandLine.new('curl', ":from_url -o :to_file_path --silent")
+    curl = Cocaine::CommandLine.new('curl', ":from_url -o :to_file_path -L --silent")
     curl.run(from_url:from_url, to_file_path:to_file_path)
   end
   
