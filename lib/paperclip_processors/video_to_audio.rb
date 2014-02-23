@@ -13,7 +13,7 @@ module Paperclip
     def make
       return file if already_audio?
       
-      # `ffmpeg -i INPUT.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 OUTPUT.mp3`
+      # `ffmpeg -i INPUT.avi -vn -ar 44100 -ac 2 -ab 128k -f mp3 OUTPUT.mp3 -y`
       @command_line = Cocaine::CommandLine.new('ffmpeg', "-i :from_video -vn -ar 44100 -ac :audio_channels -ab :audio_bitrate -f :format :to_audio -y")
       @command_line.run(from_video:file.path, to_audio:destination_file.path, audio_bitrate:@audio_bitrate, format:@format, audio_channels:audio_channels.to_s)
       return destination_file
