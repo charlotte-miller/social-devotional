@@ -15,9 +15,10 @@ common:
   dev_pass: developer
   domains:
     media: media.socialdevotional.com
-    media_cdn: media-cdn.socialdevotional.com
+    media_cdn: cdn.media.socialdevotional.com
     cdn: www.socialdevotional.com
   s3:
+    url: s3-us-west-2.amazonaws.com #s3.amazonaws.com
     bucket: media.socialdevotional.com
     credentials:
       access_key_id: AKIAJAW4PTOXOO6POA7Q

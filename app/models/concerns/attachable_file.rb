@@ -41,8 +41,9 @@ module AttachableFile
           :s3_permissions   => :public_read,
           :bucket           => AppConfig.s3.bucket,
           :s3_credentials   => AppConfig.s3.credentials,
-          :s3_host_alias    => AppConfig.domains.media_cdn, # Override for large media assets
+          :s3_host_name     => AppConfig.s3.url,
           :url              => ':s3_alias_url',
+          :s3_host_alias    => AppConfig.domains.media_cdn, # Override for large media assets
           :hash_secret      => 'faffb797c3645584210908fea09473f330f9a07857e3ea84fa37c732f6b5af667d3d3f71ed292726bdba0d7d935f2f5813fe3454f0b44cf332a69153562cc6e9',
           # :path           => [ DEFINE IN OPTIONS ]
         }.deep_merge(options)

@@ -16,7 +16,8 @@ module Lesson::AttachedMedia
                         :hash_data  => ":class/:attachment/:id/:style",
                         :s3_host_alias => AppConfig.domains.media,
                         :processors => [:video_to_audio],
-                        :styles => {mp3:{audio_bitrate:'64k'}} #ogg:true
+                        :styles => {mp3:{audio_bitrate:'64k'}}, #ogg:true
+                        :default_style => :mp3
 
     
     # http://s3.amazonaws.com/awsdocs/elastictranscoder/latest/elastictranscoder-dg.pdf
@@ -25,6 +26,7 @@ module Lesson::AttachedMedia
                         :s3_host_alias => AppConfig.domains.media,
                         :processors => [:audio_to_video, :ffmpeg, :qtfaststart],
                         :skip_processing_urls => ['youtube.com', 'vimeo.com'],
+                        :default_style => :mp4,
                         :styles => {
                           webm:          { geometry: SD_SIZE,  :format => 'webm' },
                           mp4:           { geometry: SD_SIZE,  :format => 'mp4' , :streaming => true},
@@ -39,6 +41,7 @@ module Lesson::AttachedMedia
     has_attachable_file :poster_img, :path => ':rails_env/:class/:id/:attachment/:hash.:extension',
                         :hash_data => ":class/:attachment/:id/:fingerprint-:style",
                         # :processors      => [:thumbnail, :pngquant],
+                        :default_style => :sd,
                         :styles => {
                           sd:     { geometry: SD_SIZE,     format: 'png', convert_options: "-strip" },
                           hd:     { geometry: HD_SIZE,     format: 'png', convert_options: "-strip" },
