@@ -22,7 +22,7 @@ sudo chown root:root /swapfile
 sudo chmod 0600 /swapfile
 
 sudo apt-get update
-sudo apt-get install -y curl tree
+sudo apt-get install -y curl tree htop
 sudo apt-get install -y git-core
 sudo apt-get install -y redis-server
 sudo apt-get install -y ffmpeg
