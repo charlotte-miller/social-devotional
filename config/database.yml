@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: social_devotional_production
   pool: 5
-  username: rails
-  password: cxKOYbJc7J
+  username: socialdevotional
+  password: BFEDEAFDFD8FDCAFCACB6BBDBB9BDC
   socket: /var/run/mysqld/mysqld.sock
