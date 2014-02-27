@@ -286,6 +286,8 @@ GEM
     rspec_candy (0.3.0)
       rspec
       sneaky-save
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     safe_yaml (0.9.7)
     sass (3.2.11)
     sass-rails (3.2.6)
@@ -427,6 +429,7 @@ DEPENDENCIES
   rspec-rails
   rspec-sidekiq
   rspec_candy
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   shoulda-matchers (~> 2.4.0)
   sidekiq

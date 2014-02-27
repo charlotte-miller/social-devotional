@@ -7,7 +7,6 @@ gem 'hashie'
 gem 'oj'
 gem 'celluloid'
 gem 'whenever',          :require => false
-gem 'capistrano',        :require => false
 gem 'sitemap_generator', :require => false
 # gem 'ox'
 # gem 'profanalyzer'
@@ -108,15 +107,14 @@ group :development, :test do
   gem 'annotate', ">=2.5.0"
   gem 'quiet_assets'
   gem 'rails-backbone-generator', :require => false
-  
   gem 'sunspot_test', :require => false
-  
   gem 'activerecord-import', '~> 0.3.0'
+  gem 'rvm-capistrano', require:false
+  
 end
 
 group :test do
   gem 'webmock'
-  gem 'sunspot_test'
   gem 'simplecov', :require => false
   gem "activerecord-tableless", "~> 1.0"  #used by DummyClass when testing concerns
   gem "rspec-sidekiq"
