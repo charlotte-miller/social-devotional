@@ -24,6 +24,7 @@
 require 'spec_helper'
 
 describe Study do
+  # subject { create :study }
   it { should have_many(:lessons) }
   it { should belong_to(:podcast) }
   it { should have_one(:church).through(:podcast) }
@@ -32,6 +33,7 @@ describe Study do
   it { should validate_presence_of(:slug) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:podcast) }
+  # it { should ensure_length_of(:description).is_at_most(251) }
   # it { should validate_uniqueness_of(:title)}#.scope_to(:podcast_id)}
   
   it "builds from factory", :internal do
@@ -45,6 +47,24 @@ describe Study do
     
     it "applies attribute_overrides" do
       pending 'TODO'
+    end
+  end
+  
+  describe "#description=(str)" do
+    let!(:study) { build_stubbed(:study) }
+    subject { study.description }
+    let(:str) { "Foo is bar to baz" }
+    let(:long_str) { Faker::Lorem.paragraph(10) }
+    
+    it "does not alter safe strings" do
+      study.description=str
+      should eq str
+    end
+    
+    it "truncates the string if it's longer than 250" do
+      study.description= long_str
+      should_not eq long_str
+      should match(%r{...$})
     end
   end
   

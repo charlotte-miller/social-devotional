@@ -53,6 +53,9 @@ class Study < ActiveRecord::Base
     # string(  :tags          )     { tags.select(:text).map(&:text).join(' | ')}
   end
   
+  def description=(str)
+    super str.truncate(250, omission:'...', separator: ' ')
+  end
   
   # ---------------------------------------------------------------------------------
   # Associations
@@ -71,6 +74,7 @@ class Study < ActiveRecord::Base
   # Validations
   # ---------------------------------------------------------------------------------
   validates_presence_of :slug, :title, :podcast
+  validates_length_of :description, maximum:250
   # validates_uniqueness_of :title, :scope => :podcast_id
   
   
