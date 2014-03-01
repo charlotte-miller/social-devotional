@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'open-uri'
-require 'spec/models/lesson/adapters/web_sites/dummy_klass'
+require "#{Rails.root}/spec/models/lesson/adapters/web_sites/dummy_klass"
 
 describe Lesson::Adapters::Web do
   vcr_lesson_web

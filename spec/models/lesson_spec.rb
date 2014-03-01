@@ -37,7 +37,7 @@
 
 require 'spec_helper'
 require 'cocaine'
-require 'spec/models/lesson/adapters/web_sites/dummy_klass'
+require "#{Rails.root}/spec/models/lesson/adapters/web_sites/dummy_klass"
 
 describe Lesson do
   it { should belong_to( :study )}

@@ -23,10 +23,9 @@ def url_to_regex(url_str)
 end
 
 RSpec.configure do |config|
-  config.before(:all) { @_opened_files = [] }
-  config.after( :all) do
-    @_opened_files.length.times do
-      file = @_opened_files.pop
+  config.before(:each) { @_opened_files = [] }
+  config.after( :each) do
+    @_opened_files.each do |file|
       file.close unless file.closed?
     end
   end

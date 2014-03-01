@@ -25,7 +25,7 @@ spec_location = "spec/javascripts/%s_spec"
 
 
 rspec_options ={
-  all_on_start:   false,
+  all_on_start:   true,
   all_after_pass: false,
   bundler:        false,
   zeus:           true,

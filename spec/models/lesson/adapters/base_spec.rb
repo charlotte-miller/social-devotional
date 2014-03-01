@@ -23,6 +23,7 @@ module Lesson::Adapters
       it "returns a hash of it's attributes" do
         attrs.each {|attr| klass.send("#{attr}=", 'foo')}
         klass.to_hash.symbolize_keys.should eql({
+          study_title:'foo',
           title:'foo',
           author:'foo',
           description:'foo',

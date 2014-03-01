@@ -10,7 +10,7 @@ module Lesson::Adapters::WebSites
   
     it_behaves_like 'a Lesson::Adapter', {
       title: 'The Promise of a Savior',
-      description: '',
+      description: '(Comming Soon)',
       author:'Matt Chandler',
       backlink: 'http://www.thevillagechurch.net/sermon/the-promise-of-a-savior/',
       published_at: Time.parse('Dec 01, 2013'),

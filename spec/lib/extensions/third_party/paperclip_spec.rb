@@ -8,7 +8,7 @@ describe Paperclip::Attachment do
   
   describe '#url' do
     it "returns the S3 url when present?" do
-      normal.video.url('foo').should match %r{http://s3.amazonaws.com/social-devotional/test/lessons/\d{0,4}/videos/foo/video.m4v}
+      normal.video.url('foo').should match %r{http://media.socialdevotional.com/test/lessons/\d{0,4}/videos/foo/video.m4v}
     end
     
     it "returns the instance.original_url if trusted_third_party?" do
