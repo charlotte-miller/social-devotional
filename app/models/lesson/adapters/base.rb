@@ -12,6 +12,7 @@ module Lesson::Adapters
 
     abstract_methods :initialize
     attr_accessor *ATTRIBUTES = [
+      :study_title,
       :title,
       :description,
       :author,

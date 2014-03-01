@@ -100,7 +100,12 @@ class Lesson < ActiveRecord::Base
     # Builds a lesson from an instance of Lesson::Adapters::'Klass'
     # WARN Study must be added later
     def new_from_adapter(lesson_adapter)
-      new(lesson_adapter.to_hash, as:'sudo')
+      church     = Church.where(homepage: URI(lesson_adapter.url).host).first
+      attributes = lesson_adapter.to_hash
+      study_str  = attributes.delete :study_title
+      _lesson = new(attributes, as:'sudo')
+      _lesson.study = Study.find_or_create_by_title({title:study_str, church:church}, as:'sudo') #rails4 upgrade
+      _lesson.save!
     end
   end
   

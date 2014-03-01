@@ -17,7 +17,8 @@ module Lesson::Adapters::WebSites
     end
   
     def description
-      @page.xpath("#{lesson_xpath_base}/div[@class='text']").text
+      desc = @page.xpath("#{lesson_xpath_base}/div[@class='text']").text
+      desc.empty? ? '(Comming Soon)' : desc
     end
     
     def author
@@ -37,6 +38,9 @@ module Lesson::Adapters::WebSites
     end
     
     def poster_img_remote_url
+      # http://www.thevillagechurch.net/monkimage.php?mediaDirectory=mediafiles&fileName=sermon-series-nehemiah-0-0-0-250.jpg
+      # http://www.thevillagechurch.net/monkimage.php?mediaDirectory=mediafiles&fileName=sermon-series-city-on-a-hill-0-0-0-250.jpg
+      
       thumbs_hash = JSON.parse vimeo_page.xpath('//script').text.match(/"thumbs":({[^}]*})/)[1].to_s
       thumbs_hash["1280"] #1280, 960, 640
     end
