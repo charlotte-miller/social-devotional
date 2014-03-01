@@ -13,5 +13,7 @@
 require 'spec_helper'
 
 describe Star do
-  pending "add some tests"
+  it "builds from factory" do
+    lambda { create(:star) }.should_not raise_error
+  end
 end

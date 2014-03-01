@@ -5,6 +5,7 @@
 #  id                      :integer          not null, primary key
 #  study_id                :integer          not null
 #  position                :integer          default(0)
+#  stars_count             :integer          default(0)
 #  title                   :string(255)      not null
 #  description             :text
 #  author                  :string(255)
@@ -13,6 +14,7 @@
 #  poster_img_content_type :string(255)
 #  poster_img_file_size    :integer
 #  poster_img_updated_at   :datetime
+#  poster_img_original_url :string(255)
 #  poster_img_fingerprint  :string(255)
 #  video_file_name         :string(255)
 #  video_content_type      :string(255)
@@ -34,7 +36,7 @@
 #
 
 FactoryGirl.define do
-  factory :lesson do
+  factory :lesson, aliases:[:source] do
     before(:create, :stub) { AWS.stub! if Rails.env.test? }
     
     study

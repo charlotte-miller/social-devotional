@@ -5,6 +5,7 @@
 #  id                         :integer          not null, primary key
 #  first_name                 :string(60)
 #  last_name                  :string(60)
+#  public_id                  :string(20)
 #  email                      :string(80)       default(""), not null
 #  encrypted_password         :string(255)      default(""), not null
 #  password_salt              :string(255)

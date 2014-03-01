@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
   create_table "lessons", :force => true do |t|
     t.integer  "study_id",                                   :null => false
     t.integer  "position",                :default => 0
+    t.integer  "stars_count",             :default => 0
     t.string   "title",                                      :null => false
     t.text     "description"
     t.string   "author"
@@ -144,6 +145,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
   end
 
   add_index "lessons", ["backlink"], :name => "index_lessons_on_backlink"
+  add_index "lessons", ["stars_count"], :name => "index_lessons_on_stars_count"
   add_index "lessons", ["study_id", "position"], :name => "index_lessons_on_study_id_and_position"
 
   create_table "meetings", :force => true do |t|

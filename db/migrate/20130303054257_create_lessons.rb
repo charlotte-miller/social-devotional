@@ -3,6 +3,7 @@ class CreateLessons < ActiveRecord::Migration
     create_table :lessons do |t|
       t.integer       :study_id,        null: false
       t.integer       :position,        default: 0
+      t.integer       :stars_count,     default: 0
       t.string        :title,           null: false
       t.text          :description
       t.string        :author
@@ -24,5 +25,6 @@ class CreateLessons < ActiveRecord::Migration
     
     add_index :lessons, [:study_id, :position]
     add_index :lessons, :backlink
+    add_index :lessons, :stars_count
   end
 end

@@ -15,6 +15,6 @@
 FactoryGirl.define do
   factory :star do
     user
-    source ""
+    source
   end
 end

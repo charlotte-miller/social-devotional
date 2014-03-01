@@ -30,6 +30,7 @@ sudo apt-get install -y curl tree htop
 sudo apt-get install -y git-core
 sudo apt-get install -y redis-server
 sudo apt-get install -y ffmpeg
+sudo apt-get install -y graphicsmagick
 cat ~/.ssh/id_rsa.pub | ssh -p 22 username@123.123.123.123 'cat >> ~/.ssh/authorized_keys'
 
 ssh-keygen -t rsa #generate ssh key

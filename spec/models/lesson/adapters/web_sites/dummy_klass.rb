@@ -1,7 +1,8 @@
 class Lesson::Adapters::WebSites::SomethingCom
   def initialize(path, nokogiri_doc)  end
   
-  { title:                 'Something.com',
+  { study_title:           'Something Study',
+    title:                 'Something.com',
     description:           'Dummy Lesson::Adapters::WebSites for something.com',
     author:                'Somebody',
     backlink:              'http://something.com',
