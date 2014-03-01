@@ -22,3 +22,5 @@ solr/pids/*
 doc/app
 .tmtags
 /coverage
+.rbenv-gemsets
+.ruby-version
