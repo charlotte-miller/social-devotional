@@ -14,7 +14,7 @@
 
 require 'active_support'
 FactoryGirl.define do
-  factory :podcast do  
+  factory :podcast, class:'Channels::Podcast' do  
     ignore do
       study nil
     end
@@ -23,20 +23,20 @@ FactoryGirl.define do
     studies { [study].compact }
     title   { "#{church.name} Sermons" }
     url     { "#{church.homepage}/podcasts/audio_podcast.xml" }
-    last_updated 2.days.ago
-    last_checked 1.day.ago
+    last_updated_at 2.days.ago
+    last_checked_at 1.day.ago
   end
   
   # creates a podcast w/ a single study
   factory :podcast_w_study, parent:'podcast' do |podcast|
-    study {FactoryGirl.create(:study, last_published_at:Time.now, podcast:build_stubbed(:podcast) )}
+    study {FactoryGirl.create(:study, last_published_at:Time.now, channel:build_stubbed(:podcast) )}
     after(:create) {|podcast| podcast.reload }
   end
   
   # creates a podcast w/ 'n' number of assocaiated studies
   factory :podcast_w_studies, aliases:[:podcast_with_n_studies], parent:'podcast' do |podcast|
     ignore  { n 2 }
-    studies { n.times.map { |i| FactoryGirl.create(:study, last_published_at:Time.now+i, podcast:build_stubbed(:podcast) )} }
+    studies { n.times.map { |i| FactoryGirl.create(:study, last_published_at:Time.now+i, channel:build_stubbed(:podcast) )} }
     after(:create) {|podcast| podcast.reload }
   end
 end

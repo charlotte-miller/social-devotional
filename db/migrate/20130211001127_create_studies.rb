@@ -2,7 +2,7 @@ class CreateStudies < ActiveRecord::Migration
   def change
     create_table    :studies do |t|
       t.string      :slug,          null:false
-      t.integer     :podcast_id,    null:false
+      t.integer     :channel_id
       t.string      :title,         null:false
       t.string      :description
       t.string      :ref_link
@@ -17,7 +17,7 @@ class CreateStudies < ActiveRecord::Migration
     end
     
     add_index :studies, :slug, unique: true
-    add_index :studies, [:podcast_id, :last_published_at]
+    add_index :studies, [:channel_id, :last_published_at]
     add_index :studies, :last_published_at
   end
 end

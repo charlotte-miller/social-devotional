@@ -4,7 +4,7 @@
 #
 #  id                      :integer          not null, primary key
 #  slug                    :string(255)      not null
-#  podcast_id              :integer          not null
+#  channel_id              :integer
 #  title                   :string(255)      not null
 #  description             :string(255)
 #  ref_link                :string(255)
@@ -26,13 +26,13 @@ require 'spec_helper'
 describe Study do
   # subject { create :study }
   it { should have_many(:lessons) }
-  it { should belong_to(:podcast) }
-  it { should have_one(:church).through(:podcast) }
-  it { should delegate_method(:church_name).to(:podcast)}
+  it { should belong_to(:channel) }
+  it { should have_one(:church).through(:channel) }
+  it { should delegate_method(:church_name).to(:channel)}
   
   it { should validate_presence_of(:slug) }
   it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:podcast) }
+  it { should validate_presence_of(:channel) }
   # it { should ensure_length_of(:description).is_at_most(251) }
   # it { should validate_uniqueness_of(:title)}#.scope_to(:podcast_id)}
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731050223) do
+ActiveRecord::Schema.define(:version => 20140301212429) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",             :limit => 60
@@ -67,6 +67,21 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
 
   add_index "block_requests", ["source_id", "source_type"], :name => "index_block_requests_on_source_id_and_source_type"
   add_index "block_requests", ["user_id"], :name => "index_block_requests_on_user_id"
+
+  create_table "channels", :force => true do |t|
+    t.string   "type",                           :null => false
+    t.integer  "church_id",                      :null => false
+    t.string   "title",           :limit => 100, :null => false
+    t.text     "build_options"
+    t.datetime "last_checked_at"
+    t.datetime "last_updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "channels", ["church_id", "type"], :name => "index_channels_on_church_id_and_type"
+  add_index "channels", ["last_checked_at"], :name => "index_channels_on_last_checked_at"
+  add_index "channels", ["type"], :name => "index_channels_on_type"
 
   create_table "churches", :force => true do |t|
     t.string   "name",       :limit => 100, :null => false
@@ -162,18 +177,6 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
   add_index "meetings", ["group_id", "state"], :name => "index_meetings_on_group_id_and_state"
   add_index "meetings", ["lesson_id"], :name => "index_meetings_on_lesson_id"
 
-  create_table "podcasts", :force => true do |t|
-    t.integer  "church_id",                   :null => false
-    t.string   "title",        :limit => 100
-    t.string   "url",                         :null => false
-    t.datetime "last_checked"
-    t.datetime "last_updated"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-  end
-
-  add_index "podcasts", ["church_id"], :name => "index_podcasts_on_church_id"
-
   create_table "questions", :force => true do |t|
     t.integer  "user_id",                      :null => false
     t.integer  "admin_user_id"
@@ -204,7 +207,7 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
 
   create_table "studies", :force => true do |t|
     t.string   "slug",                                   :null => false
-    t.integer  "podcast_id",                             :null => false
+    t.integer  "channel_id"
     t.string   "title",                                  :null => false
     t.string   "description"
     t.string   "ref_link"
@@ -221,8 +224,8 @@ ActiveRecord::Schema.define(:version => 20130731050223) do
     t.datetime "updated_at",                             :null => false
   end
 
+  add_index "studies", ["channel_id", "last_published_at"], :name => "index_studies_on_channel_id_and_last_published_at"
   add_index "studies", ["last_published_at"], :name => "index_studies_on_last_published_at"
-  add_index "studies", ["podcast_id", "last_published_at"], :name => "index_studies_on_podcast_id_and_last_published_at"
   add_index "studies", ["slug"], :name => "index_studies_on_slug", :unique => true
 
   create_table "users", :force => true do |t|

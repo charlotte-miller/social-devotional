@@ -4,7 +4,7 @@
 #
 #  id                      :integer          not null, primary key
 #  slug                    :string(255)      not null
-#  podcast_id              :integer          not null
+#  channel_id              :integer
 #  title                   :string(255)      not null
 #  description             :string(255)
 #  ref_link                :string(255)
@@ -60,8 +60,8 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Associations
   # ---------------------------------------------------------------------------------
-  belongs_to :podcast, :inverse_of => :studies
-  has_one :church,     :through => :podcast, :inverse_of => :studies
+  belongs_to :channel#, :inverse_of => :studies
+  has_one :church,     :through => :channel#, :inverse_of => :studies
   has_many :lessons, :order => 'position ASC', :dependent => :destroy, :inverse_of => :study do
     def number(n, strict=false)
       raise ActiveRecord::RecordNotFound if strict && (n > self.length) #lessons_count
@@ -73,7 +73,7 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :slug, :title, :podcast
+  validates_presence_of :slug, :title, :channel
   validates_length_of :description, maximum:250
   # validates_uniqueness_of :title, :scope => :podcast_id
   

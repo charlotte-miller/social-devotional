@@ -1,5 +1,5 @@
 # TODO
-class Lesson::PosterMaker < ActiveRecord::Base
+class Lesson::PosterMaker# < ActiveRecord::Base
   include AttachableFile
   belongs_to :lesson
   

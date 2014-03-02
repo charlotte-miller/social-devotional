@@ -12,7 +12,7 @@
 require 'spec_helper'
 
 describe Church do
-  it { should have_many :podcasts }
+  it { should have_many :channels }
   it { should have_many :studies  }
   
   it { should validate_presence_of(:name)     }
