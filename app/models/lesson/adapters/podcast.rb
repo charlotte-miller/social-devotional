@@ -3,6 +3,7 @@ module Lesson::Adapters
 
     # Builds from a Podcast::Item
     def initialize(podcast_item)
+      @study_title           = podcast_item.title #TODO
       @title                 = podcast_item.title
       @author                = podcast_item.author
       @description           = podcast_item.description

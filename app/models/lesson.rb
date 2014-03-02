@@ -51,10 +51,10 @@ class Lesson < ActiveRecord::Base
   acts_as_list scope: :study
 
   # Private 'sudo' access to everything
-  attr_accessible *column_names, :study, :audio_remote_url, :video_remote_url, :poster_img, :poster_img_remote_url, as: 'sudo'
+  attr_accessible *column_names, :channel_id, :study, :audio_remote_url, :video_remote_url, :poster_img, :poster_img_remote_url, as: 'sudo'
   
   # Public
-  attr_accessible :study, :study_id, :position, :title, :author, :description, :backlink, :published_at, :machine_sorted,
+  attr_accessible :channel_id, :study, :study_id, :position, :title, :author, :description, :backlink, :published_at, :machine_sorted,
                   :audio, :video, :poster_img, :audio_remote_url, :video_remote_url, :poster_img_remote_url
 
 
@@ -74,7 +74,7 @@ class Lesson < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Validations
   # ---------------------------------------------------------------------------------
-  validates_presence_of :study, :title, :author
+  validates_presence_of :study_id, :title, :author
   # validates_uniqueness_of :position, :scope => :study_id
   # validates_attachment_presence :audio, :video
   
@@ -102,12 +102,12 @@ class Lesson < ActiveRecord::Base
     # Builds a lesson from an instance of Lesson::Adapters::'Klass'
     # WARN Study must be added later
     def new_from_adapter(lesson_adapter)
-      church     = Church.where(homepage: URI(lesson_adapter.url).host).first
+      # church     = Church.where(homepage: URI(lesson_adapter.url).host).first  #find_or_create_by_title church:church
       attributes = lesson_adapter.to_hash
       study_str  = attributes.delete :study_title
       _lesson = new(attributes, as:'sudo')
-      _lesson.study = Study.find_or_create_by_title({title:study_str, church:church}, as:'sudo') #rails4 upgrade
-      _lesson.save!
+      _lesson.study_id = Study.find_or_create_by_title({title:study_str, channel_id:1}, as:'sudo').id #rails4 upgrade
+      _lesson
     end
   end
   

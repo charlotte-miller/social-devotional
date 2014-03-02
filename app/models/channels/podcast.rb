@@ -20,11 +20,11 @@ module Channels
       def pull_updates(podcasts = Podcast.all)
         podcast_arr = Array.wrap(podcasts)
       
-        Podcast::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
+        Podcasts::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
           podcast_obj.touch(:last_checked_at)
         
-          channel = Podcast::RssChannel.new(podcast_xml)
-          if (channel.last_updated > podcast_obj.last_updated rescue true)
+          channel = Podcasts::RssChannel.new(podcast_xml)
+          if ((channel.last_updated) > podcast_obj.last_updated_at rescue true)
             podcast_obj.update_channel( channel )
           end
         end.run!
@@ -50,7 +50,7 @@ module Channels
         # 2) assign or create study
         recent_studies = studies.reload.w_lessons.most_recent(5)
         study   = recent_studies.find {|study| study.should_include? lesson }
-        study ||= Study.new_from_podcast_channel(podcast_channel, podcast:self).tap(&:save!)
+        study ||= Study.new_from_podcast_channel(podcast_channel, channel:self).tap(&:save!)
         lesson.study = study
 
         # 4) save lesson
@@ -58,7 +58,7 @@ module Channels
       end
     
       # 5) Update Podcast.timestamps
-      touch(:last_updated) if new_lessons.any?
+      touch(:last_updated_at) if new_lessons.any?
     
       self #chain
     end
@@ -126,10 +126,10 @@ end
 #     def pull_updates(podcasts = Podcast.all)
 #       podcast_arr = Array.wrap(podcasts)
 #       
-#       Podcast::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
+#       Podcasts::Collector.new(podcast_arr) do |podcast_obj, podcast_xml|
 #         podcast_obj.touch(:last_checked)
 #         
-#         channel = Podcast::Channel.new(podcast_xml)
+#         channel = Podcasts::Channel.new(podcast_xml)
 #         if (channel.last_updated > podcast_obj.last_updated rescue true)
 #           podcast_obj.update_channel( channel )
 #         end

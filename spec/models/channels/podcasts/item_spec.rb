@@ -19,23 +19,23 @@ require 'spec_helper'
 module Channels
   describe Podcasts::Item do
     before(:all) { @podcast_xml = File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
-    let!(:parent_channel) { Podcast::Channel.new(@podcast_xml) }
-    let(:spamy) { Podcast::Channel.new(@spamy_content).items.first }
+    let!(:parent_channel) { Podcasts::RssChannel.new(@podcast_xml) }
+    let(:spamy) { Podcasts::RssChannel.new(@spamy_content).items.first }
     subject { parent_channel.items.first }
   
     describe '.new(parent_channel, rss_item_obj)' do
-      it "requires a Podcast::Channel" do
-        lambda { Podcast::Item.new(nil, nil) }.should raise_error(ArgumentError, 'Podcast::Channel required')
-        lambda { Podcast::Item.new('NOT Podcast::Channel', nil)}.should raise_error(ArgumentError, 'Podcast::Channel required')
+      it "requires a Podcasts::Channel" do
+        lambda { Podcasts::Item.new(nil, nil) }.should raise_error(ArgumentError, 'Podcasts::RssChannel required')
+        lambda { Podcasts::Item.new('NOT Podcasts::RssChannel', nil)}.should raise_error(ArgumentError, 'Podcasts::RssChannel required')
       end
     
       it "requires a RSS::Rss::Channel::Item" do
-        lambda { Podcast::Item.new( parent_channel, nil ) }.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
-        lambda { Podcast::Item.new( parent_channel, 'NOT RSS::Rss::Channel::Item')}.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
+        lambda { Podcasts::Item.new( parent_channel, nil ) }.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
+        lambda { Podcasts::Item.new( parent_channel, 'NOT RSS::Rss::Channel::Item')}.should raise_error(ArgumentError, 'RSS::Rss::Channel::Item required')
       end
     
       it "builds from proper arguments" do
-        lambda { Podcast::Item.new( parent_channel, parent_channel.native_rss_items.first ) }.should_not raise_error
+        lambda { Podcasts::Item.new( parent_channel, parent_channel.native_rss_items.first ) }.should_not raise_error
       end
     end
   

@@ -62,17 +62,17 @@ describe Channels::Podcast do
     end
   
     it "updates all by default" do
-      Channels::Podcast::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
+      Channels::Podcasts::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
       Channels::Podcast.pull_updates()
     end
   
     it "accetps an array of @podcasts" do
-      Channels::Podcast::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
+      Channels::Podcasts::Collector.should_receive( :new ).with(@podcasts).and_return(@runner)
       Channels::Podcast.pull_updates(@podcasts)
     end
   
     it "accetps a single @podcast" do
-      Channels::Podcast::Collector.should_receive( :new ).with([@podcast]).and_return(@runner)
+      Channels::Podcasts::Collector.should_receive( :new ).with([@podcast]).and_return(@runner)
       Channels::Podcast.pull_updates(@podcast)
     end
       
@@ -107,7 +107,7 @@ describe Channels::Podcast do
 
   describe '#update_channel( normalized_channel )' do
     let(:podcast) { create(:podcast) }
-    let(:channel_obj) { Channels::Podcast::Channel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
+    let(:channel_obj) { Channels::Podcasts::RssChannel.new(File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml'))) }
     let(:recycle_file) { Lesson.any_instance.stub(:duplicate?)  }
     subject { podcast.update_channel( channel_obj ) }
   
@@ -129,9 +129,9 @@ describe Channels::Podcast do
     end
   
     it "updates #last_updated" do
-      inital_last_updated = subject.last_updated
+      inital_last_updated = subject.last_updated_at
       Timecop.travel(1.minute) { recycle_file; subject.update_channel(channel_obj) }
-      subject.last_updated.should be > inital_last_updated
+      subject.last_updated_at.should be > inital_last_updated
     end
   end
 

@@ -9,10 +9,10 @@ describe Admin::StudiesController do
   end
   
   let!(:podcast){ create(:podcast) }
-  let!(:study){ create(:study, podcast:podcast) }
+  let!(:study){ create(:study, channel:podcast) }
   let(:valid_attributes){ 
     attributes_for(:study)
-    .merge({ podcast_id:podcast.id, title:study.slug })
+    .merge({ channel_id:podcast.id, title:study.slug })
     .except(:lessons)
     .tap {|hash| hash[:poster_img]= fixture_file_upload(hash[:poster_img].to_path) }
   }

@@ -10,7 +10,7 @@ module Channels
     attr_reader :parent_channel, :rss_item_obj
   
     def initialize(parent_channel, rss_item_obj)
-      raise ArgumentError.new('Podcast::Channel required') unless parent_channel.is_a? Podcast::RssChannel
+      raise ArgumentError.new('Podcasts::RssChannel required') unless parent_channel.is_a? Podcasts::RssChannel
       raise ArgumentError.new('RSS::Rss::Channel::Item required') unless rss_item_obj.is_a? RSS::Rss::Channel::Item
       @parent_channel = parent_channel
       @rss_item_obj   = rss_item_obj

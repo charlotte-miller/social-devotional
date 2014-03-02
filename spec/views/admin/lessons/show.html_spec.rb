@@ -10,8 +10,8 @@ describe "admin/lessons/show" do
       :video => @video,
       :audio => @audio,
     ))
-    @audio_url_matcher = url_to_regex(@lesson.audio.url)
-    @video_url_matcher = url_to_regex(@lesson.video.url)
+    @audio_url_matcher = url_to_regex(@lesson.audio.url(:mp3))
+    @video_url_matcher = url_to_regex(@lesson.video.url(:mp4))
   end
 
   it "renders attributes in <p>" do
@@ -22,10 +22,7 @@ describe "admin/lessons/show" do
     rendered.should have_content "God famously meets us in the low places.  This is a study on God intersecting our high-points"
     rendered.should have_content "http://www.church.org/sermon/1234"
     
-    rendered.should have_content @audio.basename
     rendered.should match @audio_url_matcher
-    
-    rendered.should have_content @video.basename
     rendered.should match @video_url_matcher
   end
 end

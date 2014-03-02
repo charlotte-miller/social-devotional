@@ -1,5 +1,5 @@
 module Channels
-  class Podcast::Collector
+  class Podcasts::Collector
     attr_reader :hydra, :queue
   
   

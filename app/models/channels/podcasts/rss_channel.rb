@@ -28,7 +28,7 @@ module Channels
       def initialize(xml_str)
         raise ArgumentError.new('xml_str cannot be blank') if xml_str.blank?
         @podcast_obj = RSS::Parser.parse(xml_str)
-        @items       = @podcast_obj.items.map {|item| Podcast::Item.new(self, item) }
+        @items       = @podcast_obj.items.map {|item| Podcasts::Item.new(self, item) }
         @xml_str     = xml_str
       end
 

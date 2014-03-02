@@ -43,7 +43,7 @@ describe Lesson do
   it { should belong_to( :study )}
   it { should have_many( :questions )}
   it { should delegate_method(:title).to(:study).with_prefix }
-  it { should validate_presence_of :study }
+  it { should validate_presence_of :study_id }
   it { should validate_presence_of :title }
   it { should validate_presence_of :author }
   
@@ -57,7 +57,7 @@ describe Lesson do
     study.lessons.first.save!
   end
     
-  describe '[scopes]'do
+  describe '[scopes]' do
     describe 'for_study(:study_id)' do
       it "adds WHERE(study_id=n)" do
         Lesson.for_study(1).to_sql.should match /WHERE `lessons`.`study_id` = 1/
@@ -66,22 +66,23 @@ describe Lesson do
   end
 
   describe '.new_from_adapter(lesson_adapter)' do
+    
     subject { Lesson.new_from_adapter(adapter) }
     
     context "w/ Lesson::Adapters::Podcast -" do
       let(:podcast_xml) { File.read(File.join(Rails.root, 'spec/files/podcast_xml', 'itunes.xml')) }
-      let(:podcast_item) { Podcast::Channel.new(podcast_xml).items.first }
+      let(:podcast_item) { Channels::Podcasts::RssChannel.new(podcast_xml).items.first }
       let(:adapter) { Lesson::Adapters::Podcast.new(podcast_item) }
       
       it "builds a @lesson from an adapter" do
         should be_a Lesson
-        subject.study = Study.new
+        subject.study = build_stubbed(:study)
         should be_valid
       end
 
       it "requires a study sepratly" do
         subject.valid?
-        subject.errors.messages.should eq( :study => ["can't be blank"] )
+        subject.errors.messages.should eq( :study_id => ["can't be blank"] )
       end
     end
     
@@ -93,13 +94,13 @@ describe Lesson do
       
       it "builds a @lesson from an adapter" do
         should be_a Lesson
-        subject.study = Study.new
+        subject.study = build_stubbed(:study)
         should be_valid
       end
 
       it "requires a study sepratly" do
         subject.valid?
-        subject.errors.messages.should eq( :study => ["can't be blank"] )
+        subject.errors.messages.should eq( :study_id => ["can't be blank"] )
       end
     end
   end

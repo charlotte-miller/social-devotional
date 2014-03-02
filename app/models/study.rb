@@ -29,9 +29,9 @@ class Study < ActiveRecord::Base
   # ---------------------------------------------------------------------------------
   # Attributes
   # ---------------------------------------------------------------------------------
-  attr_accessible :title, :description, :ref_link,  :poster_img, :poster_img_remote_url, :podcast, :podcast_id
-  attr_accessible *column_names, *reflections.keys, :church, :poster_img, :poster_img_remote_url, :podcast, :podcast_id, as: 'sudo'
-  delegate :church_name, to: :podcast
+  attr_accessible :title, :description, :ref_link,  :poster_img, :poster_img_remote_url, :channel, :channel_id
+  attr_accessible *column_names, *reflections.keys, :church, :poster_img, :poster_img_remote_url, :channel, :channel_id, as: 'sudo'
+  delegate :church_name, to: :channel
   serialize :keywords
   
   friendly_id :title #remove after v 5.0.0
