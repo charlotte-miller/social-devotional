@@ -3,10 +3,10 @@
 #   admin_email: admin@domain.com
 #   xml_rpc_url: http://domain.com:8000/
 #   media_path: <%= Rails.root %>/tmp/media
-# 
+#
 # development:
 #   xml_rpc_url: http://localhost:8000/
-# 
+#
 # test:
 #   xml_rpc_url: http://localhost:8008/
 
@@ -21,8 +21,9 @@ common:
     url: s3-us-west-2.amazonaws.com #s3.amazonaws.com
     bucket: media.socialdevotional.com
     credentials:
-      access_key_id: AKIAJAW4PTOXOO6POA7Q
-      secret_access_key: 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
+      # Configure in app_config.local.yml
+      # access_key_id:
+      # secret_access_key:
   redis:
     host: 'localhost'
     port: 6379
@@ -34,13 +35,13 @@ development:
   domains:
     cdn: www.socialdevotional.com
     media: media.socialdevotional.com
-    media_cdn: media.socialdevotional.com 
-    
+    media_cdn: media.socialdevotional.com
+
 
 test:
 
 production:
-  
+
   redis:
     host: 'redis-master.socialdevotional.com'
     pool: 10
