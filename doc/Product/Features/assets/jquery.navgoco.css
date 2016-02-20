@@ -1,0 +1,87 @@
+.nav, .nav ul, .nav li {
+	list-style: none;
+}
+
+.nav ul {
+	padding: 0;
+	margin: 0 0 0 18px;
+}
+
+.nav {
+	padding: 4px;
+	margin: 0px;
+}
+
+.nav > li {
+	margin: 4px 0;
+}
+
+.nav > li li {
+	margin: 2px 0;
+}
+
+.nav a {
+	color: #333;
+	display: block;
+	outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	text-decoration: none;
+}
+
+.nav a .caret {
+	float: left;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	vertical-align: top;
+	border-top: 4px solid #000;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+    margin-top: 8px;
+	margin-right: 5px;
+}
+
+.nav a:hover .caret {
+	border-top-color: #fff;
+}
+
+.nav li.open > a > .caret {
+	border-top: none;
+	border-top: 6px solid #000;
+/*  border-bottom: 5px solid #000;*/
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+}
+
+.nav li.open > a:hover > .caret {
+	border-top-color: #fff;
+}
+
+.nav a:hover, .nav li.active > a {
+	background-color: #5D5D5D;
+	color: #f5f5f5;
+}
+
+.nav > li.active > a  {
+	background-color: #4D90FE;
+}
+
+.nav li a {
+	font-size: 16px;
+	line-height: 24px;
+	padding: 2px 10px;
+}
+
+.nav > li > a {
+	font-size: 18px;
+	line-height: 24px;
+	padding: 4px 10px;
+	background-color: #5D5D5D;
+	color:#fff;
+}
+.nav > li > a > .caret {
+  border-top-color: #fff;
+}

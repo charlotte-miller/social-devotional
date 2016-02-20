@@ -1,0 +1,19 @@
+## TODO
+* lesson and meeting to_params using position - verify routes and update controllers
+* add delete to questions controller
+* questions_controller before_filter assign url params
+* questions_controller before_filter assign author and source
+* questions/show shallow routes (for answers as well)
+
+### Security
+* Capistrano replace:
+* * database.yml
+* * secret_token.rb
+
+
+## Lesson::Adapters
+Consider a model (previously considered as a Description model) that handles content processing, filter/triggering, moderating, etc
+- should has_one [:questions, :answers, :comments, etc]
+  - belongs_to :content, :class => UserPost
+  - STI?
+  - Polymorphic the other direction?

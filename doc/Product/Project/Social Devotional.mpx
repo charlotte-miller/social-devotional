@@ -1,0 +1,428 @@
+MPX,Microsoft Project for Windows,4.0,ANSI
+10,$,1,2,",",.
+11,2,0,1,8,40,$0.00/h,$0.00/h,1,1
+12,0,1,480,/,:,AM,PM,0
+20,Standard,0,1,1,1,1,1,0
+25,1
+25,2,08:00,12:00,13:00,17:00
+25,3,08:00,12:00,13:00,17:00
+25,4,08:00,12:00,13:00,17:00
+25,5,08:00,12:00,13:00,17:00
+25,6,08:00,12:00,13:00,17:00
+25,7
+30,Social Devotional,,,Standard,01/01/14 08:00,,0,,"Social Devotional:Our mission is to educate, encourage and equip the church with every effective technology.    - Educate: 	Clarify the nature of God and creation  - Encourage: 	Stir the faith of the young, tired, & dry believer  - Equip:		Supply resources to stand against evilOur plan is to spread the existing work of apostles, prophets, evangelists, pastors, and teachers as wise stewards of the technology gifted to our generation.Ephesians 4:11-15Now these are the gifts Christ gave to the church: the apostles, the prophets, the evangelists, and the pastors and teachers.  Their responsibility is to equip God's people to do his work and build up the church, the body of Christ.  This will continue until we all come to such unity in our faith and knowledge of God's Son that we will be mature in the Lord, measuring up to the full and complete standard of Christ.Then we will no longer be immature like children.  We won't we tossed and blown about by every wind of new teaching.  We will not be influenced when people try to trick us with lies so clever they sound like truth.  Instead we will speak the truth in love, growing in every way more and more like Christ, who is the head of his body, the church."
+41,1,40,42,43,49
+50,New Resource,1,$0.00/h,$0.00/h,1
+55,Standard,2,2,2,2,2,2,2
+61,90,1,20,40,81,25,44,68,91,3,70,95,98,74,50,51,58,59
+70,1,Features,,,No,0%,0%,,As Soon As Possible,0,,Medium,1,,01/01/14 08:00,,,
+71,"This section explains the functionality of the site. It describes each system and details how they may work together to educate, encourage and equip the church.Each feature answers the following questions:  1) Why build this feature?  2) Who will benefit?  3) What will the feature do? Although the features are organized into sections, the wireframes (mockups) provide a better understanding of the site's structure."
+70,2,Library,,,No,0%,0%,,As Soon As Possible,1,,Medium,2,,01/01/14 08:00,,,
+71,In order to educate and encourageThe site contains a 'Library' of resources - organized into 'Studies' and grouped by topic.
+70,3,Library Home,,,No,0%,0%,,As Soon As Possible,2,,Medium,3,,01/01/14 08:00,,,
+71,"In order to discover new and familiar resourcesAny userMay search and scroll through the site's Studies- Studies are presented as tiles and sorted by a popularity algorithm   (popularity is a function of ratings, recency, controversy, and staff weighting)- Page scrolls 'infinitely' (similar to twitter)- Search autocompletes w/ suggestions. Results appear in the same tile format- Main landing page for logged out users"
+70,4,Search Library,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,4,,01/01/14 08:00,,,
+71,In order to address specific questions about their faithA memberWants an autocomplete search field to look through all studies/lessons
+70,5,Most Popular (Discover),1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,5,,01/01/14 08:00,,,
+71,In order to discover new resourcesA memberWants a page that suggests new & popular studies- use ycombinator algorithm (http://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html)
+70,6,Personal Library,,,No,0%,0%,,As Soon As Possible,2,,Medium,6,,01/01/14 08:00,,,
+71,In order to discover new and familiar resourcesA logged-in memberMay search and scroll through recommended Studies and Groups- Main landing page for logged in members
+70,7,Current Studies,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,7,,01/01/14 08:00,,,
+71,In order to keep members engaged in their studiesA memberCan find their 'studies in progress' in their Personal Library 
+70,8,Suggested for You,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,8,,01/01/14 08:00,,,
+71,In order to provide relevant resourcesA memberMay receive suggested studies based on their search/viewing history
+70,9,Get Connected,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,9,,01/01/14 08:00,,,
+71,In order to create communityA memberMay receive suggestions for other members studying similar lessons
+70,10,Single Lesson,,,No,0%,0%,,As Soon As Possible,2,,Medium,10,,01/01/14 08:00,,,
+71,"In order to engage a study by listening to a single lessonAny userMay download or play the lesson, and browse the conversationLogged-in membersMay join the discussion, and create groups around the study"
+70,11,Media Player,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,11,,01/01/14 08:00,,,
+71,In order to spread quality teachingAny userMay view the lesson as audio or video (when available)
+70,12,Audio Download,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,12,,01/01/14 08:00,,,
+71,In order to spread quality teachingAny userMay download an audio copy of the lesson
+70,13,Share a lesson,,,No,0%,0%,,As Soon As Possible,3,,Medium,13,,01/01/14 08:00,,,
+71,In order to spread personally meaningful teachingAny userMay share a lesson via email or social media- The system should include the required metadata to most improve a secondary viewer's experience
+70,14,Open Graph Tags,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,14,,01/01/14 08:00,,,
+71,"In order for lessons to be playable (when shared) on Facebook & Google+The systemMust present OpenGraph metadata for the lessonSuggested:- og:title= ""<lesson title> from <church name>""- og:type= ""video.episode"" (plus video metadata)- og:image= poster image (plus image metadata)- og:url= socialdevotional.com/lesson url- og:site_name= ""Social Devotional""Resources:- http://ogp.me/- https://developers.facebook.com/tools/debug- http://www.jwplayer.com/blog/publish-your-videos-to-facebook-with-a-jw-player/"
+70,15,"""Share This"" widget",1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,15,,01/01/14 08:00,,,
+71,"In order to share a lesson with friends and acquaintancesAny userMay share a lesson on popular sites via a ""Share This"" widget- Facebook- Google+- Pinterest- Twitter- EmailResources:- http://www.addthis.com/"
+70,16,Member Conversation,,,No,0%,0%,,As Soon As Possible,3,,Medium,16,,01/01/14 08:00,,,
+71,"In order to engage, educate, and equip membersThe systemProvides tools to focus and foster discussion around spiritual study(the system will discourage ad-hoc debates; by focusing on specific teaching)"
+70,17,[Shared] Input Tools,,,No,0%,0%,,As Soon As Possible,4,,Medium,17,,01/01/14 08:00,,,
+71,"In order to have rich user-lead communitiesThe system provides tools to format written text, and ways to unobtrusively reference scripture, teaching and external content."
+70,18,Basic Formatting,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,18,,01/01/14 08:00,,,
+71,"In order to enhance the readability of these notesA memberMay use basic formatting like:- Bold, Italic, Underline- Ordered, Unordered Lists- Indentation, Blockquotes"
+70,19,Bible Reference Lookup,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,19,,01/01/14 08:00,,,
+71,In order to enhance the scriptural foundation of a lessonWhen a bible verse is addedThe system provides a popover of the verseAnd a link to the verse in context- use Logos auto-ref plugin (styling required!)- http://reftagger.com
+70,20,Auto wrap links,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,20,,01/01/14 08:00,,,
+71,"In order to un-clutter user inputWhen a member adds a url to a postThe system should:- wrap the url in an anchor tag (nofollow, target=blank, title=original_url)- anchor body is truncated at 30 charBonus Points:- Fetch the url.title and set that as the anchor body- UI allows members to:--- update anchor body--- add a hyperlink to existing text"
+70,21,Reference a section of the lesson,,,No,0%,0%,,As Soon As Possible,5,,Medium,21,,01/01/14 08:00,,,
+71,"In order to engage with (and discuss) the current messageA memberMay 'highlight' a specific section (time range) of the message- This should appear as a link in the question, and should play the selected portion of the lesson"
+70,22,Select the 'highlighted' section,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,22,,01/01/14 08:00,,,
+71,In order to engage with (and discuss) the current messageA memberMay select a range in the media player that can be:- shared as a link- pasted (and nicely formatted) in the notes/questions
+70,23,Play the 'highlighted' section,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,23,,01/01/14 08:00,,,
+71,In order to engage with (and discuss) the current messageA memberMay play the 'highlighted' section of the lessonBy clicking or visiting the 'highlighted' link
+70,24,Take Notes,,,No,0%,0%,,As Soon As Possible,4,,Medium,24,,01/01/14 08:00,,,
+71,In order to engage the lessonA memberMay take notes as the lesson is playing
+70,25,[Shared] Input Tools,1d,1d,No,0%,0%,,As Soon As Possible,5,17FS,Medium,25,17FS,01/02/14 08:00,,,
+71,Includes everything in [Shared] Input Tools
+70,26,Auto Bookmarks,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,26,,01/01/14 08:00,,,
+71,In order to enhance the review-value of these notesWhen a member creates a new line or list-itemThe system stores the current playhead position (assuming the lesson is playing)And provides an icon-link to jump to that position.
+70,27,Ask Question,,,No,0%,0%,,As Soon As Possible,4,,Medium,27,,01/01/14 08:00,,,
+71,In order to more personally engage a lesson or better understand a topicA memberMay post a question (to a specific lesson) for other members to answer (A leader may also use this feature to drive conversation around a study)
+70,28,[Shared] Input Tools,1d,1d,No,0%,0%,,As Soon As Possible,5,17FS,Medium,28,17FS,01/02/14 08:00,,,
+71,Includes everything in [Shared] Input Tools
+70,29,Submit a question,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,29,,01/01/14 08:00,,,
+71,In order for the community to grow togetherA memberMay submit questions (about the lesson) to the group
+70,30,Search/Confirm your question,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,30,,01/01/14 08:00,,,
+71,"In order to group similar questionsWhen a member submits a questionThe system presents similar questions and asks the user to:""Confirm this is a new question""- Similar questions not scoped to this lesson"
+70,31,Ask a specific group-of-people,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,31,,01/01/14 08:00,,,
+71,In order to leverage trusted interpersonal relationshipsA memberMay direct a question to:- public- friends- selected group of users
+70,32,Edit your question,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,32,,01/01/14 08:00,,,
+71,"In order to promote true understandingA memberMay edit their question at a later time- Answers created for a previous version will indicate that they answer a previous version, and have an expandable section that shows the question as it existed when the answer was created "
+70,33,Remove your question,1d,1d,No,0%,0%,,As Soon As Possible,5,123FS,Medium,33,123FS,01/02/14 08:00,,,
+71,In order for members to manage their postsA memberMay remove their question at any time in the future- soft delete the question- answers go into a user's 'archived answers' feed
+70,34,Notify Me w/ Answers,,,No,0%,0%,,As Soon As Possible,5,,Medium,34,,01/01/14 08:00,,,
+71,The member's email MUST be verified before notifications can be sent.- The UI should store the user's preference... but-- No notifications should be sent until the email is verified-- asking for multiple notifications should trigger one verification email per day
+70,35,Email each answer,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,35,,01/01/14 08:00,,,
+71,In order to receive immediate feedback for a questionA memberMay be notified by email each time the question is answeredThe email must include:- the question & answer- a link to the context- tokenized links to star or block the user/content- tokenized options to change the notification frequency   (tokenized links allow the action w/out logging in)
+70,36,Email friend's answers,1d,1d,No,0%,0%,,As Soon As Possible,6,145FS,Medium,36,145FS,01/02/14 08:00,,,
+71,In order to receive immediate feedback from friendsA memberMay be notified by email each time a friend answers a questionThe email must include:- the question & answer- a link to the context- tokenized links to star or block the user/content- tokenized options to change the notification frequency   (tokenized links allow the action w/out logging in)
+70,37,Email answer digest,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,37,,01/01/14 08:00,,,
+71,"In order to limit the frequency of email notificationsA memberMay receive a daily digest of any activity on this question- No activity... no email- If a user elects to receive a digest for multiple posts, the content should be bundled into a single digest (for all questions, comments, etc.) "
+70,38,Email friend's digest,1d,1d,No,0%,0%,,As Soon As Possible,6,145FS,Medium,38,145FS,01/02/14 08:00,,,
+71,"In order to limit the frequency of email notificationsA memberMay receive a daily digest of any friend activity on this post- No friend activity... no email- If a user elects to receive a digest for multiple questions, the content should be bundled into a single digest (for all questions, comments, etc.)  This will respect the potentially mixed preference to receive a digest for friends or all feedback on a given post."
+70,39,No Emails for this Question,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,39,,01/01/14 08:00,,,
+71,This is the default and an option even after notifications are sent
+70,40,Answer a Question,,,No,0%,0%,,As Soon As Possible,4,,Medium,40,,01/01/14 08:00,,,
+71,In order to more personally engage a lesson or better understand a topicA memberMay post a question (to a specific lesson) for other members to answer (A leader may also use this feature to drive conversation around a study)
+70,41,[Shared] Input Tools,1d,1d,No,0%,0%,,As Soon As Possible,5,17FS,Medium,41,17FS,01/02/14 08:00,,,
+71,Includes everything in [Shared] Input Tools
+70,42,Submit an answer,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,42,,01/01/14 08:00,,,
+71,In order for the community to grow togetherA memberMay submit an answer to an existing question- a member may answer their own question (usually providing a unified answer from their learning)
+70,43,Edit your answer,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,43,,01/01/14 08:00,,,
+71,"In order to clarify or improve an answerA memberMay edit their answer after posting- technically edits may overwrite the previous record- versions not required (contrasted to Questions, where versions are required)"
+70,44,Remove your answer,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,44,,01/01/14 08:00,,,
+71,In order for members to manage their postsA memberMay remove their answer at any time in the future- soft delete the post
+70,45,Browse Questions,,,No,0%,0%,,As Soon As Possible,4,,Medium,45,,01/01/14 08:00,,,
+71,"In order to find answers to their own questionsA memberMay browse through existing questions using search, popularity, recency, etc."
+70,46,Search Questions,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,46,,01/01/14 08:00,,,
+71,"In order to find answers to their own questionsA memberMay search through existing questions using keywordsExample: Searching ""baptism"" returns:--- ""Is baptism required?""--- ""Whats the point of baptism""--- ""Why did Jesus need to be baptized""--- ""What age is a person ready to be baptized"""
+70,47,Sort Questions,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,47,,01/01/14 08:00,,,
+71,In order to browse and understand the conversationAs a memberI want to sort questions by:  - Most Popular  - Most Recent  - Timeline (chronological)
+70,48,Share a Question,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,48,,01/01/14 08:00,,,
+71,"In order to share a great question with friends and acquaintancesAny userMay share a public question on popular sites via a ""Share This"" widget- Facebook- Google+- Pinterest- Twitter- EmailResources:- http://www.addthis.com/"
+70,49,Rate a Question,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,49,,01/01/14 08:00,,,
+71,"In order to identify quality content and manage the communityA memberMay rate a question as ""Useful""- Star: simple +1- may not rate your own content"
+70,50,Block,,,No,0%,0%,,As Soon As Possible,5,,Medium,50,,01/01/14 08:00,,,
+71,In order to protect members from irrelevant or abusive users and contentA member May block any person or content - removing it from their experience
+70,51,Question,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,51,,01/01/14 08:00,,,
+71,"In order to maintain a healthy learning environmentA memberMay 'block' any question:- Blocking a question forever removes it from their UI- Reports a concern- The offending user is NOT notifiedIf a user has blocked N posts from a single user the system Should suggest that they block the user- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,52,User,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,52,,01/01/14 08:00,,,
+71,"In order to protect members from potently abusive users (spammers, bullies)A memberMay 'block' a user:- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,53,Browse Answers,,,No,0%,0%,,As Soon As Possible,4,,Medium,53,,01/01/14 08:00,,,
+71,"In order to find a compelling answer to their own questionsA memberMay scroll through existing answers sorted by popularity, recency, or timeline"
+70,54,Sort Answers,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,54,,01/01/14 08:00,,,
+71,In order to browse and understand the conversationAs a memberI want to sort answers by:- Most Popular- Most Recent- Timeline (chronological)
+70,55,Share an Answer,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,55,,01/01/14 08:00,,,
+71,"In order to share a great answer with friends and acquaintancesAny userMay share a public answer on popular sites via a ""Share This"" widget(the metadata will show both the question and 'shared' answer)- Facebook- Google+- Pinterest- Twitter- EmailResources:- http://www.addthis.com/"
+70,56,Rate an Answer,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,56,,01/01/14 08:00,,,
+71,"In order to identify quality content and manage the communityA memberMay rate an answer as ""Useful""- Star: simple +1- may not rate your own content"
+70,57,Block,,,No,0%,0%,,As Soon As Possible,5,,Medium,57,,01/01/14 08:00,,,
+71,In order to protect members from irrelevant or abusive users and contentA member May block any person or content - removing it from their experience
+70,58,Answer,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,58,,01/01/14 08:00,,,
+71,"In order to maintain a healthy learning environmentA memberMay 'block' any answer:- Blocking an answer, forever removes it from their UI- Reports a concern- The offending user is NOT notifiedIf a user has blocked N posts from a single user The system Should suggest that they block the user- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,59,User,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,59,,01/01/14 08:00,,,
+71,"In order to protect members from potently abusive users (spammers, bullies)A memberMay 'block' a user:- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,60,Comment on an answer,,,No,0%,0%,,As Soon As Possible,4,,Medium,60,,01/01/14 08:00,,,
+71,In order to promote accountability through discussionA member May comment on another user's answer- Comments should be limited to 250 char- Sorted by usefulness (user rating)
+70,61,[Shared] Input Tools,1d,1d,No,0%,0%,,As Soon As Possible,5,17FS,Medium,61,17FS,01/02/14 08:00,,,
+71,Includes everything in [Shared] Input Tools
+70,62,Rate Comments,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,62,,01/01/14 08:00,,,
+71,"In order to identify quality content and manage the communityA memberMay rate a comment as ""Useful""- Star: simple +1- may not rate your own content"
+70,63,Block,,,No,0%,0%,,As Soon As Possible,5,,Medium,63,,01/01/14 08:00,,,
+71,In order to protect members from irrelevant or abusive users and contentA member May block any person or content - removing it from their experience
+70,64,Comment,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,64,,01/01/14 08:00,,,
+71,"In order to maintain a healthy learning environmentA memberMay 'block' any comment:- Blocking a comment forever removes it from their UI- Reports a concern- The offending user is NOT notifiedIf a user has blocked N posts from a single user The system Should suggest that they block the user- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,65,User,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,65,,01/01/14 08:00,,,
+71,"In order to protect members from potently abusive users (spammers, bullies)A memberMay 'block' a user:- Blocking a user removes this and all posts by this user, and reports a concern- The offending user is NOT notified"
+70,66,Notify Me w/ Comments,,,No,0%,0%,,As Soon As Possible,5,,Medium,66,,01/01/14 08:00,,,
+71,The member's email MUST be verified before notifications can be sent.- The UI should store the user's preference... but-- No notifications should be sent until the email is verified-- asking for notifications should trigger one verification email per day
+70,67,Email each comment,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,67,,01/01/14 08:00,,,
+71,In order to receive immediate feedback from an answerA memberMay be notified by email each time an answer is commentedThe email must include:- the answer & comment- a link to the context- tokenized links to star or block the user/content- tokenized options to change the notification frequency   (tokenized links allow the action w/out logging in)
+70,68,Email friend's comment,1d,1d,No,0%,0%,,As Soon As Possible,6,145FS,Medium,68,145FS,01/02/14 08:00,,,
+71,In order to receive immediate feedback from friendsA memberMay be notified by email each time a friend comments on an answerThe email must include:- the answer & comment- a link to the context- tokenized links to star or block the user/content- tokenized options to change the notification frequency   (tokenized links allow the action w/out logging in)
+70,69,Email comment digest,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,69,,01/01/14 08:00,,,
+71,"In order to limit the frequency of email notificationsA memberMay receive a daily digest of any comments on this answer- No activity... no email- If a user elects to receive a digest for multiple posts, the content should be bundled into a single digest (for all questions, comments, etc.) "
+70,70,Email friend's digest,1d,1d,No,0%,0%,,As Soon As Possible,6,145FS,Medium,70,145FS,01/02/14 08:00,,,
+71,"In order to limit the frequency of email notificationsA memberMay receive a daily digest of any friend activity on this post- No friend activity... no email- If a user elects to receive a digest for multiple posts, the content should be bundled into a single digest (for all questions, comments, etc.).  This will respect the potentially mixed preference to receive a digest for friends or all feedback on a given post."
+70,71,No Emails for this Answer,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,71,,01/01/14 08:00,,,
+71,This is the default and an option even after notifications are sent
+70,72,Groups,,,No,0%,0%,,As Soon As Possible,1,,Medium,72,,01/01/14 08:00,,,
+71,"In order for members to move through a study together (think 'Small Group')A collection of membersMay self-organize into a ""Group"" around a single Study Groups provide a safe space to engage a Study- questions, answers, & comments are only visible to group members- group leaders take special responsibility for questions and moderation- members may view lessons at any time, but... the group moves through the study on an 'official' schedule"
+70,73,Group Membership,,,No,0%,0%,,As Soon As Possible,2,,Medium,73,,01/01/14 08:00,,,
+71,In order to share a more intimate conversation around a StudyA memberMay join a Group of other members who together w/ a leader explore a study 
+70,74,Find,,,No,0%,0%,,As Soon As Possible,3,,Medium,74,,01/01/14 08:00,,,
+71,In order to join a GroupA memberMay browse and search through all open/public groups
+70,75,Browse All Studies,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,75,,01/01/14 08:00,,,
+71,In order to find a Group (on some topic of interest)A memberMay browse and search across all currently open/public Groups (search study topics)- groups with existing 'friends' should be called-out
+70,76,Browse Single Study,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,76,,01/01/14 08:00,,,
+71,"In order to find a Group for a specific studyA memberMay search and browse all currently open/public groups for a study- if no groups are open, the system should recommend similar groups for similar studies AND prompt the user to start a group for this study"
+70,77,Join,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,77,,01/01/14 08:00,,,
+71,In order to participate in a group studyA memberMay 'join' any open group
+70,78,Leave,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,78,,01/01/14 08:00,,,
+71,In order to manage Group membershipsA memberMay 'leave' a group at any time
+70,79,Member Dashboard,,,No,0%,0%,,As Soon As Possible,2,,Medium,79,,01/01/14 08:00,,,
+71,In order to manage activity across a number of groupsA memberMay browse the aggregated activity of their groups and find archived groups(archived groups are older groups that no longer meet) 
+70,80,My Groups,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,80,,01/01/14 08:00,,,
+71,In order to return to my Groups (past & present)A memberMay see a list of all Groups of which they are a part- Current Groups- Archived Groups
+70,81,Recent Q&A,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,81,,01/01/14 08:00,,,
+71,In order to draw members into their group's conversationA memberMay see recently asked or answered questions in the sidebar of their portal (sidebar widget)
+70,82,Group Activity Feed,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,82,,01/01/14 08:00,,,
+71,In order to catch up on the conversationA group memberMay see all group activity in a single feed.  Activity includes:- New lesson (watch now)- New questions or answers - Group-wide messages from the leader
+70,83,Group Lesson View,,,No,0%,0%,,As Soon As Possible,3,,Medium,83,,01/01/14 08:00,,,
+71,In order for groups to experience a lesson togetherA groupWill have a curated view of a LessonTabs:- Personal Notes- Group Q&A: Only their Q&A - Public Q&A: (public questions in another tab)- Group Feed
+70,84,Personal Notes,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,84,,01/01/14 08:00,,,
+71,In order to engage a lessonA memberMay take personal notes from the group's view of the lesson 
+70,85,Group Q&A,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,85,,01/01/14 08:00,,,
+71,"In order to engage a lesson as a groupA groupWill have a private (group-wide) discussion section(Questions, Answers and Comments) "
+70,86,Public Q&A,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,86,,01/01/14 08:00,,,
+71,In order to engage in the broader conversation around a lessonA groupWill have a public discussion section for the lesson(Shows the discussion happening outside of the group)
+70,87,Group Feed,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,87,,01/01/14 08:00,,,
+71,In order to catch-up on the group's activityA groupWill have an 'Activity Feed' that aggregates the group's activity into a timelineActivity:- Start a New Lesson- Questions- Answers- Comments
+70,88,Create / Become Leader,,,No,0%,0%,,As Soon As Possible,2,,Medium,88,,01/01/14 08:00,,,
+71,"In order to start a more intimate conversation around a StudyA member (now 'leader')May create a Group (the organizer is the default leader, but may invite co-leaders)Groups may be in ONE of the following types:- Open: 	Searchable and may be joined by any member- Secret: 	NOT searchable and may be joined by any member with a secret url- Closed:	NOT joinable or searchable by any member- Archived: Closed and finished study (according to the official schedule)"
+70,89,Edit,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,89,,01/01/14 08:00,,,
+71,"In order to manage a GroupA leaderMay update the groups details, review the membership (and remove members)"
+70,90,Leave / Delete,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,90,,01/01/14 08:00,,,
+71,"In order to step down as a Group leaderA leaderMay (soft) delete a group until another leader is found- Leader is removed and the Group is archived- Members still have access to the group (as Archived)- If no (co) leader is available, members get a notification asking them to opt-in as leader"
+70,91,Group-wide Message,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,91,,01/01/14 08:00,,,
+71,In order to communicate with the groupA leaderMay message the entire group (same message sent to each member)- added to the group feed
+70,92,Nominate Co-leaders,,,No,0%,0%,,As Soon As Possible,3,,Medium,92,,01/01/14 08:00,,,
+71,In order to share the responsibilities of leadershipA leaderMay invite another member(s) to become a group leader
+70,93,Create a Leader Nomination,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,93,,01/01/14 08:00,,,
+71,In order to share the responsibilities of leadershipA leaderMay invite another member(s) to become a group leader (with the option of a personal-message)- A nomination will trigger a message and add a note to the nominee's group page- Nominees should be listed in the leader's dashboard for review (and resend/cancel actions)
+70,94,Accept Leader Nomination,1d,1d,No,0%,0%,,As Soon As Possible,4,93FS,Medium,94,93FS,01/02/14 08:00,,,
+71,"In order to share the responsibilities of leadershipA nominated leaderMay accept any time before the invite is canceled or the group ends- Nominees MUST agree to the 'Leadership Responsibilities'    (a few paragraphs describing the requirements and expectations of a leader)- Acceptance will notify the original nominator- On acceptance, the nominee is upgraded to Leader & redirected to the group page-- If this is the member's only leadership position, they should be 'onboarded'"
+70,95,Decline Leader Nomination,1d,1d,No,0%,0%,,As Soon As Possible,4,93FS,Medium,95,93FS,01/02/14 08:00,,,
+71,In order to recruit only willing and engaged leadersA nominated leaderMay decline a leadership invitation with an optional message- Nominator is notified- The invitation is removed - The nominee is asked if they would 'still like to join the group as a member'
+70,96,Resend Leader Nomination,1d,1d,No,0%,0%,,As Soon As Possible,4,93FS,Medium,96,93FS,01/02/14 08:00,,,
+71,In order to manage co-leadership requests (no reply etc.)A leaderMay resend the invitation any time before the group ends
+70,97,Cancel Leader Nonination,1d,1d,No,0%,0%,,As Soon As Possible,4,93FS,Medium,97,93FS,01/02/14 08:00,,,
+71,In order to manage co-leadership requests (no reply etc.)A leaderMay cancel the nomination any time before the nominee accepts
+70,98,Leadership Onboarding,,,No,0%,0%,,As Soon As Possible,3,110FS,Medium,98,110FS,01/02/14 08:00,,,
+71,In order to cultivate quality group leadersA first-time leaderWill receive a mix of guidance and resourcesImmediate: Onscreen TourIn-depth: Followup EmailOngoing: Leadership Library 
+70,99,Onscreen Tour,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,99,,01/02/14 08:00,,,
+71,In order to immediately orient group leadersA first-time leaderWill click through a 'tour' of the leadership features of their group's page
+70,100,Followup Email,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,100,,01/02/14 08:00,,,
+71,In order to immediately orient group leadersA first-time leaderWill receive an email describing the tools and resources available to leadersIncludes:- Leadership Responsibilities summary- A link to trigger the click-through tour again- Leadership Library link w/ top articles
+70,101,Leadership Library,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,101,,01/02/14 08:00,,,
+71,"In order to continually sharpen group leadersA first-time leaderWill be directed to the ""Leadership Library""- a single page that highlights leadership focused resources across the site"
+70,102,Invite group members,,,No,0%,0%,,As Soon As Possible,3,,Medium,102,,01/01/14 08:00,,,
+71,In order to jump-start a Group's membershipCurrent and future membersMay be invited to join a group
+70,103,Existing members,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,103,,01/01/14 08:00,,,
+71,In order to jump-start a Group's membershipAny group member (starting w/ the leader as the first member)May search/invite any current member  - max 10 invites to prevent spam- blocked members are silently prevented from contact- autocomplete tags similar to google+   (http://tagedit.webwork-albrecht.de/playground.html)
+70,104,Non-members,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,104,,01/01/14 08:00,,,
+71,"In order to jump-start a Group's membershipA leaderMay type/paste a series of emails and an optional personal message- 30 max (ever)- Invited emails should NEVER be emailed again (unless they join)- If recipients respond w/ 'received mistakenly', the leader goes to moderation- autocomplete tags similar to google+   (http://tagedit.webwork-albrecht.de/playground.html)"
+70,105,Remove a Group Member,,,No,0%,0%,,As Soon As Possible,3,89FS,Medium,105,89FS,01/02/14 08:00,,,
+71,"In order to protect the group from abusive members (hate, bullies, spam)A leaderMay remove a member from the Group w/ an optional message- removes the problem-member and blocks the member's re-entry- removes the user's content from the group- blocks future invitations to this group (as they cannot be used)- the leader should be prompted to confirm the action"
+70,106,Email Notification,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,106,,01/02/14 08:00,,,
+71,In order to prevent confusion around the removalA removed group memberWill receive an email with:- a description of the situation- the leader's personal message- a link and description of the appeal process
+70,107,Appeal Process,,,No,0%,0%,,As Soon As Possible,4,,Medium,107,,01/02/14 08:00,,,
+71,In order to prevent abuse of leadership and maintain a just systemA removed group memberMay appeal the removal- the removed member must provide an explanation of their case (< 500 words)- a staff member will review the issue and provide a ruling
+70,108,Removal Upheld,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,108,,01/02/14 08:00,,,
+71,In order to support a reasonable 'removal'A staff memberMay choose from a list of carefully worded form-letters explaining the reasons for the removal- staff will also have the option to suspend the problem-member
+70,109,Removal Reversed,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,109,,01/02/14 08:00,,,
+71,In order to reverse an unreasonable 'removal'A staff memberMay 'undo' a leader's removal (expecting this to be rare)- the group member is re-admitted to the group- the leader is contacted by the staff member- depending on the situation the leader may instead be removed
+70,110,Leader Dashboard,,,No,0%,0%,,As Soon As Possible,2,,Medium,110,,01/01/14 08:00,,,
+71,In order to effectively leadA group leaderHas a 'Dashboard' of tools to aggregate and moderate group interactions
+70,111,Leadership Feed,,,No,0%,0%,,As Soon As Possible,3,,Medium,111,,01/01/14 08:00,,,
+71,In order to effectively engage and moderate a group's discussionA group leaderWill have an enhanced Activity Feed including:- The opportunity to answer new or controversial questions inline- The opportunity to block questionable content inline
+70,112,Q&A,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,112,,01/01/14 08:00,,,
+71,In order to quickly engage new or controversial questionsThe system Will spotlight new or controversial questions in a leader's Activity Feed
+70,113,Moderation,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,113,,01/01/14 08:00,,,
+71,"In order to correct or eliminate potentially abusive users/contentThe system Will spotlight suspicious posts in a leader's Activity Feed- content that has been blocked by 2 or more users- If marked ""OK"" the leader will not see this 'issue' again- If there is an ongoing reaction to the post, staff is notified (via their moderation feed).  The system trusts the leadership, but provides the group with a louder voice."
+70,114,Leadership Library,,,No,0%,0%,,As Soon As Possible,3,,Medium,114,,01/01/14 08:00,,,
+71,In order to encourage and support leaders in their responsibilitiesA group leaderMay access a library of resources about the study and leadership in general
+70,115,Study Resources,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,115,,01/01/14 08:00,,,
+71,In order to deeply engage the group's studyA group leaderMay access study specific resources like:- Small group resources from the church- Common questions & answers (from the public discussion)- Questions and commentary provided by the church or staff
+70,116,Leadership Resources,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,116,,01/01/14 08:00,,,
+71,"In order to encourage and support leaders in their responsibilities A group leaderMay access a library of resources on Christian leadership- This area will be common to all group leaders. The content should include resources on discipleship, ministry development, conflict resolution, etc.- This area will be curated by a staff member"
+70,117,Study / Leader Forum,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,117,,01/01/14 08:00,,,
+71,In order for leaders to support and encourage one anotherA leaderHas a private Q&A section for all leaders (past & present) of this Study- Leaders may opt-out of all notifications similar to other sections- Leaders may block another member similar to other sections
+70,118,Membership,,,No,0%,0%,,As Soon As Possible,1,,Medium,118,,01/01/14 08:00,,,
+71,"In order to join groups, save notes, and take part in a conversationA userMay become a Social Devotional 'member' by creating an account"
+70,119,Account Managment,,,No,0%,0%,,As Soon As Possible,2,,Medium,119,,01/01/14 08:00,,,
+71,In order to manage their system preferencesA memberMay access and update their settings through an 'Account Management' section 
+70,120,Update Personal Data,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,120,,01/01/14 08:00,,,
+71,In order for members to maintain an accurate online identityA memberMay update their personal data:- email- name- profile picture
+70,121,Reset Password,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,121,,01/01/14 08:00,,,
+71,In order for members to more easily remember account credentialsA memberMay change their password through their profile or by email
+70,122,Cancel Account,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,122,,01/01/14 08:00,,,
+71,In order for a user to feel safe sharing their thoughts and informationA memberMay cancel their account at any time- The user's account is removed (but not deleted)- Their content is removed from the site- They may 're-inflate' their account at any time via email confirmation
+70,123,Review Posts,,,No,0%,0%,,As Soon As Possible,3,,Medium,123,,01/01/14 08:00,,,
+71,In order to reference previously posted contentA memberMay review any content they have posted and if applicable jump to that context
+70,124,Search,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,124,,01/01/14 08:00,,,
+71,In order to find previously posted content (even after it's been archived or removed )A memberMay search across all the content they have posted- unified search
+70,125,View,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,125,,01/01/14 08:00,,,
+71,In order to reference previously posted contentA memberMay review any content they have posted in a single chronological feedAnd if applicable jump to that context
+70,126,Email Preferences,,,No,0%,0%,,As Soon As Possible,3,,Medium,126,,01/01/14 08:00,,,
+71,"In order to manage the frequency of all emails sent from the siteA memberMay select their email preferences and manage specific exceptions.What are exceptions?  Examples:- ""In general I don't want to receive any emails, but I have opted-in to immediately receive answers to a question I asked.""- ""In general I receive one email digest per week, but I have opted-in to receive messages from friends in real time."""
+70,127,Default Preference,,,No,0%,0%,,As Soon As Possible,4,,Medium,127,,01/01/14 08:00,,,
+71,In order to broadly express their email preferencesA memberMay express the default frequency of emails from both Friends and Any MemberOptions:- Real Time- Daily Summary- Weekly Summary- Never Email Notifications
+70,128,Real Time,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,128,,01/01/14 08:00,,,
+71,"In order to get instant feedbackA memberMay opt to receive emails as things happen- Members should confirm this option as it will cause a lot of noiseExample:""A friend messages me and I receive an email right away"""
+70,129,Daily Summary,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,129,,01/01/14 08:00,,,
+71,"In order to limit the frequency of email notifications to once dailyA memberMay receive a daily digest of relevant activity and personal messages- the user should be given the option of 'morning' or 'afternoon' emailsExample: ""I only have time to look at the site after the kids are in bed"""
+70,130,Weekly Summary,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,130,,01/01/14 08:00,,,
+71,"In order to limit the frequency of email notifications to once weeklyA memberMay receive a weekly digest of relevant activity and personal messages- the user should be given the option of which day to receive the digestExample: ""I generally check on my group and watch the lesson over the weekend""This is the default email frequency"
+70,131,Never Email Notifications,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,131,,01/01/14 08:00,,,
+71,In order to turn off all email notificationsA member May opt to never receive email notifications- This can still be overridden by Opt-In Exceptions
+70,132,Opt-In Exceptions,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,132,,01/01/14 08:00,,,
+71,"Opt-in exceptions happen all over the site.  Any time a user decides to receive notifications around a question, lesson, friend, etc.In order to manage the accumulation of opt-in exceptionsA memberMay update all these preferences from their 'Account' section"
+70,133,Manage Blocked Members,,,No,0%,0%,,As Soon As Possible,3,,Medium,133,,01/01/14 08:00,,,
+71,In order to unblock a previously blocked userA memberMay manage their blocked members in their 'Account' section
+70,134,Search Blocked Members,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,134,,01/01/14 08:00,,,
+71,In order to find a previously blocked member (in a large list)A memberMay search their blocked members
+70,135,List Blocked Members,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,135,,01/01/14 08:00,,,
+71,In order to find a previously blocked member (to unblock)A memberMay see a list of their blocked members
+70,136,Unblock Member,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,136,,01/01/14 08:00,,,
+71,In order to manage blocked users (perhaps blocked by accident)A memberMay unblock a blocked-member at any time
+70,137,Notifications,,,No,0%,0%,,As Soon As Possible,2,,Medium,137,,01/01/14 08:00,,,
+71,In order to notify members (who may have opted out of email notifications)A memberMay be alerted through an on-site notification system- the menubar will display the presence and number of notifications- notifications may be viewed in the message section of a member's account
+70,138,System Messages,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,138,,01/01/14 08:00,,,
+71,In order to notify members (who may have opted out of email notifications)A memberMay receive system-wide announcements (like a new feature) via the in-site messaging system
+70,139,Subscribed Events,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,139,,01/01/14 08:00,,,
+71,In order to notify members (who may have opted out of email notifications)A memberMay receive event-driven notifications (like someone has answered your question) via the on-site messaging system
+70,140,Community,,,No,0%,0%,,As Soon As Possible,2,,Medium,140,,01/01/14 08:00,,,
+71,"In order to engage with the community and create your own circleA memberMay message other members, follow friends, and (if needed) block abusive users"
+70,141,Message Member,,,No,0%,0%,,As Soon As Possible,3,,Medium,141,,01/01/14 08:00,,,
+71,In order to safely communicate with other membersA memberMay use the site's messaging service to communicate on-site or through emailSafely Communicate:- emails are not shared with other users- members may block each other at any time
+70,142,Send Message,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,142,,01/01/14 08:00,,,
+71,"In order to safely communicate with other membersA memberMay send a written message to one or more members from their ""Messages"" portal- All messages trigger an on-site notification- Emailed messages should protect the sender's email, but allow reply via email"
+70,143,Recieve Message,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,143,,01/01/14 08:00,,,
+71,"In order to safely communicate with other membersA memberMay receive a written message from another member- All messages trigger an on-site notification- The conversation will be visible in their ""Messages"" portal- Emailed messages should protect the sender's email, but allow reply via email"
+70,144,Archive Thread,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,144,,01/01/14 08:00,,,
+71,"In order to manage their read messagesA memberMay archive a message- removed from the inbox, but still searchable- a new message will 'wake' the thread"
+70,145,Follow Member,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,145,,01/01/14 08:00,,,
+71,"In order to find mentors and communityA memberMay follow another member to see public posts, questions, studies, etc. - Twitter style, one way 'friending'- No approval required"
+70,146,Block Member,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,146,,01/01/14 08:00,,,
+71,"In order to protect members from abuse (spam, hate, bullies)A memberMay block another member (blocks all messages, posts, etc.)- The blocked member cannot tell they have been blocked- Blocked content is removed from the user's experience"
+70,147,Email Verification,,,No,0%,0%,,As Soon As Possible,2,,Medium,147,,01/01/14 08:00,,,
+71,"In order to protect the community from automated abuse (spam, hate)The system Will require a member to verify their email before performing certain actions "
+70,148,Creating a group,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,148,,01/01/14 08:00,,,
+71,In order to protect the Group's system from automated members (spammers)The systemWill require a member to verify their email before creating a group
+70,149,Message another member,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,149,,01/01/14 08:00,,,
+71,In order to protect members from automated messaging (spam)The systemWill require a member to verify their email before first messaging another user
+70,150,Posting more than 5 times,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,150,,01/01/14 08:00,,,
+71,In order to protect the community from automated posting (spam)The systemWill require a member to verify their email before their 6th post- this allows members to use the site for a reasonable time before checking their email
+70,151,Moderation,,,No,0%,0%,,As Soon As Possible,1,,Medium,151,,01/01/14 08:00,,,
+71,"In order to protect members from inaccurate, irrelevant, or abusive contentThe communityRelies on a moderation system with the following design goals:- Respect individual preferences and allow users to tailor their experience   Example: Members may block any person or content - removing it for them- Leverage the 'wisdom of crowds' by acting on the community's feedback   Example: New posts are automatically pulled for review when the initial response is predominately negative - Provide leaders and staff with tools to prevent abuse & guide conversations   Example: A moderation feed allows staff to answer questions or suspend members without leaving the tool"
+70,152,Automatically Block Suspicious Posts,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,152,,01/01/14 08:00,,,
+71,"In order to prevent the propagation of malicious content (spam, hate, bully)The systemWill flag suspicious posts for moderator approval & will not publish the contentAuto blocked content is opaque to the user:- Posts appear posted in the author's UI- The backend responds identically to the http postHowever, suspicious posts are:- not published to the site- flagged for approval in the moderator's feedWhat is Questionable content:- believed profane (profanity blacklist)- containing marketing links (domain blacklist)- containing sql injection or script tags- part of a publishing flood	- too many posts too quickly	- similar or identical content	- no other interaction"
+70,153,Membership,,,No,0%,0%,,As Soon As Possible,2,,Medium,153,,01/01/14 08:00,,,
+71,"In order to address abusive members (violate terms of use - often a spammer)A staff memberMay use the moderation tools to identify, warn, and suspend"
+70,154,Suspicous Member Identification,,,No,0%,0%,,As Soon As Possible,3,,Medium,154,,01/01/14 08:00,,,
+71,"In order to suspend abusive members (spam, bullies, hate)A staff memberWill have suspicious members highlighted in their moderation feed"
+70,155,Account Creation Flood,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,155,,01/01/14 08:00,,,
+71,"In order to prevent spammers from abusing the networkThe systemShould notify moderators when a bunch of similar users create accounts(accounts remain active, but are reviewed by staff)Similar is defined as:- same IP address- same non-standard domain (Not: gmail, yahoo, etc.)"
+70,156,Frequently Blocked,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,156,,01/01/14 08:00,,,
+71,In order to leverage the community's feedbackA frequently blocked memberWill be added to the staff's moderation feed for review
+70,157,Warn Member,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,157,,01/01/14 08:00,,,
+71,In order to warn a member who may have unknowingly violated the terms of useA staff memberMay send the member a suspension warning (working from a form letter)- the event is recorded and presented to the staff member in future interactions- the email goes to the user regardless of their email preferences
+70,158,Suspend Member,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,158,,01/01/14 08:00,,,
+71,"In order to remove a problematic member (spammers, bullies)A staff memberMay suspend a member's account.- The member is emailed	- You have violated the Terms of Service agreement	- Your account has been suspended	- A link and explanation about the appeals process- Their content is removed from the site- The member's account is frozen (they are logged out permanently)"
+70,159,Domain Suspension,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,159,,01/01/14 08:00,,,
+71,In order to block an automated spam campaignA staff member (Extreme discretion required)May block all membership requests (and auto suspend members) from a single domainExample: <anything>@sell1134.com- these membership requests should be directed to Suspension Appeal- existing members should be auto suspended (including the email) 
+70,160,Moderation Feed,,,No,0%,0%,,As Soon As Possible,2,,Medium,160,,01/01/14 08:00,,,
+71,In order to effectively moderate the communityA leader or staff memberWill receive an activity feed of significant or questionable content.The feed allows the user to do the following w/out leaving the tool: - block a member- remove abusive posts- comment or answer question
+70,161,Leader,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,161,,01/01/14 08:00,,,
+71,I order to escalate important group activity to a leader's attentionThe systemAggregates significant and questionable group activity into a moderation feed
+70,162,Staff,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,162,,01/01/14 08:00,,,
+71,I order to escalate potentially abusive or incorrect content The systemAggregates significant and questionable activity into a staff moderation feed
+70,163,Reaction Profiles,,,No,0%,0%,,As Soon As Possible,2,,Medium,163,,01/01/14 08:00,,,
+71,In order to protect the community from abusive contentThe systemAutomatically targets content for moderation using a series of profilesReaction Types:- Very Positive: 	member follow- Positive:   		star- Negative: 		post block- Very Negative: 	user block
+70,164,Fire,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,164,,01/01/14 08:00,,,
+71,In order to triage clearly abusive contentThe system will remove content for moderation (removed so it can be reviewed)When almost all reactions to a post are negative (low threshold w/ short time )Thresholds:- At least 5 negative or 3 very negative reactions- Less than 2 (very) positive reactions- Reactions occur over a 2 day period(See parent for reaction definitions)
+70,165,Consistent Opposition,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,165,,01/01/14 08:00,,,
+71,In order to remove clearly abusive contentThe system will remove content for moderation (removed so it can be reviewed)When almost all reactions to a post are negative (high threshold w/ no time limit)Thresholds:- At least 12 negative or 8 very negative reactions- More than 70% Opposition- Reactions occur over any time period
+70,166,Controversial,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,166,,01/01/14 08:00,,,
+71,In order to bring wisdom to conflicted subjectsThe system will escalate topics to group leaders (or all leaders for public posts)When the post receives a large mix of reactions in a short period of time
+70,167,Blocked by Leadership,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,167,,01/01/14 08:00,,,
+71,In order to give weight and accountability to a group's leadershipWhen a leader blocks content in their groupContent is removed globally AND intermittently sent to staff-moderation (to protect against abuse of leadership situations)
+70,168,Blocked by Staff,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,168,,01/01/14 08:00,,,
+71,In order to give weight and accountability to staffWhen a staff member blocks contentContent is removed globally AND intermittently sent to another member for staff-moderation 
+70,169,Church Admin,,,No,0%,0%,,As Soon As Possible,1,,Medium,169,,01/01/14 08:00,,,
+71,"In order to support their church community (locally and virtually)Church staffMay access tools to track reactions, manage content, and engage their community"
+70,170,Edit Church Metadata,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,170,,01/01/14 08:00,,,
+71,In order to have correct metadata for a churchA church adminMay update a church's:- name- homepage- podcast urls
+70,171,Dashboard,,,No,0%,0%,,As Soon As Possible,2,,Medium,171,,01/01/14 08:00,,,
+71,In order to better support their church community (locally and virtually)Church staffMay track high-level reactions and feedback through a chart-heavy dashboard
+70,172,Activity Overview,,,No,0%,0%,,As Soon As Possible,3,,Medium,172,,01/01/14 08:00,,,
+71,In order to produce a virtuous feedback cycle of engagementA church adminMay view statistics around their media:Overview- Overall hours engaging media- Overall lines of notes taken- Overall Questions asked and answered- Overall Groups formed
+70,173,Totals,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,173,,01/01/14 08:00,,,
+71,In order to gain a quick understanding of members' engagementA church adminMay see total counts for:- Overall hours engaging media- Overall lines of notes taken- Overall Questions asked and answered- Overall Groups formed
+70,174,Graphed across a timeline,1d,1d,No,0%,0%,,As Soon As Possible,4,,Medium,174,,01/01/14 08:00,,,
+71,"In order to gauge the effect of external initiatives on member engagementA church adminMay view charts of activity along a timeline:- Overall hours engaging media- Overall lines of notes taken- Overall Questions asked and answered- Overall Groups formed- to manage data bloat, the timeline will be no more granular than daily-- meaning data can be collapsed each day into a single entry"
+70,175,Trending Lessons,,,No,0%,0%,,As Soon As Possible,3,,Medium,175,,01/01/14 08:00,,,
+71,In order to produce a virtuous feedback cycle of engagementA church adminMay view statistics around specific lessons:- Trending Lessons  - Number of views
+70,176,Lesson Profile,,,No,0%,0%,,As Soon As Possible,4,,Medium,176,,01/01/14 08:00,,,
+71,In order to produce a virtuous feedback cycle of engagementA church adminMay view statistics around specific lessons:  - Common drop off points :(  - Commonly noted points :)  - Questions Feed- These should always be available for the top trending lessons but should require a subscription to view the complete (church) library
+70,177,Common drop off points,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,177,,01/01/14 08:00,,,
+71,In order to improve their lessonsA church adminMay see the places where users stop watching a lesson- these should trigger the media so the user can get an idea of what is causing the drop-off
+70,178,Commonly noted points,1d,1d,No,0%,0%,,As Soon As Possible,5,,Medium,178,,01/01/14 08:00,,,
+71,In order to improve their lessonsA church adminMay see the places where users take notes- these should trigger the media so the user can get an idea of what is causing the sudden increase in interest
+70,179,Questions Feed,,,No,0%,0%,,As Soon As Possible,5,,Medium,179,,01/01/14 08:00,,,
+71,In order to understand a lesson's resulting discussion A church adminMay view all public and group-public questions- questions between individual members or groups of members are not available for review 
+70,180,Answer public questions,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,180,,01/01/14 08:00,,,
+71,In order to get the best answersA church adminMay answer a public question directly from their Question Feed (inline)
+70,181,Annonomous group-public questions,1d,1d,No,0%,0%,,As Soon As Possible,6,,Medium,181,,01/01/14 08:00,,,
+71,"In order to respect the privacy of a groupA church adminMay see group-public questions, but the member identities will be obscured with fake data/icons- these questions cannot be answered here "
+70,182,Manage Studies,,,No,0%,0%,,As Soon As Possible,2,,Medium,182,,01/01/14 08:00,,,
+71,In order to support their church community (locally and virtually)Church staffMay update and create new studies from their church's media
+70,183,Create new study,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,183,,01/01/14 08:00,,,
+71,In order to create studies (to group miss-grouped lessons)A church adminMay create a study from scratch
+70,184,Edit a study's metadata,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,184,,01/01/14 08:00,,,
+71,In order to have correct metadata for a studyA church adminMay update the:- title- description- poster image (upload new)- etc
+70,185,Group lessons into studies,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,185,,01/01/14 08:00,,,
+71,In order to correctly group lessons into studiesA church adminMay drag lessons from one study to anotherAnd may drag lessons to a different position within the study
+70,186,Delete a study,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,186,,01/01/14 08:00,,,
+71,"In order to provide a complete content management systemA church adminMay delete a study w/ options:- Move these lessons to ""Stand Alone""- Delete All (#) Lessons- soft delete and notify super admin"
+70,187,Manage Lessons,,,No,0%,0%,,As Soon As Possible,2,,Medium,187,,01/01/14 08:00,,,
+71,"In order to support their church community (locally and virtually)Church staffMay add or update Lessons with additional references and material  - Additional notes (verses, books, links)  - Church bulletins  - small group support material"
+70,188,Load a new lesson,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,188,,01/01/14 08:00,,,
+71,In order to deliver content not found elsewhereA church adminMay create a lesson (including loading media) directly through the interface
+70,189,Edit a lesson's metadata,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,189,,01/01/14 08:00,,,
+71,In order to have correct metadata for a lessonA church adminMay update the:- title- author- description- poster image (upload new)- etc
+70,190,Upload accompanying documents,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,190,,01/01/14 08:00,,,
+71,"In order to provide the richest experience possibleA church adminMay upload accompanying files for download (pdf, doc, img)Example: pdf of message notes with fill-in-the-blank sections."
+70,191,Select poster image from video,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,191,,01/01/14 08:00,,,
+71,In order to have the best artwork for a lessonA church adminMay select a different poster image from a collection of suggestions(suggestions are snapshots of the first 20 seconds at regular intervals)- 1 day after selection these snapshots should be cleared from S3 
+70,192,Delete a Lesson,1d,1d,No,0%,0%,,As Soon As Possible,3,,Medium,192,,01/01/14 08:00,,,
+71,In order to provide a complete content management systemA church adminMay delete a lesson- soft delete and notify super admin
+70,193,Infrastructure,,,No,0%,0%,,As Soon As Possible,0,,Medium,193,,01/01/14 08:00,,,
+71,This section begins to capture the operational cost of providing the service.
+70,194,CDN,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,194,,01/01/14 08:00,,,
+71,Content Delivery Network- cloundfront
+70,195,Cloud Storage,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,195,,01/01/14 08:00,,,
+71,Distributed Redundant Storage- S3
+70,196,Servers,,,No,0%,0%,,As Soon As Possible,1,,Medium,196,,01/01/14 08:00,,,
+71,Raw/Cloud Hardware Requirements
+70,197,Staging,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,197,,01/01/14 08:00,,,
+71,1 	Web2 	App1 	Util1 	DB
+70,198,Production,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,198,,01/01/14 08:00,,,
+71,2 	Web2+ 	App1 	Util2 	DB
+70,199,Engineering Resources,,,No,0%,0%,,As Soon As Possible,1,,Medium,199,,01/01/14 08:00,,,
+71,Paid services required for team collaboration
+70,200,Github,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,200,,01/01/14 08:00,,,
+70,201,Flowdock,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,201,,01/01/14 08:00,,,
+70,202,PivotalTracker,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,202,,01/01/14 08:00,,,
+70,203,Continuous Integration,1d,1d,No,0%,0%,,As Soon As Possible,2,,Medium,203,,01/01/14 08:00,,,
+71,Hosted:- Jenkins- Team City- Travis-CI- etc. 
+70,204,Staff,,,No,0%,0%,,As Soon As Possible,0,,Medium,204,,01/01/14 08:00,,,
+71,This section attempts to outline the staff positions required to build and operate the service
+70,205,Design,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,205,,01/01/14 08:00,,,
+70,206,Engineers,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,206,,01/01/14 08:00,,,
+70,207,Account Manager,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,207,,01/01/14 08:00,,,
+70,208,Community Leader,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,208,,01/01/14 08:00,,,
+70,209,Editor,1d,1d,No,0%,0%,,As Soon As Possible,1,,Medium,209,,01/01/14 08:00,,,
+71,"Responsible for researching, curating, and verifying new or questionable content Similar to the editor of a book or periodical, this person protects the credibility of Social Devotional by:- verifying the theological basis of a teaching- verifying the quality of the recording and speaker- identifying new content sources"
