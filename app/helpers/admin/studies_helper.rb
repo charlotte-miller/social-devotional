@@ -1,2 +1,0 @@
-module Admin::StudiesHelper
-end
